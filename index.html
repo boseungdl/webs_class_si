@@ -193,135 +193,155 @@
                                 <div class="img-text donutImg">
                                     <h5>CLASS</h5>
                                     <p>클래스</p>
-                                    <span>CLASS</span>
+                                    <span>CLASS</span>                                    
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </section>
+                                    <!-- //box -->
+                                     <!-- box -->
+                    <section class="color-shape class">
+                        <a href="script/index.html" target="_blank">
+                            <div class="image-wrap">
+                                <div class="hover-wrap">
+                                    <span class="overlay-img-donut">JavaScript</span>
+                                    <span class="overlay-text-thumb-donut">자바스크립트</span>
+                                    <span class="overlay-text-thumb1-donut">자바스크립트</span>
+                                    <span class="overlay-text-thumb2-donut">JavaScript</span>
                                 </div>
-                            </div>
-                        </a>
-                    </section>
-                    <!-- //box -->
+                                <img src="assets/img/svg-donut.svg" alt="portfolio">
+                                <div class="img-text donutImg">
+                                    <h5>JavaScript</h5>
+                                    <p>자바스크립트</p>
+                                    <span>JavaScript</span>                                    
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </section>
 
+                                </div>
+                                <!-- //container-->
+                            </div>
+                            <!-- //row -->
                 </div>
                 <!-- //container-->
             </div>
-            <!-- //row -->
-        </div>
-        <!-- //container-->
-    </div>
-    <!-- //contents -->
+            <!-- //contents -->
 
 
-    <!-- footer -->
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="span12">
-                    <h5>
-                        <a href="http://webstoryboy.co.kr" target="_blank">Webstoryboy</a>
-                        <span id="clock"></span>
-                        <span id="infor"></span>
-                    </h5>
+            <!-- footer -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <h5>
+                                <a href="http://webstoryboy.co.kr" target="_blank">Webstoryboy</a>
+                                <span id="clock"></span>
+                                <span id="infor"></span>
+                            </h5>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- //footer -->
+            <!-- //footer -->
 
 
-    <!-- script -->
-    <script src="assets/js/jquery-1.9.1.min.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/jquery.isotope.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e05a0a02a2b57e5e3a1deb6a9dae1e0e">
-    </script>
-    <script>
-        var container = document.getElementById('map');
-        var options = {
-            center: new kakao.maps.LatLng(33.450701, 126.570667),
-            level: 3
-        };
+            <!-- script -->
+            <script src="assets/js/jquery-1.9.1.min.js"></script>
+            <script src="assets/js/bootstrap-collapse.js"></script>
+            <script src="assets/js/bootstrap-transition.js"></script>
+            <script src="assets/js/jquery.isotope.min.js"></script>
+            <script type="text/javascript"
+                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e05a0a02a2b57e5e3a1deb6a9dae1e0e">
+            </script>
+            <script>
+                var container = document.getElementById('map');
+                var options = {
+                    center: new kakao.maps.LatLng(33.450701, 126.570667),
+                    level: 3
+                };
 
-        var map = new kakao.maps.Map(container, options);
-    </script>
-    <script>
-        //운영체제 정보 알아내기
-        let os = navigator.userAgent.toLowerCase();
-        let sw = screen.width;
-        let sh = screen.height;
-        let infor = document.getElementById("infor");
+                var map = new kakao.maps.Map(container, options);
+            </script>
+            <script>
+                //운영체제 정보 알아내기
+                let os = navigator.userAgent.toLowerCase();
+                let sw = screen.width;
+                let sh = screen.height;
+                let infor = document.getElementById("infor");
 
-        if (os.indexOf("windows") >= 0) {
-            infor.innerHTML = "현재 윈도우를 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
-        } else if (os.indexOf("macintosh") >= 0) {
-            infor.innerHTML = "현재 맥을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
-        } else if (os.indexOf("iphone") >= 0) {
-            infor.innerHTML = "현재 아이폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
-        } else if (os.indexOf("android") >= 0) {
-            infor.innerHTML = "현재 안드로이드 폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
-        }
-
-
-
-
-        //시간 표현
-        let clock = document.getElementById("clock");
-
-        setInterval(function () {
-            clock.innerHTML = new Date().toLocaleTimeString();
-        }, 1000);
-
-        $(function () {
-            var $container = $('#container'),
-                filters = {};
-
-            $container.isotope({
-                itemSelector: '.color-shape',
-                masonry: {
-                    columnWidth: 57
-                }
-            });
-
-            // filter buttons
-            $('.filter a').click(function () {
-                var $this = $(this);
-                // don't proceed if already selected
-                if ($this.hasClass('selected')) {
-                    return;
+                if (os.indexOf("windows") >= 0) {
+                    infor.innerHTML = "현재 윈도우를 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+                } else if (os.indexOf("macintosh") >= 0) {
+                    infor.innerHTML = "현재 맥을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+                } else if (os.indexOf("iphone") >= 0) {
+                    infor.innerHTML = "현재 아이폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
+                } else if (os.indexOf("android") >= 0) {
+                    infor.innerHTML = "현재 안드로이드 폰을 사용하고 있으며, 화면 크기는 " + sw + "x" + sh + " 입니다."
                 }
 
-                var $optionSet = $this.parents('.option-set');
-                // change selected class
-                $optionSet.find('.selected').removeClass('selected');
-                $this.addClass('selected');
 
-                // store filter value in object
-                // i.e. filters.color = 'red'
-                var group = $optionSet.attr('data-filter-group');
-                filters[group] = $this.attr('data-filter-value');
-                // convert object into array
-                var isoFilters = [];
-                for (var prop in filters) {
-                    isoFilters.push(filters[prop])
-                }
-                var selector = isoFilters.join('');
-                $container.isotope({
-                    filter: selector
+
+
+                //시간 표현
+                let clock = document.getElementById("clock");
+
+                setInterval(function () {
+                    clock.innerHTML = new Date().toLocaleTimeString();
+                }, 1000);
+
+                $(function () {
+                    var $container = $('#container'),
+                        filters = {};
+
+                    $container.isotope({
+                        itemSelector: '.color-shape',
+                        masonry: {
+                            columnWidth: 57
+                        }
+                    });
+
+                    // filter buttons
+                    $('.filter a').click(function () {
+                        var $this = $(this);
+                        // don't proceed if already selected
+                        if ($this.hasClass('selected')) {
+                            return;
+                        }
+
+                        var $optionSet = $this.parents('.option-set');
+                        // change selected class
+                        $optionSet.find('.selected').removeClass('selected');
+                        $this.addClass('selected');
+
+                        // store filter value in object
+                        // i.e. filters.color = 'red'
+                        var group = $optionSet.attr('data-filter-group');
+                        filters[group] = $this.attr('data-filter-value');
+                        // convert object into array
+                        var isoFilters = [];
+                        for (var prop in filters) {
+                            isoFilters.push(filters[prop])
+                        }
+                        var selector = isoFilters.join('');
+                        $container.isotope({
+                            filter: selector
+                        });
+
+                        return false;
+                    });
+
+                    $('.tit_btn').on('click', function (e) {
+                        e.preventDefault();
+                        $('.nav_container').toggleClass('on');
+                    });
+
+                    $(".click").click(function () {
+                        $(".view").fadeToggle();
+                    });
+
                 });
-
-                return false;
-            });
-
-            $('.tit_btn').on('click', function (e) {
-                e.preventDefault();
-                $('.nav_container').toggleClass('on');
-            });
-
-            $(".click").click(function () {
-                $(".view").fadeToggle();
-            });
-
-        });
-    </script>
+            </script>
 
 </body>
 
