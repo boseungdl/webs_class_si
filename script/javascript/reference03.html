@@ -73,8 +73,9 @@
             display: inline-block;
             margin-bottom: 10px;
             font-weight: 400;
-            padding: px 10px 0 10px;
+            padding: 0 10px 0 10px;
             font-size: 24px;
+            border-radius: 10px;
 
         }
 
@@ -82,9 +83,9 @@
         .sample {
             background: #8dc2a5;
             display: inline-block;
-            margin: 1px;
+            margin: 5px 0;
             padding-right: 10px;
-            border-radius: 5px;
+            border-radius: 10px;
 
         }
     </style>
@@ -95,14 +96,14 @@
 
 <body>
 
-    <h2>변수에 저장할 수 있는 자료형</h2>
+    <h1>변수에 저장할 수 있는 자료형</h1>
     <p>
         변수에 저장할 수 있는 자료형(data type)으로는 문자형(string), 숫자형(Number), 논리형(boolin) 그리고
         빈 데이터(undefined)가 있습니다. 앞으로는 @@형 또는 @@형 데이터라고 부르겠습니다.
     </p>
 
 
-    <h3>문자형</h3>
+    <br><h2>문자형</h2><br>
     <p>
         문자형(string)데이터는 다음과 같이 문자나 숫자를 큰따옴표("")또는 작은 따옴표('')로 감싸고 있습니다.
         또한 문자형 데이터에 html태그를 포함하여 출력하면 태그로 인식합니다.</p>
@@ -126,7 +127,7 @@
 
 
 
-    <h3>숫자형</h3>
+    <br><h2>숫자형</h2><br>
     숫자형(number)데이터는 단어 의미 그대로 숫자를 의미합니다. 만약"100"과 같이 큰따옴표가 숫자를
     감싸고 있다면 숫자가 아닌 문자형 데이터입니다. 이 경우에는 number("100")를 이용하면 문자형
     데이터를 숫자형 데이터로 바꿀 수 있습니다.
@@ -148,10 +149,12 @@
 
 
 
-    <h3>논리형</h3>
-    논리형(booline)데이터는 true(참) 또는 false(거짓)가 있습니다. 이 데이터는 주로 2개의 데이터를 비교할 때 나오는 결과입니다. 예를 들어
+    <br><h2>논리형</h2><br>
+    <p>
+        논리형(booline)데이터는 true(참) 또는 false(거짓)가 있습니다. 이 데이터는 주로 2개의 데이터를 비교할 때 나오는 결과입니다. 예를 들어
     '100보다 10이 크다'는 잘못된 비교이므로 false라는 결과를 반환하게 됩니다. 논리형 데이터의 기본형은 다음과 같습니다.
-
+    </p>
+    
 
 
     <div class="sample">
@@ -221,7 +224,7 @@
 
 
 
-    <h3>null & undefined 데이터</h3>
+    <h3>null & undefine2 데이터</h2>
     <p>
         undefined는 다음과 같이 변수 s에 값이 등록되기 전의 기본값이고, null은 변수에 저장된 값이 null
         인 경우를 가리킵니다. null은 변수에 저장된 데이터를 비우고자 할 때 사용하는 값입니다.
@@ -237,7 +240,7 @@
     </div>
 
 
-    <h3>typeof</h3>
+    <h3>typeof</h2>
     <p>
         typeof는 지정한 데이터 또는 변수에 저장된 자료형을 알고 싶을 때 사용합니다. 기본형은 다음과 같습니다.
     </p>

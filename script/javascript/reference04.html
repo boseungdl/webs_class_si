@@ -77,6 +77,7 @@
             font-weight: 400;
             padding: 0px 10px 0 10px;
             font-size: 24px;
+            border-radius: 10px;
 
         }
 
@@ -93,8 +94,12 @@
             display: inline-block;
             margin: 10px 0px;
             padding-right: 10px;
-            border-radius: 5px;
+            border-radius: 10px;
 
+        }
+
+        p {
+            font-weight: 800 ;
         }
     </style>
 
@@ -104,36 +109,15 @@
 
 <body>
 
-    <h1>키워드란?</h1>
-    
-    <p>자바 스크립트가 처음 만들어질 때 정해진, 특별한 의미가 있는 단어이다. 모든 브라우저에서 아래와 같은 키워드들을 지원하며, 이 키워드들은 식별자로 정의할 수 없다.</p>
-
-    <h2>자바스크립트의 키워드 종류</h2>
-
-
-    <p> break, if, else, instanceof, true, false, switch, case, default, try, catch, finally, null, typeof, continue,
-        for,
-        return, var, new, function, void, delete, this, while, do, in, throw, with
-    </p>
-
-
-    <h2>미래에 사용될 가능성이 있는 자바스크립트 키워드</h2>
-
-    <p>abstract, boolean, byte, char, class, const, debugger, double, enum, export, extends, final, float, goto,
-        implements, imports, int, interface, long, native, package, private, protected, public, short, static, super,
-        synchronized, throws, transient, volatile</p>
-    
-     
-
     <h1>식별자란?</h1>
-   
+
     <p> 변수나 함수의 이름이 될 수 있는 프로그래머가 선언하는 단어.</p>
 
-
-        <div class="sample">
-            <pre><code>
-    [식별자 생성시 규칙]
-
+     <h2>[식별자 생성시 규칙]</h2>
+     <br>
+    
+     <div class="sample">
+        <pre><code>
     - 키워드 사용불가
 
     - 숫자로 시작 불가
@@ -142,14 +126,16 @@
 
     - 공백 포함불가
             </code></pre>
-        </div>
+    </div>
 
-        
-        <hr>
-        <div class="sample">
-            <pre><code>
-    [식별자 생성할 때의 관례]
 
+    <hr>
+    
+    <h2>[식별자 생성할 때의 관례]</h2>
+    <br>
+
+    <div class="sample">
+        <pre><code>
     - 모든 언어가 사용 가능하나 알파벳 사용이 관례
 
     - 의미 있는 단어 사용
@@ -158,13 +144,76 @@
 
     - 변수와 인스턴스, 함수, 메소드 이름은 소문자로 시작
 
-    - 식별자가 여러 단어로 이뤄지면 각 단어의 첫 글자는 대문자
-        
+    - 식별자가 여러 단어로 이뤄지면 각 단어의 첫 글자는 대문자        
             </code></pre>
-        </div>
+    </div>
 
 
-       
+    <h1>키워드란?</h1>
+
+    <p>키워드는 제어문의 시작과 끝, 특정한 조작 목적 등으로 쓰입니다.이런 기능들이
+        정의되어 있기 때문에 식별자나 프로퍼티 이름으로 사용할 수 없습니다.</p>
+
+    <h2>자바스크립트의 키워드 종류</h2>
+
+
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>키워드</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>break</td>
+                <td>loop문이나 switch문을 종료하기 위해 사용.</td>
+            </tr>
+            <tr>
+                <td>continue</td>
+                <td>loop문을 빠져나가 가장상단으로 가는데 사용.</td> </tr> <tr>
+                <td>debugger</td>
+                <td>자바스크립트의 실행을 중지하고 (가능하다면)디버깅 function을 부른다.</td>
+            </tr>
+            <tr>
+                <td>do ... while</td>
+                <td>do while반복문 실행</td>
+            </tr>
+            <tr>
+                <td>for</td>
+                <td>for반복문 실행 </td>
+            </tr>
+            <tr>
+                <td>function</td>
+                <td>function을 선언한다.</td>
+            </tr>
+            <tr>
+                <td>return</td>
+                <td>function에서 나온다.</td>
+            </tr>
+            <tr>
+                <td>var</td>
+                <td>변수를 선언한다.</td>
+            </tr>
+           
+
+        </tbody>
+
+
+
+    </table>
+
+
+
+
+
+  
+
+
+
+
+
+
 
 </body>
-
