@@ -58,14 +58,14 @@
             padding: 5%;
         }
 
-       
+
         h1 {
             padding-bottom: 20px;
             font-size: 40px;
             /* 단축키: fz40 */
         }
 
-        
+
         h2 {
             margin-top: 30px;
             background-color: #000;
@@ -77,26 +77,15 @@
             font-size: 24px;
 
         }
-        
+
         .sample {
             background: #8dc2a5;
             display: inline-block;
             margin: 1px;
             padding-right: 10px;
             border-radius: 5px;
-           
-        }
-      
 
-        .sample h3 {
-            background: #f2f2f2;
-            font-size: 16px;
-            padding: 20px 15px 15px 15px;
-            border-radius: 5px 5px 0 0;
-            border: 1px solid #e6e6e6;
         }
-
-     
     </style>
 
     <link rel="stylesheet" href="../asset/css//prism.css">
@@ -120,9 +109,13 @@
         자바스크립트 객체의 메서드와 속성을 사용하는 기본형은 다음과 같습니다.
     </P>
 
+    <div class="sample">
+        <pre><code>
     기본형 : 1. 객체.메서드();
     2. 객체.속성; 또는 3. 객체.속성=값;
-
+        </code></pre>
+    </div>
+    
     <P>
         객체의 메소드를 실행합니다.<br>
         객체의 속성값을 가져옵니다.<br>
@@ -136,16 +129,26 @@
         다음은 메서드를 잘못 사용한 경우입니다. '앞으로 전진해'라는 메서드는 자동차에나 있을 법한 기능이겠죠.
     </P>
 
+    <div class="sample">
+        <pre><code>
     TV.앞으로 전진해(); (O)
     자동차.앞으로 전진해(); (O)
+     </code></pre>
+    </div>
+
+
 
     <p>
         또한 자바스크립트에서 TV의 너비와 색상, 속성 정보를 알고 싶다면 다음과 같이 적용할 수 있습니다.
     </p>
-
+    
+    <div class="sample">
+        <pre><code>
     TV.width; (tv의 너비) 또는 TV.color;(tv의 색상) //TV의 속성값을 가져옵니다.
     TV.color=black; //TV의 속성값을 바꿉니다.
-
+        </code></pre>
+    </div>
+   
 
 
 
