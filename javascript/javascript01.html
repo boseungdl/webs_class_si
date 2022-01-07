@@ -657,7 +657,7 @@
                 c: {x: 400, y: 500},
                 d: "javascript",
                 e: function(){
-                document.write("javascript가 실행되었습니다.");            
+                document.write("javascript가 실행되었습니다.")            
                 },
                 f: function(){
                     document.write(obj.d + "가 실행되었습니다.<br>")
@@ -665,18 +665,20 @@
                 g: function(){
                     document.write(this.d + "가 실행되었습니다.<br>")
                 }
+            }    
 
-        }
+        
 
             document.write(obj.a, "<br>");
             document.write(obj.b[0], "<br>");
             document.write(obj.b[1], "<br>");
             document.write(obj.c.x, "<br>");
-            document.write(obj.c.y, "<br>");
-            e();
-
-
+            document.write(obj.c.y, "<br>");  
+            obj.e();             
         }
+
+      
+
        
        
        
