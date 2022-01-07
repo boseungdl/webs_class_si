@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</h1></a>
+        <nav> 
+            <ul>                
+                <li><a href="reference01.html">기초문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li class="active"><a href="reference03.html">자료형</a></li>               
+            </ul>
+        </nav>
+
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>데이터 타입(자료형)</h2>
+            <p>변수에는 여러가지 유형이 들어갈 수 있습니다. 프로그램 언어에 있어 가장 기본적인 요소이며, 데이터 타입이라고 합니다.
+                데이터 타입에는 <b>숫자, 문자열, 논리값, 특수값, 심벌, 객체, 배열, 함수 등</b>을 표현할 수 있습니다.
+            </p>
+
+            <h3>숫자(Number)</h3>
+            <p>숫자형(number)데이터는 단어 의미 그대로 숫자를 의미합니다. 만약<b>"100"</b>과 같이 큰따옴표가 숫자를
+                감싸고 있다면 숫자가 아닌 문자형 데이터입니다. 이 경우에는 number("100")를 이용하면 문자형
+                데이터를 숫자형 데이터로 바꿀 수 있습니다.</p>
+
+                <div class="code">
+                    <pre><code>
+기본형   
+var 변수 = 숫자; 또는 number("문자형 숫자");
+
+var s="100"
+var t=Number("500"); // "500" →  500
+                    </code></pre>
+                    </div>
+
+            <h3>문자열(string)</h3>
+            <p>문자형(string)데이터는 다음과 같이 문자나 숫자를 <b>큰따옴표("")또는 작은 따옴표('')</b>로 감싸고 있습니다.
+                또한 문자형 데이터에 html태그를 포함하여 출력하면 태그로 인식합니다.</p>
+                
+                <div class="code">
+                    <pre><code>
+기본형<br>
+var 변수 = "사용할 문자나 숫자"
+                    </code></pre>
+                    </div>
+
+            <h3>논리값(Boolean</h3>
+            <p>논리형(booline)데이터는 true(참) 또는 false(거짓)가 있습니다. 이 데이터는 주로 2개의 데이터를 비교할 때 나오는 결과입니다.</p>
+
+            <div class="code">
+                <pre><code>
+기본형
+var 변수 = true(참) 또는 false; 또는 booline(데이터);
+
+var s=true;
+var t=10>=100;          //false
+var k=Booline("hello"); //true
+                </code></pre>
+                </div>
+
+            <h3>특수값</h3>
+            <p></p>
+
+            <h3>심볼(Symbol)</h3>
+            <p>심볼은 <b>변경 불가능한</b> 원시 타입의 값이며, 다른 값과 중복되지 않는 고유한 값이다. 심볼 값은 충돌 위험이 없는 오브젝트의 유일한 프로퍼티 키를 만들기 위해서 사용할 수 있다. 하위호환성을 유지하면서 표준을 확장한다든지, 고유한 상수값을 만드는 데 사용할 수 있다.</p>
+            
+            <h3>객체(Object)</h3>
+            <p>객체란 여러 속성을 하나의 변수에 저장할 수 있도록 해주는 데이터 타입으로 <b>Key / Value</b> 를 저장할 수 있는 구조이다.</p>
+
+            <h3>배열(Aarry)</h3>
+            <p>배열은 같은 자료들을 담는 자료구조 중의 하나이다.</p>
+
+            <h3>함수(Function)</h3>
+            <p>함수도 데이터 타입 중 하나이다. 일련의 과정을 문(statement)으로 구현하고 코드 블록으로 감싸서 하나의 실행 단위로 정의한 것이다.
+                입력을 받아서 출력을 내보낼 때, 함수 내부로 전달 받은 변수를 <b>매개변수(parameter)</b>, 입력을 <b>인수=인자(argument)</b>, 출력을 <b>반환값(return value)</b>라고 한다.</p>
+        </div>
+       
+    </main>
+    
+</body>
+</html>

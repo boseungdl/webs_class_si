@@ -53,6 +53,11 @@
             </ul>
         </div>
         <!-- //list -->
+        <div class="note">
+            <a href="reference01.html">기초문법</a>
+            <a href="reference02.html">변수</a>
+            <a href="reference03.html">자료형</a>          
+        </div>
 
         <div class="script">
             <!-- sample1 -->
@@ -325,6 +330,78 @@
         </div>
     </div>
 
+     <!-- sample15 -->
+     <div id="sample15" class="sample">
+        <h3>15. 객체 : 데이터를 저장(키와 값) : 표현 방법6</h3>
+<div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200,300],
+        c: {x: 400, y: 500},
+        d: "javascript"            
+    }
+    document.write("<br>*** 15. 객체 ***<br>");
+    document.write(obj.a, "<br>");
+    document.write(obj.b[0], "<br>");
+    document.write(obj.b[1], "<br>");
+    document.write(obj.c.x, "<br>");
+    document.write(obj.c.y, "<br>");
+    document.write(obj.d, "<br>");
+</code></pre>
+    </div>
+</div>
+     <!-- sample16 -->
+     <div id="sample16" class="sample">
+        <h3>16. 객체 : 데이터를 저장(키와 값) : 표현 방법7</h3>
+<div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const a = 100;   
+    const b = 200;   
+    const c = "javascript";   
+
+    const obj = {a, b, c};
+
+    document.write("<br>*** 16. 객체 ***<br>");
+    document.write(obj.a, "<br>");
+    document.write(obj.b, "<br>");
+    document.write(obj.c, "<br>");
+</code></pre>
+    </div>
+</div>
+     <!-- sample17 -->
+     <div id="sample17" class="sample">
+        <h3>17. 객체 : 데이터를 저장(키와 값) : 표현 방법8</h3>
+<div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {
+    a: 100,
+    b: [200,300],
+    c: {x: 400, y: 500},
+    d: "javascript",
+    e: function(){
+    document.write("javascript가 실행되었습니다.");            
+    },
+    f: function(){
+        document.write(obj.d + "가 실행되었습니다.<br>")
+    },
+    g: function(){
+        document.write(this.d + "가 실행되었습니다.<br>")
+    }
+
+}
+
+    document.write(obj.a, "<br>");
+    document.write(obj.b[0], "<br>");
+    document.write(obj.b[1], "<br>");
+    document.write(obj.c.x, "<br>");
+    document.write(obj.c.y, "<br>");
+    e();
+</code></pre>
+    </div>
+</div>
+
+
 
       
 
@@ -555,8 +632,7 @@
             document.write(obj.b[1], "<br>");
             document.write(obj.c.x, "<br>");
             document.write(obj.c.y, "<br>");
-            document.write(obj.d, "<br>");
-            
+            document.write(obj.d, "<br>");         
         }
 
         // 16. 객체 : 데이터를 저장(키와 값) : 표현 방법7 : 객체 속에 변수
