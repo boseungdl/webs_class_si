@@ -75,12 +75,12 @@ a {
     margin-bottom: 10px;
 }
 
-#header nav ul li.active a{
+#header nav ul li.active a {
     background: #000;
     color: #fff;
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
     #header {
         padding: 20px;
     }
@@ -123,5 +123,35 @@ a {
     .list ul li{
         font-size: 14px;
         line-height: 1.6;
+    }
+}
+
+/* script */
+.script {
+    padding: 40px; 
+}
+
+.script .sample {
+    margin-bottom: 80px;
+}
+.script .sample h3 {
+    background: #f2f2f2;
+    font-size: 16px;
+    padding: 20px 15px 15px 15px;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #e6e6e6;
+}
+.script .sample .code pre {
+    margin: 0 !important;
+    border-radius: 0 0 5px 5px;
+}
+
+@media (max-width: 800px){
+    .script{
+        padding: 40px 0;
+    }
+    .scrip .sample h3{
+        font-size: 14px;
+        padding: 10px 15px 8px 15px;
     }
 }
