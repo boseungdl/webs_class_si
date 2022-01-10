@@ -514,11 +514,7 @@
             y = 400;
             z = "jquery";
 
-            document.write("<br>*** 02. 변수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>"); 
-            
+          
             document.querySelector(".result02").innerHTML = x + "<br>" + y + "<br>" + z;
         }
 
@@ -531,10 +527,6 @@
             y -= 400;   // y = y - 400;
             z += "jquery";
 
-            document.write("<br>*** 03. 변수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
 
             document.querySelector(".result03").innerHTML = x + "<br>" + y + "<br>" + z;
         }
@@ -553,12 +545,7 @@
                 x = 200;    //지역변수 100->200
                 y = 300;    //전역변수 200->300
 
-                document.write("함수 안<br>");
-                document.write(x, "<br>");
-                document.write(y, "<br>");
-                document.write(z, "<br>");
-
-                document.querySelector(".result04").innerHTML += "*** 함수 안 ***<br>";
+            document.querySelector(".result04").innerHTML += "*** 함수 안 ***<br>";
             document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>" + z + "<br>";
                 
             }
@@ -567,12 +554,6 @@
             document.querySelector(".result04").innerHTML += "<br>*** 함수 밖 ***<br>";
             document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>" + z;
 
-            document.write("함수 밖<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
-
-           
         }
 
         // 05. 상수 : 데이터 저장 + 데이터 변경(X)
@@ -585,10 +566,7 @@
             //y = 400;
             //z = "jquery"
 
-            document.write("<br>*** 05. 상수 ***<br>");
-            document.write(x, "<br>");
-            document.write(y, "<br>");
-            document.write(z, "<br>");
+            
 
             document.querySelector(".result05").innerHTML = x + "<br>" + y + "<br>" + z;
 
@@ -605,10 +583,7 @@
             arr[1] = 200;
             arr[2] = "javascript";
 
-            document.write("<br>*** 06. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            
 
             document.querySelector(".result06").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
         }
@@ -617,10 +592,7 @@
         {
             const arr = new Array(100, 200, "javascript");
 
-            document.write("<br>*** 07. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            
            
             document.querySelector(".result07").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
@@ -633,10 +605,7 @@
             arr[1] = 200;
             arr[2] = "javascript";
 
-            document.write("<br>*** 08. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            
 
             document.querySelector(".result08").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
@@ -646,10 +615,7 @@
         {
             const arr = [100, 200, "javascript"];
 
-            document.write("<br>*** 09. 배열 ***<br>");
-            document.write(arr[0], "<br>");
-            document.write(arr[1], "<br>");
-            document.write(arr[2], "<br>");
+            
 
             document.querySelector(".result09").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
@@ -662,10 +628,7 @@
             obj[1] = 200;
             obj[2] = "javascript";
 
-            document.write("<br>*** 10. 객체 ***<br>");
-            document.write(obj[0], "<br>");
-            document.write(obj[1], "<br>");
-            document.write(obj[2], "<br>");
+           
 
             document.querySelector(".result10").innerHTML = obj[0] + "<br>" + obj[1] + "<br>" + obj[2];
 
@@ -678,10 +641,7 @@
             obj.b = 200;
             obj.c = "javascript";
 
-            document.write("<br>*** 11. 객체 ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            
 
             document.querySelector(".result11").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
 
@@ -693,10 +653,7 @@
             obj.b = 200;
             obj.c = "javascript";
 
-            document.write("<br>*** 12. 객체 ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            
 
             document.querySelector(".result12").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
 
@@ -705,10 +662,7 @@
         {
             const obj = { a:100, b:200, c:"javascript"};
 
-            document.write("<br>*** 13. 객체 ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            
 
             document.querySelector(".result13").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
 
@@ -720,10 +674,7 @@
                 {c: "javascript"} 
             ];
 
-            document.write("<br>*** 14. 객체 ***<br>");
-            document.write(obj[0].a, "<br>");
-            document.write(obj[0].b, "<br>");
-            document.write(obj[1].c, "<br>");
+            
 
             document.querySelector(".result14").innerHTML = obj[0].a + "<br>" + obj[0].b + "<br>" + obj[1].c;
 
@@ -737,13 +688,7 @@
                 d: "javascript"
             };
 
-            document.write("<br>*** 15. 객체 ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b[0], "<br>");
-            document.write(obj.b[1], "<br>");
-            document.write(obj.c.x, "<br>");
-            document.write(obj.c.y, "<br>");
-            document.write(obj.d, "<br>");
+           
 
             document.querySelector(".result15").innerHTML = obj.a + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y+ "<br>" + obj.d 
 
@@ -756,10 +701,7 @@
 
             const obj = { a, b, c };
 
-            document.write("<br>*** 16. 객체 ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.c, "<br>");
+            
 
             document.querySelector(".result16").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c; 
         }
@@ -770,28 +712,19 @@
                 b: [200, 300],
                 c: {x:400, y:500},
                 d: "javascript",
-                e: function(){
-                    document.write("javascript가 실행되었습니다.")
-                },
-                f: function(){
-                    document.write( obj.d + "가 실행되었습니다.")
-                },
-                g: function(){
-                    document.write( this.d + "가 실행되었습니다")
-                }
-                
-            };
-            document.write("<br>*** 17. 객체 ***<br>");
-            document.write(obj.a, "<br>");
-            document.write(obj.b, "<br>");
-            document.write(obj.b[0], "<br>");
-            document.write(obj.b[1], "<br>");
-            document.write(obj.c.x, "<br>");
-            document.write(obj.c.y, "<br>");
-            obj.e();
-            obj.f();
-            obj.g();
 
+                e: function () {
+                    document.querySelector(".result17").innerHTML += "javascript가 실행되었습니다." + "<br>";
+                },
+                f: function () {
+                    document.querySelector(".result17").innerHTML += obj.d + "가 실행되었습니다." + "<br>";
+                },
+                g: function () {
+                    document.querySelector(".result17").innerHTML += this.d + "가 실행되었습니다." + "<br>";
+                }
+               
+            };
+            
             document.querySelector(".result17").innerHTML += obj.a + "<br>" + obj.b + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>";
             obj.e();
             obj.f();
