@@ -9,7 +9,6 @@
         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
     font-display: swap;
 }
-
 @font-face {
     font-family: 'NexonLv1Gothic';
     font-weight: 400;
@@ -21,7 +20,6 @@
         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
     font-display: swap;
 }
-
 @font-face {
     font-family: 'NexonLv1Gothic';
     font-weight: 700;
@@ -33,34 +31,28 @@
         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
     font-display: swap;
 }
-
 /* reset */
 * {
     margin: 0;
     padding: 0;
     font-family: 'NexonLv1Gothic';
 }
-
 li {
     list-style: none;
 }
-
 a {
     text-decoration: none;
     color: #000;
 }
-
 /* top */
 .top {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    
 }
-
 .top a {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     line-height: 60px;
     border-radius: 50%;
     text-align: center;
@@ -68,11 +60,10 @@ a {
     color: #fff;
     display: block;
 }
-
 /* header */
 #header {
     padding: 40px;
-    border-bottom: 1px dashed #cdcdcd;
+    border-bottom: 1px dashed #CDCDCD;
 }
 #header h1 {
     margin-bottom: 30px;
@@ -93,55 +84,49 @@ a {
     background: #000;
     color: #fff;
 }
-
-@media (max-width: 800px) {
+@media (max-width: 800px){
     #header {
         padding: 20px;
     }
     #header h1 {
         margin-bottom: 15px;
-        font-size: 28px; 
+        font-size: 28px;
     }
     #header nav ul li a {
         font-size: 16px;
-        padding: 8px 15px 9px 15px;
+        padding: 8px 15px 6px 15px;
         margin-bottom: 5px;
     }
-
 }
-
 /* main */
 #main {
     padding: 40px;
 }
-
 /* list */
 .list {
     padding-bottom: 40px;
-    border-bottom: 1px dotted #cdcdcd;
+    border-bottom: 1px dotted #CDCDCD;
 }
 .list ul li {
     font-size: 18px;
-    line-height: 1.8; 
+    line-height: 1.8;
 }
-
 @media (max-width: 800px){
     #main {
         padding: 20px;
-    }   
+    }
     .list {
         padding-bottom: 20px;
-    }    
-    .list ul li{
+    }
+    .list ul li {
         font-size: 14px;
         line-height: 1.6;
     }
 }
-
 /* note */
-.note{
+.note {
     padding: 40px 0;
-    border-bottom: 1px dotted #cdcdcd;
+    border-bottom: 1px dotted #CDCDCD;
 }
 .note a {
     font-size: 16px;
@@ -152,43 +137,44 @@ a {
     display: inline-block;
     margin-bottom: 5px;
 }
-.note a:hover{
+.note a:hover {
     text-decoration: underline;
 }
-
 @media (max-width: 800px){
-    .note{
+    .note {
         padding: 20px 0;
     }
-    .note a{
+    .note a {
         font-size: 14px;
     }
 }
-
 /* script */
 .script {
-    padding: 40px; 
+    padding: 40px 0;
 }
 .script .sample {
     margin-bottom: 80px;
 }
 .script .sample h3 {
-    background: #f2f2f2;
+    background: #F2F2F2;
     font-size: 16px;
-    padding: 20px 15px 15px 15px;
+    padding: 15px 20px 10px 20px;
     border-radius: 5px 5px 0 0;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #E6E6E6;
+    font-weight: 500;
 }
 .script .sample .code pre {
     margin: 0 !important;
     border-radius: 0 0 5px 5px;
 }
-
 @media (max-width: 800px){
-    .script{
-        padding: 40px 0;
+    .script {
+        padding: 20px 0;
     }
-    .script .sample h3{
+    .script .sample {
+        margin-bottom: 40px;
+    }
+    .script .sample h3 {
         font-size: 14px;
         padding: 10px 15px 8px 15px;
     }
@@ -196,7 +182,6 @@ a {
         font-size: 14px;
     }
 }
-
 /* doc */
 .doc {
     font-size: 18px;
@@ -206,48 +191,46 @@ a {
 .doc h2 {
     font-weight: 500;
     margin: 40px 0 5px;
-}    
+}
 .doc h3 {
     font-weight: 500;
     margin: 20px 0 5px;
     text-decoration: underline;
-}    
+}
 .doc li {
     list-style: disc;
-    margin-left: 20px
+    margin-left: 20px;
 }
-.doc h2 p {
+.doc p {
     margin-bottom: 5px;
-}  
+}
 .doc .line {
-    border: 1px solid #cdcdcd;
+    border: 1px solid #CDCDCD;
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
 }
 .doc .code {
-    border: 1px solid #cdcdcd;
-    padding: 15px 20px 15px 20px;
+    padding: 20px 20px 15px 20px;
     border-radius: 10px;
-    background: #f3f8fa;
+    background: #F4F8FA;
 }
 .doc strong {
-    background: #c3eaff;
+    background: #C3EAFF;
     font-weight: normal;
     border-radius: 20px;
-    padding: 2px 5px 0px 5px;
+    padding: 2px 15px 0px 15px;
     display: inline-block;
 }
-
 /* result */
-.result h4 {
-    background: #f2f2f2;
+.result h4{
+    background: #F2F2F2;
     padding: 10px 20px;
     font-weight: normal;
-    margin-top: 10px;   
+    margin-top: 10px;
     border-radius: 5px 5px 0 0;
     font-size: 16px;
 }
-.result div {
+.result div{
     background: #272822;
     padding: 20px;
     color: #fff;
@@ -258,12 +241,15 @@ a {
 @media (max-width: 800px){
     .result h4 {
         font-size: 14px;
-        padding: 10px 15px;    
+        padding: 10px 15px;
     }
-    .result div{
+    .result div {
         font-size: 14px;
         padding: 15px;
     }
-
 }
+/* table */
+
+
+
 
