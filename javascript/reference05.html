@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="assets/css/prism.css">
     <!-- script -->
     <script src="assets/js/prism.js"></script>
+
+    <style>
+    table { 
+    width:100%;
+    border-collapse: collapse;
+    }
+    table th {
+        background: rgb(205, 241, 168);
+    }
+    table td {
+        text-align: center;
+    }
+    table th, td{
+    border: 1px solid #000;
+    }
+     </style>
 </head>
 <body>
     <header id="header">
@@ -18,15 +34,115 @@
             <ul>                
                 <li><a href="reference01.html">기초문법</a></li>
                 <li><a href="reference02.html">변수</a></li>
-                <li><a href="reference03.html">자료형</a></li>                
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li class="active"><a href="reference05.html">연산자</a></li>  
             </ul>
         </nav>
+
+
+        
 
     </header>
 
     <main id="main">
-        
-     
+        <div class="doc">
+            <h2>연산자</h2>
+            <p>연술자에는, 산술, 문자 결합, 대입(복합대입), 증감, 비교, 논리 , 삼항 조건 연산자가 있습니다.</p>
+
+            <h3>산술연산자</h3>
+            <p>산수시간에 배운 +, -, *(곱하기), /(나누기), %(나머지)가 있습니다. 산술 연산자로 연산을 하기 위해서는 연산 대상 데이터가 반드시 2개 있어야 합니다. </p>
+            
+            <table class="연산자">
+                <caption>산술 연산자의 종류와 기본형</caption>
+                <thead>
+                    <tr>
+                        <th>종류</th>
+                        <th>기본형</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>+</td>
+                    <td>A + B</td>
+                    <td>더하기</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>A - B</td>
+                    <td>빼기</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>A * B</td>
+                    <td>곱하기</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>A / B</td>
+                    <td>나누기</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>A % B</td>
+                    <td>나머지</td>
+                </tr>
+            </tbody>
+               
+            </table>
+            <div class="code">
+                <pre><code>
+
+                </code></pre>
+            </div>
+
+            <h3>문자결합연산자</h3>
+
+            <h3>대입 연산자</h3>
+
+            <h3>증감 연산자</h3>
+
+            <h3>비교 연산자</h3>
+
+            <h3>논리 연산자</h3>
+            <p>논리 연산자에는 ||(or), &&(and), !(not)이 있으며, 논리 연산자는 피연산자가 논리형 데이터인 true 또는 false</p>
+
+            <div class="line">
+1. ()<br>
+2. 단항 연산자(--. ++, !)<br>
+3. 산술 연산자(*, /, %, +, -)<br>
+4. 비교 연산자(&gt;, &gt;=, &lt;, &lt;=, ==, ===, !==, !=)<br>
+5. 논리 연산자(&&,||)<br>
+6. 대입(복합 대입) 연산자(=, +=, -=, *=, /=, %=)<br>
+            </div>
+
+            <div class="code">
+                <pre><code>
+&lt;script&gt;
+var a = 10;
+var b = 20;
+var m = 30;
+var n = 40;
+
+var result;
+result = a &gt;b||b&gt;=m||m&gt;n;      //false || false || false
+document.write(result, "&lt;br&gt;")    //false
+
+
+
+
+
+&lt;/script&gt;
+                </code></pre>
+                </div>
+
+
+
+                
+
+           
+        </div>
     </main>
     
     
