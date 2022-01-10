@@ -129,6 +129,13 @@ var result;
 result = a &gt;b||b&gt;=m||m&gt;n;      //false || false || false
 document.write(result, "&lt;br&gt;")    //false
 
+result = a &gt;b||b&gt;=m||m&lt;=n;      //false || false || true
+document.write(result, "&lt;br&gt;")    //true
+
+result = a &lt;=b&&b&gt;=m&&m&lt;=n;      //true || false || true
+document.write(result, "&lt;br&gt;")    //true
+
+
 
 
 
