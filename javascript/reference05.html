@@ -11,53 +11,7 @@
     <!-- script -->
     <script src="assets/js/prism.js"></script>
 
-    <style>
-    .연산자 { 
-    width:100%;
-    border-collapse: collapse;
-    }
-    .연산자 th {
-    background: rgb(205, 241, 168);
-    }
-    .연산자 td {
-    text-align: center;
-    }
-    .연산자 th, td{
-    border: 1px solid #000;
-    }
-    
-    
-    .non {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 30px;
-    }
-    .non th {
-    background: rgb(205, 241, 168);
-    }
-    .non td {
-    padding: 0px 5px;    
-    }
-    .non th, td{
-    border: 1px solid #000;
-    }
-    td:first-child {
-    text-align: center;
-    }
-
-    
-    .대입 {
-    width: 100%;
-    border-collapse: collapse;
-    }
-    .대입 th {
-    background: rgb(205, 241, 168);   
-    border: 1px solid 
-    }
-    .대입 td {
-    text-align: center;
-    }
-     </style>
+   
 </head>
 <body>
     <header id="header">
@@ -85,7 +39,8 @@
             <h3>산술연산자</h3>
             <p>산수시간에 배운 +, -, *(곱하기), /(나누기), %(나머지)가 있습니다. 산술 연산자로 연산을 하기 위해서는 연산 대상 데이터가 반드시 2개 있어야 합니다. </p>
             
-            <table class="연산자">
+        <div class="table">
+            <table>
                 <caption>산술 연산자의 종류와 기본형</caption>
                 <thead>
                     <tr>
@@ -123,6 +78,7 @@
             </tbody>
                
             </table>
+        </div>
 
          
             <h3>문자결합연산자</h3>
@@ -141,37 +97,42 @@ ex) "100" + 200 = "100200";
 
             <h3>대입 연산자</h3>
             <p>대입 연산자(=)는 연산된 데이터를 변수에 저장할 때 사용합니다. 복합 대입 연산자(+=, -=, *=, /=, %=)는 산술 연산자와 대입 연산자가 복합적으로 적용된 것을 말합니다.</p>
-            <table class="대입">
-                <caption>대입 연산자의 종류</caption>
-                <thead>
-                    <tr>
-                        <th>종류</th>
-                        <th>풀이</th>
-                    </tr>                                  
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>A = B</td>
-                        <td>A = B</td>
-                    </tr>
-                    <tr>
-                        <td>A += B</td>
-                        <td>A = A + B</td>
-                    </tr>
-                    <tr>
-                        <td>A *= B</td>
-                        <td>A = A*B</td>
-                    </tr>
-                    <tr>
-                        <td>A /= B</td>
-                        <td>A = A/B</td>
-                    </tr>
-                    <tr>
-                        <td>A %= B</td>
-                        <td>A = A%B</td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <main class="doc">
+                <div class="table">
+                    <table>
+                        <caption>대입 연산자의 종류</caption>
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>풀이</th>
+                            </tr>                                  
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A = B</td>
+                                <td>A = B</td>
+                            </tr>
+                            <tr>
+                                <td>A += B</td>
+                                <td>A = A + B</td>
+                            </tr>
+                            <tr>
+                                <td>A *= B</td>
+                                <td>A = A*B</td>
+                            </tr>
+                            <tr>
+                                <td>A /= B</td>
+                                <td>A = A/B</td>
+                            </tr>
+                            <tr>
+                                <td>A %= B</td>
+                                <td>A = A%B</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
 
             <h3>증감 연산자</h3>
             <p>증감 연산자에는 숫자형 데이터를 1씩 증가시키는 증가 연산자(++)와 반대로 1씩 감소시키는 감소연산자(--)가 있습니다. 증감 연산자는 앞에서 배운 연산자와는 달리 피연산자가 한 개만 필요한 단항 연산자입니다. 증감 연산자는 변수의 어느 위치에 오는가에 따라 결괏값이 달라집니다.                
@@ -204,85 +165,98 @@ ex) "100" + 200 = "100200";
             <h3>비교 연산자</h3>
             <p>두 데이터를 '크다, 작다, 같다'와 같이 비교할 때 사용하는 연산자입니다. 연산된 결괎값은 true(참) 또는 false(거짓)로 논리형 데이터를 반환합니다.</p>
 
-            <table class="non">
-                <caption>비교  연산자의 종류</caption>                               
-                <tr>
-                    <th>종류</th>
-                    <th>설명</th>
-                    <th>비고</th>
-                </tr>
-                <tr>
-                    <td>A&gt;B</td>
-                    <td>A가 B보다 크다.</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>A&lt;B</td>
-                    <td>A가 B보다 작다.</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>A&gt;=B</td>
-                    <td>A가 B보다 크거나 같다.</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>A&lt;=B</td>
-                    <td>A가 B보다 작거나 같다.</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>A==B</td>
-                    <td>A와 B는 같다.</td>
-                    <td>숫자를 비교할 경우 자료형은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 일치하면 true를 반환한다.<br>
-                    숫자형 10과 문자형 "10"은 같은 것으로 인식되어 true를 반환한다.</td>
-                </tr>
-                <tr>
-                    <td>A!=B</td>
-                    <td>A와 B는 다르다.</td>
-                    <td>숫자를 비교할 경우 자료형은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 다르면 true를 반환한다.<br>
-                    숫자형 10과 문자형 "10"은 같은 것으로 인식되어 A!=B에 대해 false를 반환한다.</td>
-                </tr>
-                <tr>
-                    <td>A===B</td>
-                    <td>A와 B는 같다.</td>
-                    <td>숫자를 비교할 경우 반드시 표기된 숫자와 자료형도 일치해야만 true를 반환한다. 10과 "10"을 비교했을 경우 표기된 숫자는 같지만<br>
-                    하나는 숫자형 10이고 하나는 문자형 "10"이므로 false를 반환한다.</td>
-                </tr>
-                <tr>
-                    <td>A!==B</td>
-                    <td>A와 B는 다르다.</td>
-                    <td>숫자를 비교할 경우 반드시 표기된 숫자 또는 자료형이 일치하지 않을 떄 true를 반환한다. 10과 "10"을 비교했을 경우 표기된 숫자는 같지만<br>
-                    하나는 숫자형 10이고 하나는 문자형 "10"이므로 true를 반환한다.</td>
-                </tr>
-            </table><br>
+            
+            <main class="doc">
+                <div class="table">
+                    <table>
+                        <caption>비교  연산자의 종류</caption>                               
+                        <tr>
+                            <th>종류</th>
+                            <th>설명</th>
+                            <th>비고</th>
+                        </tr>
+                        <tr>
+                            <td>A&gt;B</td>
+                            <td>A가 B보다 크다.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>A&lt;B</td>
+                            <td>A가 B보다 작다.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>A&gt;=B</td>
+                            <td>A가 B보다 크거나 같다.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>A&lt;=B</td>
+                            <td>A가 B보다 작거나 같다.</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>A==B</td>
+                            <td>A와 B는 같다.</td>
+                            <td>숫자를 비교할 경우 자료형은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 일치하면 true를 반환한다.<br>
+                            숫자형 10과 문자형 "10"은 같은 것으로 인식되어 true를 반환한다.</td>
+                        </tr>
+                        <tr>
+                            <td>A!=B</td>
+                            <td>A와 B는 다르다.</td>
+                            <td>숫자를 비교할 경우 자료형은 숫자형이든 문자형이든 상관하지 않고 표기된 숫자만 다르면 true를 반환한다.<br>
+                            숫자형 10과 문자형 "10"은 같은 것으로 인식되어 A!=B에 대해 false를 반환한다.</td>
+                        </tr>
+                        <tr>
+                            <td>A===B</td>
+                            <td>A와 B는 같다.</td>
+                            <td>숫자를 비교할 경우 반드시 표기된 숫자와 자료형도 일치해야만 true를 반환한다. 10과 "10"을 비교했을 경우 표기된 숫자는 같지만<br>
+                            하나는 숫자형 10이고 하나는 문자형 "10"이므로 false를 반환한다.</td>
+                        </tr>
+                        <tr>
+                            <td>A!==B</td>
+                            <td>A와 B는 다르다.</td>
+                            <td>숫자를 비교할 경우 반드시 표기된 숫자 또는 자료형이 일치하지 않을 떄 true를 반환한다. 10과 "10"을 비교했을 경우 표기된 숫자는 같지만<br>
+                            하나는 숫자형 10이고 하나는 문자형 "10"이므로 true를 반환한다.</td>
+                        </tr>
+                    </table>
+                </div>
+            </main>
+           <br>
 
             <h3>논리 연산자</h3>
             <p>논리 연산자에는 ||(or), &&(and), !(not)이 있으며, 논리 연산자는 피연산자가 논리형 데이터인 true 또는 false로 결괏값을 반환합니다. ||(or)연산자 중 하나만 true이면 true라는 결괏값을 반환합니다. 하지말 &&(and) 연산자는 피연산자 중 하나만 false이면 false라는 결괏값을 반환합니다. !(not)은 논리 부정 연산자로, 피연산자가 true이면 false라는 반대의 결괏값을 반환합니다.</p>
 
-            <table class="non">                  
-                <caption>논리 연산자의 종류</caption>
-                <thead>
-                    <tr>
-                        <th>종류</th>
-                        <th>설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>||</td>
-                        <td>or 연산자라 부르며, 피연사 중 값이 하나라도 true가 존재하면 true로 결괏값을 반환합니다.</td>                        
-                    </tr>
-                    <tr>
-                        <td>&&</td>
-                        <td>and 연산자라 부르며, 피연산자 중 값이 하나라도 false가 존재하면 false로 결괏값을 반환합니다.</td>
-                    </tr>
-                    <tr>
-                        <td>!</td>
-                        <td>not 연산자라 부르며, 단항 연산자입니다. 피연산자의 값이 true이면 반대로 false로 결괏값을 반환합니다.</td>
-                    </tr>
-                </tbody>
-            </table>
+
+
+            <main class="doc">
+                <div class="table">
+                    <table>                  
+                        <caption>논리 연산자의 종류</caption>
+                        <thead>
+                            <tr>
+                                <th>종류</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>||</td>
+                                <td>or 연산자라 부르며, 피연사 중 값이 하나라도 true가 존재하면 true로 결괏값을 반환합니다.</td>                        
+                            </tr>
+                            <tr>
+                                <td>&&</td>
+                                <td>and 연산자라 부르며, 피연산자 중 값이 하나라도 false가 존재하면 false로 결괏값을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>!</td>
+                                <td>not 연산자라 부르며, 단항 연산자입니다. 피연산자의 값이 true이면 반대로 false로 결괏값을 반환합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+          
             
             <br><h3>연산자 우선순위</h3>
             <div class="line">                

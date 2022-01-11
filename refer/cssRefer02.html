@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Refernce</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+
+    <header id="header">
+        <h1><a href="../index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>한승보</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html">CSS <em>Block/Inline</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li  class="active"><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>Block와 Inline</h3>
+                <h3>Block</h3>
+                <p> 한 영역을 차지하는 박스형태를 가진다. 대부분의 HTML element(요소)는 block 요소이다.</p>
+
+                <div class="line">
+                    <h4>block의 특징</h4>
+                    <ol>
+                        <li>기본적으로 width값은 100%가 된다. </li>
+                        <li>이 요소의 좌우측에 다른 요소를 붙여넣을 수 없다.</li>
+                        <li>margin, padding 속성이 적용된다.</li>
+                        <li>너비(width)와 높이(height)값을 지정 할 수 있다.</li>
+                    </ol>
+                </div>
+                <div class="line">
+                    <h4>block의 종류</h4>
+                address(연락처 정보), aside(부가콘텐츠), blockquote(긴 인용구), details(상세 정보 위젯)
+                dialog(대화상자), dd(설명 목록의 정의) div(문서의 분할) di(설명목록), hr(수평선), h1~6(제목), pre, p 등등
+                </div>  
+                               
+                <h3>inline</h3>
+                <p>inline은 주로 텍스트를 주입 할 때 사용 되는 형태입니다. 그렇기 때문에 기본적으로 block처럼 width값이 100%가 아닌 컨텐츠 영역 만큼 자동으로 잡히게 되며 라인이 새로 추가 되지 않습니다. 높이 또한 폰트의 크기만큼 잡힌다.(line-height로 설정이 가능 하긴 하다.)</p>
+
+                <div class="line">
+                    <h4>inline의 특징</h4>
+                    <ol>
+                        <li>너비(width)와 높이(height)속성이 적용되지 않고 태그가 품고있는 내부요소의 부피에 맞춰진다.</li>
+                        <li>margin은 위아래엔 적용 되지 않는다.</li>
+                        <li>padding은 좌우는 공간과 시각적인 부분이 모두 적용 되지만 위아래는 시각적으로는 추가되지만 공간을 차지 하지는 않는다.</li>                        
+                        <li>인라인 속성을 가진 태그끼리 연속으로 사용되는 경우에는 최소한의 간격을 유지하기 위해 좌우에 5px 가량의 여백(margin)이 자동으로 발생한다.</li>                        
+                    </ol>
+                </div>
+
+                <div class="line">
+                    <h4>inline의 종류</h4>
+                    &lt;a&gt;, &lt;abbr&gt;, &lt;acronym&gt;, &lt;b&gt;, &lt;bdo&gt;, &lt;big&gt;, &lt;br/&gt;, &lt;button&gt;, &lt;cite&gt;, &lt;code&gt;, &lt;dfn&gt;, &lt;em&gt;, &lt;i&gt;, &lt;img&gt;, &lt;input&gt;, &lt;kbd&gt;, &lt;label&gt;, &lt;map&gt;, &lt;object&gt;, &lt;q&gt;, &lt;samp&gt;, &lt;small&gt;, &lt;script&gt;, &lt;select&gt;, 
+                    &lt;span&gt;, &lt;strong&gt;, &lt;sub&gt;, &lt;sup&gt;, &lt;textarea&gt;, &lt;tt&gt;, &lt;var&gt;
+                </div>  
+
+                <h3>inline-block</h3>
+                <p> inline-block 은 말그대로 inline의 특징과 block의 특징을 모두 가진 요소입니다.</p>
+
+                <div class="line">
+                    <h4>block의 특징</h4>
+                    <ol>
+                        <li>줄바꿈이 이루어지지 않는다. </li>
+                        <li>block처럼 width와 height를 지정 할 수 있다.</li>
+                        <li>만약 width와 height를 지정하지 않을 경우, inline과 같이 컨텐츠만큼 영역이 잡힌다.</li>                        
+                    </ol>
+                </div>
+
+                <h3>태그 중첩 규칙</h3>
+                <div class="line">                   
+                    <ol>
+                        <li> 블럭 태그는 자식으로 또다른 블럭 태그 or 인라인 태그를 가질 수 있다. </li>
+                        <li> 인라인태그는 자식으로 또다른 인라인태그만 올 수 있다.(블럭태그는 올 수 없다.)</li>
+                        <li>. 예외] 블럭 태그 중 <p>태그는 자식으로 인라인 태그만 가질 수 있다.</li>                        
+                    </ol>
+                </div>
+
+
+
+
+                                
+                
+            
+            
+            </div>
+        </div>
+        <!-- //refer -->
+        
+       
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+
+   
+    
+</body>
+</html>
