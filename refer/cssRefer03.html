@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/prism.css">
+
+    <style>
+        dt {
+            color: red
+        }
+    </style>
 </head>
 <body>
 
@@ -23,7 +29,7 @@
     </header>
 
     <main id="contents">
-        <h2><a href="css.html">CSS <em>색상</em></a></h2>
+        <h2><a href="css.html">CSS <em>단위</em></a></h2>
 
         <div class="menu">
             <ul>
@@ -39,15 +45,71 @@
         <div class="refer">            
             <div class="doc">
                 <h3>CSS 단위</h3>
-                <h4>rem(root em)</h4>
-                <p></p>
+                <p>
+                    CSS에서 사용하는 단위는 font-size, text-indent, line-height, padding 등 크기를 나타내는 값에 쓰인다.
+                    크게는 크기가 변하지 않는 절대 단위와 상황에 따라 크기가 변하는 상대 단위로 나뉜다.
+                </p>
+                <h4>절대 단위</h4>
+                <div class="line">                   
+                    <p>고정도니 값을 출력하며 절대 크기가 변하지 않는다. 이 방법은 크기가 가변적인 웹사이트가 아닌 경우에는 유용하나, 반응형 사이트에 적용하기 위해서는
+                        매우 복잡하다는 단점이 있다.
+                    </p>  
+                </div>
+
+                <div class="table">
+                    <table>
+
+                        <tr>
+                            <td>cm</td>
+                            <td>mm</td>
+                            <td>in</td>
+                        </tr>
+                        <tr>
+                            <td>px(필셀)</td>
+                            <td>pt(포인트)</td>
+                            <td>pc(파이카)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h4>상대단위</h4>
+                <div class="line">                   
+                    <p>
+                        부모 요소나 다른 요소의 크기에 영향을 받아 상대적으로 크기가 변하는 단위 
+                        반응형 웹사이트를 작업할 때 주로 사용한다.
+                    </p>  
+                </div>
+
+                <div class="line">
+                    <dl>
+                        <dt>em</dt>
+                        <dd>부모 요소의 크기의 영향을 받아 크기가 변함</dd>
+                        <dt>rem</dt>
+                        <dd>최상위 요소인 html요소의 크기의 영향을 받아 크기가 변함</dd>
+                        <dt>%</dt>
+                        <dd>부모요소의 크기의 영향을 받아 크기가 변함</dd>
+                        <dt>vw</dt>
+                        <dd>view port width의 약자 / 80vw = "뷰포트 영역의 80%</dd>
+                        <dt>vh</dt>
+                        <dd>view port height의 약자 / 80vh = "뷰포트 영역의 80%</dd>
+                        <dt>vmin</dt>
+                        <dd>뷰포트의 최소값 / 설정한 view port값에 따라 변함</dd>
+                        <dt>vmax</dt>
+                        <dd>뷰포트의 최대값설정한 view port값에 따라 변함</dd>                     
+                    </dl>
+                </div>
+
+
+
+
+                
 
 
             </div>
         </div>
         <!-- //refer -->
           
-        </div>
+        
     </main>
 
     <!-- script -->

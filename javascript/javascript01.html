@@ -204,8 +204,8 @@
                 <div class="code">
 <pre class="line-nembers"><code class="language-js">{
     const arr = new Array();
-    arr.a = 100;
-    arr.b = 200;
+    arr[0] = 100;
+    arr[1] = 200;
     arr[2] = "javascript";
 
     document.write("*** 06. 배열 ***");
@@ -550,7 +550,7 @@
             func();
 
             document.querySelector(".result04").innerHTML += "<br>*** 함수 밖 ***<br>";
-            document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>" + z;
+            document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>";
 
         }
 
