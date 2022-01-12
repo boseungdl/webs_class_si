@@ -42,7 +42,7 @@
                 <p>CSS에서 색을 표현하는 방법에는 세 가지가 있습니다.</p>
 
                 <h4>색상 이름으로 표현</h4>
-                <p>색상 이름으로 표현이 가능하다. W3C에서 정의한 16개의 HTML4 표준 색상 이름은 다음과 같다.<br>(HTML에서 색상 이름은 대소문자를 구분하지 않는다.)</p>
+                <p>색상 이름으로 표현이 가능하다. W3C에서 정의한 HTML4 표준 색상 이름은 다음과 같다.(총 약 140개가 있다)<br>(HTML에서 색상 이름은 대소문자를 구분하지 않는다.)</p>
                 <div class="table">
                     <table>
                         <tr>
@@ -69,6 +69,12 @@
                             <td>white</td>
                             <td>yellow</td>
                         </tr>
+                        <tr>
+                            <td>darkorchild</td>
+                            <td>darkred</td>
+                            <td>darkkhaki</td>
+                            <td>darkgrey</td>
+                        </tr>
                     </table>
                 </div>
                 <h4>RGB 색상 값으로 표현</h4>
@@ -93,6 +99,22 @@
                     .silver { color: #C0C0C0; }<br>
                     &lt;/style&gt;
                 </div>
+
+                <h4>RGBA colors</h4>
+                <p>RGBA 는 RGB에 alpha라는 투명도가 추가된것이다. alpha는 0에서 1사이의 값으로 정의한다.</p>
+
+                <h4>HSL colors</h4>
+                <p>ccs3에서 새롭게 표준으로 소개된 색 표현 방식 HSL은 HUE, saturation 그리고 Lightness의 약자이다</p>
+                <div class="line">
+                    <ul>
+                        <li>Hue(빛깔, 색조)는 우리가 color로 이해하고 있는 것으로 색상 휠(색상환)로 표현 0에서 360사이의 값을 가진다.</li>
+                        <li>satuation(포화도) 주어진 색에 회색이 들어간 정도를 의미, 백분율 0%는 회색 음영을 의미하고 100%는 완전한 채도를 의미</li>
+                        <li>Lightness(빛) 주어진 색의 흰색의 포함정도를 의미, 0%는 검은색을 의미하고 100%는 흰색을 의미한다. 50%는 보통의 상태이다.</li>
+                    </ul>
+                </div>
+
+                <h4>HSLA colors</h4>
+                <p>css3에서 새로 소개된 HSLA는 a(alpha value)는 색의 투명도를 조절하는 값을 의미하며 0에서 1사이의 값으로 투명도를 표현</p>
 
 
 
