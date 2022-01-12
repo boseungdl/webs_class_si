@@ -85,14 +85,13 @@
             <p>문자 결합 연산자는 피연산자(연산 대상 데이터)가 문자형 데이터입니다. 여러 개의 문자를 하나의 문자형 데이터로 결합할 떄 사용합니다.</p>
 
             <div class="code">
-                <pre><code>
-기본형
+                <pre><code>기본형
 문자형 데이터 + 문자형 데이터 = 하나의 문자형 데이터
 ex) "do it" + "javascript" = "do it javascript";
 
 문자형 데이터 + 숫자형 데이터 + 하나의 문자형 데이터
 ex) "100" + 200 = "100200";
-                </code></pre>
+</code></pre>
                 </div>
 
             <h3>대입 연산자</h3>
@@ -139,8 +138,7 @@ ex) "100" + 200 = "100200";
             </p>
             
             <div class="code">
-                <pre><code>
-                    &lt;script&gt;
+                <pre><code>&lt;script&gt;
     var num1 = 10;
     var num2 = 20;
     var result;
@@ -156,8 +154,8 @@ ex) "100" + 200 = "100200";
     
     result = num2++;    //result: 22, num2: 22
     document.write(num1,"&lt;br&gt;");
-                &lt;/script&gt;
-                </code></pre>
+&lt;/script&gt;
+</code></pre>
                 </div>
 
             
@@ -269,31 +267,30 @@ ex) "100" + 200 = "100200";
             </div>
 
             <div class="code">
-                <pre><code>
-&lt;script&gt;
-var a = 10;
-var b = 20;
-var m = 30;
-var n = 40;
+                <pre><code>&lt;script&gt;
+    var a = 10;
+    var b = 20;
+    var m = 30;
+    var n = 40;
 
-var result;
-result = a &gt;b||b&gt;=m||m&gt;n;             //false || false || false
-document.write(result, "&lt;br&gt;")      //false
+    var result;
+    result = a &gt;b||b&gt;=m||m&gt;n;             //false || false || false
+    document.write(result, "&lt;br&gt;")      //false
 
-result = a &gt;b||b&gt;=m||m&lt;=n;           //false || false || true
-document.write(result, "&lt;br&gt;")      //true
+    result = a &gt;b||b&gt;=m||m&lt;=n;           //false || false || true
+    document.write(result, "&lt;br&gt;")      //true
 
-result = a &lt;=b&&b&gt;=m&&m&lt;=n;     //true && false && true
-document.write(result, "&lt;br&gt;")      //false
+    result = a &lt;=b&&b&gt;=m&&m&lt;=n;     //true && false && true
+    document.write(result, "&lt;br&gt;")      //false
 
-result = a &lt;=b&&b&lt;=m&&m&lt;=n;    //true && true && true
-document.write(result, "&lt;br&gt;")     //true
+    result = a &lt;=b&&b&lt;=m&&m&lt;=n;    //true && true && true
+    document.write(result, "&lt;br&gt;")     //true
 
-result= !(a&gt;b);                            //!false를 계산
-document.write(result, "&lt;br&gt;")     //true
+    result= !(a&gt;b);                            //!false를 계산
+    document.write(result, "&lt;br&gt;")     //true
 &lt;/script&gt;
-                </code></pre>
-                </div>
+</code></pre>
+            </div>
 
 
 
