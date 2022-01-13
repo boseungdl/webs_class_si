@@ -81,6 +81,7 @@ if(num&lt;500){
 if(num){
     document.write(num);
 } 
+//false
 </code></pre>
             </div>
 
@@ -89,7 +90,7 @@ if(num){
                 <pre><code>&lt;script&gt;
     var min = prompt("당신의 하루 통화량은 몇 분인가요?", "0");
     if(min&gt;=60){document.write("많이 사용하는 편이네요");}
-    //  많이 사용하는 편이네요
+    //  60이상이면 많이 사용하는 편이네요를 반환
 &lt;/script&gt;        
 </code></pre>
             </div>
@@ -98,6 +99,7 @@ if(num){
 
             <h3>else문</h3>
             <p>조건식을 만족할(true) 경우와 만족하지 않을(false)의 경우에 따라 실행되는 코드가 달라집니다. 즉, 두 가지 결과가 나올 수 있습니다.</p>
+           
             <h4 class="mt30">* 예제</h4>           
             <div class="code">
                 <pre><code>&lt;script&gt;
@@ -108,14 +110,72 @@ if(num){
    } else {
        document.write("당신이 좋아하는 숫자는 홀수입니다.");
    }
+   //2의 배수이면 당신이 좋아하는 숫자는 짝수 입니다.
+   //나머진 당신이 좋아하는 숫자는 홀수 입니다.를 출력합니다.
 &lt;/script&gt;        
 </code></pre>
             </div>
 
             <h3>if else문</h3>
-            <p>else if문은 두 가지 이상의 조건식과 정해 놓은 조건을 만족하지 않았을 때 실행되는 코드로 이루어져 있습니다.</p>
+            <p>else if문은 두 가지 이상의 조건식과 정해 놓은 조건을 만족하지 않았을 때 실행되는 코드로 이루어져 있습니다.</p>            
+            <p>두 가지 이상의 조건식과 정해 놓은 조건을 만족하지 않았을 때 실행되는 코드로 이루어져 있습니다.</p>
+            
+          
+            <h4>* 예제</h4>
+            <div class="code">
+                <pre><code>&lt;script&gt;
+  var mon = pompt("현재는 몇 월입니까?", "0")
+
+  if(mon&gt;=9 && mon&lt;=11){
+      document.write("독서의 계절 가을이네요!");
+  } else if(mon&gt;=6 && mon&lt;=8){
+    document.write("여행가기 좋은 여름이네요!!");
+  } else if(mon&gt;=3 && mon&lt;=5){
+      document.write("햇살가득한 봄이네요!");      
+  } else {
+      document.write("스키의 계절 겨울이네요");
+  }
+  //9, 10, 11은 독서의 계절 가을이네요!, 6,7,8은 여행가기 좋은 여름이네요!!, 
+  3,4,5,햇갈 가득한 봄이네요! 그외는 스키의 계절 겨울이네요를 출력합니다
+&lt;/script&gt;        
+</code></pre>
+            </div>
+
             <h3>중첩 if문</h3>
+            <p>조건문 안에 조건문이 있으면 중첩 if문이라고 한다.</p>
+
+            <h4>* 예제</h4>
+            <div class="code">
+                <pre><code>&lt;script&gt;
+  var id = "easy1004";
+  var password = "112233"
+
+  var user_id = prompt("아이디는?", "");
+  var user_pw = prompt("비밀번호는?", "");
+
+  if(id == user_id){
+      if(pw == user_pw){
+          if(pw == user_pw){
+              document.write(user_id+"님 반갑습니다!");
+          } else {
+              alert("비밀번호가 일치하지 않았습니다.");
+              location.reload();
+          } 
+      } else{
+          alert("아이디가 일치하지 않았습니다.");
+          location.reload();
+      }
+  }
+  // 아이디가 일치하고 비밀번호가 일치하지않으면 비밀번호가 일치하지 않습니다가 실행되고 
+  브라우저가 새로고침이됩니다. 아이디가 틀릴시 아이디가 일치하지 않습니다 후 새로고침됩니다.
+&lt;/script&gt;        
+</code></pre>
+            </div>
+
+
+
            
+
         </div>
     </main>
     
