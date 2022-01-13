@@ -56,13 +56,14 @@
                 <li>23. 객체 : 데이터 불러오기 : 비구조화 할당</li>
             </ul>
         </div>
-        <!-- list -->
+        <!-- //list -->
+        
+        <!-- note -->
         <div class="note">
             <a href="reference04.html">for문</a>
             <a href="reference05.html">연산자</a>   
         </div>
-
-        <!-- note -->
+        <!-- //note -->
 
 
         <div class="script">
@@ -262,10 +263,7 @@
                 <div class="code">
 <pre class="line-nembers"><code class="language-js">{
     const num = [100, 200, 300, 400, 500];
-
-    document.write("<br>***09. 배열 : 데이터 불러오기 ***")
-
-
+    
     for( let i in num ){                
         document.write(num[i]);                        
     }
@@ -335,19 +333,19 @@
                 <h3>11. 배열 : 데이터 불러오기 : 펼침 연산자</h3>
                 <div class="code">
 <pre class="line-nembers"><code class="language-js">{
-    const num = [100, 200, 300, 400, 500]
+    const num = [100, 200, 300, 400, 500];
 
-    document.write(num)
+    document.write(num);
     document.write(num[0], num[1], num[2], num[3], num[4],); 
     document.write(...num); 
 }</code></pre>
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result11">
-                        100, 200, 300, 400, 500<br>
-                        100200300400500<br>                
-                        100200300400500                
+                    <div class="result11">                        
+                        100,200,300,400,500<br>
+                        100 200 300 400 500<br>
+                        100 200 300 400 500
                     </div>
                 </div>
             </div>
@@ -360,7 +358,7 @@
 <pre class="line-nembers"><code class="language-js">{
     let a, b, c;
 
-    [a, b, c] = [100, 200, "javascript"]
+    [a, b, c] = [100, 200, "javascript"];
 
     document.write(a);
     document.write(b);

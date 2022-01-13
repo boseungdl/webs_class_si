@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+
+   
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</h1></a>
+        <nav> 
+            <ul>                
+                <li><a href="reference01.html">기초문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>  
+                <li class="active"><a href="reference06.html">조건문</a></li>  
+                <li><a href="reference07.html">반복문</a></li> 
+            </ul>
+        </nav>
+
+
+        
+
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>조건문</h2>
+            <p>조건문은 조건식의 값이 참인지 거짓인지에 따라 자바스크립트 코드를 제어합니다. 예를 들어 
+                질의 응답 창을 이용해 방문자가 좋아하는 숫자를 입력받았습니다. 이때 입력된 값을 2로 나누어 나머지 값이 0이면 "당신이 좋아하는 숫자는 짝수 입니다."라고 출력하게 하고
+                , 아닌 경우에는 "당신이 좋아하는 숫자는 홀수입니다."라고 출력하게 한다고 합시다. 이렇게 수를 나눈 나머지 값에 따라 다른 결과를 출력하게 하려면 조건문을 사용해야 합니다. 조건문의
+                종류에는 if문, else문, 그리고 if else문이 있습니다.
+            </p>       
+
+            <h3>if문</h3>
+            <p>if문은 조건식을 만족(true)할 경우에만 코드를 실행합니다. 조건식은 booline()내장 메서드와 마찬가지로 그 어떤 데이터를 입력해도 true 또는 false를 반환합니다. </p>
+            
+            <h4 class="mt30">* 기본형</h4>           
+            <div class="code">
+                <pre><code>if(조건식){
+        자바스크립트 코드;
+    }
+</code></pre>
+            </div>
+           
+            <h4 class="mt30">* 예제</h4>           
+            <div class="code">
+                <pre><code>var num=10;
+if(num&lt;500){
+    document.write("hello");
+} 
+//hello
+</code></pre>
+            </div>
+
+            
+
+
+            <h4>조건식에 논리형 데이터가 아닌 다른 형이 오는 경우</h4>
+            <p>조건식에 논리형 데이터(true, false)가 아닌 다른 형의 데이터가 입력되어도 true 또는 false로 인식됩니다.                
+            </p>
+
+            <h5>다음값들의 조건식에 입력되면 false를 반환합니다.</h5>
+            <div class="line">
+                0, null, ""(빈문자), undefined
+            </div>
+
+            <h4 class="mt30">* 예제</h4>           
+            <div class="code">
+                <pre><code>var num=0;
+if(num){
+    document.write(num);
+} 
+</code></pre>
+            </div>
+
+            <h4 class="mt30">* 예제</h4>           
+            <div class="code">
+                <pre><code>&lt;script&gt;
+    var min = prompt("당신의 하루 통화량은 몇 분인가요?", "0");
+    if(min&gt;=60){document.write("많이 사용하는 편이네요");}
+    //  많이 사용하는 편이네요
+&lt;/script&gt;        
+</code></pre>
+            </div>
+
+
+
+            <h3>else문</h3>
+            <p>조건식을 만족할(true) 경우와 만족하지 않을(false)의 경우에 따라 실행되는 코드가 달라집니다. 즉, 두 가지 결과가 나올 수 있습니다.</p>
+            <h4 class="mt30">* 예제</h4>           
+            <div class="code">
+                <pre><code>&lt;script&gt;
+   var num = peompt("당신이 좋아하는 숫자는?", "0");
+
+   if(num % 2 == 0){
+       document.write("당신이 좋아하는 숫자는 짝수입니다.");
+   } else {
+       document.write("당신이 좋아하는 숫자는 홀수입니다.");
+   }
+&lt;/script&gt;        
+</code></pre>
+            </div>
+
+            <h3>if else문</h3>
+            <p>else if문은 두 가지 이상의 조건식과 정해 놓은 조건을 만족하지 않았을 때 실행되는 코드로 이루어져 있습니다.</p>
+            <h3>중첩 if문</h3>
+           
+        </div>
+    </main>
+    
+    
+</body>
+</html>
