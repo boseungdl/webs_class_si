@@ -25,10 +25,14 @@
                 <li><a href="javascript03.html">데이터 실행하기</a></li>
                 <li><a href="javascript04.html">데이터 제어하기</a></li>
             </ul>
+            <ul>
+                <li><a href="practice01.html">데이터 연습하기</a></li>
+            </ul>
         </nav>
     </header>
 
     <main id="main">
+        <!-- list -->
         <div class="list">
             <ul>
                 <li>01. 변수 : 데이터 불러오기</li>
@@ -72,7 +76,7 @@
             <div id="sample1" class="sample">
                 <h3>01. 변수 : 데이터 불러오기</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     let x = 100; y = 200; z = "javascript";
     
     document.write(x);
@@ -93,7 +97,7 @@
             <div id="sample2" class="sample">
                 <h3>02. 상수 : 데이터 불러오기</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     let x = 100; y = 200; z = "javascript";
    
     document.write(x);
@@ -112,7 +116,7 @@
             <div id="sample3" class="sample">
                 <h3>03. 배열 : 데이터 불러오기</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const arr = [100, 200, "javascript"];
     
     document.write(arr[0]);
@@ -131,7 +135,7 @@
             <div id="sample4" class="sample">
                 <h3>04. 배열 : 데이터 불러오기 : 2차 배열</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const arr = [100, 200, ["javascript", "jquery"]];
 
     document.write("*** 04. 배열 ***");
@@ -152,7 +156,7 @@
             <div id="sample5" class="sample">
                 <h3>05. 배열 : 데이터 불러오기 : 갯수 구하기</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const arr = [100, 200, "javascript"];
 
     document.write("*** 05. 배열 ***");
@@ -170,7 +174,7 @@
             <div id="sample6" class="sample">
                 <h3>06. 배열 : 데이터 불러오기 : for( )문</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const arr = [100, 200, 300, 400, 500];
 
     // doument.write(arr[0]);
@@ -195,7 +199,7 @@
             <div id="sample7" class="sample">
                 <h3>07. 배열 : 데이터 불러오기 : forEach( )</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const num = [100, 200, 300, 400, 500];
     document.write(num[0])
     document.write(num[1])
@@ -238,7 +242,7 @@
             <div id="sample8" class="sample">
                 <h3>08. 배열 : 데이터 불러오기 : for of</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const num = [100, 200, 300, 400, 500];
 
     document.write("<br>***08. 배열 : 데이터 불러오기 ***")
@@ -261,7 +265,7 @@
             <div id="sample9" class="sample">
                 <h3>09. 배열 : 데이터 불러오기 : for in</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const num = [100, 200, 300, 400, 500];
     
     for( let i in num ){                
@@ -287,7 +291,7 @@
             <div id="sample10" class="sample">
                 <h3>10. 배열 : 데이터 불러오기 : map</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const num = [100, 200, 300, 400, 500];
 
     //map
@@ -332,7 +336,7 @@
             <div id="sample11" class="sample">
                 <h3>11. 배열 : 데이터 불러오기 : 펼침 연산자</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const num = [100, 200, 300, 400, 500];
 
     document.write(num);
@@ -355,7 +359,7 @@
             <div id="sample12" class="sample">
                 <h3>12. 배열 : 데이터 불러오기 : 배열구조 분해 할당</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     let a, b, c;
 
     [a, b, c] = [100, 200, "javascript"];
@@ -380,7 +384,7 @@
             <div id="sample13" class="sample">
                 <h3>13.  객체 : 데이터 불러오기 : 기본</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const obj = {
         a: 100,
         b: 200,
@@ -413,7 +417,7 @@
              <div id="sample14" class="sample">
                 <h3>14. 객체 : 데이터 불러오기 : Object</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const obj = {
         a: 100,
         b: 200,
@@ -440,7 +444,7 @@
              <div id="sample15" class="sample">
                 <h3>15. 객체 : 데이터 불러오기 : 변수</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     const obj = {
         a: 100,
         b: 200,
@@ -471,7 +475,7 @@
             <div id="sample16" class="sample">
                 <h3>16. 객체 : 데이터 불러오기 : for in</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     
 }</code></pre>
                 </div>
@@ -486,7 +490,7 @@
             <div id="sample17" class="sample">
                 <h3>17. 객체 : 데이터 불러오기 : map( )</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     
 }</code></pre>
                 </div>
@@ -501,7 +505,7 @@
             <div id="sample18" class="sample">
                 <h3>18. 객체 : 데이터 불러오기 : hasOwnProperty</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     
 }</code></pre>
                 </div>
@@ -516,7 +520,7 @@
             <div id="sample19" class="sample">
                 <h3>19. 객체 : 데이터 불러오기 : 펼침 연산자 - 복사</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     
 }</code></pre>
                 </div>
@@ -531,7 +535,7 @@
             <div id="sample20" class="sample">
                 <h3>20. 객체 : 데이터 불러오기 : 펼침 연산자 - 추가</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     
 }</code></pre>
                 </div>
@@ -546,7 +550,7 @@
             <div id="sample21" class="sample">
                 <h3>21. 객체 : 데이터 불러오기 : 펼침 연산자 - 결합</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     
 }</code></pre>
                 </div>
@@ -561,7 +565,7 @@
             <div id="sample122" class="sample">
                 <h3>22. 객체 : 데이터 불러오기 : 비구조화 할당</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     
 }</code></pre>
                 </div>
@@ -576,7 +580,7 @@
             <div id="sample23" class="sample">
                 <h3>23. 객체 : 데이터 불러오기 : 비구조화 할당</h3>
                 <div class="code">
-<pre class="line-nembers"><code class="language-js">{
+<pre class="line-numbers"><code class="language-js">{
     
 }</code></pre>
                 </div>

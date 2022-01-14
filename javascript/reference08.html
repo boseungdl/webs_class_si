@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+
+   
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</h1></a>
+        <nav> 
+            <ul>                
+                <li><a href="reference01.html">기초문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>  
+                <li><a href="reference06.html">조건문</a></li>  
+                <li><a href="reference07.html">반복문</a></li>
+                <li class="active"><a href="reference08.html">함수</a></li> 
+            </ul>
+        </nav>
+
+
+        
+
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>함수</h2>
+            <p>변수에는 데이터만 저장할 수 있고, 코드는 저장할 수 없습니다. 하지만 함수를 사용하면 코드를 메모리에 저장했다가 필요할때
+                마다 호출하여 사용할 수 있습니다.
+            </p>
+
+            <h3>선언적 함수</h3>            
+            <div class="line"><pre>기본형
+
+function함수명(){
+    자바스크립트 코드;
+}</pre></div>
+            <p>함수를 사용하여 코드를 저장한 것을 '함수 정의문'이라고 합니다. 변수를 선언할 때 var키워드를 사용한 것처럼
+                함수에서는 function 키워드를 사용해 변수를 선언합니다. 
+            </p>
+            
+            <h4>* 예제</h4>
+            <div class="code">
+                <pre><code>&lt;script&gt;
+var count = 0;
+
+myFnc();
+
+function myFnc(){
+    count++;
+    document.write("hello" +count, "&lt;br&gt;")
+}
+
+myFnc();
+
+var theFnc = function(){
+    count++;
+    document.write("bye" +count, "&lt;br&gt;")
+}
+
+theFnc();
+// myFnc()가 두번 실행되어 hello1hello2가 출력됩니다.
+&lt;/script&gt;</code></pre>
+            </div>
+
+
+
+            <h3>익명 함수</h3>
+            <div class="line"><pre>기본형
+
+function함수명(){
+    자바스크립트 코드;
+}</pre></div>
+            <p>함수를 리터럴 방식으로 만들고 함수의 이름이 없는 함수를 익명함수라고 합니다.  리터럴이란 함수를 문자그대로 변수에 담으면 함수 리터럴 방식으로 만드는 것입니다. 보통 함수를 재사용하지 않을 경우 익명함수를 만들어서 사용합니다.
+                또한 익명함수는 호이스팅이 되지 않습니다(오류발생)
+            </p>
+            <h4>* 예제</h4>
+            <div class="code">
+                <pre><code>&lt;script&gt;
+var theFnc = function(){
+    count++;
+    document.write("bye" +count, "&lt;br&gt;")
+}
+
+theFnc();
+// theFnc가 한번 실행되어 bye1이 출력됩니다.
+&lt;/script&gt;</code></pre>
+            </div>
+
+
+            <h3>매개변수함수</h3>
+            
+            <div class="line"><pre>기본형
+function 함수명(매개변수1, 매개변수2,..... 매개변수n){
+    자바스크립트 코드;
+}
+함수명(데이터1, 데이터2,..... 데이터n);
+</pre></div>
+            <p>함수를 호출할 때 전달하고자 하는 값을 입력하여 호출할 수 있습니다. 이렇게 전달된 값은 매개변수가 받아 함수 정의문에서 사용할 수 있게됩니다.               
+            </p>
+            
+            <h4>* 예제</h4>            
+            <div class="code">
+                <pre><code>&lt;script&gt;
+function myFnc(name, area){
+    document.write("안녕하세요." +name+ "입니다.", "&lt;br&gt;");
+    document.write("사는 곳은" +area+ "입니다.", "&lt;br&gt;&lt;br&gt;")
+}
+myFnc("홍당무", "서울");
+
+myFnc("깍두기", "부산");
+
+결과
+안녕하세요 홍당무입니다.
+사는 곳은 서울입니다.
+안녕하세요 깍두기입니다.
+사는 곳은 부산입니다.
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <h3>리턴값</h3>
+            <div class="line"><pre>기본형
+function 함수명(){
+
+자바스크립트 코드1;
+return 데이터(값);
+
+자바스크립트 코드2;
+}
+
+var 변수 = 함수명();
+</pre></div>
+            <p>함수에서 결괏값을 반환할 때 사용합니다. 그리고 함수에서 return문이 실행되면 반복문의 break 문과 비슷하게 
+                코드가 강제로 종료됩니다. 다시 말해 함수 정의문에 return 문이 사용되면 함수를 호출 했을 때 결괏값(data)을 반환합니다.
+            </p>
+
+            <h4>* 예제1</h4>
+            <div class="code">
+                <pre><code>&lt;script&gt;
+function testAvg(arrData){
+    var sum = 0;
+    for(var i=0; i&lt;arrData.length; i++){
+        sum += Number(prompt(arrData[i] + "점수는?", "0"));
+    }
+    
+    var avg= sum / arrFata.length
+    return avg;
+}
+
+var arrSubject = ["국어", "수학"];
+var result = testAvg(arrSubject);
+
+document.write("평균 점수는" +relsult+ "점입니다.");                               
+&lt;/script&gt;</code></pre>
+            </div>
+            
+            <h4>* 예제2</h4>
+            <div class="code">
+                <pre><code>&lt;script&gt;
+var num =1;
+function gallery(direct){
+    if(direct){
+        if(num==8)return;
+        num++;
+    } else {
+        if(num==1) return;
+        num--;
+    }
+
+    var imgTag = document.getElementByld("photo");
+    imgTag.setAttribute("src", "images/pic_" +num+ ".jpg");
+}                           
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="galleryZone"&gt;
+        &lt;p&gt;&lt;img src="images/pic_1.jpg" id="photo" alt=""&gt;&lt;/p&gt;
+        &lt;p&gt;
+            &lt;button onclick="gallery(0)"&gt;이전&lt;/button&gt;
+            &lt;button onclick="gallery(1)"&gt;다음&lt;/button&gt;
+        &lt;/p&gt;        
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+            </div>
+
+            
+
+            
+           
+                
+           
+
+           
+        </div>
+    </main>  
+</body>
+</html>
