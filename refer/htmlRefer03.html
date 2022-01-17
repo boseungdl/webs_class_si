@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Refernce</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/html.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/html.png">
+    <link rel="icon" href="../assets/face/html.png" sizes="128x128">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <style>
+        dt {
+            color: red
+        }
+    </style>
+    
+</head>
+<body>
+
+    <header id="header">
+        <h1><a href="../index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>한승보</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a  href="html.html">HTML<em>기초문법</em></a></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="html.html">속성</a></li>
+                <li><a href="htmlRefer01.html">기초 문법</a></li>
+                <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li class="active"><a href="htmlRefer03.html">시멘틱 태그</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+        <div class="doc">
+            <div class="refer">
+                <h3>시멘틱 태그</h3>
+                <p>시맨틱(Semantic)은 "의미의, 의미론적인"이라는 뜻이다. 즉, HTML5에 도입된 시맨틱 태그는 개발자와 브라우저에게 의미있는 태그를 제공하게 된다.
+                    일반적으로 &lt;div&gt; 태그만 보고는 이 태그 안에 들어간 내용의 의미를 알 수가 없다. 반면, &lt;table&gt;, &lt;article&gt; 등의 태그는 대략이라도 태그 안에 들어갈 내용의 의미를 유추할 수 있다.
+                </p>
+
+                <h3>종류</h3>
+                <div class="table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>&lt;section&gt;</th>
+                                <td>주제별 그룹의 콘텐츠 섹션을 나타낼 때 사용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>&lt;header&gt;</th>
+                                <td>화면 상단에 위치하며 보통 로고, 로그인, 회원가입 등을 포함합니다.</td>                           
+                            </tr> 
+                            <tr>
+                                <th>&lt;nav&gt;</th>
+                                <td> 보통 &lt;header&gt; 영역의 아래쪽에 위치하며 메뉴를 표현할 수 있습니다.(영역 가리지 않음 독릭적으로 쓰이기도 한다.)</td>
+                            </tr>                          
+                            <tr>
+                                <th>&lt;section&gt;</th>
+                                <td>하나의 주제를 그룹화할 때 사용합니다. (ex 뉴스 기사의 제목)</td>
+                            </tr>                          
+                            <tr>
+                                <th>&lt;article&gt;</th>
+                                <td>하나의 주제에 대해서 그 내용에 대해 설명할 떄 사용합니다. (ex 뉴스 기사, 블로그 글)</td>
+                            </tr>                          
+                            <tr>
+                                <th>&lt;aside&gt;</th>
+                                <td>흔히 사이드바라고 불리는 곳으로 보통 광고, 검색 기능, 카테고리 등을 표현합니다.</td>
+                            </tr>                          
+                            <tr>
+                                <th>&lt;footer&gt;</th>
+                                <td>화면 하단에 위치하며 보통 제작정보(연락처 회사주소 등), 저작권 표시 등을 표현합니다.</td>
+                            </tr>                          
+                            <tr>
+                                <th>&lt;address&gt;</th>
+                                <td>&lt;footer&gt; 태그 안에 주로 사용되며 웹 페이지 제작자의 이름이나 제작자의 웹 페이지 또는 피드백을 위한 연락처 정보를 넣는데 사용된다.</td>
+                            </tr>                          
+                            <tr>
+                                <th>&lt;main&gt;</th>
+                                <td>메인 콘텐츠를 나타내는데 사용</td>
+                            </tr>                                                                      
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>HTML5에서 없어진 태그</h3>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>acrocy (&lt;abbr&gt; 태그로 대체)</td>
+                            <td>applet (&lt;object&gt; 태그로 대체)</td>
+                            <td>basefont</td>
+                            <td>big</td>
+                        </tr>
+                        <tr>
+                            <td>center</td>
+                            <td>dir (&lt;ul&gt; 태그로 대체)</td>
+                            <td>font</td>
+                            <td>frame</td>
+                        </tr>
+                        <tr>
+                            <td>frameset</td>
+                            <td>noframes</td>
+                            <td>strike</td>
+                            <td>tt</td>
+                        </tr>
+                    </table>
+                </div>  
+
+
+                <h3>HTML5에서 의미가 변경된 태그</h3>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>a</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>address</th>
+                            <td>HTML4에서는 href="#" 또는 href="javascript:;"로 지정해야 널 링크로 사용할 수 있었지만 HTML5에서는 href 속성 없이 사용해도 널 링크로 사용 가능</td>
+                        </tr>
+                        <tr>
+                            <th>b</th>
+                            <td>HTML4에서는 텍스트를 진하게 표시할 때 사용하였지만, HTML5에서는 텍스트를 진하게 표시할뿐 아니라, 제품 소개서 안의 제품명, 요약문서 안의 키워드처럼 특별하게 중요하지는 않지만 진하게 표시하려고 할 때 사용</td>
+                        </tr>
+                        <tr>
+                            <th>hr</th>
+                            <td>HTML4에서는 가로줄을 표시할 때 사용하였지만, HTML5에서는 단락 단위로 주제를 바꾸려고 할 때 사용</td>
+                        </tr>
+                        <tr>
+                            <th>menu</th>
+                            <td>HTML4에서는 <menu>태그를 사용하지 않도록 권고하였으나, HTML5에서는 실제 문서 메뉴 정보를 제공하는데 사용</td>
+                        </tr>
+                        <tr>
+                            <th>small</th>
+                            <td>HTML4에서는 작은 글자로 표시할 때 사용하였지만, HTML5에서는 세부 주석이나 법적 인쇄문서에서 작은 인쇄 정보를 표시할 때 사용</td>
+                        </tr>
+                        <tr>
+                            <th>strong</th>
+                            <td>HTML4에서는 글자를 강조할 때 사용하였지만, HTML5에서는 단순히 진하게 표시하는 것보다 중요한 정보를 표시할 때 사용</td>
+                        </tr>
+                        <tr>
+                            <th>i</th>
+                            <td>HTML4에서는 텍스트를 기울어지게 표시할 때 사용하였지만, HTML5에서는 텍스트를 기울어지게 표시할 뿐 아니라, 중요한 정보가 들어 있지 않은 주변 콘텐츠로부터 텍스트를 따로 표시할 때 사용</td>
+                        </tr>
+                      
+                    </table>
+                </div>
+                
+
+
+            </div>
+        </div>
+           
+        <!-- //refer -->     
+        
+    </main>
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+
+   
+    
+</body>
+</html>
