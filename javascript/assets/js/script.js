@@ -49,11 +49,11 @@
 
 //for문을 이용해서 1~12까지 출력!!
 
-// for(let i=1; i<=12; i++){
-//     document.querySelector(".result" +i+ "t h4").addEventListener("click", function(){
-//         document.querySelector(".result" + i).style.display = "block";
-//     })
-// }
+for(let i=1; i<=12; i++){
+    document.querySelector(".result" +i+ "t h4").addEventListener("click", function(){
+        document.querySelector(".result" + i).style.display = "block";
+    })
+}
 
 //forEach문을 이용해서 1~12까지 출력
 
