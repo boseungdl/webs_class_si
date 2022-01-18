@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .wrap {
+            width: 100%;
+        }
+        #header {
+            height: 100px;
+            background-color: #111;
+        }
+        #nav {
+            height: 100px;
+            background-color: #222;
+        }
+        #contents {
+            height: 780px;
+            background-color: #333;
+        }
+        #footer {
+            height: 100px;
+            background-color: #444;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            background-color: rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+        #header .container {
+            width: 1200px;
+            height: 100px;
+            background-color: #555;
+        }
+        #nav .container {
+            width: 1200px;
+            height: 100px;
+            background-color: #666;
+        }
+        #contents .container {
+            width: 1200px;
+            height: 780px;
+            background-color: #777;
+        }
+        #footer .container {
+            width: 1200px;
+            height: 100px;
+            background-color: #888;
+        }
+        #contents .container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        #contents .container #section1 {
+            width: 800px;
+            height: 390px;
+            background-color: #999;
+        }
+        #contents .container #section2 {
+            width: 800px;
+            height: 390px;
+            background-color: #111
+        }
+        #contents .container #aside {
+            width: 400px;
+            height: 780px;
+            background-color: #444;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <header id="header">
+            <div class="container"></div>
+        </header>
+        <nav id="nav">
+            <div class="container"></div>
+        </nav>
+        <section id="contents">
+            <div class="container">
+                <section id="section1"></section>
+                <section id="section2"></section>
+                <aside id="aside"></aside>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="container"></div>
+        </footer>
+    </div>
+    
+</body>
+</html>

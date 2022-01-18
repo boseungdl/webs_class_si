@@ -10,92 +10,69 @@
             margin: 0;
             padding: 0;
         }
-        body {
-            background-color: #fff;
-        }
         #wrap {
-            width: 1200px;
-            margin: 0 auto;
+            width: 100%;
         }
         #header {
-            width: 1200px;
+            width: 100%;
             height: 100px;
-            background-color: #B3E5FC;
+            background-color: #E0F2F1;
         }
-        #nav {
-            width: 1200px;
-            display: flex;
+        #banner {
+            width: 100%;
+            height: 300px;
+            background-color: #80CBC4;
         }
-        #nav .nav1 {
-            width: 600px;
-            height: 100px;
-            background-color: #64B5F6;
-        }
-        #nav .nav2 {
-            width: 600px;
-            height: 100px;
-            background-color: rgb(214, 193, 193);
-        }
-        #main {
-            width: 1200px;
-                       
-        }
-        #main .contents {
-            width: 1200px;
-            display: flex;
-        }
-        #main .contents .aside {
-            width: 300px;
-            height: 520px;
-            background-color: #42A5F5;
-            
-        }
-        #main .contents .section1 {
-            width: 900px;            
-        }
-        #main .contents .section1 .article1 {
-            width: 900px;
-            height: 260px;
-            background-color: #2196F3;
-        }
-        #main .contents .section1 .article2 {
-            width: 900px;
-            height: 260px;
-            background-color: #1E88E5;
-        }
-        #main .section2 {
-            width: 1200px;
-            height: 260px;
-            background-color: #1976D2;
+        #contents {
+            width: 100%;
+            height: 580px;
+            background-color: #26A69A;
         }
         #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #00897B;
+        }
+        .header-container {
             width: 1200px;
             height: 100px;
-            background-color: #1565C0;
+            background-color: #b2dfdb;
+            margin: 0 auto;
         }
-
-
+        .banner-container {
+            width: 1200px;
+            height: 300px;
+            background-color: #4DB6AC;
+            margin: 0 auto;
+        }
+        .contents-container {
+            width: 1200px;
+            height: 580px;
+            background-color: #009688;
+            margin: 0 auto;
+        }
+        .footer-container {
+            width: 1200px;
+            height: 100px;
+            background-color: #007968;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-
-    <div id="wrap">
-        <header id="header"></header>
-        <nav id="nav">
-            <nav class="nav1"></nav>
-            <nav class="nav2"></nav>
-        </nav>
-        <main id="main">
-            <div class="contents">
-                <aside class="aside"></aside>
-                <section class="section1">
-                    <article class="article1"></article>
-                    <article class="article2"></article>
-                </section>
-            </div>
-            <section class="section2"></section>
-        </main>        
-        <footer id="footer"></footer>
+    <div class="wrap">
+        <header id="header">
+            <div class="header-container"></div>
+        </header>
+        <article id="banner">
+            <div class="banner-container"></div>
+        </article>
+        <section id="contents">
+            <div class="contents-container"></div>
+        </section>
+        <footer id="footer">
+            <div class="footer-container"></div>
+        </footer>
     </div>
     
 </body>
