@@ -8,16 +8,157 @@
 
      <!-- style -->
      <link rel="stylesheet" href="assets/css/style.css">
-     <link rel="stylesheet" href="assets/css/prism.css">
-     <!-- script -->
-     <script src="assets/js/prism.js"></script>
+     <link rel="stylesheet" href="assets/css/prism2.css">
+
+     <style>
+         table {
+             border-collapse: collapse;
+         }
+         table td {
+             border: 1px solid #222;
+             font-size: 16px;
+             padding: 15px;   
+             font-family: 'NexonLv1Gothic';          
+         }
+     </style>
 </head>
 <body>
 
     <main id="main">
+        <div class="test">
+            <h2>1. 테이블 출력하기</h2>
+            <!-- 01 -->
+            <h3>1.1 for문을 이용해서 테이블을 출력하시오!</h3>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let table = "&lt;table&gt;";
+
+        for( let i=1; i&lt;=5; i++){
+            table += "&lt;tr&gt;"
+                for(let j=1; j&lt;=5; j++){
+                    table += "&lt;td&gt;1&lt;/td&gt;";
+                   
+                }
+            table += "&lt;/tr&gt;";
+        }
+        
+        table += "&lt;/table&gt;";
+
+        document.querySelector(".result01").innerHTML = table;
+}</code></pre>
+            </div>
+            <div class="result01"></div>
+            <!-- //01 -->
+
+           
+            <!-- 02 -->
+            <h3>1.1 for문을 이용해서 테이블을 출력하시오!
+                <p>1-25까지 숫자를 넣으시오</p>
+            </h3>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let num = 1;
+    let table = "&lt;table&gt;";
+
+    for( let i=1; i&lt;=5; i++){
+        table += "&lt;tr&gt;";
+            for( let j=1; j&lt;=5; j++){
+                table += "&lt;td&gt;"+ num +"&lt;/td&gt;";
+                num++;
+            }                 
+        table += "&lt;tr&gt;";
+    }         
+
+    table += "&lt;table&gt;";
+
+    document.querySelector(".result02").innerHTML = table;
+}</code></pre>
+            </div>
+            <div class="result02"></div>
+            <!-- //02 -->
+        </div>
 
     </main>
     
+    
+    <!-- script -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/prism2.js"></script>
+    <script>
+        //01
+        let table = "<table>";
+
+        for( let i=1; i<=5; i++){
+            table += "<tr>"
+                for(let j=1; j<=5; j++){
+                    table += "<td>1</td>";
+                   
+                }
+            table += "</tr>";
+        }
+        
+        table += "</table>";
+
+        document.querySelector(".result01").innerHTML = table;
+
+        //02
+        {
+            let num = 1;
+            let table = "<table>";
+
+            for( let i=1; i<=5; i++){
+                table += "<tr>";
+                    for( let j=1; j<=5; j++){
+                        table += "<td>"+ num +"</td>";
+                        num++;
+                    }                 
+                table += "</tr>";
+            }         
+
+            table += "<table>";
+
+            document.querySelector(".result02").innerHTML = table;
+        }
+
+        //연습
+        
+    //     for(let i=2; i<=9; i++){
+    //         for(let j=1; j<=9; j++){
+    //             let sum = i*j
+    //             document.write(i +"*"+j+"=" +sum);
+    //         }
+    //     }
+    //     {
+    //         let table = "<table>"
+
+    //             for(let i=1; i<=5; i++){
+    //                 table += "<tr>"
+    //                     for(let j=1; j<=5; j++){
+    //                         table += "<td>1</td>"
+    //                     }
+    //                 table += "</tr>"    
+    //             }
+
+    //             table += "</table>"
+
+    //             document.querySelector(".result01").innerHTML = table
+    //     }
+    // let table = "<table>";
+    // let num = 1;
+
+    //     for(let i=1; i<=5; i++){
+    //         table += "<tr>";
+    //             for(let j=1; j<=5; j++){
+    //                 table += "<td>"+num+"</td>"
+    //                 num++;
+    //             }
+    //         table += "</tr>";  
+    //     }
+
+    //     table += "</table>"
+
+
+        </script> 
     
 </body>
 </html>
