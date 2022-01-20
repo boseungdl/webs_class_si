@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;            
+        }
+        body {
+            background-color: rgb(31, 29, 124);
+        }
+        .wrap {
+            width: 1200px;
+            height: 1080px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            background-color: #787877;
+        }
+        #nav {
+            height: 100px;
+            background-color: #556789;
+        }
+        #section {
+            height: 780px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        #section .aside {
+            width: 300px;
+            height: 780px;
+            background-color: #454544;
+        }
+        #section .div1 {
+            height: 260px;
+            display: flex;
+        }
+        #section .div1 .article1 {
+            width: 450px;
+            height: 260px;
+            background-color: #888888;
+        } 
+        #section .div1 .article2 {
+            width: 450px;
+            height: 260px;
+            background-color: #454565;
+        }
+        #section .article3 {
+            width: 900px;
+            height: 260px;
+            background-color: #777777;
+        } 
+        #section .article4 {
+            width: 900px;
+            height: 260px;
+            background-color: #b41f1f;
+        } 
+
+        #footer {
+            height: 100px;
+            background-color: #787878;
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <section id="section">
+            <aside class="aside"></aside>
+            <div class="div1">
+                <article class="article1"></article>
+                <article class="article2"></article>
+            </div>  
+            <article class="article3"></article>
+            <article class="article4"></article>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

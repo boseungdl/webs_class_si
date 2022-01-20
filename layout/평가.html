@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(202, 15, 202, 0.267)
+        }
+        .wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            background-color: #111;
+        }
+        #nav {
+            height: 100px;
+            background-color: #123;
+        }
+        #contents {
+            height: 780px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            
+        }
+        #contents aside {
+            width: 400px;
+            height: 780px;
+            background-color: #222;
+            
+        }
+        #contents .article1 {
+            width: 800px;
+            height: 390px;
+            background-color: #111;
+        }
+        #contents .article2 {
+            width: 800px;
+            height: 390px;
+            background-color: #545;
+        }
+        footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #228;
+        }
+    </style>
+</head>
+<body>
+   
+</body>
+</html>
+
+<div class="wrap">
+    <header id="header"></header>
+    <nav id="nav"></nav>
+    <section id="contents">
+        <aside id="aside"></aside>
+        <article class="article1"></article>
+        <article class="article2"></article>
+    </section>
+    <footer id="footer"></footer>
+</div>
+

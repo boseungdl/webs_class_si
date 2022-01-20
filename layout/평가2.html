@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: #121;
+        }
+        .wrap {
+            width: 1200px;
+            height: 1080px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            background-color: #7894;
+        }
+        #nav {
+            height: 100px;
+            background-color: #5485;
+        }
+        #section {
+            height: 780px;
+            display: flex;
+        }
+        #section .aside {
+            width: 300px;
+            height: 780px;
+            background-color: #121212;
+        }
+        #section div {
+            height: 780px;
+        }
+        #section div .article1 {
+            width: 600px;
+            height: 390px;
+            background-color: #565887;
+        }
+        #section div .article2 {
+            width: 600px;
+            height: 390px;
+            background-color: #578887;
+        }
+        #section .article3 {
+            width: 300px;
+            height: 780px;
+            background-color: #ebeb14;
+        }
+        #footer {
+            height: 100px;
+            background-color: #588474;
+        }
+
+            
+        
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <section id="section">
+            <aside class="aside"></aside>
+            <div>
+                <article class="article1"></article>
+                <article class="article2"></article>
+            </div>
+            <article class="article3"></article>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>
