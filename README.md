@@ -11,3 +11,6 @@ https://boseungdl.github.io/webs_class/html/index.html
 
 ## CSS 레퍼런스
 https://boseungdl.github.io/webs_class/css/index.html
+
+## 웹표준 사이트 제작
+https://boseungdl.github.io/webs_class/site/webClass/index.html
