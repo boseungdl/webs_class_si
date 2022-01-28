@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>웹 표준 사이트 만들기</title>
+    
     <!-- SEO(검색엔진최적화) -->
     <meta name="acthor" content="한승보">
     <meta name="description" content="웹 표준을 준수한 사이트입니다.">
@@ -30,10 +31,44 @@
 
 
 
-    <style>      
+    <style>   
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+    font-display: swap;
+}   
         *{
             margin: 0;
-            padding: 0;            
+            padding: 0; 
+            font-family: 'NexonLv1Gothic';           
         }
         body {
             width: 100%;
@@ -92,12 +127,10 @@
         #contents3 {
             width: 100%;
         }
-        #contents3 h1 {
-            display: block; 
+        #contents3 .s {
             width: 1200px;
             margin: 0 auto;           
-            padding: 134px 0;
-
+            padding: 100px 0;
         }
         #contents3 .photo {
             margin: 0 auto;
@@ -111,7 +144,9 @@
             height: 468px;
             margin-bottom: 33px;
         }
-        #contents3 .photo .photo1 h2 {
+        #contents3 .photo .photo1 .h {
+            font-size: 25px;
+            font-weight: 1000;
             margin-bottom: 21px;
         }
         #contents3 .photo .photo1 h3 {
@@ -122,8 +157,10 @@
             height: 468px;
             margin-bottom: 33px;
         }
-        #contents3 .photo .photo2 h2 {
+        #contents3 .photo .photo2 .h {
             margin-bottom: 21px;
+            font-size: 25px;
+            font-weight: 1000;
         }
         #contents3 .photo .photo2 h3 {
             font-weight: 300;
@@ -133,7 +170,9 @@
             height: 468px;
             margin-bottom: 33px;
         }
-        #contents3 .photo .photo3 h2 {
+        #contents3 .photo .photo3 .h {
+            font-size: 25px;
+            font-weight: 1000;
             margin-bottom: 21px;
         }
         #contents3 .photo .photo3 h3 {
@@ -170,21 +209,21 @@
         </section>
         <section id="contents3">
             <h2 class="z">컨텐츠3</h2>
-            <h1>FIND opportunities</h1>
+            <h2 class="s">FIND opportunities</h2>
             <div class="photo">
                 <div class="photo1">
                     <img id="img01" src="webClass/img/2 1.jpg" alt=""> 
-                    <h2>Fintech</h2>
+                    <h3 class="h">Fintech</h3>
                     <h3>Payment</h3>      
                 </div>
                 <div class="photo2">
                     <img id="img02" src="webClass/img/3.jpg" alt="">
-                    <h2>Digital Marketing</h2>
+                    <h3 class="h">Digital Marketing</h3>
                     <h3>IMS</h3>    
                 </div>
                 <div class="photo3">
                     <img id="img03" src="webClass/img/3.jpg" alt="">   
-                    <h2>Platform</h2>
+                    <h3 class="h">Platform</h3>
                     <h3>Commerce, Magazine</h3> 
                 </div>                
             </div>     
