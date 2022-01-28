@@ -27,18 +27,23 @@
     <link rel="apple-touch-icon" sizes="114x114" href="img/icon114.png">
     <link rel="apple-touch-icon-precomposed" href="img/icon.png">
     <link rel="apple-touch-icon-precomposed" sizes="167x167" href="img/icon167.png">
-    <!-- CSS style -->
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
 
-    <style>
+
+
+    <style>      
         *{
             margin: 0;
             padding: 0;            
         }
         body {
             width: 100%;
+        }
+        .z {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
         }
         #wrap {
             width: 100%;
@@ -152,16 +157,19 @@
             <nav class="nav"></nav>
         </header>
         <section id="banner">
-
+            <h2 class="z">배너</h2>
             <article class="article"></article>
         </section>
         <section id="contents1">
+            <h2 class="z">컨텐츠1</h2>
             <article class="article1"></article>
         </section>
         <section id="contents2">
+            <h2 class="z">컨텐츠2</h2>
             <article class="article2"></article>
         </section>
         <section id="contents3">
+            <h2 class="z">컨텐츠3</h2>
             <h1>FIND opportunities</h1>
             <div class="photo">
                 <div class="photo1">
