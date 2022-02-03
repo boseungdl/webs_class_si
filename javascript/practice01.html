@@ -59,8 +59,34 @@
     }
 }</code></pre>
             </div>
+            
             <!-- //03 -->
+
+              <!-- 04 -->
+              <h3>1.4 for문을 이용해서 1부터 100까지 합을 출력하세요!</h3>
+              <div class="code">
+  <pre class="line-numbers"><code class="language-js">{
+     let sum = 0;
+  
+     for(let i=0; i&lt;=100; i++){
+         sum = sum + i
+     }
+  
+     document.write(sum)
+  }</code></pre>
+              </div>
+              <div class="result">
+                <h4>결과보기</h4>
+                <div class="result03">
+                   5050
+                </div>
+               </div>
+              <!-- //04 -->
         </div>
+
+          
+                       
+            
     </main>
 
 
@@ -73,26 +99,38 @@
     <script src="assets/js/prism2.js"></script>
     <script>
         {
-            //짝수
-            for(let i =1; i<=100; i++){ 
-                if( i % 2 == 0){
-                    console.log(i);
-                }
-            }
-            //다른방법1
-            for(let i =1; i<=100; i++){
-                if( i % 2 == 0) console.log(i);
-            }
-            //다른방법2
-            for(let i =2; i<=100; i+=2){
-                console.log(i);
-            }
-            //홀수
-            for(let i =1; i<=100; i++){              
-                if( i % 2 == 1){
-                    console.log(i);
-                }
-            }
+            // //짝수
+            // for(let i =1; i<=100; i++){ 
+            //     if( i % 2 == 0){
+            //         console.log(i);
+            //     }
+            // }
+            // //다른방법1
+            // for(let i =1; i<=100; i++){
+            //     if( i % 2 == 0) console.log(i);
+            // }
+            // //다른방법2
+            // for(let i =2; i<=100; i+=2){
+            //     console.log(i);
+            // }
+            // //홀수
+            // for(let i =1; i<=100; i++){              
+            //     if( i % 2 == 1){
+            //         console.log(i);
+            //     }
+            // }
+          
+           
+
+           
+
+            let sum = 0;
+
+for(let i=0; i<=100; i++){
+    sum = sum + i
+}
+
+document.write(sum)
         }
     </script>
 
