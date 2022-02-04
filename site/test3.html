@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;            
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;            
+        }
+        .logo {
+            padding: 30px 0 20px 75px;
+        }
+        .nav {
+            padding: 45px 50px 20px 0;            
+        }
+        .nav li {
+            display: inline;  
+            padding-right: 50px;         
+        }
+        .nav a {
+            text-decoration: none;
+            color: #000;  
+            font-weight: 700;          
+        }
+        #contents {
+            width: 1120px;
+            height: 1335px;
+            margin: 0 auto;
+            margin-bottom: 700px;
+            
+        }
+        #contents .title {
+            width: 1120px;
+            margin: 0 auto;
+            font-size: 48px;
+            margin-top: 240px;
+        }
+        #contents .box1 {
+            
+        }
+        #contents .box1 .imgtype01 {
+            background: url(../site/webClass/img/bg01.jpg) no-repeat 0 80px;
+            width: 548px;
+            height: 548px;
+        }
+        #contents .box1 .imgtype02 {
+            background: url(../site/webClass/img/bg01.jpg) no-repeat 0 80px;
+            width: 548px;
+            height: 548px;
+        }
+        .tit {
+            font-size: 28px;
+            border-top: 1px solid #000;
+        }
+        #contents .box1 .imgtype01 .tit {
+            margin-top: 110px;
+            padding-top: 38px;
+        }
+        #contents .box1 .imgtype02 .tit {
+            margin-top: 120px;
+            padding-top: 38px;
+        }
+        #contents .box2 {
+          margin-top: 50px;
+        }
+        #contents .box2 .imgtype01 {
+            background: url(../site/webClass/img/bg01.jpg) no-repeat 0 80px;
+            width: 548px;
+            height: 548px;
+        }
+        #contents .box2 .imgtype02 {
+            background: url(../site/webClass/img/bg01.jpg) no-repeat 0 80px;
+            width: 548px;
+            height: 548px;
+        }
+        #contents .box2 .imgtype01 .tit {
+            margin-top: 110px;
+            padding-top: 38px;
+        }
+        #contents .box2 .imgtype02 .tit {
+            margin-top: 120px;
+            padding-top: 38px;
+        }
+        #footer {
+            height: 370px;
+            background: #000;
+        }
+        .cont {
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1 class="logo">IMFORM</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">WORK</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="contents">
+            <h2 class="title">We research new opportunities<br>
+                that inspire success.</h2>
+                <div class="cont">
+                    <article class="box1">                
+                        <div class="imgtype01">
+                            <h3 class="tit">스마트한 카라이프<br>한국 타이어</h3>
+                        </div>
+                        <div class="imgtype02">
+                            <h3 class="tit">나는 대만족 입니다<br>대만관광청 홈페이지 리뉴얼</h3>
+                        </div>
+                    </article>
+                    <article class="box2">
+                        <div class="imgtype01">
+                            <h3 class="tit">한섬 프리미엄 스타일<br>모바일 룩북</h3>
+                        </div>
+                        <div class="imgtype02">
+                            <h3 class="tit">세련된 감각의 까사미아<br>라이프스타일 매거진</h3>
+                        </div>
+                    </article>                    
+                </div>           
+        </section>
+        <footer id="footer"></footer>
+
+    </div>
+    
+</body>
+</html>
