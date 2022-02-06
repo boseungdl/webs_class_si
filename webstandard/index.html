@@ -271,6 +271,47 @@ padding-bottom: 15px;}
 .cont .col5 .ico_img:hover {background-position: -60px -480px;}
 .cont .col6 .ico_img:hover {background-position: -60px -540px;}
 
+/* 게시판 */
+.notice {position: relative;}
+.notice h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font-weight: bold;}
+.notice ul {}
+.notice ul li{overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: url(/class/img/dot.gif) no-repeat 0 8px; padding-left: 8px;}
+.notice ul li a {font-size: 12px;}
+.notice a.more{position: absolute; right: 0; top: 0; display: block;
+background: url(/class/img/icon.png) -150px -90px; width: 17px; height: 17px;}
+
+/* 게시판2 */
+.notice2 {position: relative; margin-top: 15px;}
+.notice2 h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font-weight: bold;}
+.notice2 ul {}
+.notice2 li {overflow: hidden; background: url(/class/img/dot.gif) no-repeat 0 8px; padding-left: 8px;}
+.notice2 li a {float: left; width: 65%;overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.notice2 li span {float: right; width: 30%; text-align: right;}
+.notice2 a.more {position: absolute; right: 0; top: 0; display: block;
+background: url(/class/img/icon.png) -150px -90px; width: 17px; height: 17px;}
+
+/* 마우스 오버효과1 */
+.notice_hover h4 {font-size: 14px; color: #0093bd; padding-bottom: 3px; font-weight: bold;}
+.notice_hover ul {overflow: hidden;}
+.notice_hover li {float: left; width: 93px; margin-right: 5px; text-align: center;}
+.notice_hover li:last-child {margin-right: 0;} /* ie9부터 적용 */
+.notice_hover li.last {margin-right: 0;} /* 모든 브라우저에 적용 */
+.notice_hover li span {position: relative; display: block; width: 93px; height: 93px; line-height: 93px;}
+.notice_hover li span img {width: 100%;}
+.notice_hover li span em {visibility: hidden; position: absolute; left: 0; top: 0; background: rgba(0,0,0,0.7); color:#fff; width: 100%; height: 100%;}
+.notice_hover li span:hover em {visibility: visible;}
+.notice_hover li strong {padding-top: 3px; display: inline-block; font-size: 12px;}
+
+/* 마우스 오버효과2 */
+.notice_hover2 ul {overflow: hidden;}
+.notice_hover2 li {float: left; width: 93px; margin-right: 5px; text-align: center;}/* ie9부터 적용 */
+.notice_hover2 li.last {margin-right: 0;}  
+.notice_hover2 li span {position: relative; display: block; width: 93px; height: 93px; line-height: 93px;}
+.notice_hover2 li span img {width: 100%;}
+.notice_hover2 li span em {visibility: hidden; position: absolute; left: 0; top: 0; background: rgba(0,0,0,0.7); color:#fff; width: 100%; height: 100%;}
+.notice_hover2 li span:hover em {visibility: visible;}
+.notice_hover2 li strong {padding-top: 3px; display: inline-block; font-size: 12px;}
+
 
 </style>
 
@@ -399,20 +440,97 @@ padding-bottom: 15px;}
                        <div class="column col1">
                            <h3><span class="ico_img ir_pm">아이콘</span><span class="ico_tit">Notice</span></h3>
                            <p class="ico_desc">가장 웹 페이지에서 기본이 되는 게시판 유형입니다.</p>
-                       </div>
-                       <!-- //col1 -->
-                       <div class="column col2">
-                            <h3><span class="ico_img ir_pm ">아이콘</span><span class="ico_tit">Notice</span></h3>
-                            <p class="ico_desc">가장 웹 페이지에서 기본이 되는 게시판 유형입니다.</p>
-                       </div>
-                       <!-- //col2 -->
-                       <div class="column col3">
-                            <h3><span class="ico_img ir_pm">아이콘</span><span class="ico_tit">Notice</span></h3>
-                            <p class="ico_desc">가장 웹 페이지에서 기본이 되는 게시판 유형입니다.</p>
-                       </div><!-- //col3 -->
-                       <div class="column col4">
-                            <h3><span class="ico_img ir_pm">아이콘</span><span class="ico_tit">Notice</span></h3>
-                            <p class="ico_desc">가장 웹 페이지에서 기본이 되는 게시판 유형입니다.</p>
+                       <!-- 게시판 -->
+                       <div class="notice">
+                        <h4>web publisher Notice</h4>
+                        <ul>
+                            <li><a href="">display:inline과 display:block의 차이점은 무엇인가요></a></li>
+                            <li><a href="">HTML 태그 중에 dl, dd, ul, ol, li의 차이점은 무엇인가요?</a></li>
+                            <li><a href="">HTML 태그 중에 strong과 em 태그의 차이점은 무엇인가요?</a></li>
+                            <li><a href="">컨텐츠 요소를 가운데로 오게 하는 방법을 알려주세요!</a></li>
+                            <li><a href="">독타입을 선언하는 이유에 대해서 설명하세요.</a></li>                                 
+                        </ul>
+                        <a href="" class="more ir_pm" title="더보기">더보기</a>
+                    </div>
+                    <!-- //게시판 -->
+                    <!-- 게시판2 -->
+                    <div class="notice2">
+                     <h4>Web Designer Notice</h4>
+                     <ul>
+                         <li><a href="#">JPG, PNG, GIF의 차이점이 무엇인가요?</a><span>2018.11.16</span></li>
+                         <li><a href="#">UI 디자인과 UX 디자인의 차이점을 설명하세요.</a><span>2018.11.16</span></li>
+                         <li><a href="#">인터랙션 디자인의 핵심은 무엇이라고 생각하나요?</a><span>2018.11.16</span></li>
+                         <li><a href="#">포트폴리오를 하면서 가장 잘 했다고 생각하는 부분은 무엇인가요?</a><span>2018.11.16</span></li>
+                         <li><a href="#">웹 디자인과 모바일 디자인의 차이가 무엇이라고 생각하나요?</a><span>2018.11.16</span></li>
+                     </ul>
+                     <a href="#" class="more ir_pm" title="더보기">더보기</a>
+                    </div>
+                    <!-- //게시판2 -->
+                </div>
+                <!-- //col1 -->
+                <div class="column col2">
+                     <h3><span class="ico_img ir_pm ">아이콘</span><span class="ico_tit">Notice</span></h3>
+                     <p class="ico_desc">가장 웹 페이지에서 기본이 되는 게시판 유형입니다.</p>
+                </div>
+                <!-- //col2 -->
+                <div class="column col3">
+                     <h3><span class="ico_img ir_pm">아이콘</span><span class="ico_tit">Notice</span></h3>
+                     <p class="ico_desc">가장 웹 페이지에서 기본이 되는 게시판 유형입니다.</p>
+                </div><!-- //col3 -->
+                <div class="column col4">
+                     <h3><span class="ico_img ir_pm">아이콘</span><span class="ico_tit">Notice</span></h3>
+                     <p class="ico_desc">가장 웹 페이지에서 기본이 되는 게시판 유형입니다.</p>
+                     <!-- 오버효과 -->
+                     <div class="notice_hover">
+                         <h4>Mouse Hover</h4>
+                         <ul>
+                             <li>
+                                 <a href="#">
+                                     <span><img src="../site/webClass/img/sban01.jpg" alt="이미지1"><em>바로가기</em></span>
+                                     <strong>와이어 프레임</strong>
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#">
+                                     <span><img src="../site/webClass/img/sban02.jpg" alt="이미지2"><em>바로가기</em></span>
+                                     <strong>스케치 작업</strong>
+                                 </a>
+                             </li>
+                             <li class="last">
+                                 <a href="#">
+                                     <span><img src="../site/webClass/img/sban03.jpg" alt="이미지3"><em>바로가기</em></span>
+                                     <strong>UI 디자인</strong>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+                     <!-- //오버효과 -->
+
+                      <!-- 오버효과2 -->
+                      <div class="notice_hover2">
+                         <h4 class="ir_su">Mouse Hover</h4>
+                         <ul>
+                             <li>
+                                 <a href="#">
+                                     <span><img src="../site/webClass/img/sban04.jpg" alt="이미지1"><em>바로가기</em></span>
+                                     <strong>HTML</strong>
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#">
+                                     <span><img src="../site/webClass/img/sban05.jpg" alt="이미지2"><em>바로가기</em></span>
+                                     <strong>CSS</strong>
+                                 </a>
+                             </li>
+                             <li class="last">
+                                 <a href="#">
+                                     <span><img src="../site/webClass/img/sban06.jpg" alt="이미지3"><em>바로가기</em></span>
+                                     <strong>Jquery</strong>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+                     <!-- //오버효과2 -->
                        </div><!-- //col4 -->
                        <div class="column col5">
                             <h3><span class="ico_img ir_pm">아이콘</span><span class="ico_tit">Notice</span></h3>
