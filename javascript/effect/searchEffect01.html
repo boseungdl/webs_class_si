@@ -182,7 +182,26 @@
 
     <!-- script -->
     <script>
-            
+        const searchBox = document.querySelector("#search-box");
+        const cssList = document.querySelectorAll(".list ul li");
+
+        searchBox.addEventListener("keyup", () => {
+            const searchWord = searchBox.value; //사용자가 입력한 데이터 저장소
+
+            // console.log(searchWord)
+           
+            cssList.forEach(el => {
+                console.log(el.dataset.name)
+
+                const cssName = el.dataset.name; //css 속성 값 
+                
+                if( cssName.indexOf(searchWord)){
+                    el.classList.add("hide");
+                } else {
+                    el.classList.remove("hide");
+                }
+            })
+        })
 
         //
         
