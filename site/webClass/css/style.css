@@ -334,7 +334,6 @@
     bottom: 20px;
 }
 .img_type01 .img-wrap .right-cont {
-    background: #b5924094;
     position: absolute;
     left: 20px;
     bottom: 20px;
@@ -349,6 +348,7 @@
 }
 .img_type01 .img-wrap .right:hover .right-cont {
     bottom: 20px;
+    background: #b5924094;
 }
 .img_type01 .img-wrap h4 {
     font-size: 30px;
