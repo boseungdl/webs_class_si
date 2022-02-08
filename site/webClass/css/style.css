@@ -188,7 +188,7 @@
     margin: 70px 0 45px -4px;
 }
 .imgText_Type01 .text .text_desc {
-    font-family: 'NexonLv1Gothic';
+    font-family: 'N exonLv1Gothic';
     font-size: 18px;
     color: #888;
     margin-bottom: 55px;    
@@ -303,7 +303,8 @@
 .img_type01 h3 em {
     font-size: 20px;
     color: #777;
-    vertical-align: -4px;
+
+    
 }
 .img_type01 .img-wrap {
   display: flex;
