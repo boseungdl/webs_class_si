@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
 
   
 </head>
@@ -67,20 +68,83 @@
     
         <main id="contents">
             <h2 class="ir_so">컨텐츠 영역</h2>
-
-            <section id="banner">
-                <h2 class="ir_so">배너 영역</h2>
-                <div class="img_type">
-                    <div class="tit">
-                        <span>DEVELOPER</span>
-                        <h1>HOW WAS UR WORLD?</h1>
-                        <p>우리가 만들어 왔던 모든 이야기<br>
-                            잊지말고 기억해요</p>
-                         <a href="">자세히 보기</a>   
-                         <a href="">사이트 보기</a>   
-                    </div>              
+            <!-- <section id="banner">                
+                <h3 class="ir_so">배너 영역</h3>
+                <div class="img_type slider">
+                    <div class="slider-img">
+                        <div class="desc">
+                            <span>DEVELOPER</span>
+                            <h4>HOW R U?</h4>
+                            <p>우리가 만들어 왔던 모든 이야기<br>
+                                잊지말고 기억해요</p>
+                            <div class="btn">
+                                <a href="#" class="white">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-arrow">
+                        <a href="#" class="left"><span class="ir_pm">이전 이미지</span></a>
+                        <a href="#" class="right"><span class="ir_pm">다음 이미지</span></a>
+                    </div>
+                    <div class="slider-dot">
+                        <a href="#" class="dot active"><span class="ir_pm">1</span></a>
+                        <a href="#" class="dot"><span class="ir_pm">2</span></a>
+                        <a href="#" class="dot"><span class="ir_pm">3</span></a>
+                        <a href="#" class="dot"><span class="ir_pm">4</span></a>
+                        <a href="#" class="play"><span class="ir_pm">자동플레이</span></a>
+                        <a href="#" class="stop"><span class="ir_pm">정지</span></a>
+                    </div>
                 </div>
-            </section>        
+            </section> -->
+
+            <!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide s1">
+        <div class="desc">
+            <span>DEVELOPER</span>
+            <h4>HOW R U?</h4>
+            <p>우리가 만들어 왔던 모든 이야기<br>
+                잊지말고 기억해요</p>
+            <div class="btn">
+                <a href="#" class="white">자세히 보기</a>
+                <a href="#" class="black">사이트 보기</a>
+            </div>
+        </div>
+      </div>
+      <div class="swiper-slide s2">
+        <div class="desc">
+            <span>DEVELOPER</span>
+            <h4>HOW R U?</h4>
+            <p>우리가 만들어 왔던 모든 이야기<br>
+                잊지말고 기억해요</p>
+            <div class="btn">
+                <a href="#" class="white">자세히 보기</a>
+                <a href="#" class="black">사이트 보기</a>
+            </div>
+        </div>
+      </div>
+      <div class="swiper-slide s3">
+        <div class="desc">
+            <span>DEVELOPER</span>
+            <h4>HOW R U?</h4>
+            <p>우리가 만들어 왔던 모든 이야기<br>
+                잊지말고 기억해요</p>
+            <div class="btn">
+                <a href="#" class="white">자세히 보기</a>
+                <a href="#" class="black">사이트 보기</a>
+            </div>
+        </div>
+      </div>      
+    </div>
+    <div class="swiper-pagination"></div>  
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>    
+</div>   
+                    
             <!-- //banner -->
             <section class="imgText_Type01 container">
                 <div class="text">
@@ -249,5 +313,30 @@
         </footer>
     </div>   
     <!-- wrap -->
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+  // Optional parameters
+            direction: 'horizontal',
+            loop: false,
+            effect: "slide",
+            // autoplay: {
+            //     delay: 3000
+            // },
+
+
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable : true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+   
 </body>
 </html>
