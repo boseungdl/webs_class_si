@@ -4,110 +4,250 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        .wrap {
+          
+        }
+        a {
+            text-decoration: none;
+        }
+        #header{
+            margin: 52px 90px 112px 101px;
+            width: 1249px;
+            height: 42px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 138px;
+        }
+        #header .logo {
+            display: inline-block;
+            height: 42px;
+        }
+        #header .logo .imglogo {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: url(../site/webClass/img/test4.svg) ;
+            
+        }
+        #header .logo a {
+            display: inline-block;
+            vertical-align: middle;            
+          
+            
+        }
+        #header .nav {}
+        #header .nav ul {
+            width: 484px;
+            display: flex;
+            justify-content: space-between;            
+        }
+        #header .nav ul li {
+            font-size: 16px;
+            position: relative;
+        }
+        #header .nav ul li:nth-of-type(1)::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            bottom: -3px;
+            width: 72px;
+            height: 2px;
+            background: #000;
+        } 
+        #header .icon ul{
+            display: flex;
+            justify-content: space-between;
+            width: 120px;
+        }
+        #header .icon li {
+            width: 20px;
+            height: 20px;
+            background: url(../site/webClass/img/test4.svg) ;
+            
+        }
+        #header .icon li:nth-child(1) {        
+            background-position: -50px 0;
+        }
+        #header .icon li:nth-child(2) {
+            background-position: -101px 0;
+        }
+        #header .icon li:nth-child(3) {
+            background-position: -150px 0;
+        }
+        #banner {
+            width: 1440px;
+            height: 853px;
+            margin: 52px 0 0 101px;
+            background: url(../site/webClass/img/sofa.jpg) no-repeat 310px -30px ;
+            background-size: 1030px 1000px;
+        }
+        #banner h2 {
+            font-size: 80px;
+            margin-bottom: 55px;
+        }
+        #banner .article01 {
+          
+        }
+        #banner p {            
+            font-size: 18px;
+            margin-bottom: 35px;
+            line-height: 1.56;
+
+        }
+        #banner a {
+            display: inline-block;
+            padding: 21px 45px;        
+            border: 1px solid #c4a586;
+            margin-right: 26px;
+            text-decoration: none;  
+            text-align: center;
+            font-size: 16px;
+        }
+        #banner a:nth-of-type(1) {
+            color: #fff;
+            background-color: #c4a586;
+        }
+        #banner a:nth-of-type(2) {
+            color: #c4a586;
+        }
+        #conten1 {
+            width: 1440px;
+            height: 300px;
+            background: rgb(187, 146, 146);
+        }
+        #conten2 {
+            display: flex;
+            margin: 170px;
+        }
+        #conten2 article:nth-child(1) {
+            width: 720px;
+            height: 388px;
+            background: rgb(134, 211, 163);
+            
+        }
+        #conten2 article:nth-child(2) {
+            width: 720px;
+            height: 388px;
+            background: rgb(26, 92, 51);
+            
+        }
+        #conten3 {
+            height: 2400px;
+            
+            margin-left: 192px;
+        }
+        #conten3 .products {
+            vertical-align: baseline;
+        }
+        #conten3 .products h2 {
+            display: inline-block;
+            margin-right: 95px;
+            font-size: 50px;
+        }
+        #conten3 .products a:nth-of-type(1) {
+            margin-right: 95px;
+            font-size: 23px;
+            font-weight: 500;
+            color: #a9a7a6;
+            
+        }
+        #conten3 .products a:nth-of-type(2) {
+            margin-right: 228px;
+            font-size: 23px;
+            font-weight: 500;
+            color: #a9a7a6;
+        }
+        #conten3 .products a:nth-of-type(3) {
+            margin-right: 36px;
+            font-size: 17px;
+            color: #3d3d3f;
+        }
+        #conten3 .products a:nth-of-type(4) {
+            width: 34px;
+            height: 19px;
+            display: inline-block;
+            background-color: #e9e9e9;
+        }
+        #footer {
+            height: 746px;
+            background: rgb(133, 81, 81);
+            margin-left: 135px;
+            margin-right: 32px;            
+        }
+       
+
+      
+    </style>
 </head>
-<style>
-    * {
-       margin: 0;
-       padding: 0;
-       box-sizing: border-box;
-    }
-    a {
-        text-decoration: none;
-        color: #000
-    }
-    header {
-        width: 100%;
-        height: 90px;
-        background: #eee;
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 15px;
-        align-items: center;
-    }
-    header .logo {
-        padding: 5px 10px 10px;
-    }
-    header .logo span a {
-       font-size: 18px;
-       font-weight: 300;
-    }
-    header .logo span a em {
-        font-size: 30px;
-    }
-    header .nav {}
-    header .nav ul {
-        display: flex;
-        list-style: none;
-    }
-    header .nav ul li {
-        padding-right: 50px;
-        
-    }
-    header .nav ul li a {}
-    header .icon {
-
-    }
-    header .icon ul {
-        display: flex;
-        list-style: none;
-    }
-    header .icon  li {
-        margin: 3px;
-        padding: 10px;
-        border: 1px solid #000;
-        border-radius: 10px;
-    }
-    header .icon  li a {}
-
-    #section01 {}
-    #section01 .box {
-        
-    }
-    #section01 .photo01 {}
-    #section01 .photo01 h3 {}
-    #section01 .photo01 a {}
-    #section01 .photo02 {}
-    #section01 .photo03 {}
-
-</style>
 <body>
-
-    <header>
-        <div class="logo">
-            <span><a href=""><em>WEB </em>class</a></span>
-        </div>
-        <nav class="nav">
-            <ul>
-                <li><a>레이아웃1</a></li>
-                <li><a>레이아웃2</a></li>
-                <li><a>레이아웃3</a></li>
-                <li><a>레이아웃4</a></li>
-                <li><a>레이아웃5</a></li>
-            </ul>
-        </nav>
-        <div class="icon">
-            <ul>
-                <li><a href="">회원가입</a></li>
-                <li><a href="">로그인</a></li>
-            </ul>
-        </div>
-    </header>
-    <section id="section01">     
-        <h2>사람들<em>이미지 유형01</em></h2>
-        <div class="box">
-            <div class="photo01">
-                <h3>래퍼</h3>
-                <a href="">자세히 보기</a>
+    <div class="wrap">
+        <header id="header">
+            <div class="logo">
+                <div class="imglogo"></div>
+                <a>MISTRIUM</a>
             </div>
-            <div class="photo02"></div>
-            <div class="photo03"></div>     
-        </div>                 
-    </section>
-    <article id="article01"></article>
-    <article id="article02"></article>
-    <article id="article02"></article>
-    <footer></footer>
+            <div class="nav">
+                <ul>
+                    <li>home</li>
+                    <li>about us</li>
+                    <li>products</li>
+                    <li>faqs</li>
+                    <li>contact us</li>
+                </ul>
+            </div>
+            <div class="icon">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </header>
+<!-- //header -->
+
+
+        <section id="banner">
+            <h2>Modern Furniture For <br>
+                Modern Living Style</h2>
+           <article class="article01">            
+               <p> In unfeeling existence objection immediate repulsive<br> on he in. Imprudence comparison uncommonly
+                 me<br> he difficulty diminution resolution. Likewise proposal<br> differed scarcely dwelling as on raillery. <br><br>
+                September few dependent extremity own continued<br> and ten prevailed attending. Early to weeks we could.<br> Do commanded an shameless we disposing do.<br> Indulgence ten remarkably nor are impression out.<br> Power is lived means oh every in we<br> quiet.</p>
+               <a href="#">Request a Quote</a>
+               <a href="#">Watch Video</a>               
+           </article>
+          
+        </section>
+        <article id="conten1"></article>
+        <article id="conten2">
+            <article></article>
+            <article></article>
+        </article>
+        <article id="conten3">
+            <div class="products">
+                <h2>PRODUCTs</h2>
+                <a href="">Best Selling</a>
+                <a href="">Most Popular</a>
+                <a href="">See All</a>
+                <a href=""></a>
+            </div>
+        </article>      
+        <footer id="footer"></footer>
+
+    </div>
+   
+
+
     
 </body>
 </html>
