@@ -113,6 +113,7 @@
 
         }
         #banner a {
+            
             display: inline-block;
             padding: 21px 45px;        
             border: 1px solid #c4a586;
@@ -127,6 +128,9 @@
         }
         #banner a:nth-of-type(2) {
             color: #c4a586;
+            padding-right: 55px;
+            padding-left: 55px;
+
         }
         #conten1 {
             width: 1109px;
@@ -136,7 +140,7 @@
         }
         #conten1 h3 {
             text-align: center;
-            margin: 85px 0 72px 0;
+            margin: 0 0 100px 0;
         }
         .logotext {
             display: flex;
@@ -175,24 +179,25 @@
             background: url(../site/webClass/img/150.svg)-750px 0;
         }
         #conten2 {
-            width: 1440px;
+            width: px;
             margin: 0 auto;
             display: flex;
-            
+            overflow: hidden;
         }
-        #conten2 div:nth-child(1) {
-            width: 720px;
-            height: 388px;          
-        }
-        #conten2 div:nth-child(1) div {
-            width: 300px;
-            height: 200px;
-            display: inline-block;
-            padding: 50px 0 79px 100px ;
+        #conten2 >div:nth-child(1) {
+            width: 50%;
+            height: 388px;     
+            background-color: #fcefe9;  
+            position: relative;
+             
         }
         #conten2 div:nth-child(1) .text {
-           
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            margin: 50px 0 79px 16% ;
         }
+        
         #conten2 div:nth-child(1) span {
             font-size: 34px;
             display: inline-block;
@@ -205,21 +210,21 @@
             color: #000;
         }
         #conten2 div:nth-child(1) .img {
-            background: url(../site/webClass/img/300.svg) no-repeat 0 -600px;
+            background: url(../site/webClass/img/300.svg) no-repeat 0 -580px;
             width: 300px;
             height: 300px;
             float: right;
         }
-        #conten2 div:nth-child(2) {
-            width: 720px;
+        #conten2 > div:nth-child(2) {
+           width: 50%;
             height: 388px;  
             background-color: #fae2c8;       
         }
-        #conten2 div:nth-child(2) div {
-            width: 300px;
+        #conten2 div:nth-child(2) .text {
+            width: 200px;
             height: 200px;
             display: inline-block;
-            padding: 50px 0 79px 100px ;
+            margin: 50px 0 79px 16% ;
         }
         #conten2 div:nth-child(2) .text {
            
@@ -228,6 +233,7 @@
             font-size: 34px;
             display: inline-block;
             margin-bottom: 81px;
+        
         }
         #conten2 div:nth-child(2) a {
             font-size: 20px;
@@ -236,7 +242,7 @@
             color: #000;
         }
         #conten2 div:nth-child(2) .img {
-            background: url(../site/webClass/img/300.svg) no-repeat -530px -600px;
+            background: url(../site/webClass/img/300.svg) no-repeat -530px -560px;
             width: 380px;
             height: 300px;
             float: right;
@@ -245,7 +251,8 @@
             width: 1050px;
             margin: 0 auto;
             height: 2400px; 
-            margin-top: 110px;                     
+            margin-top: 110px; 
+                              
         }
         #conten3 .products {
             vertical-align: baseline;
@@ -279,13 +286,150 @@
             display: inline-block;
             background-color: #e9e9e9;
         }
+        #conten3 .menu {
+            margin: 0 auto;
+            margin-top: 105px;
+            font-size: 18px;
+                      
+            width: 450px;
+           
+        }
+        #conten3 .menu a {
+            margin-right: 59px;
+            color: #a9a7a6;
+        }
+        #conten3 .menu a:last-child {
+            margin: 0;
+        
+        }
+        #conten3 .item {
+            margin-top: 110px;
+        }
+        #conten3 .item .col01{
+            display: flex;
+            justify-content: space-between;
+        }
+        #conten3 .item .col01 {
+          
+        }
+        #conten3 .item0 {
+            width: 312px;
+            height: 450px; 
+            
+            position: relative;
+        }
+        #conten3 .item0 > div {
+           
+            
+        }
+        #conten3 .item0 a {
+            float: right;
+            position: absolute;
+            left: 29%;  
+            width: 137px;
+            height: 40px;          
+            line-height: 2.5;
+            border: 1px solid #d9ab82;
+            border-radius: 40px;
+            background-color: #d9ab82;
+            color: #fff;
+            text-align: left;
+            padding-left: 10px;
+            font-size: 14px;
+            z-index: 1;
+        } 
+        #conten3 .item0 .small {
+            background: url(../site/webClass/img/150.svg) -5px -150px;
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            float: right;
+            position: absolute;
+            right: 87px;
+            top: 6px;
+            z-index: 1;
+            
+        }  
+        #conten3 .item0 .bg {
+            margin-top: 18px;
+            width: 312px;
+            height: 340px;
+            background-color: #fff4e8;
+            position: relative;
+        }
+        #conten3 .item0 .bg .money {
+            margin: 0px 0 30px 51px;
+            position: absolute;
+            top: 20%;
+        }
+        #conten3 .item0 .bg .money h3 {
+            margin-bottom: 32px;
+            font-size: 26px;
+        }
+        #conten3 .item0 .bg .money em {
+            margin-left: 38px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #a9a7a6;
+            text-decoration:line-through
+        }
+        #conten3 .item0 .productimg  {
+            background: url(../site/webClass/img/300.svg) no-repeat 20px 0;
+            width: 312px;
+            height: 300px;
+            float: left;
+            position: absolute;
+            top: 200px;
+        }
+        #conten3 .item0 .productimg02  {
+            background: url(../site/webClass/img/300.svg) no-repeat -280px 0;
+            width: 312px;
+            height: 300px;
+            float: left;
+            position: absolute;
+            top: 200px;
+        }
+        #conten3 .item0 .productimg03  {
+            background: url(../site/webClass/img/300.svg) no-repeat -580px 0;
+            width: 312px;
+            height: 300px;
+            float: left;
+            position: absolute;
+            top: 200px;
+        }
         #footer {
             height: 746px;
             background: rgb(133, 81, 81);
             margin-left: 135px;
             margin-right: 32px;            
         }
-       
+        
+        <div class="item">
+                <div class="col01">
+                    <div class="item0 a">
+                        <div><a href="">Add To Cart<div class="small"></div><</a>/div>                                           
+                        <div class="bg">
+                            <div>
+                                <h3>Ramen Stool</h3>
+                                <span>$65.00<em>$95.00</em></span>
+                            </div>                         
+                        </div>
+                    </div>                       
+                    <div class="item0 a">
+                        <div><a href="">Add To Cart</a><div class="small"></div></div>                                           
+                        <div class="bg">
+                            <h3></h3>
+                        <span><em></em></span>
+                        </div>
+                    </div>                    
+                    <div class="item0 a">
+                        <div><a href="">Add To Cart</a><div class="small"></div></div>                                           
+                        <div class="bg">
+                            <h3></h3>
+                        <span><em></em></span>
+                        </div>
+                    </div>                  
+                </div>
         
       
     </style>
@@ -365,6 +509,48 @@
                 <a href="">Most Popular</a>
                 <a href="">See All</a>
                 <a href=""></a>
+            </div>
+            <div class="menu">
+                <a href="">All</a>
+                <a href="">Bed</a>
+                <a href="">Sofa</a>
+                <a href="">Chair</a>
+                <a href="">Light</a>
+            </div>
+            <div class="item">
+                <div class="col01">
+                    <div class="item0">
+                        <div><a href="">Add To Cart</a><div class="small"></div></div>                                           
+                        <div class="bg">
+                            <div class="money">   
+                                <h3>Ramen Stool</h3>
+                                <span>$65.00<em>$95.00</em></span>
+                            </div> 
+                            <div class="productimg"></div>                                                    
+                        </div>
+                       
+                    </div>                       
+                    <div class="item0">
+                        <div><a href="">Add To Cart</a><div class="small"></div></div>                                           
+                        <div class="bg">
+                            <div class="money">   
+                                <h3>Flexform</h3>
+                                <span>$35.00<em>$55.00</em></span>
+                            </div> 
+                            <div class="productimg02"></div>                                                    
+                        </div>
+                    </div>                    
+                    <div class="item0">
+                        <div><a href="">Add To Cart</a><div class="small"></div></div>                                           
+                        <div class="bg">
+                            <div class="money">   
+                                <h3>Porada</h3>
+                                <span>$87.00<em>$97.00</em></span>
+                            </div> 
+                            <div class="productimg03"></div>                                                    
+                        </div>
+                    </div>                  
+                </div>
             </div>
         </article>      
         <footer id="footer"></footer>
