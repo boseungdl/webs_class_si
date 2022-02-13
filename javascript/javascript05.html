@@ -959,22 +959,18 @@ document.querySelector(".sample10_R8").innerHTML = "&lt;pre&gt;" + text8 + "&lt;
     <script>
         //#id 이동하기
         
-            // document.querySelectorAll("a[href^='#']").forEach(el => {
-            //     el.addEventListener("click", (event) => {                    
-            //         event.preventDefault();
-            //         document.querySelector(el.getAttribute("href")).scrollIntoView({
-            //             behavior: "smooth"
-            //         })
-            //     })
-            // })
             document.querySelectorAll("a[href^='#']").forEach(el => {
-            el.addEventListener("click", (event) => {
-                event.preventDefault();
-                document.querySelector(el.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
+                el.addEventListener("click", (event) => {                    
+                    event.preventDefault();
+                    document.querySelector(el.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
                     })
                 })
             })
+           
+          
+
+
         
         //01. 문자열 : 문자열 결합/ 템플릿 문자열
         {
