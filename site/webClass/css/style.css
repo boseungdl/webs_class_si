@@ -826,7 +826,7 @@ address {
 /* 회원가입 */
 .join-type {
  padding: 200px 0;
-font-family: 'NEXONLv1GothicOTF;';
+
 }
 .member-form {
     max-width: 665px;
@@ -864,6 +864,7 @@ font-family: 'NEXONLv1GothicOTF;';
     margin: 30px 10px 10px 0;
     line-height: 1.5;
     text-decoration: underline;
+    font-weight: 500;
 }
 .member-form .list02 {
     
@@ -878,6 +879,7 @@ font-family: 'NEXONLv1GothicOTF;';
     line-height: 1.6;
     position: relative;
     padding-left: 10px;
+    font-family: 'NEXONLv1GothicOTF;';
 }
 .member-form .list02 li::before {
     position: absolute;
