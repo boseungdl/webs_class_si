@@ -244,10 +244,10 @@
             
          
 
-                (currentIndex < sliderCount - 1) ?  currentIndex++ : currentIndex = 0;      //뒤에는 해석 x 보이는 이미지
+                (currentIndex < sliderCount - 1) ?  currentIndex++ : currentIndex = 0;      // currentIndex가 4이하를 만족하면 1을 더해준다.
                 
-                sliderInner.style.left = -800 * currentIndex + "px";
-                sliderInner.style.transition = "all 0.6s ease "
+                sliderInner.style.left = -800 * currentIndex + "px"; //sliderInner를 -800*currentIndex 만큼 이동시켜 이미지가 바뀐거 처럼 보이게 한다.
+                sliderInner.style.transition = "all 0.6s ease " // sliderInner의 값이 바뀔때 사용되는 transition = "all 0.6s ease " 을 추가해준다.
 
             //    //gsap 애니메이션
             //    gsap.to(sliderInner, {                       //sliderInner를 작동시간을0.4s  left로 -800* currentIndex  속도를 expo.out으로 설정
