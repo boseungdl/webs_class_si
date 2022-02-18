@@ -343,15 +343,14 @@ sliderBtnNext.addEventListener("click", () => {
      
         function gotoSlider(num){ 
             sliderInner.style.transition = "all 400ms";     
-            sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
-            
+            sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";            
             currentIndex = num;
         }
         //이 함수는 sliderInner에 transition, transform 속성을 넣어주어 사진을 sliderInner에 변화가 있을 시
         //0.4초의 텀을 두어 변화 시키는 함수이다. 또한 currentIndex값에 매개변수를 대입시킨다.
        
         sliderBtnPrev.addEventListener("click", () => {
-          let prevIndex = (currentIndex + (sliderCount -1))%sliderCount;                     
+          let prevIndex = (currentIndex + (sliderCount -1))%sliderCount;                    
           gotoSlider(prevIndex)             
         })                          
         //이전 버튼을 클릭했을 때 preindex의 값은 gotoSlider함수의 매개변수에 들어가기때문에 이미지의
@@ -368,26 +367,26 @@ sliderBtnNext.addEventListener("click", () => {
         
 
 
-        // function gotoSlider(){      //sliderInner에 변화가 생길때 0.4초 작동시간을 주고 sliderInner에 sliderWidth값에  현재 인덱스값을 곱한만큼 이동시켜주는 기능을한다.
-        //     sliderInner.style.transition = "all 400ms";
-        //     sliderInner.style.transform = "translateX("+ -sliderWidth * currentIndex +"px)";
-        // }
-        // sliderBtnPrev.addEventListener("click", () => {
-        //     if(currentIndex>0){
-        //     currentIndex--;
-        //     } else {
-        //         currentIndex = sliderCount-1;
-        //     }
-        //     gotoSlider();
-        // })
-        // sliderBtnNext.addEventListener("click", () => {
-        //     if(currentIndex<sliderCount - 1){
-        //         currentIndex++;
-        //     } else {
-        //         currentIndex = currentIndex -4;
-        //     }
-        //     gotoSlider();
-        // })
+        function gotoSlider(){      //sliderInner에 변화가 생길때 0.4초 작동시간을 주고 sliderInner에 sliderWidth값에  현재 인덱스값을 곱한만큼 이동시켜주는 기능을한다.
+            sliderInner.style.transition = "all 400ms";
+            sliderInner.style.transform = "translateX("+ -sliderWidth * currentIndex +"px)";
+        }
+        sliderBtnPrev.addEventListener("click", () => {
+            if(currentIndex>0){
+            currentIndex--;
+            } else {
+                currentIndex = sliderCount-1;
+            }
+            gotoSlider();
+        })
+        sliderBtnNext.addEventListener("click", () => {
+            if(currentIndex<sliderCount - 1){
+                currentIndex++;
+            } else {
+                currentIndex = currentIndex -4;
+            }
+            gotoSlider();
+        })
     </script>
 
 
