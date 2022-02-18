@@ -24,8 +24,7 @@
         }
         .slider__inner {        
             display: flex;         
-            width: 4800px;    /*이미지 총 길이*/
-            
+            width: 4800px;    /*이미지 총 길이*/            
             transform: translateX(0);        
         }
         .slider {            
@@ -60,7 +59,6 @@
             display: block;
             color: #fff;
             text-decoration: none; 
-
         }
         .slider__btn a.prev {
             left: 0;
@@ -72,7 +70,7 @@
             background: rgb(241,96,86);
         }
     
-    </style>
+  
     </style>
 </head>
 <body class="img03">
@@ -367,26 +365,26 @@ sliderBtnNext.addEventListener("click", () => {
         
 
 
-        function gotoSlider(){      //sliderInner에 변화가 생길때 0.4초 작동시간을 주고 sliderInner에 sliderWidth값에  현재 인덱스값을 곱한만큼 이동시켜주는 기능을한다.
-            sliderInner.style.transition = "all 400ms";
-            sliderInner.style.transform = "translateX("+ -sliderWidth * currentIndex +"px)";
-        }
-        sliderBtnPrev.addEventListener("click", () => {
-            if(currentIndex>0){
-            currentIndex--;
-            } else {
-                currentIndex = sliderCount-1;
-            }
-            gotoSlider();
-        })
-        sliderBtnNext.addEventListener("click", () => {
-            if(currentIndex<sliderCount - 1){
-                currentIndex++;
-            } else {
-                currentIndex = currentIndex -4;
-            }
-            gotoSlider();
-        })
+        // function gotoSlider(){      //sliderInner에 변화가 생길때 0.4초 작동시간을 주고 sliderInner에 sliderWidth값에  현재 인덱스값을 곱한만큼 이동시켜주는 기능을한다.
+        //     sliderInner.style.transition = "all 400ms";
+        //     sliderInner.style.transform = "translateX("+ -sliderWidth * currentIndex +"px)";
+        // }
+        // sliderBtnPrev.addEventListener("click", () => {
+        //     if(currentIndex>0){
+        //     currentIndex--;
+        //     } else {
+        //         currentIndex = sliderCount-1;
+        //     }
+        //     gotoSlider();
+        // })
+        // sliderBtnNext.addEventListener("click", () => {
+        //     if(currentIndex<sliderCount - 1){
+        //         currentIndex++;
+        //     } else {
+        //         currentIndex = currentIndex -4;
+        //     }
+        //     gotoSlider();
+        // })
     </script>
 
 
