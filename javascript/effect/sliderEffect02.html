@@ -45,6 +45,7 @@
         .slider:nth-child(3)::before { content: '이미지3';}
         .slider:nth-child(4)::before { content: '이미지4';}
         .slider:nth-child(5)::before { content: '이미지5';}
+
     
     </style>
 </head>
@@ -161,28 +162,28 @@
 </code></pre>                                                   
                                 </div>
                                 <div>
-    <pre><code class="language-javascript">const sliderWrap = document.querySelector(".slider__wrap"); 
-        const sliderimg = document.querySelector(".slider__img");  
-        const sliderInner = document.querySelector(".slider__inner") 
-        const slider = document.querySelectorAll(".slider");           
+<pre><code class="language-javascript">const sliderWrap = document.querySelector(".slider__wrap"); 
+const sliderimg = document.querySelector(".slider__img");  
+const sliderInner = document.querySelector(".slider__inner") 
+const slider = document.querySelectorAll(".slider");           
 
-        console.log(slider)
+console.log(slider)
 
 
-        let currentIndex = -1;   
-        let sliderCount = slider.length; 
-        setInterval(() => {
-            
-         
+let currentIndex = -1;   
+let sliderCount = slider.length; 
+setInterval(() => {
+    
 
-                (currentIndex &lt; sliderCount - 1) ?  currentIndex++ : currentIndex = 0;      
-                
-                sliderInner.style.left = -800 * currentIndex + "px";
-                sliderInner.style.transition = "all 0.6s ease "
 
-        }, 2000)
+        (currentIndex &lt; sliderCount - 1) ?  currentIndex++ : currentIndex = 0;      
+        
+        sliderInner.style.left = -800 * currentIndex + "px";
+        sliderInner.style.transition = "all 0.6s ease "
 
-    </code></pre>  
+}, 2000)
+
+</code></pre>  
                                 </div>
                                 <div>
     <pre><code class="language-javascript">

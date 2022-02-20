@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/atom-one-dark.min.css">
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NexonLv1Gothic';
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.2s;
+}
+li {
+    list-style: none;
+}
+img {
+    width: 100%;
+    vertical-align: top;   
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../effect/img/slider01.jpg);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    color: #fff;
+}
+body.img01 {
+    background-image: url(../img/image01.jpg);
+}
+body.img02 {
+    background-image: url(../img/image06.jpg);
+}
+body.img03 {
+    background-image: url(../img/image03.jpg);
+}
+body.img04 {
+    background-image: url(../img/image04.jpg);
+}
+body.img05 {
+    background-image: url(../img/image05.jpg);
+}
+body::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(36, 54, 61, 0.8);
+    z-index: -1;
+}
+/* info */
+.title {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.title h1 {
+    font-size: 34px;
+    border-bottom: 1px dashed #fff;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+}
+.title p {
+    font-size: 16px;
+}
+.number {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.number li {
+    display: inline;
+}
+.number li a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+}
+.number li a:hover,
+.number li.active a  {
+    background: #fff;
+    color: #000;
+}
+.source {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.source button {
+    border: 1px solid #fff;
+    background: transparent;
+    font-family: 'NexonLv1Gothic';
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: all 0.2x;
+    cursor: pointer;
+}
+.source button:hover {
+    background: #fff;
+    color: #000;
+}
+/* modal */
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    transform: scale(1);
+}
+#modal.show {
+    animation: foldOut 1s ease forwards;            
+}  
+#modal.show.hide {
+    animation: foldIn 1s 0.3s ease backwards;
+}     
+.modal-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    transform: scale(1);
+}
+#modal.show .modal-wrap {
+    animation: zoomOut 0.5s 1s ease forwards;
+}
+#modal.show.hide .modal-wrap {
+    animation: zoomIn 0.5s ease forwards;
+}
+@keyframes foldOut {
+    0%   {transform: scaleX(0) scaleY(0.005)}
+    50%  {transform: scaleX(1) scaleY(0.005)}
+    100% {transform: scaleX(1) scaleY(1)}
+}
+@keyframes foldIn {
+    0%   {transform: scaleX(1) scaleY(1)}
+    50%  {transform: scaleX(1) scaleY(0.005)}
+    100% {transform: scaleX(0) scaleY(0.005)}
+}
+@keyframes zoomOut {
+    0%   {transform: scaleX(0)}
+    100% {transform: scaleX(1)}
+}
+@keyframes zoomIn {
+    0%   {transform: scaleX(1)}
+    100% {transform: scaleX(0)}
+}
+.modal-close {
+    margin-top: 10px;
+}
+.modal-cont {       
+    opacity: 1;
+    position: relative;
+}
+.code-view {
+    width: 60vw;
+    height: 60vh;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    overflow: scroll;
+
+}
+/* .code-view::-webkit-scrollbar {
+    width: 4px; 
+    display: none;
+}
+.code-view::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+}
+.code-view::-webkit-scrollbar-track {
+    background-color: rgb(39, 95, 99); 
+}
+.code-view::-webkit-scrollbar-corner {
+    background-color: #282936;
+} */
+.view-header {
+    padding: 5px 0 5px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;
+    height: 32px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+}
+.view-header > span {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 10px;
+}
+.view-header > span:nth-child(1) {
+    background-color: #f56565;
+}
+.view-header > span:nth-child(2) {
+    background-color: #f6e05e;
+}
+.view-header > span:nth-child(3) {
+    background-color: #4ebb7b;
+}
+.view-title {
+    position: absolute;
+    left: 0; top: 32px;;
+    width: 100%;
+    height: 32px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 9px 0 7px ;
+    height: 37px;          
+}
+.view-title li {
+    display: inline;
+}
+.view-title li a {
+    color: rgb(150, 150, 150);
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 12px 20px 10px 20px;
+    margin: 2px 5px 0 0px;
+}
+.view-title li.active a {
+    color: #000;           
+    background: #ffeaea;  
+}
+.view-cont {
+    background-color: #282c34;
+    height: 100%;
+    padding-top: 65px;
+}
+.view-cont > div {
+    display: none;
+}
+.view-cont > div:first-child {
+    display: block;
+}
+.view pre code.hljs {
+    line-height: 1.6;
+}
+        
+        
+        .slider__wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .slider__img {
+            width: 800px;
+            height: 480px;  
+            overflow : hidden 
+        }
+        .slider__inner {        
+            display: flex;         
+            width: 4000px;    
+            position: relative;  /* left를 사용하기 위해*/               
+        }
+        .slider {            
+            width: 800px;
+            position: relative;
+        }
+        .slider::before {
+         position: absolute;
+         left: 5px;
+         top: 5px;
+         background: rgba(0,0,0,0.4);
+         color: #fff;
+         padding: 5px 10px 3px;
+        }
+        .slider:nth-child(1)::before { content: '이미지1';}
+        .slider:nth-child(2)::before { content: '이미지2';}
+        .slider:nth-child(3)::before { content: '이미지3';}
+        .slider:nth-child(4)::before { content: '이미지4';}
+        .slider:nth-child(5)::before { content: '이미지5';}
+
+    
+    </style>
+</head>
+<body class="img02">
+
+<!-- main -->
+    <main>
+        <section id="sliderType02">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider__inner">
+                        <div class="slider"><img src="img/slider10.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="img/slider06.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="img/slider07.jpg" alt="이미지3"></div>
+                        <div class="slider"><img src="img/slider08.jpg" alt="이미지4"></div>
+                        <div class="slider"><img src="img/slider09.jpg" alt="이미지5"></div>
+                    </div>               
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- //main -->
+
+
+<!-- info -->
+    <div class="info">
+        <div class="title">
+            <h1><a href="sliderEffect.html">Javascript Slider Effect02</a></h1>
+            <p>이미지 슬라이드 - 좌로 움직이기</p>
+        </div>
+        <div class="number">
+            <ul>
+                <li><a href="sliderEffect01.html">1</a></li>
+                <li class="active"><a href="sliderEffect02.html">2</a></li>
+                <li><a href="sliderEffect03.html">3</a></li>
+                <li><a href="sliderEffect04.html">4</a></li>
+                <li><a href="sliderEffect05.html">5</a></li>
+                <li><a href="sliderEffect06.html">6</a></li>
+                <li><a href="sliderEffect07.html">7</a></li>
+                <li><a href="sliderEffect08.html">8</a></li>
+            </ul>
+        </div>
+        <div class="source">
+            <button class="source-btn">소스보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <div class="view-header" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-title">
+                                <ul>
+                                    <li class="active"><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">JavaScript</a></li>
+                                    <li><a href="#">jquery</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+<pre><code class="language-html">&lt;main&gt;
+&lt;section id="sliderType01"&gt;
+    &lt;div class="slider__wrap"&gt;
+        &lt;div class="slider__img"&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/slider01.jpg" alt="이미지1"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/slider02.jpg" alt="이미지2"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/slider03.jpg" alt="이미지3"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/slider04.jpg" alt="이미지4"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="img/slider05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-javascript"> .slider__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.slider__img {
+    width: 800px;
+    height: 480px;  
+    overflow : hidden 
+}
+.slider__inner {        
+    display: flex;         
+    width: 4000px;    
+    position: relative;  /* left를 사용하기 위해*/               
+}
+.slider {            
+    width: 800px;
+    position: relative;
+}
+.slider::before {
+ position: absolute;
+ left: 5px;
+ top: 5px;
+ background: rgba(0,0,0,0.4);
+ color: #fff;
+ padding: 5px 10px 3px;
+}
+.slider:nth-child(1)::before { content: '이미지1';}
+.slider:nth-child(2)::before { content: '이미지2';}
+.slider:nth-child(3)::before { content: '이미지3';}
+.slider:nth-child(4)::before { content: '이미지4';}
+.slider:nth-child(5)::before { content: '이미지5';}
+
+</code></pre>                                                   
+                                </div>
+                                <div>
+    <pre><code class="language-javascript">const sliderWrap = document.querySelector(".slider__wrap"); 
+        const sliderimg = document.querySelector(".slider__img");  
+        const sliderInner = document.querySelector(".slider__inner") 
+        const slider = document.querySelectorAll(".slider");           
+
+        console.log(slider)
+
+
+        let currentIndex = -1;   
+        let sliderCount = slider.length; 
+        setInterval(() => {
+            
+         
+
+                (currentIndex &lt; sliderCount - 1) ?  currentIndex++ : currentIndex = 0;      
+                
+                sliderInner.style.left = -800 * currentIndex + "px";
+                sliderInner.style.transition = "all 0.6s ease "
+
+        }, 2000)
+
+    </code></pre>  
+                                </div>
+                                <div>
+    <pre><code class="language-javascript">
+
+    </code></pre>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>   
+<!-- //info -->
+
+
+
+
+<!-- script -->
+   
+<script src="../assets/js/gsap.min.js"></script>
+<script src="../assets/js/highright.js"></script>
+<script src="../assets/js/custom.js"></script>
+<script>      
+    modal();
+    highlight();
+    tabMenu();  
+      
+        
+        //slider01
+      
+
+               // currentIndex++;
+
+                // let currentIndex = (currentIndex+1)%5;
+
+                // if(currentIndex< sliderCount -1){               
+                //     currentIndex++;
+                // } else {
+                //     currentIndex = 0;
+                // }
+
+                   // let sliderInner01 = `${-800*currentIndex}px `
+                // sliderInner.style.left = sliderInner01
+
+                // sliderInner.style.left = -800 * currentIndex + "px";
+                // sliderInner.style.transition = "all 0.6s ease "
+
+        const sliderWrap = document.querySelector(".slider__wrap"); 
+        const sliderimg = document.querySelector(".slider__img");   //이미지 한칸만 보이는 영역
+        const sliderInner = document.querySelector(".slider__inner") //이미지 움직이는 영역
+        const slider = document.querySelectorAll(".slider");            //5개 이미지 저장
+
+        console.log(slider)
+
+
+        let currentIndex = -1;   //첫 번째 이미지(현재 보이는 이미지)
+        let sliderCount = slider.length;  //사진의 갯수를 저장한다.
+        setInterval(() => {
+            
+         
+
+                (currentIndex < sliderCount - 1) ?  currentIndex++ : currentIndex = 0;      // currentIndex가 4이하를 만족하면 1을 더해준다.
+                
+                sliderInner.style.left = -800 * currentIndex + "px"; //sliderInner를 -800*currentIndex 만큼 이동시켜 이미지가 바뀐거 처럼 보이게 한다.
+                sliderInner.style.transition = "all 0.6s ease " // sliderInner의 값이 바뀔때 사용되는 transition = "all 0.6s ease " 을 추가해준다.
+
+            //    //gsap 애니메이션
+            //    gsap.to(sliderInner, {                       //sliderInner를 작동시간을0.4s  left로 -800* currentIndex  속도를 expo.out으로 설정
+            //        duration: 0.4, 
+            //        left: -800 *currentIndex, 
+            //        ease: "expo.out"})
+           
+        }, 2000)
+
+        
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    const modal = function(){
+        $(".source-btn").click(()=>{
+            $("#modal").addClass("show");
+        });
+        $(".modal-close").click(()=>{
+            $("#modal").removeClass("show");
+        })
+    }
+    modal(); -->
+</script>
+</body>
+</html>

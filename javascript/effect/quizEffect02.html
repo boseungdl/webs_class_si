@@ -570,6 +570,48 @@
             animation: none;
         }
 
+          /* modal */
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    transform: scale(0);
+}
+#modal.show {
+    animation: foldOut 1s ease forwards;            
+}  
+#modal.show.hide {
+    animation: foldIn 1s 0.3s ease backwards;
+}     
+#modal.show .modal-wrap {
+    animation: zoomOut 0.5s 1s ease forwards;
+}
+#modal.show.hide .modal-wrap {
+    animation: zoomIn 0.5s ease forwards;
+}
+@keyframes foldOut {
+    0%   {transform: scaleX(0) scaleY(0.005)}
+    50%  {transform: scaleX(1) scaleY(0.005)}
+    100% {transform: scaleX(1) scaleY(1)}
+}
+@keyframes foldIn {
+    0%   {transform: scaleX(1) scaleY(1)}
+    50%  {transform: scaleX(1) scaleY(0.005)}
+    100% {transform: scaleX(0) scaleY(0.005)}
+}
+@keyframes zoomOut {
+    0%   {transform: scaleX(0)}
+    100% {transform: scaleX(1)}
+}
+@keyframes zoomIn {
+    0%   {transform: scaleX(1)}
+    100% {transform: scaleX(0)}
+}
+
       
  
     </style>
@@ -631,7 +673,7 @@
         </div>
         
         <div class="quiz__source">
-            <button>소스 보기</button>
+            <button class="source-btn">소스 보기</button>
         </div>
     </main>
 <!-- //main -->
@@ -644,7 +686,7 @@
 <!-- //footer -->
 
 
-
+    <script src="../assets/js/custom.js"></script>
     <script>
         const quizType = document.querySelector(".quiz__type")//퀴즈 종류
         const quizNumber = document.querySelector(".quiz__number")  //퀴즈번호
