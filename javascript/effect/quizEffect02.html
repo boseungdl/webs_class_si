@@ -652,6 +652,10 @@
         const quizConfirm = document.querySelector(".quiz__confirm")//정답 확인 버튼
         const quizResult = document.querySelector(".quiz_result")   //정답 결과
         const quizDog = document.querySelector(".quiz__view .dog") //강아지
+        const quizView = document.querySelector(".quiz__input") //사용자 입력창
+        const quizTrue = document.querySelector(".quiz__view .true") //사용자 입력창
+        const quizFalse = document.querySelector(".quiz__view .false") //사용자 입력창
+
 
         //문제 정보
         const answerType = "javascript";
@@ -672,6 +676,24 @@
             quizResult.style.display = "block";
             quizDog.classList.add("like");
         })
+        function confirm(){
+            quizView.addEventListener("keydown", (e) => {
+                const key = e.keyCode;
+            if(quizView.value == answerResult && key == 13){
+                quizFalse.style.opacity = "0";
+                quizTrue.style.opacity = "1";
+            } else if(quizView.value !== answerResult && key == 13) {
+                quizFalse.style.opacity = "1";
+            }
+        })
+        }
+        confirm();
+        
+      
+
+
+
+
     </script>
 </body>
 </html>
