@@ -4,120 +4,594 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슬라이드 이펙트</title>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/atom-one-dark.min.css">
+    <title>퀴즈 이펙트</title>
     <style>
-       * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'NexonLv1Gothic';
-}
-a {
-    text-decoration: none;
-    color: #fff;
-    transition: all 0.2s;
-}
-li {
-    list-style: none;
-}
-img {
-    width: 100%;
-    vertical-align: top;   
-}
-body {
-    width: 100%;
-    height: 100vh;
-    background-image: url(../../effect/img/slider01.jpg);
-    background-size: cover;
-    background-position: center center;
-    overflow: hidden;
-    color: #fff;
-}
-body.img01 {
-    background-image: url(../img/image01.jpg);
-}
-body.img02 {
-    background-image: url(../img/image06.jpg);
-}
-body.img03 {
-    background-image: url(../img/image03.jpg);
-}
-body.img04 {
-    background-image: url(../img/image04.jpg);
-}
-body.img05 {
-    background-image: url(../img/image05.jpg);
-}
-body::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(36, 54, 61, 0.8);
-    z-index: -1;
-}
-/* info */
-.title {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-}
-.title h1 {
-    font-size: 34px;
-    border-bottom: 1px dashed #fff;
-    margin-bottom: 8px;
-    padding-bottom: 5px;
-}
-.title p {
-    font-size: 16px;
-}
-.number {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
-.number li {
-    display: inline;
-}
-.number li a {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #fff;
-    border-radius: 10px;
-    text-align: center;
-    line-height: 30px;
-    font-size: 12px;
-}
-.number li a:hover,
-.number li.active a  {
-    background: #fff;
-    color: #000;
-}
-.source {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-}
-.source button {
-    border: 1px solid #fff;
-    background: transparent;
-    font-family: 'NexonLv1Gothic';
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 30px;
-    border-radius: 50px;
-    transition: all 0.2x;
-    cursor: pointer;
-}
-.source button:hover {
-    background: #fff;
-    color: #000;
-}
-/* modal */
+        @font-face {
+            font-family: 'DungGeunMo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Cafe24Dangdanghae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        *, *:before, *:after {
+            box-sizing:border-box;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: 'DungGeunMo';   
+        }
+        a {
+            text-decoration: none;
+        }
+        body {
+            background-color: #f6f6f6;
+            background-image:
+                linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+                linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+                linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+                linear-gradient(#cdcccc, #cdcccc);
+            background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+        }
+
+        #header {
+            position: absolute;
+            left: 0; top: 0; 
+            width: 100%;
+            background: #262626;
+            color: #fff;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;  
+            align-items: center;     
+            z-index: 10;    
+        }
+        #header::before {
+            content: '';
+            border: 4px ridge #a3a3a3;
+            position: absolute;
+            left: 5px; top: 5px;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            z-index: -1;
+        }
+        #header h1 {
+            padding: 3px 0 6px 10px;
+        }
+        #header nav li {
+            list-style: none;
+            display: inline;            
+        }
+        #header nav li a {
+            color: #fff;
+            transition: all 0.2s;
+            padding: 0 10px;
+            display: inline-block;
+            border: 1px dashed #fff;
+        }
+        #header nav li.active a {
+            background: #fff;
+            color: #000;
+            border: 1px dashed #000;
+        }
+        #header nav li a:hover {
+            opacity: 0.5;
+        }
+        #footer {
+            margin-top: 200px;
+            width: 100%;
+            background: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        #footer a{
+            color: #000;
+            font-size: 16px;
+        }
+
+        .quiz__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap ;
+            margin-top: 150px;
+        }
+        .quiz {
+            max-width: 500px;
+            width: 100%;
+            background: #fff;
+            border: 8px ridge #cacaca;
+            margin: 10px;
+        }
+        .quiz__type {
+            background: #cacaca;
+            text-align: center;
+            font-size: 14px;
+            color: #3b3b3b;
+            border: 3px ridge #cacaca;
+            padding: 3px 0;
+            position: relative;
+        }
+        .quiz__type::before {
+            content: '';
+            position: absolute;
+            left: 2px; top: 2px;
+            width: 5px;
+            height: 5px;
+            border: 6px ridge #cacaca;
+        }
+        .quiz__type::after {
+            content: '';
+            position: absolute;
+            right: 2px; top: 2px;
+            width: 5px;
+            height: 5px;
+            border: 6px ridge #cacaca;
+        }
+        .quiz__question {
+            border-bottom: 6px ridge #cacaca;
+            border-top: 6px ridge #cacaca;
+            padding: 13px 30px;
+            font-size: 24px;
+            line-height: 1.4;
+        }
+        .quiz__number {
+            font-family: 'Cafe24Dangdanghae';
+            color: #64a30b;
+        }
+        .quiz__ask {
+            font-family: 'Cafe24Dangdanghae';
+        }
+        .quiz__answer {
+            background: #f5f5f5;
+            
+        }
+        .quiz__view {
+            background-color: #f5f5f5;
+            position: relative;
+        }
+        .quiz__view .true {
+            position: absolute;
+            left: 70%;
+            top: 100px;
+            width: 120px;
+            height: 120px;
+            background: #f5534f;
+            border-radius: 50%;
+            z-index: 100;
+            line-height: 120px;
+            text-align: center;
+            color: #fff;
+            opacity: 0;
+        }
+        .quiz__view .false {
+            position: absolute;
+            right: 70%;
+            top: 100px;
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 100;
+            line-height: 120px;
+            text-align: center;
+            color: #f5534f;
+            opacity: 0;
+        }
+        .quiz__answer {
+            background-color: #f5f5f5;
+            border-top: 6px ridge #cacaca;
+            padding: 10px;
+        }
+        .quiz__confirm {
+            border: 6px ridge #cacaca;
+            width: 100%;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: #d6d6d6;
+            font-family: 'Cafe24Dangdanghae';
+            text-shadow: 1px 1px 1px #fff;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .quiz__confirm:hover {
+            background: #b3b3b3;
+        }
+        .quiz_result {
+            text-align: center;
+            border: 6px ridge #cacaca;
+            width: 100%;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: #fff;
+            font-family: 'Cafe24Dangdanghae';
+            text-shadow: 1px 1px 1px #fff;
+            display: none;
+        }
+        .quiz__input {
+            width: 100%;
+            border: 6px ridge #cacaca;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: #fff;
+            font-family: 'Cafe24Dangdanghae';
+            text-shadow: 1px 1px 1px #fff;
+            margin-bottom: 10px;
+        }
+
+        /* dog */
+        .dog .tail, 
+        .dog .chin, 
+        .dog .tongue::before, 
+        .dog .tongue::after, 
+        .dog .mouth, 
+        .dog .nose, 
+        .dog .teardrop, 
+        .dog .eyes, 
+        .dog .face::before, 
+        .dog .face::after, 
+        .dog .ears::before, 
+        .dog .ears::after, 
+        .wrapper {
+            transition: 0.2s ease-in;
+        } 
+        .dog {
+            padding-top: 50px;
+        }
+        .dog .head,
+        .dog .body {
+            position: relative;
+            width: 115px;
+        }
+        .dog .head {
+            height: 115px;
+            border-radius: 50% 50% 0 0;
+            margin: 0 auto;
+        }
+        .dog .ears {
+            position: relative;
+            top: -14%;
+            width: 100%;
+        }
+        .dog .ears::before, .dog .ears::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 35px;
+            height: 70px;
+            background: #CB7A1D;
+            border-top: 11px solid #F7AA2B;
+            border-left: 7px solid #F7AA2B;
+            border-right: 7px solid #F7AA2B;
+        }
+        .dog .ears::before {
+            left: 0;
+            border-radius: 50% 45% 0 0;
+        }
+        .dog .ears::after {
+            right: 0;
+            border-radius: 45% 50% 0 0;
+        }
+        .dog .face {
+            position: absolute;
+            background: #F7AA2B;
+            width: 100%;
+            height: 100%;
+            border-radius: 50% 50% 0 0;
+        }
+        .dog .face::before, .dog .face::after {
+            content: "";
+            display: block;
+            margin: auto;
+            background: #FEFEFE;
+        }
+        .dog .face::before {
+            width: 15px;
+            height: 35px;
+            margin-top: 24px;
+            border-radius: 20px 20px 0 0;
+        }
+        .dog .face::after {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            width: 60px;
+            height: 65px;
+            border-radius: 45% 45% 0 0;
+        }
+        .dog .eyes {
+            position: relative;
+            top: 29%;
+            text-align: center;
+        }
+        .dog .eyes::before, .dog .eyes::after {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            background: #451D1C;
+            margin: 0 14.5%;
+        }
+        .dog .teardrop {
+            position: absolute;
+            top: 125%;
+            left: 19%;
+            width: 6px;
+            height: 6px;
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(45deg);
+            background: #FEFEFE;
+            visibility: hidden;
+        }
+        .dog .nose {
+            position: relative;
+            top: 35%;
+            width: 16px;
+            height: 8px;
+            border-radius: 35px 35px 65px 65px;
+            background: #451D1C;
+            margin: auto;
+        }
+        .dog .mouth {
+            position: relative;
+            top: 34.5%;
+            width: 4px;
+            height: 6px;
+            margin: 0 auto;
+            text-align: center;
+            background: #451D1C;
+        }
+        .dog .mouth::before, .dog .mouth::after {
+            content: "";
+            position: absolute;
+            top: -4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 4px solid #451D1C;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            z-index: 2;
+        }
+        .dog .mouth::before {
+            transform: translateX(-89%) rotate(45deg);
+        }
+        .dog .mouth::after {
+            transform: translateX(-2px) rotate(45deg);
+        }
+        .dog .tongue {
+            position: relative;
+            z-index: 1;
+        }
+        .dog .tongue::before, .dog .tongue::after {
+            content: "";
+            position: absolute;
+        }
+        .dog .tongue::before {
+            top: 10px;
+            left: -7px;
+            width: 18px;
+            height: 0;
+            border-radius: 50%;
+            background: #451D1C;
+            z-index: -1;
+        }
+        .dog .tongue::after {
+            top: 14px;
+            left: -4px;
+            width: 12px;
+            height: 0;
+            border-radius: 20px;
+            background: #F5534F;
+            z-index: 5;
+        }
+        .dog .chin {
+            position: relative;
+            top: 47.5%;
+            margin: 0 auto;
+            width: 12px;
+            height: 12px;
+            border-top: 10px solid #E8E7EC;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-radius: 2px;
+            z-index: 0;
+        }
+        .dog .body {
+            position: relative;
+            height: 139px;
+            margin: auto;
+            z-index: 0;
+        }
+        .dog .body::before, .dog .body::after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            margin: auto;
+            background: #F7AA2B;
+        }
+        .dog .body::after {
+            top: -2px;
+            bottom: -1px;
+            width: 60px;
+            background: #FEFEFE;
+        }
+        .dog .tail {
+            position: absolute;
+            left: -60%;
+            bottom: 1px;
+            background: #F7AA2B;
+            width: 93px;
+            height: 15px;
+            transform: rotate(45deg);
+            transform-origin: 100% 50%;
+            border-radius: 25px 0 0 25px;
+            z-index: -2;
+            animation: movetail 0.1s linear infinite alternate forwards;
+            animation: none;
+        }
+        .dog .legs {
+            position: absolute;
+            bottom: 0;
+            left: -10%;
+            width: 120%;
+            height: 15%;
+            background: #F7AA2B;
+            border-radius: 10px 10px 0 0;
+        }
+        .dog .legs::before, .dog .legs::after {
+            content: "";
+            position: absolute;
+            bottom: 1px;
+            background: #CB7A1D;
+            z-index: -1;
+        }
+        .dog .legs::before {
+            left: -7.5%;
+            width: 115%;
+            height: 55%;
+            border-radius: 5px 5px 0 0;
+        }
+        .dog .legs::after {
+            left: -3.5%;
+            width: 107%;
+            height: 250%;
+            border-radius: 20px 20px 35px 35px;
+        }
+        @keyframes movetongue {
+            100% { height: 27px;}
+        }
+        @keyframes movetail {
+            0% {transform: rotate(37deg);}
+            100% {transform: rotate(52deg);}
+        }
+        @keyframes cry {
+            100% {visibility: visible;}
+        }
+        /* .dog.like */
+        .dog.like .face::before {
+            margin-top: 10px;
+        }
+        .dog.like .face::after {
+            height: 85px;
+        }
+        .dog.like .eyes {
+            top: 13%;
+        }
+        .dog.like .eyes::before,
+        .dog.like .eyes::after {
+            width: 18px;
+            height: 5px;
+            margin: 0px 12.5%;
+            transform: rotate(-37.5deg);
+            border-radius: 20px;
+        }
+        .dog.like .eyes::after {
+            transform: rotate(37.5deg);
+        }
+        .dog.like .nose {
+            top: 18%;
+        }
+        .dog.like .mouth {
+            top: 16.5%;
+        }
+        .dog.like .tongue::before {
+            height: 12px;
+        }
+        .dog.like .tongue::after {
+            height: 24px;
+            animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
+        }
+        .dog.like .chin {
+        top: 34%;
+        }
+        .dog.like .tail {
+            animation: movetail 0.1s linear infinite alternate forwards;
+        }
+        /* .dog.dislike */
+        .dog.dislike .ears::before {
+            transform: rotate(-50deg) translate(-7px, 2px);
+        }
+        .dog.dislike .ears::after {
+            transform: rotate(50deg) translate(7px, 2px);
+        }
+        .dog.dislike .face::before {
+            margin-top: 28px;
+        }
+        .dog.dislike .face::after {
+            height: 55px;
+        }
+        .dog.dislike .eyes {
+            top: 38%;
+        }
+        .dog.dislike .eyes::before,
+        .dog.dislike .eyes::after {
+            width: 18px;
+            height: 5px;
+            margin: 0px 14.5%;
+            transform: rotate(-37.5deg);
+            border-radius: 20px;
+        }
+        .dog.dislike .eyes::after {
+            transform: rotate(37.5deg);
+        }
+        .dog.dislike .teardrop {
+            animation: cry 0.1s ease-in 0.25s forwards;
+        }
+        .dog.dislike .nose {
+            top: 44%;
+        }
+        .dog.dislike .mouth {
+            top: 42%;
+        }
+        .dog.dislike .chin {
+            top: 52%;
+        }
+        .dog.dislike .tail {
+            transform: rotate(0);
+            animation: none;
+        }
+        .quiz__source {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            z-index: 2000;
+        }
+        .quiz__source button {
+            border: 1px solid #fff;
+            background: #000;
+            font-family: 'NexonLv1Gothic';
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: all 0.2x;
+            cursor: pointer;
+        }
+        .quiz__source button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+          /* modal */
 #modal {
     position: fixed;
     left: 0;
@@ -126,28 +600,24 @@ body::before {
     height: 100vh;
     background: rgba(0,0,0,0.4);
     z-index: 1000;
-    transform: scale(1);
+    transform: scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff9ae1a4;
+    font-family: "Inconsolata", monospace;
 }
+
 #modal.show {
     animation: foldOut 1s ease forwards;            
 }  
 #modal.show.hide {
     animation: foldIn 1s 0.3s ease backwards;
 }     
-.modal-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    transform: scale(1);
+.modal-close.hide {
+    display: none;
 }
-#modal.show .modal-wrap {
-    animation: zoomOut 0.5s 1s ease forwards;
-}
-#modal.show.hide .modal-wrap {
-    animation: zoomIn 0.5s ease forwards;
-}
+
 @keyframes foldOut {
     0%   {transform: scaleX(0) scaleY(0.005)}
     50%  {transform: scaleX(1) scaleY(0.005)}
@@ -166,374 +636,1344 @@ body::before {
     0%   {transform: scaleX(1)}
     100% {transform: scaleX(0)}
 }
-.modal-close {
-    margin-top: 10px;
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
+html {
+  box-sizing: border-box;
 }
-.modal-cont {       
-    opacity: 1;
-    position: relative;
-}
-.code-view {
-    width: 60vw;
-    height: 60vh;
-    background: #fff;
-    border: 1px solid #f2f2f2;
-    border-radius: 10px;
-    overflow: scroll;
 
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
-/* .code-view::-webkit-scrollbar {
-    width: 4px; 
-    display: none;
+
+
+
+body {
+ 
 }
-.code-view::-webkit-scrollbar-thumb {
-    background-color: black;
-    border-radius: 20px;
+
+.window {
+  min-width: 360px;
+  min-height: 220px;
+  background-color: #c7c7c7;
+  padding: 4px;
+  border-left: 2px solid #fcfcfc;
+  border-top: 2px solid #fcfcfc;
+  border-right: 2px solid #2a2a2a;
+  border-bottom: 2px solid #2a2a2a;
+ 
 }
-.code-view::-webkit-scrollbar-track {
-    background-color: rgb(39, 95, 99); 
+
+.title-bar {
+  background-color: #000080;
+  padding: 4px;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
-.code-view::-webkit-scrollbar-corner {
-    background-color: #282936;
-} */
-.view-header {
-    padding: 5px 0 5px 10px;
-    border-bottom: 1px solid #e2e8f0;
-    position: absolute;
-    left: 0;top: 0;
-    width: 100%;
-    height: 32px;
-    background: #fff;
-    border-radius: 5px 5px 0 0;
+.title-bar > .minimize,
+.title-bar > .maximize,
+.title-bar > .close {
+  width: 26px;
+  height: 22px;
+  background-color: #c7c7c7;
+  margin-left: 4px;
+  border-left: 2px solid #fcfcfc;
+  border-top: 2px solid #fcfcfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-.view-header > span {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    border-radius: 10px;
+.title-bar > .minimize:hover,
+.title-bar > .maximize:hover,
+.title-bar > .close:hover {
+  background-color: #bababa;
+  border-left: 2px solid #2a2a2a;
+  border-top: 2px solid #2a2a2a;
+  border-right: 2px solid #fcfcfc;
+  border-bottom: 2px solid #fcfcfc;
 }
-.view-header > span:nth-child(1) {
-    background-color: #f56565;
+.title-bar > .minimize {
+  align-items: flex-end;
 }
-.view-header > span:nth-child(2) {
-    background-color: #f6e05e;
+.title-bar > .minimize > .symbol {
+  width: 60%;
+  height: 3px;
+  background-color: #000000;
+  margin-bottom: 2px;
 }
-.view-header > span:nth-child(3) {
-    background-color: #4ebb7b;
+.title-bar > .maximize > .symbol {
+  width: 70%;
+  height: 80%;
+  border: 2px solid #000000;
+  border-top-width: 4px;
 }
-.view-title {
-    position: absolute;
-    left: 0; top: 32px;;
-    width: 100%;
-    height: 32px;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 9px 0 7px ;
-    height: 37px;          
+.title-bar > .close > .symbol {
+  width: 70%;
+  height: 3px;
+  background-color: #000000;
+  transform: rotate(45deg);
 }
-.view-title li {
-    display: inline;
+.title-bar > .close > .symbol::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #000000;
+  transform: rotate(90deg);
 }
-.view-title li a {
-    color: rgb(150, 150, 150);
-    font-size: 14px;
-    text-transform: uppercase;
-    padding: 12px 20px 10px 20px;
-    margin: 2px 5px 0 0px;
+
+.menu-bar > span {
+  padding: 8px;
+  display: inline-block;
+  cursor: pointer;
 }
-.view-title li.active a {
+.menu-bar > span.active {
     color: #000;           
     background: #ffeaea;  
 }
-.view-cont {
-    background-color: #282c34;
-    height: 100%;
-    padding-top: 65px;
+
+.menu-bar > span::first-letter {
+  text-decoration: underline;
 }
-.view-cont > div {
+.menu-bar > span:hover {
+  background-color: #bababa;
+}
+
+.content-container {
+  border-left: 2px solid #2a2a2a;
+  border-top: 2px solid #2a2a2a;
+  border-right: 2px solid #fcfcfc;
+  border-bottom: 2px solid #fcfcfc;
+  display: flex;
+}
+.content-container > .content {
+  /* display: flex; */
+  height: 260px;
+  overflow: scroll;
+  width: 500px;
+}
+.main > div {
     display: none;
 }
-.view-cont > div:first-child {
+.main > div:first-child {
     display: block;
 }
-.view pre code.hljs {
-    line-height: 1.6;
+.content-container > .content > .main,
+.content-container > .content > .scroll-left {
+  height: 100%;
+   
 }
-        
-        
-        .slider__wrap {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .slider__img {
-            width: 800px;
-            height: 480px;  
-            overflow : hidden 
-        }
-        .slider__inner {        
-            display: flex;         
-            width: 4000px;    
-            position: relative;  /* left를 사용하기 위해*/               
-        }
-        .slider {            
-            width: 800px;
-            position: relative;
-        }
-        .slider::before {
-         position: absolute;
-         left: 5px;
-         top: 5px;
-         background: rgba(0,0,0,0.4);
-         color: #fff;
-         padding: 5px 10px 3px;
-        }
-        .slider:nth-child(1)::before { content: '이미지1';}
-        .slider:nth-child(2)::before { content: '이미지2';}
-        .slider:nth-child(3)::before { content: '이미지3';}
-        .slider:nth-child(4)::before { content: '이미지4';}
-        .slider:nth-child(5)::before { content: '이미지5';}
+.content-container > .content > .main {
+  width: calc(100% - 26px);
+}
+.content-container > .content > .scroll {
+  width: 26px;
+}
 
-    
+.scroll {
+ 
+  background-color: #d7d7d7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.scroll > .progress {
+  width: 24px;
+  height: 70%;
+  cursor: pointer;
+  border-left: 2px solid #fcfcfc;
+  border-top: 2px solid #fcfcfc;
+  border-right: 2px solid #2a2a2a;
+  border-bottom: 2px solid #2a2a2a;
+  background-color: #c7c7c7;
+}
+.scroll > .progress:hover {
+  background-color: #bababa;
+}
+.scroll > .start,
+.scroll > .end {
+  width: 24px;
+  height: 22px;
+  position: relative;
+  border-left: 2px solid #fcfcfc;
+  border-top: 2px solid #fcfcfc;
+  border-right: 2px solid #2a2a2a;
+  border-bottom: 2px solid #2a2a2a;
+  background-color: #c7c7c7;
+}
+.scroll > .start:hover,
+.scroll > .end:hover {
+  background-color: #bababa;
+  border-left: 2px solid #2a2a2a;
+  border-top: 2px solid #2a2a2a;
+  border-right: 2px solid #fcfcfc;
+  border-bottom: 2px solid #fcfcfc;
+}
+.scroll > .start::after,
+.scroll > .end::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 6px;
+  left: 4px;
+  border-top: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #000000;
+}
+.scroll > .end::after {
+  transform: rotate(180deg);
+}
+.scroll.-row {
+  flex-direction: row;
+}
+.scroll.-row > .progress {
+  width: 30%;
+  height: 24px;
+}
+.scroll.-row > .start::after {
+  transform: rotate(-90deg);
+}
+.scroll.-row > .end::after {
+  transform: rotate(90deg);
+}
+
+      
+ 
     </style>
 </head>
-<body class="img02">
+<body>
+    <header id="header">
+        <h1>Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li class="active"><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- //header -->
 
-<!-- main -->
-    <main>
-        <section id="sliderType02">
-            <div class="slider__wrap">
-                <div class="slider__img">
-                    <div class="slider__inner">
-                        <div class="slider"><img src="img/slider10.jpg" alt="이미지1"></div>
-                        <div class="slider"><img src="img/slider06.jpg" alt="이미지2"></div>
-                        <div class="slider"><img src="img/slider07.jpg" alt="이미지3"></div>
-                        <div class="slider"><img src="img/slider08.jpg" alt="이미지4"></div>
-                        <div class="slider"><img src="img/slider09.jpg" alt="이미지5"></div>
-                    </div>               
+
+    <main id="main">
+        <div class="quiz__wrap">          
+            <div class="quiz">
+                <h2 class="quiz__type"></h2>
+                <h3 class="quiz__question">
+                    <span class="quiz__number"></span>
+                    <span class="quiz__ask"></span>
+                </h3>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                          <div class="ears"></div>
+                          <div class="face"></div>
+                          <div class="eyes">
+                            <div class="teardrop"></div>
+                        </div>
+                        <div class="nose"></div>
+                        <div class="mouth">
+                            <div class="tongue"></div>
+                        </div>
+                        <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                          <div class="tail"></div>
+                          <div class="legs"></div>
+                        </div>
+                      </div>
+                </div>
+                <div class="quiz__answer">
+                    <input type="text" placeholder="정답을 적어주세요!" class="quiz__input">
+                    <button class="quiz__confirm">정답 확인하기</button>
+                    <div class="quiz_result"></div>
                 </div>
             </div>
-        </section>
-    </main>
-<!-- //main -->
-
-
-<!-- info -->
-    <div class="info">
-        <div class="title">
-            <h1><a href="sliderEffect.html">Javascript Slider Effect02</a></h1>
-            <p>이미지 슬라이드 - 좌로 움직이기</p>
         </div>
-        <div class="number">
-            <ul>
-                <li><a href="sliderEffect01.html">1</a></li>
-                <li class="active"><a href="sliderEffect02.html">2</a></li>
-                <li><a href="sliderEffect03.html">3</a></li>
-                <li><a href="sliderEffect04.html">4</a></li>
-                <li><a href="sliderEffect05.html">5</a></li>
-                <li><a href="sliderEffect06.html">6</a></li>
-                <li><a href="sliderEffect07.html">7</a></li>
-                <li><a href="sliderEffect08.html">8</a></li>
-            </ul>
-        </div>
-        <div class="source">
-            <button class="source-btn">소스보기</button>
+        
+        <div class="quiz__source">
+            <button class="source-btn">소스 보기</button>
             <div id="modal">
                 <div class="modal-wrap">
-                    <div class="modal-cont">
-                        <div class="code-view">
-                            <div class="view-header" aria-hidden="true">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="view-title">
-                                <ul>
-                                    <li class="active"><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                    <li><a href="#">jquery</a></li>
-                                </ul>
-                            </div>
-                            <div class="view-cont">
+                    <div class="window">
+                        <div class="title-bar">
+                          <div class="minimize">
+                            <div class="symbol"></div>
+                          </div>
+                          <div class="maximize">
+                            <div class="symbol"></div>
+                          </div>
+                          <div class="close">
+                            <div class="symbol"></div>
+                          </div>
+                        </div>
+                        <div class="menu-bar"><span>File</span><span>Edit</span><span>View</span><span>Help</span></div>
+                        <div class="content-container">
+                           
+                          <div class="content">
+                            <div class="main">
                                 <div>
-<pre><code class="language-html">&lt;main&gt;
-&lt;section id="sliderType01"&gt;
-    &lt;div class="slider__wrap"&gt;
-        &lt;div class="slider__img"&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider01.jpg" alt="이미지1"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider02.jpg" alt="이미지2"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider03.jpg" alt="이미지3"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider04.jpg" alt="이미지4"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+<pre><code class="language-html">
+    &lt;div class="quiz__wrap"&gt;          
+        &lt;div class="quiz"&gt;
+            &lt;h2 class="quiz__type"&gt;&lt;/h2&gt;
+            &lt;h3 class="quiz__question"&gt;
+                &lt;span class="quiz__number"&gt;&lt;/span&gt;
+                &lt;span class="quiz__ask"&gt;&lt;/span&gt;
+            &lt;/h3&gt;
+            &lt;div class="quiz__view"&gt;
+                &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+                &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+                &lt;div class="dog"&gt;
+                    &lt;div class="head"&gt;
+                        &lt;div class="ears"&gt;&lt;/div&gt;
+                        &lt;div class="face"&gt;&lt;/div&gt;
+                        &lt;div class="eyes"&gt;
+                        &lt;div class="teardrop"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="nose"&gt;&lt;/div&gt;
+                    &lt;div class="mouth"&gt;
+                        &lt;div class="tongue"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="chin"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="body"&gt;
+                        &lt;div class="tail"&gt;&lt;/div&gt;
+                        &lt;div class="legs"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="quiz__answer"&gt;
+                &lt;input type="text" placeholder="정답을 적어주세요!" class="quiz__input"&gt;
+                &lt;button class="quiz__confirm"&gt;정답 확인하기&lt;/button&gt;
+                &lt;div class="quiz_result"&gt;&lt;/div&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/section&gt;
-&lt;/main&gt;
 </code></pre>
                                 </div>
-                                <div>
-<pre><code class="language-javascript"> .slider__wrap {
+<div>
+    <pre><code class="language-javascript">
+        @font-face {
+            font-family: 'DungGeunMo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Cafe24Dangdanghae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        *, *:before, *:after {
+            box-sizing:border-box;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: 'DungGeunMo';   
+        }
+        a {
+            text-decoration: none;
+        }
+        body {
+            background-color: #f6f6f6;
+            background-image:
+                linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+                linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+                linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+                linear-gradient(#cdcccc, #cdcccc);
+            background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+        }
+    
+        #header {
+            position: absolute;
+            left: 0; top: 0; 
+            width: 100%;
+            background: #262626;
+            color: #fff;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;  
+            align-items: center;     
+            z-index: 10;    
+        }
+        #header::before {
+            content: '';
+            border: 4px ridge #a3a3a3;
+            position: absolute;
+            left: 5px; top: 5px;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            z-index: -1;
+        }
+        #header h1 {
+            padding: 3px 0 6px 10px;
+        }
+        #header nav li {
+            list-style: none;
+            display: inline;            
+        }
+        #header nav li a {
+            color: #fff;
+            transition: all 0.2s;
+            padding: 0 10px;
+            display: inline-block;
+            border: 1px dashed #fff;
+        }
+        #header nav li.active a {
+            background: #fff;
+            color: #000;
+            border: 1px dashed #000;
+        }
+        #header nav li a:hover {
+            opacity: 0.5;
+        }
+        #footer {
+            margin-top: 200px;
+            width: 100%;
+            background: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        #footer a{
+            color: #000;
+            font-size: 16px;
+        }
+    
+        .quiz__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap ;
+            margin-top: 150px;
+        }
+        .quiz {
+            max-width: 500px;
+            width: 100%;
+            background: #fff;
+            border: 8px ridge #cacaca;
+            margin: 10px;
+        }
+        .quiz__type {
+            background: #cacaca;
+            text-align: center;
+            font-size: 14px;
+            color: #3b3b3b;
+            border: 3px ridge #cacaca;
+            padding: 3px 0;
+            position: relative;
+        }
+        .quiz__type::before {
+            content: '';
+            position: absolute;
+            left: 2px; top: 2px;
+            width: 5px;
+            height: 5px;
+            border: 6px ridge #cacaca;
+        }
+        .quiz__type::after {
+            content: '';
+            position: absolute;
+            right: 2px; top: 2px;
+            width: 5px;
+            height: 5px;
+            border: 6px ridge #cacaca;
+        }
+        .quiz__question {
+            border-bottom: 6px ridge #cacaca;
+            border-top: 6px ridge #cacaca;
+            padding: 13px 30px;
+            font-size: 24px;
+            line-height: 1.4;
+        }
+        .quiz__number {
+            font-family: 'Cafe24Dangdanghae';
+            color: #64a30b;
+        }
+        .quiz__ask {
+            font-family: 'Cafe24Dangdanghae';
+        }
+        .quiz__answer {
+            background: #f5f5f5;
+            
+        }
+        .quiz__view {
+            background-color: #f5f5f5;
+            position: relative;
+        }
+        .quiz__view .true {
+            position: absolute;
+            left: 70%;
+            top: 100px;
+            width: 120px;
+            height: 120px;
+            background: #f5534f;
+            border-radius: 50%;
+            z-index: 100;
+            line-height: 120px;
+            text-align: center;
+            color: #fff;
+            opacity: 0;
+        }
+        .quiz__view .false {
+            position: absolute;
+            right: 70%;
+            top: 100px;
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 100;
+            line-height: 120px;
+            text-align: center;
+            color: #f5534f;
+            opacity: 0;
+        }
+        .quiz__answer {
+            background-color: #f5f5f5;
+            border-top: 6px ridge #cacaca;
+            padding: 10px;
+        }
+        .quiz__confirm {
+            border: 6px ridge #cacaca;
+            width: 100%;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: #d6d6d6;
+            font-family: 'Cafe24Dangdanghae';
+            text-shadow: 1px 1px 1px #fff;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .quiz__confirm:hover {
+            background: #b3b3b3;
+        }
+        .quiz_result {
+            text-align: center;
+            border: 6px ridge #cacaca;
+            width: 100%;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: #fff;
+            font-family: 'Cafe24Dangdanghae';
+            text-shadow: 1px 1px 1px #fff;
+            display: none;
+        }
+        .quiz__input {
+            width: 100%;
+            border: 6px ridge #cacaca;
+            font-size: 22px;
+            padding: 13px 20px;
+            background: #fff;
+            font-family: 'Cafe24Dangdanghae';
+            text-shadow: 1px 1px 1px #fff;
+            margin-bottom: 10px;
+        }
+    
+        /* dog */
+        .dog .tail, 
+        .dog .chin, 
+        .dog .tongue::before, 
+        .dog .tongue::after, 
+        .dog .mouth, 
+        .dog .nose, 
+        .dog .teardrop, 
+        .dog .eyes, 
+        .dog .face::before, 
+        .dog .face::after, 
+        .dog .ears::before, 
+        .dog .ears::after, 
+        .wrapper {
+            transition: 0.2s ease-in;
+        } 
+        .dog {
+            padding-top: 50px;
+        }
+        .dog .head,
+        .dog .body {
+            position: relative;
+            width: 115px;
+        }
+        .dog .head {
+            height: 115px;
+            border-radius: 50% 50% 0 0;
+            margin: 0 auto;
+        }
+        .dog .ears {
+            position: relative;
+            top: -14%;
+            width: 100%;
+        }
+        .dog .ears::before, .dog .ears::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 35px;
+            height: 70px;
+            background: #CB7A1D;
+            border-top: 11px solid #F7AA2B;
+            border-left: 7px solid #F7AA2B;
+            border-right: 7px solid #F7AA2B;
+        }
+        .dog .ears::before {
+            left: 0;
+            border-radius: 50% 45% 0 0;
+        }
+        .dog .ears::after {
+            right: 0;
+            border-radius: 45% 50% 0 0;
+        }
+        .dog .face {
+            position: absolute;
+            background: #F7AA2B;
+            width: 100%;
+            height: 100%;
+            border-radius: 50% 50% 0 0;
+        }
+        .dog .face::before, .dog .face::after {
+            content: "";
+            display: block;
+            margin: auto;
+            background: #FEFEFE;
+        }
+        .dog .face::before {
+            width: 15px;
+            height: 35px;
+            margin-top: 24px;
+            border-radius: 20px 20px 0 0;
+        }
+        .dog .face::after {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            width: 60px;
+            height: 65px;
+            border-radius: 45% 45% 0 0;
+        }
+        .dog .eyes {
+            position: relative;
+            top: 29%;
+            text-align: center;
+        }
+        .dog .eyes::before, .dog .eyes::after {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            background: #451D1C;
+            margin: 0 14.5%;
+        }
+        .dog .teardrop {
+            position: absolute;
+            top: 125%;
+            left: 19%;
+            width: 6px;
+            height: 6px;
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(45deg);
+            background: #FEFEFE;
+            visibility: hidden;
+        }
+        .dog .nose {
+            position: relative;
+            top: 35%;
+            width: 16px;
+            height: 8px;
+            border-radius: 35px 35px 65px 65px;
+            background: #451D1C;
+            margin: auto;
+        }
+        .dog .mouth {
+            position: relative;
+            top: 34.5%;
+            width: 4px;
+            height: 6px;
+            margin: 0 auto;
+            text-align: center;
+            background: #451D1C;
+        }
+        .dog .mouth::before, .dog .mouth::after {
+            content: "";
+            position: absolute;
+            top: -4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 4px solid #451D1C;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            z-index: 2;
+        }
+        .dog .mouth::before {
+            transform: translateX(-89%) rotate(45deg);
+        }
+        .dog .mouth::after {
+            transform: translateX(-2px) rotate(45deg);
+        }
+        .dog .tongue {
+            position: relative;
+            z-index: 1;
+        }
+        .dog .tongue::before, .dog .tongue::after {
+            content: "";
+            position: absolute;
+        }
+        .dog .tongue::before {
+            top: 10px;
+            left: -7px;
+            width: 18px;
+            height: 0;
+            border-radius: 50%;
+            background: #451D1C;
+            z-index: -1;
+        }
+        .dog .tongue::after {
+            top: 14px;
+            left: -4px;
+            width: 12px;
+            height: 0;
+            border-radius: 20px;
+            background: #F5534F;
+            z-index: 5;
+        }
+        .dog .chin {
+            position: relative;
+            top: 47.5%;
+            margin: 0 auto;
+            width: 12px;
+            height: 12px;
+            border-top: 10px solid #E8E7EC;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-radius: 2px;
+            z-index: 0;
+        }
+        .dog .body {
+            position: relative;
+            height: 139px;
+            margin: auto;
+            z-index: 0;
+        }
+        .dog .body::before, .dog .body::after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            margin: auto;
+            background: #F7AA2B;
+        }
+        .dog .body::after {
+            top: -2px;
+            bottom: -1px;
+            width: 60px;
+            background: #FEFEFE;
+        }
+        .dog .tail {
+            position: absolute;
+            left: -60%;
+            bottom: 1px;
+            background: #F7AA2B;
+            width: 93px;
+            height: 15px;
+            transform: rotate(45deg);
+            transform-origin: 100% 50%;
+            border-radius: 25px 0 0 25px;
+            z-index: -2;
+            animation: movetail 0.1s linear infinite alternate forwards;
+            animation: none;
+        }
+        .dog .legs {
+            position: absolute;
+            bottom: 0;
+            left: -10%;
+            width: 120%;
+            height: 15%;
+            background: #F7AA2B;
+            border-radius: 10px 10px 0 0;
+        }
+        .dog .legs::before, .dog .legs::after {
+            content: "";
+            position: absolute;
+            bottom: 1px;
+            background: #CB7A1D;
+            z-index: -1;
+        }
+        .dog .legs::before {
+            left: -7.5%;
+            width: 115%;
+            height: 55%;
+            border-radius: 5px 5px 0 0;
+        }
+        .dog .legs::after {
+            left: -3.5%;
+            width: 107%;
+            height: 250%;
+            border-radius: 20px 20px 35px 35px;
+        }
+        @keyframes movetongue {
+            100% { height: 27px;}
+        }
+        @keyframes movetail {
+            0% {transform: rotate(37deg);}
+            100% {transform: rotate(52deg);}
+        }
+        @keyframes cry {
+            100% {visibility: visible;}
+        }
+        /* .dog.like */
+        .dog.like .face::before {
+            margin-top: 10px;
+        }
+        .dog.like .face::after {
+            height: 85px;
+        }
+        .dog.like .eyes {
+            top: 13%;
+        }
+        .dog.like .eyes::before,
+        .dog.like .eyes::after {
+            width: 18px;
+            height: 5px;
+            margin: 0px 12.5%;
+            transform: rotate(-37.5deg);
+            border-radius: 20px;
+        }
+        .dog.like .eyes::after {
+            transform: rotate(37.5deg);
+        }
+        .dog.like .nose {
+            top: 18%;
+        }
+        .dog.like .mouth {
+            top: 16.5%;
+        }
+        .dog.like .tongue::before {
+            height: 12px;
+        }
+        .dog.like .tongue::after {
+            height: 24px;
+            animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
+        }
+        .dog.like .chin {
+        top: 34%;
+        }
+        .dog.like .tail {
+            animation: movetail 0.1s linear infinite alternate forwards;
+        }
+        /* .dog.dislike */
+        .dog.dislike .ears::before {
+            transform: rotate(-50deg) translate(-7px, 2px);
+        }
+        .dog.dislike .ears::after {
+            transform: rotate(50deg) translate(7px, 2px);
+        }
+        .dog.dislike .face::before {
+            margin-top: 28px;
+        }
+        .dog.dislike .face::after {
+            height: 55px;
+        }
+        .dog.dislike .eyes {
+            top: 38%;
+        }
+        .dog.dislike .eyes::before,
+        .dog.dislike .eyes::after {
+            width: 18px;
+            height: 5px;
+            margin: 0px 14.5%;
+            transform: rotate(-37.5deg);
+            border-radius: 20px;
+        }
+        .dog.dislike .eyes::after {
+            transform: rotate(37.5deg);
+        }
+        .dog.dislike .teardrop {
+            animation: cry 0.1s ease-in 0.25s forwards;
+        }
+        .dog.dislike .nose {
+            top: 44%;
+        }
+        .dog.dislike .mouth {
+            top: 42%;
+        }
+        .dog.dislike .chin {
+            top: 52%;
+        }
+        .dog.dislike .tail {
+            transform: rotate(0);
+            animation: none;
+        }
+        .quiz__source {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            z-index: 2000;
+        }
+        .quiz__source button {
+            border: 1px solid #fff;
+            background: #000;
+            font-family: 'NexonLv1Gothic';
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: all 0.2x;
+            cursor: pointer;
+        }
+        .quiz__source button:hover {
+            background: #fff;
+            color: #000;
+        }
+    
+            /* modal */
+    #modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    transform: scale(1);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-.slider__img {
-    width: 800px;
-    height: 480px;  
-    overflow : hidden 
-}
-.slider__inner {        
-    display: flex;         
-    width: 4000px;    
-    position: relative;  /* left를 사용하기 위해*/               
-}
-.slider {            
-    width: 800px;
+    background: #ff9ae1a4;
+    font-family: "Inconsolata", monospace;
+    }
+    .modal-wrap {
+        
+    }
+    #modal.show {
+    animation: foldOut 1s ease forwards;            
+    }  
+    #modal.show.hide {
+    animation: foldIn 1s 0.3s ease backwards;
+    }     
+    
+    @keyframes foldOut {
+    0%   {transform: scaleX(0) scaleY(0.005)}
+    50%  {transform: scaleX(1) scaleY(0.005)}
+    100% {transform: scaleX(1) scaleY(1)}
+    }
+    @keyframes foldIn {
+    0%   {transform: scaleX(1) scaleY(1)}
+    50%  {transform: scaleX(1) scaleY(0.005)}
+    100% {transform: scaleX(0) scaleY(0.005)}
+    }
+    @keyframes zoomOut {
+    0%   {transform: scaleX(0)}
+    100% {transform: scaleX(1)}
+    }
+    @keyframes zoomIn {
+    0%   {transform: scaleX(1)}
+    100% {transform: scaleX(0)}
+    }
+    @import url("https://fonts.googleapis.com/css?family=Inconsolata");
+    html {
+    box-sizing: border-box;
+    }
+    
+    *,
+    *::after,
+    *::before {
+    box-sizing: inherit;
+    }
+    
+    
+    
+    body {
+    
+    }
+    
+    .window {
+    min-width: 360px;
+    min-height: 220px;
+    background-color: #c7c7c7;
+    padding: 4px;
+    border-left: 2px solid #fcfcfc;
+    border-top: 2px solid #fcfcfc;
+    border-right: 2px solid #2a2a2a;
+    border-bottom: 2px solid #2a2a2a;
+    
+    }
+    
+    .title-bar {
+    background-color: #000080;
+    padding: 4px;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    }
+    .title-bar > .minimize,
+    .title-bar > .maximize,
+    .title-bar > .close {
+    width: 26px;
+    height: 22px;
+    background-color: #c7c7c7;
+    margin-left: 4px;
+    border-left: 2px solid #fcfcfc;
+    border-top: 2px solid #fcfcfc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    }
+    .title-bar > .minimize:hover,
+    .title-bar > .maximize:hover,
+    .title-bar > .close:hover {
+    background-color: #bababa;
+    border-left: 2px solid #2a2a2a;
+    border-top: 2px solid #2a2a2a;
+    border-right: 2px solid #fcfcfc;
+    border-bottom: 2px solid #fcfcfc;
+    }
+    .title-bar > .minimize {
+    align-items: flex-end;
+    }
+    .title-bar > .minimize > .symbol {
+    width: 60%;
+    height: 3px;
+    background-color: #000000;
+    margin-bottom: 2px;
+    }
+    .title-bar > .maximize > .symbol {
+    width: 70%;
+    height: 80%;
+    border: 2px solid #000000;
+    border-top-width: 4px;
+    }
+    .title-bar > .close > .symbol {
+    width: 70%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(45deg);
+    }
+    .title-bar > .close > .symbol::after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(90deg);
+    }
+    
+    .menu-bar > span {
+    padding: 8px;
+    display: inline-block;
+    cursor: pointer;
+    }
+    .menu-bar > span.active {
+    color: #000;           
+    background: #ffeaea;  
+    }
+    
+    .menu-bar > span::first-letter {
+    text-decoration: underline;
+    }
+    .menu-bar > span:hover {
+    background-color: #bababa;
+    }
+    
+    .content-container {
+    border-left: 2px solid #2a2a2a;
+    border-top: 2px solid #2a2a2a;
+    border-right: 2px solid #fcfcfc;
+    border-bottom: 2px solid #fcfcfc;
+    display: flex;
+    }
+    .content-container > .content {
+    /* display: flex; */
+    height: 260px;
+    overflow: scroll;
+    
+    }
+    .main > div {
+    display: none;
+    }
+    .main > div:first-child {
+    display: block;
+    }
+    .content-container > .content > .main,
+    .content-container > .content > .scroll-left {
+    height: 100%;
+    
+    }
+    .content-container > .content > .main {
+    width: calc(100% - 26px);
+    }
+    .content-container > .content > .scroll {
+    width: 26px;
+    }
+    
+    .scroll {
+    
+    background-color: #d7d7d7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    }
+    .scroll > .progress {
+    width: 24px;
+    height: 70%;
+    cursor: pointer;
+    border-left: 2px solid #fcfcfc;
+    border-top: 2px solid #fcfcfc;
+    border-right: 2px solid #2a2a2a;
+    border-bottom: 2px solid #2a2a2a;
+    background-color: #c7c7c7;
+    }
+    .scroll > .progress:hover {
+    background-color: #bababa;
+    }
+    .scroll > .start,
+    .scroll > .end {
+    width: 24px;
+    height: 22px;
     position: relative;
-}
-.slider::before {
- position: absolute;
- left: 5px;
- top: 5px;
- background: rgba(0,0,0,0.4);
- color: #fff;
- padding: 5px 10px 3px;
-}
-.slider:nth-child(1)::before { content: '이미지1';}
-.slider:nth-child(2)::before { content: '이미지2';}
-.slider:nth-child(3)::before { content: '이미지3';}
-.slider:nth-child(4)::before { content: '이미지4';}
-.slider:nth-child(5)::before { content: '이미지5';}
-
-</code></pre>                                                   
-                                </div>
-                                <div>
-    <pre><code class="language-javascript">const sliderWrap = document.querySelector(".slider__wrap"); 
-        const sliderimg = document.querySelector(".slider__img");  
-        const sliderInner = document.querySelector(".slider__inner") 
-        const slider = document.querySelectorAll(".slider");           
-
-        console.log(slider)
-
-
-        let currentIndex = -1;   
-        let sliderCount = slider.length; 
-        setInterval(() => {
-            
-         
-
-                (currentIndex &lt; sliderCount - 1) ?  currentIndex++ : currentIndex = 0;      
-                
-                sliderInner.style.left = -800 * currentIndex + "px";
-                sliderInner.style.transition = "all 0.6s ease "
-
-        }, 2000)
-
-    </code></pre>  
-                                </div>
-                                <div>
+    border-left: 2px solid #fcfcfc;
+    border-top: 2px solid #fcfcfc;
+    border-right: 2px solid #2a2a2a;
+    border-bottom: 2px solid #2a2a2a;
+    background-color: #c7c7c7;
+    }
+    .scroll > .start:hover,
+    .scroll > .end:hover {
+    background-color: #bababa;
+    border-left: 2px solid #2a2a2a;
+    border-top: 2px solid #2a2a2a;
+    border-right: 2px solid #fcfcfc;
+    border-bottom: 2px solid #fcfcfc;
+    }
+    .scroll > .start::after,
+    .scroll > .end::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 6px;
+    left: 4px;
+    border-top: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #000000;
+    }
+    .scroll > .end::after {
+    transform: rotate(180deg);
+    }
+    .scroll.-row {
+    flex-direction: row;
+    }
+    .scroll.-row > .progress {
+    width: 30%;
+    height: 24px;
+    }
+    .scroll.-row > .start::after {
+    transform: rotate(-90deg);
+    }
+    .scroll.-row > .end::after {
+    transform: rotate(90deg);
+    }
+    </code></pre>                                                   
+                                    </div>
+                                    <div>
     <pre><code class="language-javascript">
-
     </code></pre>  
-                                </div>
+                                    </div>
+                                    <div>
+    <pre><code class="language-javascript">
+    
+    </code></pre>  
+                                    </div>
+                            </div>                               
+                          </div>
+                            <div class="scroll">
+                              <div class="start"></div>
+                              <div class="progress"></div>
+                              <div class="end"></div>
                             </div>
+                          </div>
+                          <div class="scroll -row">
+                            <div class="start"></div>
+                            <div class="progress"></div>
+                            <div class="end"></div>
+                          </div>
                         </div>
-                    </div>
-                    <button class="modal-close">닫기</button>
+                        <button class="modal-close">닫기</button>
+                        <div class="footer"></div>
+                      </div>
                 </div>
+                
             </div>
         </div>
-    </div>   
-<!-- //info -->
+    </main>
+<!-- //main -->
+
+    
+
+<footer id="footer">
+        <a href="mailto:96tmdqh@naver.com">96tmdqh@naver.com</a> 
+    </footer>
+<!-- //footer -->
 
 
 
-
-<!-- script -->
-   
 <script src="../assets/js/gsap.min.js"></script>
 <script src="../assets/js/highright.js"></script>
-<script src="../assets/js/custom.js"></script>
+
 <script>      
+   
+        const quizType = document.querySelector(".quiz__type")//퀴즈 종류
+        const quizNumber = document.querySelector(".quiz__number")  //퀴즈번호
+        const quizAsk = document.querySelector(".quiz__ask")      //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz__confirm")//정답 확인 버튼
+        const quizResult = document.querySelector(".quiz_result")   //정답 결과
+        const quizDog = document.querySelector(".quiz__view .dog") //강아지
+        const quizView = document.querySelector(".quiz__input") //사용자 입력창
+        const quizTrue = document.querySelector(".quiz__view .true") //사용자 입력창
+        const quizFalse = document.querySelector(".quiz__view .false") //사용자 입력창
+
+
+        //문제 정보
+        const answerType = "javascript";
+        const answerNum = 1;    //정답 번호
+        const answerAsk = " 객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?"//질문
+        const answerResult = "javascript" //
+
+        //문제 출력
+        quizType.textContent = answerType;
+        quizNumber.textContent = answerNum + ". ";
+        quizAsk.textContent = answerAsk;
+        quizResult.textContent = answerResult;
+
+        //정답 확인
+        //정답 버튼을 클릭하면 정답을 보이게
+        quizConfirm.addEventListener("click", () => {
+            quizConfirm.style.display = "none";
+            quizResult.style.display = "block";
+            quizDog.classList.add("like");
+        })
+        function confirm(){
+            quizView.addEventListener("keydown", (e) => {
+                const key = e.keyCode;  //발생하는 이베튼에 대한 키코드값
+            if(quizView.value == answerResult && key == 13){
+                quizDog.classList.add("like");
+                quizFalse.style.opacity = "0";
+                quizTrue.style.opacity = "1";
+            } else if(quizView.value !== answerResult && key == 13) {
+                quizDog.classList.add("dislike");
+                quizTrue.style.opacity = "0";
+                quizFalse.style.opacity = "1";
+            }
+        })
+        }
+        confirm();
+        //사용자 입력창에 사용자가 키를 누를 때 키코드의 값이 13이고 사용자가 입력한 값이 answerResult(javascript)
+        //와 같다면 quizDog에 like 클래스를 추가하여 css 변화를 주고 quizFalse의 투명도를 0으로 만든후 quizTrue의
+        //투명도를 1로 만든다.
+        //만약 사용자의 입력값이 answerResult를 제외한 어떤것이 오고 이벤트의 키코드가 13일 경우 quizDog에 dislike
+        //클래스를 추가해준 후 css 값에 변화를 주고 quizTrue의 투명도를 0으로 quizFalse의 투명도를 1로 적용시킨다.
+
+          //highlight
+  const highlight = function(){
+    hljs.highlightAll();
+  }
+ 
+  //modal
+  const modal = function(){
+     // 버튼을 클릭하면 modal 창을 보이게
+      const btn = document.querySelector(".source-btn")
+      const modal1 = document.querySelector("#modal")
+      btn.addEventListener("click", ()=>{
+          modal1.classList.add("show")
+      })
+      document.querySelector(".source-btn").addEventListener("click", () => {
+          document.querySelector("#modal").classList.add("show");
+          document.querySelector("#modal").classList.remove("hide")
+      });
+      document.querySelector(".modal-close").addEventListener("click", () => {
+          document.querySelector("#modal").classList.add("hide");
+      });       
+  }
+
+
+  //tabmenu
+      const tabMenu = function(){
+      const tabBtn = document.querySelectorAll(".menu-bar span");
+      const tabCont = document.querySelectorAll(".content-container .main > div");
+
+      //각각의 버튼을 클릭하면 경고창을
+      tabBtn.forEach((btn, index) => {     //tabBtn에 있는 모든 btn에 대해 
+          btn.addEventListener("click", () => {   //클릭했을 때 
+             // 내가 클릭하지 않은건 active 삭제  
+              // tabBtn.forEach(el => {            //tabBtn이 갖고 있는 모든 버튼에서 active클래스를 지운다.
+              //     el.classList.remove("active") 
+              // })
+              for(let i=0; i<tabBtn.length; i++){
+                  tabBtn[i].classList.remove("active")
+              }
+             
+
+              btn.classList.add("active");         //그리고 클릭한 btn만 active를 추가한다.
+              //내가 클릭한건 active 추가  
+
+              tabCont.forEach(el => {
+               el.style.display ="none"
+              })
+              tabCont[index].style.display = "block"; //tabBtn과 tabCont가 무엇이 같은지 생각해보자
+                                                     //클릭했을 때 클릭한것에 해당하는 값을 어떻게 찾아올지 생각
+          })
+
+      })
+  
+    
+  }
     modal();
     highlight();
-    tabMenu();  
-      
-        
-        //slider01
-      
-
-               // currentIndex++;
-
-                // let currentIndex = (currentIndex+1)%5;
-
-                // if(currentIndex< sliderCount -1){               
-                //     currentIndex++;
-                // } else {
-                //     currentIndex = 0;
-                // }
-
-                   // let sliderInner01 = `${-800*currentIndex}px `
-                // sliderInner.style.left = sliderInner01
-
-                // sliderInner.style.left = -800 * currentIndex + "px";
-                // sliderInner.style.transition = "all 0.6s ease "
-
-        const sliderWrap = document.querySelector(".slider__wrap"); 
-        const sliderimg = document.querySelector(".slider__img");   //이미지 한칸만 보이는 영역
-        const sliderInner = document.querySelector(".slider__inner") //이미지 움직이는 영역
-        const slider = document.querySelectorAll(".slider");            //5개 이미지 저장
-
-        console.log(slider)
-
-
-        let currentIndex = -1;   //첫 번째 이미지(현재 보이는 이미지)
-        let sliderCount = slider.length;  //사진의 갯수를 저장한다.
-        setInterval(() => {
-            
-         
-
-                (currentIndex < sliderCount - 1) ?  currentIndex++ : currentIndex = 0;      // currentIndex가 4이하를 만족하면 1을 더해준다.
-                
-                sliderInner.style.left = -800 * currentIndex + "px"; //sliderInner를 -800*currentIndex 만큼 이동시켜 이미지가 바뀐거 처럼 보이게 한다.
-                sliderInner.style.transition = "all 0.6s ease " // sliderInner의 값이 바뀔때 사용되는 transition = "all 0.6s ease " 을 추가해준다.
-
-            //    //gsap 애니메이션
-            //    gsap.to(sliderInner, {                       //sliderInner를 작동시간을0.4s  left로 -800* currentIndex  속도를 expo.out으로 설정
-            //        duration: 0.4, 
-            //        left: -800 *currentIndex, 
-            //        ease: "expo.out"})
-           
-        }, 2000)
+    tabMenu();
 
         
+      
+
 
 
 
     </script>
-
-
-
-
-
-
-
-
-
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    const modal = function(){
-        $(".source-btn").click(()=>{
-            $("#modal").addClass("show");
-        });
-        $(".modal-close").click(()=>{
-            $("#modal").removeClass("show");
-        })
-    }
-    modal(); -->
-</script>
 </body>
 </html>

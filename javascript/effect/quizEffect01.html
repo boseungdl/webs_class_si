@@ -616,13 +616,13 @@
         const answerType = "HTML";
         const answerNum = 1;    //정답 번호
         const answerAsk = "컨텐츠 구조를 정의하는 마크업 언어는 무엇일까요?"//질문
-        const answerResult = "html" //
+        const answerResult = "html" //  결과
 
         //문제 출력
-        quizType.textContent = answerType;
-        quizNumber.textContent = answerNum + ". ";
-        quizAsk.textContent = answerAsk;
-        quizResult.textContent = answerResult;
+        quizType.textContent = answerType;  //quizType에 HTML을 넣어준다.
+        quizNumber.textContent = answerNum + ". "; //quizNumber에 answerNum. 를 넣어준다.
+        quizAsk.textContent = answerAsk;    //quizAsk에 컨텐츠 구조를 정의하는 마크업 언어는 무엇일까요?텍스트를 나오게 한다.
+        quizResult.textContent = answerResult; //정답 결과에 html텍스트가 나오게 한다.
 
         //정답 확인
         //정답 버튼을 클릭하면 정답을 보이게
@@ -631,6 +631,8 @@
             quizResult.style.display = "block";
             quizDog.classList.add("like");
         })
+        // 정답 버튼을 클릭하면 정답확인 버튼이 안보이고 정답이 블럭 처리 되어서 보이게 한다.
+        //강아지에 like 클래스를 추가하여  like가 붙은  dog의 스타일을 적용시켜준다.
     </script>
 </body>
 </html>
