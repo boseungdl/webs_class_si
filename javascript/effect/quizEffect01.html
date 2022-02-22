@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
     <link rel="stylesheet" href="../assets/css/quiz.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/atom-one-dark.min.css">
     <style>
+        @import url(../assets/css/cssnexon.css);
+        @import url(../assets/css/cssitom.css);
         @font-face {
             font-family: 'DungGeunMo';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
@@ -606,7 +609,7 @@
                             <div class="symbol"></div>
                           </div>
                         </div>
-                        <div class="menu-bar"><span class="active">File</span><span>Edit</span><span>View</span><span>Help</span></div>
+                        <div class="menu-bar"><span class="active">File</span><span>Edit</span><span>View</span></div>
                         <div class="content-container">
                            
                           <div class="content">
@@ -1497,12 +1500,7 @@
                                     <div>
     <pre><code class="language-javascript">
     </code></pre>  
-                                    </div>
-                                    <div>
-    <pre><code class="language-javascript">
-    
-    </code></pre>  
-                                    </div>
+                                    </div>                                  
                             </div>                               
                           </div>
                             <div class="scroll">
@@ -1532,7 +1530,7 @@
     </footer>
 <!-- //footer -->
 
-
+    <script src="../assets/js/highright.js"></script>
     <script src="../assets/js/quiz.js"></script>    
     <script>
         const quizType = document.querySelector(".quiz__type")//퀴즈 종류

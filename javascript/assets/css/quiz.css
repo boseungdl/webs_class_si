@@ -380,6 +380,20 @@ animation: foldIn 1s 0.3s ease backwards;
 .modal-close.hide {
 display: none;
 }
+.modal-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    transform: scale(0);
+}
+#modal.show .modal-wrap {
+    animation: zoomOut 0.5s 1s ease forwards;
+}
+#modal.show.hide .modal-wrap {
+    animation: zoomIn 0.5s ease forwards;
+}
 
 @keyframes foldOut {
 0%   {transform: scaleX(0) scaleY(0.005)}
