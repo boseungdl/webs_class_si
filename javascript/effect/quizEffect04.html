@@ -744,6 +744,12 @@
                  quizResult.style.display = "none";
             }
             updateQuiz();
+            //타입, 넘버, 질문, 결과 변수가 가리키는 태그 안에 quizInfo[0] 안에 해당 키에 대한 값을 넣어준다.
+            //그리고 객관식 보기 박스 안에 4번 반복하여 quizInfo[0]의 해당 키값을 넣어준다.
+            //정답 박스를 갑춘다.
+
+
+
 
             //정답 확인
             function answerQuiz(){
@@ -767,7 +773,8 @@
             //이 함수는 
             //1. 정답확인박스를 안보이게 한다.
             //2. 객관식 보기의 수만큼 반복한다
-            //3. 보기가 트루라면
+            //3. 해당 보기에 체크가 되어있고 그 보기의 value값이 1이라면 강아지에 클래스 like를 추가한다.
+            //4. 그 외의 상황에선 강아지에 dislike를 추가하고 퀴즈정답박스를 보이게해준다.
 
             quizConfirm.addEventListener("click", answerQuiz)
 
