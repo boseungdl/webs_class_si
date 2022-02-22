@@ -1869,10 +1869,10 @@ body {
         const quizInput = document.querySelector(".quiz__input");       //input 
 
         //문제 정보
-        const answerType = "javasript";
+        const answerType = "javascript";
         const answerNum = 1;                                           
         const answerAsk = "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?";    
-        const answerResult = "javasript";
+        const answerResult = "javascript";
 
         //문제 출력
         quizType.textContent = answerType;
@@ -1881,7 +1881,7 @@ body {
         quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
 
         //정답 숨기기
-        quizResult.style.display = "none";
+        quizResult.style.display = "none";        
 
         //정답 확인
         quizConfirm.addEventListener("click", () => {
@@ -1899,6 +1899,12 @@ body {
                 quizInput.style.display = "none";
             }
         });
+        //정답확인버튼을 클릭했을 때 정답확인버튼을 없애고 정답결과를 블럭처리 해줘서 보이게 해준다.
+        //사용자가 입력한 값을 소문자로 바꿔주고 빈칸을 없애준후 유저워드 변수에 저장한다.
+        //그 후 유저워드와 결과값(answerResult)이 같다면 퀴즈 뷰에 클래스 like를 추가하여 css에 변화를 준 후에
+        //퀴즈인풋의 디스플레이를 none으로 해 없어준다.
+        //정답 외의 상황에선 퀴즈뷰에 클래스 dislike를 추가해 강아지의 표정을 울상으로 바꾼 후 
+        //퀴즈인풋의 디스플레이를 없애준다.
 
 
         const modal = function(){

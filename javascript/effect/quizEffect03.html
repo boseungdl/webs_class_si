@@ -1726,6 +1726,10 @@
             quizAsk[index].textContent = quizInfo[index].answerAsk;
             quizResult[index].textContent = quizInfo[index].answerResult;
         });
+        //quizInfo라는 배열이 갖는 요소와 요소의 수를 이용하기 위해 포이치문을 쓴다.
+        //배열이 갖는 요소의 수만큼 안의 내용을 반복한다.
+        //각각의 타입과 넘버 에스크 리절트에 부여된 인덱스 값에 해당하는 태그 안에 퀴즈 인포에서 부여된 인덱스 값의
+        //앤서타입 넘버 에스크 리저트를 넣어준다.
 
         //정답 숨기기
         quizResult.forEach(el => {
@@ -1751,6 +1755,7 @@
         
             })
         })
+        //
         modal();
         tabMenu();
     </script>   

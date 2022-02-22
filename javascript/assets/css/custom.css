@@ -40,6 +40,15 @@ body.img04 {
 body.img05 {
     background-image: url(../img/image05.jpg);
 }
+body.img06 {
+    background-image: url(../img/image06.jpg);
+}
+body.img07 {
+    background-image: url(../img/image07.jpg);
+}
+body.img08 {
+    background-image: url(../img/image08.jpg);
+}
 body::before {
     content: '';
     position: absolute;
@@ -107,6 +116,13 @@ body::before {
 .source button:hover {
     background: #fff;
     color: #000;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.attr {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
 }
 /* modal */
 #modal {
