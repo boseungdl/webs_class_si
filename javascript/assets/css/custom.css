@@ -60,6 +60,7 @@ body::before {
     z-index: -1;
 }
 /* info */
+
 .title {
     position: absolute;
     left: 20px;

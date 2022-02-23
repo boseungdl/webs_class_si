@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/atom-one-dark.min.css">
     <title>퀴즈 이펙트</title>
     <style>
         
@@ -1826,7 +1828,76 @@ body {
     </code></pre>                                                   
                                     </div>
                                     <div>
-    <pre><code class="language-javascript">
+    <pre><code class="language-javascript"> 
+        const answerType = "javascript";
+        const answerNum = 1;                                           
+        const answerAsk = "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?";    
+        const answerResult = "javascript";
+
+        quizType.textContent = answerType;
+        quizNumber.textContent = answerNum + ". ";
+        quizAsk.textContent = answerAsk;
+        quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
+
+        quizResult.style.display = "none";        
+
+        quizConfirm.addEventListener("click", () => {
+            quizConfirm.style.display = "none";
+            quizResult.style.display = "block";
+
+            const userWord = quizInput.value.toLowerCase().trim();  //사용자 데이터
+         
+            if(userWord == answerResult){
+                quizView.classList.add("like");
+                quizInput.style.display = "none";
+            } else {
+                quizView.classList.add("dislike");
+                quizInput.style.display = "none";
+            }
+        });
+     
+
+
+        const modal = function(){
+     // 버튼을 클릭하면 modal 창을 보이게
+      const btn = document.querySelector(".source-btn")
+      const modal1 = document.querySelector("#modal")
+      btn.addEventListener("click", ()=>{
+          modal1.classList.add("show")
+      })
+      document.querySelector(".source-btn").addEventListener("click", () => {
+          document.querySelector("#modal").classList.add("show");
+          document.querySelector("#modal").classList.remove("hide")
+      });
+      document.querySelector(".modal-close").addEventListener("click", () => {
+          document.querySelector("#modal").classList.add("hide");
+      });       
+  }
+
+
+      const tabMenu = function(){
+      const tabBtn = document.querySelectorAll(".menu-bar span");
+      const tabCont = document.querySelectorAll(".content-container .main > div");
+
+      tabBtn.forEach((btn, index) => {  
+          btn.addEventListener("click", () => {
+          
+              for(let i=0; i&lt;tabBtn.length; i++){
+                  tabBtn[i].classList.remove("active")
+              }
+             
+
+              btn.classList.add("active");   
+           
+
+              tabCont.forEach(el =&gt; {
+               el.style.display ="none"
+              })
+              tabCont[index].style.display = "block"; 
+                                               
+          })
+      })    
+  }
     </code></pre>  
                                     </div>                                    
                             </div>                               
@@ -1854,7 +1925,11 @@ body {
         <a href="mailto:96tmdqh@naver.com">96tmdqh@naver.com</a>
     </footer>
 
+    <script src="../assets/js/quiz.js"></script>
+    <script src="../assets/js/highright.js"></script>
     <script>
+        hljs.highlightAll();
+
         const quizType = document.querySelector(".quiz__type");         //퀴즈 종류
         const quizNumber = document.querySelector(".quiz__number");     //퀴즈 번호
         const quizAsk = document.querySelector(".quiz__ask");           //퀴즈 질문
