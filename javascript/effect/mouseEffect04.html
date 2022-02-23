@@ -144,22 +144,87 @@
                             <div class="view-cont">
                                 <div>
 <pre><code class="language-html">&lt;main&gt;
-&lt;section id="sliderType01"&gt;
-    &lt;div class="slider__wrap"&gt;
-        &lt;div class="slider__img"&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider01.jpg" alt="이미지1"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider02.jpg" alt="이미지2"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider03.jpg" alt="이미지3"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider04.jpg" alt="이미지4"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+    &lt;section id="mouseType01"&gt;
+        &lt;div class="cursor"&gt;
+       
         &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/section&gt;
+        &lt;div class="cursor-follower"&gt;&lt;/div&gt;
+
+        &lt;div class="mouse__wrap"&gt;
+            &lt;div class="mouse__img"&gt;
+                &lt;figure&gt;
+                    &lt;img src="../assets/img/image07.jpg" alt=""&gt;
+                &lt;/figure&gt;
+                &lt;figcaption&gt;
+                    &lt;p&gt;길을 잃어 헤매이는 작은 고양이는 눈이 보이지 않는다.&lt;/p&gt;
+                    &lt;p&gt;The little cat lost and lost is blind.&lt;/p&gt;
+                &lt;/figcaption&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
 &lt;/main&gt;
 </code></pre>
                                 </div>
                                 <div>
-<pre><code class="language-javascript">
+<pre><code class="language-css">.mouse__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /* cursor: none; */
+}
+.mouse__img {
+    position: relative;
+}
+.mouse__img figure {
+    position: relative;
+    width: 50vw;
+    height: 53vh;
+    /* overflow: hidden;
+    /* border: 3px solid #fff; */
+    background-color: #ccc; 
+    transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+}
+.mouse__img figure:hover {
+    transform: scale(1.025);
+}
+.mouse__img figure img {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    opacity: 0.4;
+    /* background-size: cover; */
+    object-fit: cover;
+}
+.mouse__img figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.3vw;
+    line-height: 1.6;
+    white-space: nowrap;
+}
+
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 1000;
+  user-select: none;
+  pointer-events: none;
+}
 </code></pre>                                                   
                                 </div>
                                 <div>

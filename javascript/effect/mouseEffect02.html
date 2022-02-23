@@ -141,28 +141,123 @@
                             <div class="view-cont">
                                 <div>
 <pre><code class="language-html">&lt;main&gt;
-&lt;section id="sliderType01"&gt;
-    &lt;div class="slider__wrap"&gt;
-        &lt;div class="slider__img"&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider01.jpg" alt="이미지1"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider02.jpg" alt="이미지2"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider03.jpg" alt="이미지3"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider04.jpg" alt="이미지4"&gt;&lt;/div&gt;
-            &lt;div class="slider"&gt;&lt;img src="img/slider05.jpg" alt="이미지5"&gt;&lt;/div&gt;
+    &lt;section id="mouseType01"&gt;
+        &lt;div class="cursor"&gt;
+       
         &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/section&gt;
+        &lt;div class="cursor-follower"&gt;&lt;/div&gt;
+
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;where is the &lt;span&gt;end&lt;/span&gt; of the &lt;span&gt;day&lt;/span&gt; &lt;/p&gt;
+            &lt;p&gt;&lt;span&gt;하루&lt;/span&gt;의 &lt;span&gt;끝&lt;/span&gt;은 어디있나요&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
 &lt;/main&gt;
 </code></pre>
                                 </div>
                                 <div>
-<pre><code class="language-javascript">
+<pre><code class="language-css"> .mouse__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none;
+}
+.mouse__wrap p {
+    font-size: 2.5vw;
+    line-height: 2;
+    font-weight: 300;
+}
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 400;
+}
+.mouse__wrap p span {
+    border-bottom: 0.15vw dashed orange;
+    color: orange; 
+}
+.cursor {
+    position: absolute;
+    left: 0; top:  0;
+    width: 10px;
+    height: 10px;
+    z-index: 9999;
+    border-radius: 50%;          
+    background-color: rgba(255,255,255,0.1);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s;
+}
+.cursor-follower {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.3);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.2s, border-radius 0.2s;
+}
+
+.cursor.active {
+    transform: scale(0);
+}
+.cursor-follower.active {
+    transform:  scale(10);
+    background: rgba(255, 166, 0, 0.6);
+}
+.cursor.show {
+    transform: scale(0);
+}
+.cursor-follower.show {    
+    border-radius: 10px;        
+    transform: rotateZ(300deg) scale(2);
+    background: rgb(100, 189, 155);
+}
 </code></pre>                                                   
                                 </div>
                                 <div>
-    <pre><code class="language-javascript">
+<pre><code class="language-javascript">const cursor = document.querySelector(".cursor");
+const follower = document.querySelector(".cursor-follower");
 
-    </code></pre>  
+window.addEventListener("mousemove", e => {
+
+    gsap.to(cursor, {duration: .3, left: e.pageX -5, top: e.pageY -5});
+    gsap.to(follower, {duration: .8, left: e.pageX -15, top: e.pageY -15});
+
+    document.querySelectorAll(".mouse__wrap span").forEach(el => {
+        el.addEventListener("mouseover", () => {        
+            cursor.classList.add("active");
+            follower.classList.add("active");
+        });
+        el.addEventListener("mouseout", () => {
+            cursor.classList.remove("active");
+            follower.classList.remove("active");
+        });
+    });
+
+    document.querySelectorAll(".info").forEach(el => {
+        el.addEventListener("mouseover", () => {        
+            cursor.classList.add("show");
+            follower.classList.add("show");
+        });
+        el.addEventListener("mouseout", () => {
+            cursor.classList.remove("show");
+            follower.classList.remove("show");
+        });
+    });
+
+    document.querySelector(".pageX").innerText = e.pageX;
+    document.querySelector(".pageY").innerText = e.pageY;
+})
+
+</code></pre>  
                                 </div>                               
                             </div>
                         </div>
