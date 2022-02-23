@@ -197,7 +197,7 @@
 
     const circle = document.querySelector(".cursor").getBoundingClientRect(); 
 
-  document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
+    document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
       //커서
       gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2})
 

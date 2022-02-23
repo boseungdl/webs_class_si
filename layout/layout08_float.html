@@ -9,6 +9,9 @@
         * {
             margin: 0;
         }
+        body {
+            background: #E1F5FE;
+        }
         #wrap {
             width: 1200px;
             margin: 0 auto;
@@ -24,28 +27,31 @@
             background: rgb(156, 211, 181);
         }
         #main {
-            display: flex;
-            flex-wrap: wrap;
+       
         }
         #aside {       
-            width: 30%;
-            height: 900px;
+            float: left;
+            width: 25%;
+            height: 780px;
             background: rgb(18, 75, 44);
         }
       
-        .contents01 {        
-            width: 70%;
-            height: 300px;
+        .contents01 {       
+            float: left;
+            width: 75%;
+            height: 260px;
             background: rgb(127, 168, 146);
         }
-        .contents02 {        
-            width: 70%;
-            height: 300px;
+        .contents02 {      
+            float: left;  
+            width: 75%;
+            height: 260px;
             background: rgb(96, 230, 156);
         }
-        .contents03 {        
-            width: 70%;
-            height: 300px;
+        .contents03 {   
+            float: left;     
+            width: 75%;
+            height: 260px;
             background: rgb(10, 39, 23);
         }    
         #footer {
@@ -59,49 +65,53 @@
                 width: 96%;
             }
             #aside {
-                height: 800px;
+        
             }
             .contents01 {
-                height: 400px;
+                height: 260px;
             }
             .contents02 {
-                height: 400px;
+                width: 37.5%;
+                height: 520px;
             }
             .contents03 {
-                width: 100%;
-                height: 100px;
+                width: 37.5%;
+               height: 520px;
             }
         }
         @media (max-width: 768px) {
             #wrap {
-                width: 100%;
+             width: 100%;
             }
             #aside {
-                height: 600px;
+         
             }
             .contents01 {
-                height: 600px;
+                height: 390px;
             }
             .contents02 {
-               width: 100%;
-               height: 100px;
+                width: 75%;
+                height: 390px;
             }
             .contents03 {
-                width: 100%;
-                height: 100px;
+                height: 0;
             }
         }
         @media (max-width: 600px) {
             #main {
-                flex-direction: column;
+           
             }
-            #side {
+            #aside {
                 width: 100%;
-                height: 300px;
+                height: 200px;
             }
-            #contents {
+            .contents01 {
                 width: 100%;
-                height: 400px;
+                height: 430px;
+            }
+            .contents02 {
+                width: 100%;
+                height: 150px;
             }
         }
     </style>
