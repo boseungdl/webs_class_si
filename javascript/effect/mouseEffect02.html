@@ -205,7 +205,8 @@
         gsap.to(cursor, {duration: .3, left: e.pageX -5, top: e.pageY -5});
         gsap.to(follower, {duration: .8, left: e.pageX -15, top: e.pageY -15});
 
-    
+    //마우스가 움직일 때마다 커서와 팔로워에 애니메이션 효과를 준다. (작동시간, 위치로 이동)
+
         //오버 효과
         //span 오버 했을 때 클래스 active추가/ 나갔을 때 active 삭제
         //mouseenter와over 차이점, mouseout과leave 자식포함 여부결정 //이벤트 버블링
@@ -219,7 +220,8 @@
                 follower.classList.remove("active");
             });
         });
-
+        //span에 마우스가 오버 했을 때 커서와 팔로워에 에 액티브 클래스를 추가시켜 애니메이션 효과를 준다.
+        //마우스가 벗어나면 액티브를 제거해 원래 상태로 돌아오게 한다.
         document.querySelectorAll(".info").forEach(el => {
             el.addEventListener("mouseover", () => {        
                 cursor.classList.add("show");
@@ -230,6 +232,8 @@
                 follower.classList.remove("show");
             });
         });
+           //info에 마우스가 오버 했을 때 커서와 팔로워에 에 쇼 클래스를 추가시켜 애니메이션 효과를 준다.
+        //마우스가 벗어나면 쇼를 제거해 원래 상태로 돌아오게 한다.
 
 
 
@@ -237,6 +241,7 @@
       document.querySelector(".pageX").innerText = e.pageX;
       document.querySelector(".pageY").innerText = e.pageY;
     })
+        //.pageX와 pageY 안에 마우스가 움직일 때마다 그 페이지의 x, y 값을 넣어준다.
 
  
 

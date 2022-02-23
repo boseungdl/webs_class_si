@@ -169,11 +169,7 @@
     // const circle2 = document.querySelector(".cursor").offsetWidth; //200 : border값이 들어간 상태
     const circle3 = document.querySelector(".cursor").getBoundingClientRect(); //bottom, height, left, right, top, width, x, y 값을 알려준다.
    
-
    function follow(e){
-    
-
-        console.log()
 
     gsap.to(".cursor", {duration: .3, left: e.pageX - circle3.width/2, top: e.pageY- circle3.height/2});
 
@@ -183,6 +179,8 @@
    }
 
    window.addEventListener("mousemove", follow);
+   //윈도우에서 마우스가 움직일 때 follow함수를 실행한다.
+   //팔로우 함수는 커서에 애니메이션을 준다. 커서의 
 
    
  
