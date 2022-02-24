@@ -304,12 +304,9 @@
         document.querySelector(".screenX").innerText = event.screenX;
         document.querySelector(".screenY").innerText = event.screenY;
     })
-    //해당 클래스 위치에 마우스의 위치값을 넣어준다.
-    //client 
-    //offset 
-    //page
-    //screen 화면을 기준으로 한 창의 가로 세로 좌표를 반환.
-
+    //해당 클래스 위치에 마우스가 움직일 때마다 x,y좌표값 요소의 x,y값 페이지의 x,y값,
+    // 디바이스의 x,y값을 설정해준다.
+    
     //마우스 움직이기
         window.addEventListener("mousemove", (e) => {
             // document.querySelector(".cursor").style.left = e.clientX -25 + "px"
@@ -319,6 +316,9 @@
             let y =  e.clientY -25 + "px";
             document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y
         });
+    //윈도우에서 마우스가 움직일때 커서의 속성에 x, t값을 설정한다. 
+    //x는 윈도우에서 발생하는 이벤트의 x좌표에서 -25px한 위치, y도 마찬가지로 값을 계산한 y위치를 나타내어
+    //마우스가 움직일 때마다 커서도 움직이게하는 효과를 준다.
 
  
     // const style = document.querySelectorAll(".mouse__wrap span")
@@ -351,6 +351,8 @@
                 document.querySelector(".cursor").classList.remove(attr);
             })
         })
+        //mouse__wrpa안에 있는 모든 span태그에 대해 마우스가 오버될때 클래스 커서에 
+        //attr 클래스를 추가해주고 마우스가 벗어나면 제거해줘 효과를 줫다 뺏다 한다.
 
   
 </script>

@@ -24,16 +24,17 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            /* cursor: none; */
+       
         }
         .mouse__img {
             position: relative;
+            cursor: none;
         }
         .mouse__img figure {
             position: relative;
             width: 50vw;
             height: 53vh;
-            /* overflow: hidden;
+            overflow: hidden;
             /* border: 3px solid #fff; */
             background-color: #ccc; 
             transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
@@ -64,8 +65,8 @@
         
       .cursor {
           position: absolute;
-          left: 0;
-          top: 0;
+          left: -30px;
+          top: -30px;
           width: 20px;
           height: 20px;
           border-radius: 50%;
@@ -73,6 +74,13 @@
           z-index: 1000;
           user-select: none;
           pointer-events: none;
+      }
+      .cursor ul {
+          position: absolute;
+          left: 40px; top: 0;
+      }
+      .cursor ul li {
+        white-space: nowrap;
       }
       
      
@@ -83,7 +91,7 @@
     <main>
         <section id="mouseType01">
             <div class="cursor">
-           
+              
             </div>
             <div class="cursor-follower"></div>
 
@@ -228,9 +236,28 @@
 </code></pre>                                                   
                                 </div>
                                 <div>
-    <pre><code class="language-javascript">
+<pre><code class="language-javascript">const circle = document.querySelector(".cursor").getBoundingClientRect(); 
+    
+    document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
+    
+        gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2})
 
-    </code></pre>  
+        let mousePageX = e.pageX;
+        let mousePageY = e.pageY;
+    
+        let centerPageX = window.innerWidth/2 - mousePageX;
+        let centerPageY = window.innerHeight/2 - mousePageY;
+        
+        gsap.to(".mouse__img figure img", {duration: 0.3, x: centerPageX/20, y: centerPageY/20});
+
+    
+        document.querySelector(".mousePageX").textContent = mousePageX;
+        document.querySelector(".mousePageY").textContent = mousePageY;
+        document.querySelector(".centerPageX").textContent = centerPageX;
+        document.querySelector(".centerPageY").textContent = centerPageY;
+    })
+
+</code></pre>  
                                 </div>                               
                             </div>
                         </div>
@@ -242,10 +269,10 @@
 
         <div class="attr">
             <ul>
-                <li>pageX : <span class="pageX">0</span>px</li>
-                <li>pageY : <span class="pageY">0</span>px</li>
-                <li>standardX : <span class="standardX">0</span>px</li>
-                <li>standardY : <span class="standardY">0</span>px</li>
+                <li>mousepageX : <span class="mousePageX">0</span>px</li>
+                <li>mousepageY : <span class="mousePageY">0</span>px</li>
+                <li>centerpageY : <span class="centerPageY">0</span>px</li>
+                <li>centerpageX : <span class="centerPageX">0</span>px</li>
             </ul>
         </div>
     </div>   
@@ -261,9 +288,10 @@
     // tabMenu();
 
     const circle = document.querySelector(".cursor").getBoundingClientRect(); 
+    //cursor에 대한 정보를 가져온다.
 
     document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
-      //커서
+      //
       gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2})
 
       //마우스 좌표 값
@@ -272,12 +300,31 @@
     
       //마우스 좌표 값을 가운데 초기화
       //전체 가로
-      //window.innerWidth 1720  
-      //window.outerWidth 1720  
-      let windowWidth = window.innerWidth;
-      
-      console.log(windowWidth)
+      //window.innerWidth 1920 //브라우저 크기
+      //window.outerWidth 1920 //브라우저 크기
+
+      //마우스 좌표 값을 가운데 초기화
+      //전체 길이/2
+      let centerPageX = window.innerWidth/2 - mousePageX;
+      let centerPageY = window.innerHeight/2 - mousePageY;
+     
+      //이미지 움직이기
+      //const imgMove = document.querySelector(".mouse__img figure img")
+      //imgMove.style.transform = "translate(" +centerPageX/20+ "px, ", centerPageY/20+"px)";
+
+        gsap.to(".mouse__img figure img", {duration: 0.3, x: centerPageX/20, y: centerPageY/20});
+
+      //출력
+      //document.querySelector(".pageX").textContent = centerPageX;
+      //document.querySelector(".pageY").textContent = centerPageY;
+      document.querySelector(".mousePageX").textContent = mousePageX;
+      document.querySelector(".mousePageY").textContent = mousePageY;
+      document.querySelector(".centerPageX").textContent = centerPageX;
+      document.querySelector(".centerPageY").textContent = centerPageY;
   })
+  //마우스가 클래스mouse__img 내에서 움직일 때 실행된다
+  //애니메이션으로 커서가 움직일 때마다 작동시간을 0.2초로 설정한다.
+  //또한 img태그에도 작동시간 0.3초를 설정한다. 그리고 x, y축의 값에 센터페이지 값을 넣어주어 값이 변하도록 설정한다.
 
    
  
