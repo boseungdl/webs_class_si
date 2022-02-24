@@ -36,7 +36,7 @@
             /* transition: all 1s; */
         }
         .mouse__img figure {
-            width: 50vw;
+            width: 50%;
             position: relative;
         }
         .mouse__img figure::before {
@@ -239,7 +239,7 @@
 </code></pre>                                                   
                                 </div>
                                 <div>
-<pre><code class="language-javascript">const circle = document.querySelector(".cursor").getBoundingClientRect(); //bottom, height, left, right, top, width, x, y 값을 알려준다.
+<pre><code class="language-javascript">const circle = document.querySelector(".cursor").getBoundingClientRect();
 
 function mouseMove(e){
   
@@ -264,7 +264,47 @@ function mouseMove(e){
 
 }
 
-document.addEventListener("mousemove", mouseMove)
+document.addEventListener("mousemove", mouseMove)    const circle = document.querySelector(".cursor").getBoundingClientRect(); 
+    
+function mouseMove(e){
+    
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    let centerPageX = window.innerWidth/2 - mousePageX;
+    let centerPageY = window.innerHeight/2 - mousePageY;
+
+
+    let maxPageX = Math.max(-800, Math.min(800, centerPageX));
+    let maxPageY = Math.max(-300, Math.min(300, centerPageY));
+    let anlexpageX = maxPageX * 0.12;
+    let anlexpageY = maxPageY * 0.12;
+  
+    let softPageX = 0;
+    let softpageY = 0;
+     softPageX += (anlexpageX - softPageX) * 0.4;
+     softpageY += (anlexpageY - softpageY) * 0.4;     
+
+    const imgMove = document.querySelector(".mouse__img");
+    imgMove.style.transform = "perspective(600px) rotateX("+ +softpageY+"deg) rotateY("+ -softPageX+"deg)"
+    
+
+    let circleWidth = mousePageX-circle.width/2;
+    let circleHeight = mousePageY-circle.height/2;
+   
+
+    gsap.to(".cursor", {duration: .3, left: circleWidth, top: circleHeight})
+
+   
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+    document.querySelector(".maxPageX").textContent = maxPageX;
+    document.querySelector(".maxPageY").textContent = maxPageY;
+
+}
+
 
 </code></pre>  
                                 </div>                               
@@ -304,14 +344,19 @@ document.addEventListener("mousemove", mouseMove)
         //마우스 좌표 값
         let mousePageX = e.pageX;
         let mousePageY = e.pageY;
+        //마우스 좌표의 페이지 x, y축 값을 저장한다.
 
         //마우스 좌표 기준점을 가운데로 변경
         let centerPageX = window.innerWidth/2 - mousePageX;
         let centerPageY = window.innerHeight/2 - mousePageY;
+        //윈도우의 가로와 세로의 값을 가져와 2로 나누면 중앙에 해당하다 x,y좌표값이 나온다
+        //그 값에서 마우스에 페이지값을 빼면 마우스페이지가 중앙에 있을 때 x,y 값은 0이된다.
+
 
         //최솟값 -50 최댓값은 50 설정
         let maxPageX = Math.max(-800, Math.min(800, centerPageX));
         let maxPageY = Math.max(-300, Math.min(300, centerPageY));
+        //최대값과 최소값을 설정한다.
 
         //각도 줄이는 설정
         let anlexpageX = maxPageX * 0.12;
@@ -321,15 +366,19 @@ document.addEventListener("mousemove", mouseMove)
         let softPageX = 0;
         let softpageY = 0;
          softPageX += (anlexpageX - softPageX) * 0.4;
-         softpageY += (anlexpageY - softpageY) * 0.4;      
+         softpageY += (anlexpageY - softpageY) * 0.4;     
 
         //transfirm: ratoteX(0deg) rotateY(0deg)
         const imgMove = document.querySelector(".mouse__img");
         imgMove.style.transform = "perspective(600px) rotateX("+ +softpageY+"deg) rotateY("+ -softPageX+"deg)"
+        //마우스 움직일 때 이미지도 움직이게 하기 위해 트랜스폼으로 z600px 로 3D 느낌을 주고 rotate에 설정된 소프트페이지 값이 변하면서 x,y축의  
+        //각도를 계속 변하게 해 애니메이션 효과를 준다.
 
         //원 크기
         let circleWidth = mousePageX-circle.width/2;
         let circleHeight = mousePageY-circle.height/2;
+        //이벤트가 발생할 때의 x,y좌표값에서 커서의 반지름값을 빼고 변수에 저장한다.
+        //그래야 커서중심이 기준이 된다.
 
         //커서
         gsap.to(".cursor", {duration: .3, left: circleWidth, top: circleHeight})
@@ -341,13 +390,11 @@ document.addEventListener("mousemove", mouseMove)
         document.querySelector(".centerPageY").textContent = centerPageY;
         document.querySelector(".maxPageX").textContent = maxPageX;
         document.querySelector(".maxPageY").textContent = maxPageY;
+        //각각의 클래스 안에 텍스트값을 나타내는 변수를 넣어 값이 화면에 나오도록 설정한다.
 
     }
-
-
-
-
     document.addEventListener("mousemove", mouseMove)
+    //마우스가 움직일 때 mouseMove 함수를 실행한다.
 
   
   
