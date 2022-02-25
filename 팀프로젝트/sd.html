@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @font-face {
+    font-family: 'BMJua';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.ttf') format("truetype");
+    font-display: swap;
+} 
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing:border-box;
+        font-family: 'BMJua';
+    }  
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    #wrap {}
+    .headerbg {
+   
+        width: 100%;
+        height: 800px;
+        background: url(img/phone.png) no-repeat right;
+        background-color: #284abe;
+        color: #fff;
+    }
+    #header {
+        width: 1340px;
+        height: 90px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #header .headerleft {
+        display: flex;
+        align-items: center;
+    }
+    #header .logo {
+        width: 70px;
+        height: 70px;
+        background: url(img/조별logo.jpg);     
+    }
+    #header .logo+a {
+        font-size: 30px;
+    }
+    #header ul {
+        display: flex;
+    }
+    #header ul li {
+        margin-left: 50px;
+        list-style: none;
+    }
+    #header .icon {
+        display: flex;        
+    }
+    #header .icon01 {
+        width: 30px;
+        height: 30px;
+        background: url(img/Facebook.jpg);
+    }
+    #header .icon02 {
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        background: url(img/Facebook.jpg);
+    }
+    #header .icon03 {
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        background: url(img/Facebook.jpg);
+    }
+
+
+    #banner {
+        width: 1340px;
+        height: 710px;
+        margin: 75px auto;
+    }
+    #banner h1 {
+        font-weight: normal;
+        font-size: 130px;
+        margin-bottom: 50px;
+    }
+    #banner p {
+        font-size: 70px;
+    }
+    #banner span {
+        display: inline-block;
+        margin-top: 50px;
+        font-size: 32px;
+    }
+    #banner button {
+        margin-top: 30px;
+        width: 189px;
+        height: 37.6px;
+        padding: 10px 19.5px 11.6px;
+        box-shadow: 0 4px 0 0 #202020;
+        border: solid 1px #1c1c1d;
+        border-radius: 9px;
+        background-color: #ffc636;
+    }
+    #contents{
+        width: 1340px;
+        height: 1800px;
+        margin: 75px auto;
+    }
+    #contents .contents01 {
+        display: flex;
+        color: #000;
+    }
+    #contents .contents01 .con01left {}
+    #contents .contents01 .con01left h2 {
+        font-size: 48px;
+        margin-bottom: 24px;
+    }
+    #contents .contents01 .con01left p {
+        font-size: 24px;
+        color: #474a57;
+        line-height: 1.5;
+    }
+    #contents .contents01 .con01left button {
+        width: 189px;
+        height: 48.1px;
+        padding: 16px 22px 16.1px;
+        box-shadow: 0 4px 0 0 #202020;
+        border: solid 1px #1c1c1d;
+        border-radius: 5px;
+        background-color: #4f66af;
+        margin-left: 100px;
+        margin-top: 70px;
+    }
+    #contents .contents01 .computer {
+        background: url(img/computer.jpg) no-repeat center center/contain;
+        width: 750px;
+        height: 480px;
+        margin-top: 30px;
+        margin-left: 80px;
+    }
+    .contents02 {
+        margin: 150px auto;        
+    }
+    .contents02 .buttons {
+        width: 1000px;
+        display: flex;  
+        justify-content: space-between;
+        margin: 150px auto;
+    }
+    .button {
+        width: 100px;
+        height: 150px;        
+        background: url(img/조별button.jpg) no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+    }   
+    .button02 {
+        background: url(img/조별active버튼.jpg) no-repeat;
+    }
+    .button span {
+        font-size: 18px;
+        color: #474a57;
+    }
+    .button__info {
+        font-size: 54px;
+        text-align: center;
+    }
+    .button__info span {
+        display: inline-block;
+        margin-bottom: 50px;
+
+    }
+    .button__info p {
+        font-size: 22px;
+        line-height: 1.5;
+        letter-spacing: 0.45px;
+        color: #424b5a;
+    }
+    .contents03 {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .contents03 .span01 {
+        display: block;
+        font-size: 45px;
+        margin-bottom: 25px;
+    }
+    .contents03 .span02 {
+        font-size: 18px;
+        color: #474a57;
+    }
+    .contents03 .box {
+        margin-top: 75px;
+        display: flex;        
+        justify-content: center;
+    }
+    .contents03 .inbox {
+        width: 400px;
+        height: 230px;
+        background: url(img/mountain.png) #00c6ae no-repeat 20px 20px;
+        border-radius: 12.5px;
+        box-shadow: 2px 5px 2px 2px #202020;
+        margin-right: 30px;
+    }
+    .contents03 .inbox:last-child {
+        margin-right: 0;
+    }
+    .contents03 .inbox h3 {
+        padding-top: 40px;
+        margin: 0 0 40px 120px;
+        font-size: 30.1px;
+    }
+    .contents03 .inbox p {
+        font-size: 20.1px;
+        text-align: left;
+        margin: 0 10px 0 28px;
+    }
+    .contents03 .box .resent {
+        background-color: #4f66af;
+    }
+    .contents03 .box .comunity {
+        background-color: #f589b7;
+    }
+    #keyword {
+        width: 100%;
+        height: 1065px;
+        background-color: #fa6648;
+         text-align: center;
+         display: flex;
+         justify-content: center;
+    }
+    .kewordimg {
+        width: 1550px;
+        margin: 75px 0 75px 0;
+    }
+    .kewordimg h3 {
+        font-size: 45px;
+        color: #3f1a12;
+        margin-bottom: 125px;
+    }
+    .kewordimg .imgslide {
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .leftarrow {
+        margin-right: 50px;
+        margin-top: 200px;
+        width: 70px;
+        height: 70px;
+        background: url(img/leftArrow.png) no-repeat center center ;
+    }
+    .rightarrow {
+        margin-left: 50px;
+        margin-top: 200px;
+        width: 70px;
+        height: 70px;
+        background: url(img/right_arrow.png) no-repeat center center ;
+    }
+    .imgslide .img01 {
+        margin-top: 60px;
+        background: url(img/조별사진400_1.jpg) no-repeat;
+        width: 350px;
+        height: 350px;
+    }
+    .imgslide .img02 {
+        
+        background: url(img/조별사진500.jpg) no-repeat;
+        width: 500px;
+        height: 500px;
+    }
+    .imgslide .img03 {
+        margin-top: 60px;
+        background: url(img/조별400_2.png) no-repeat;
+        width: 350px;
+        height: 350px;
+    }
+    .kewordimg span {
+        margin-top: 80px;
+        font-size: 24px;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .kewordimg a {
+        font-size: 52px;
+        color: #000;
+    }
+    .kewordflow h2 {
+      text-align: center;
+      font-size: 80px;
+     margin-top: 200px;
+    }
+    .kewordflow {
+        width: 1870px;
+        height: 1000px;
+        background: url(img/affinity.jpg);
+        margin: 0 auto;
+    }
+    #wireframe {
+        width: 100%;
+        height: 1500px;
+        background-color: #00c6ae;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        
+    }
+    #wireframe .wireimg {
+        width: 1645px;
+        height: 1210px;
+        background: url(img/wireframe.png) no-repeat;
+        margin: 150px auto;
+    }
+   
+    
+
+   
+</style>
+<body>
+
+    <div class="wrap">
+        <div class="headerbg">
+            <header id="header">
+                <div class="headerleft"> 
+                    <div class="logo"></div>
+                    <a href="">방역투게더</a>
+                </div>
+               
+                <ul>
+                    <li><a>ASDS</a></li>
+                    <li><a>SSSS</a></li>
+                    <li><a>DDDD</a></li>
+                    <li><a>SSSS</a></li>
+                </ul>
+    
+                <div class="icon">
+                    <div class="icon01"></div>
+                    <div class="icon02"></div>
+                    <div class="icon03"></div>
+                </div>
+    
+            </header>
+            <article id="banner">
+                <div class="bannerleft">
+                    <h1>방역투게더</h1>
+                    <p>지치고 힘들 때, <br>
+                        우리 함께 이겨내요.<br>
+                        
+                        <span> 모두가 힘든 시기에 방투가 함께 하겠습니다. <br>
+                        코로나에 대한 모든 정보를 제공하겠습니다.</span></p>
+                        <button>Contact</button>
+                </div>
+            </article>
+        </div>
+        <article id="contents">
+            <section class="contents01">
+                <div class="con01left">
+                    <h2>실시간 확진자를 알려줍니다.</h2>
+                    <p>실시간으로 늘어나는 국내 코로나 확진자와, 전 세계<br>
+                        확진자 수  그리고 접종 현황까지 한눈에 볼 수 있도록<br>
+                         디자인 했습니다. <br><br>
+
+                        계속되는 거리두기와 방역패스 시행으로 인해, 장소<br>
+                        별, 상황별 정책이 달라 많은 이들이 혼란스러운 상황<br>
+                        입니다. <br><br>
+                        
+                        방역 투게더는 이러한 어려움을 해소하기 위해 정확한<br>
+                         정보만을 취합하여 알려줍니다.
+                        </p>
+                        <button>Contact</button>
+                </div>
+                <div class="computer"></div>
+            </section>
+            <section class="contents02">
+                <div class="buttons">
+                    <div class="button button01">장소별 방역 수칙<span>asdasd</span></div>
+                    <div class="button button02">실시간 확진자<span>asdasd</span></div>
+                    <div class="button button03">지원금 관련 정보<span>asdasd</span></div>
+                    <div class="button button04">비대면 커뮤니티<span>asdasd</span></div>
+                    <div class="button button05">다크 모드<span>asdasd</span></div>
+                </div>
+                <div class="button__info">
+                    <span>방역투게더는 ~~합니다.</span><br>
+                    <P>2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한 시간이였습니다.<br>
+                        방역 투게더는 여러개의 테마를 가진 방을 만들어<br>
+                        관심사가 비슷한 사람들끼리 모여 그 동안 못 다한 대화를 나눕니다.
+                   
+                        </P>
+                </div>
+            </section>
+            <section class="contents03">
+                <span class="span01">UI/UX 전략</span>
+                <span class="span02">Top Web Development Specialists</span>
+                <div class="box">
+                    <div class="inbox ul">
+                        <h3>심플하고 효율적인 <br>
+                            UI 디자인</h3>
+                            <P>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. </P>
+                    </div>
+                    <div class="inbox resent">
+                        <h3>최신 정보를 <br>
+                            빠르게 업데이트</h3>
+                            <P>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. </P>
+                    </div>
+                    <div class="inbox comunity">
+                        <h3>비대면 커뮤니티 <br>
+                            컨텐츠 활성화</h3>
+                            <P>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. </P>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article id="keyword">
+            <div class="kewordimg">
+                <h3>keword 정리</h3>
+                <div class="imgslide">
+                    <div class="leftarrow"></div>
+                    <div class="img01"></div>
+                    <div class="img02"></div>
+                    <div class="img03"></div>
+                    <div class="rightarrow"></div>
+                </div>
+                <span>Team Project</span>
+                <a href="#">방역투게더</a>
+            </div>
+        </article>
+        <article id="affinity">
+         
+            <div class="kewordflow">
+                <h2>Affinity Diagram</h2>
+            </div>
+        </article>
+        <article id="wireframe">
+            <div class="wireimg"></div>
+        </article>
+        
+    </div>
+    
+    <script>
+        const Button = document.querySelectorAll(".button");
+        
+        Button.forEach(el => {
+            el.addEventListener("click", (e) => {
+                e.style.background = "url(img/조별active버튼.jpg)"
+            })
+        })
+
+
+
+        
+    </script>
+</body>
+</html>
