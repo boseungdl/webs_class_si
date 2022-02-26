@@ -29,14 +29,14 @@
         .mouse__img {
             position: relative;
             text-align: center;
-            perspective: 600px;
+            /* perspective: 600px; */
             transform: rotateX(0deg) rotateY(0deg);
             transform-style: preserve-3d;
             will-change: transform;
             /* transition: all 1s; */
         }
         .mouse__img figure {
-            width: 50%;
+            width: 50vw;
             position: relative;
         }
         .mouse__img figure::before {
@@ -46,12 +46,13 @@
            bottom: -40px;
            width: 90%;
            height: 100px;
-           background: url(../assets/img/image09.jpg) no-repeat center center;
+           background: url(../assets/img/image09.jpg) no-repeat;
+           background-position: center center;
            background-size: 100% 40px;
            filter: blur(15px);
            opacity: 0.8;
            z-index: -1;
-
+        
         }
         .mouse__img figcaption {
             position: absolute;
