@@ -26,19 +26,19 @@ body {
     color: #fff;
 }
 body.img01 {
-    background-image: url(../img/image01.jpg);
+    background-image: url(../img/headphone.jpg);
 }
 body.img02 {
-    background-image: url(../img/image06.jpg);
+    background-image: url(../img/img02.jpg);
 }
 body.img03 {
-    background-image: url(../img/image03.jpg);
+    background-image: url(../img/img03.jpg);
 }
 body.img04 {
-    background-image: url(../img/image04.jpg);
+    background-image: url(../img/img04.jpg);
 }
 body.img05 {
-    background-image: url(../img/image05.jpg);
+    background-image: url(../img/img05.jpg);
 }
 body.img06 {
     background-image: url(../img/image06.jpg);
