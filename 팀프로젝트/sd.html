@@ -317,6 +317,37 @@
         left: 1100px;
         z-index:1;
     }
+    .im00 {
+        margin-top: 60px;
+        background: url(img/sliderImg01.png) no-repeat 0 0 /contain;
+        width: 350px;
+        height: 350px;
+        transition: all 0.6s;
+        position: absolute;
+        left: 100px;
+        z-index: 1;
+    }
+    .im01 {
+        background-image:url(img/sliderImg02.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 500px;
+        height: 500px;
+        transition: all 0.6s;
+        position: absolute;
+        left: 530px;
+        z-index: 1;
+    }
+    .im02 {
+        margin-top: 60px;
+        background: url(img/sliderImg03.png) no-repeat 0 0 /contain;
+        width: 350px;
+        height: 350px;
+        transition: all 0.6s;
+        position: absolute;
+        left: 1100px;
+    }
     .kewordimg span {
         margin-top: 280px;
         font-size: 24px;
@@ -522,6 +553,7 @@
         Button.forEach((el,i) => {
           el.addEventListener("click", () => {
               Button.forEach((el, i) => {
+              
                   el.classList.remove("active");
                   btninfo[i].classList.remove("show")
               })
@@ -552,11 +584,13 @@
        
        function ImgR(){
           Img001.forEach((el, i) => {
+             el.classList.remove("im0"+(num)%3)
              el.classList.remove("img0"+num%3)
-          //    el.classList.remove("active0"+num%3)
+          //el.classList.remove("active0"+num%3)
              num++;
              el.classList.add("img0"+num%3)
-             el.style.backgroundImage = `url(img/조별0${(i%3)}.jpg)`
+             
+             el.style.backgroundImage = `url(img/조별0${(i)}.jpg)`
           })
           num++;
         }
@@ -566,12 +600,15 @@
           Img001.forEach((el, i) => {
               num = num+3;
              el.classList.remove("img0"+(num)%3)
-             el.classList.add("img0"+(num-1)%3)
+             el.classList.remove("im0"+(num)%3)
+             el.classList.add("im0"+(num-1)%3)
              num++;
-             el.style.backgroundImage = `url(img/조별0${(i%3)}.jpg)`
+             el.style.backgroundImage = `url(img/조별0${(i)}.jpg)`
           })
+          Img01.style.zIndex + `0`
+          Img02.style.zIndex + `1`
+          Img03.style.zIndex + `2`
           num--;
-         
         }
     </script>
 </body>
