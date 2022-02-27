@@ -12,6 +12,10 @@
         @import url(../assets/css/cssitom.css);
         
         /* slider */
+
+        body::before {
+            background-color: rgba(168, 101, 84, 0.479);
+        }
         .slider__wrap {
             display: flex;
             justify-content: center;
@@ -45,11 +49,15 @@
         .slider:nth-child(3)::before { content: '이미지3';}
         .slider:nth-child(4)::before { content: '이미지4';}
         .slider:nth-child(5)::before { content: '이미지5';}
+        img {
+           width: 800px;
+           height: 480px;
+        }
 
     
     </style>
 </head>
-<body class="img02">
+<body class="img06">
 
 <!-- main -->
     <main>
@@ -57,11 +65,11 @@
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider__inner">
-                        <div class="slider"><img src="img/slider10.jpg" alt="이미지1"></div>
-                        <div class="slider"><img src="img/slider06.jpg" alt="이미지2"></div>
-                        <div class="slider"><img src="img/slider07.jpg" alt="이미지3"></div>
-                        <div class="slider"><img src="img/slider08.jpg" alt="이미지4"></div>
-                        <div class="slider"><img src="img/slider09.jpg" alt="이미지5"></div>
+                        <div class="slider"><img src="img/art01.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="img/art02.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="img/art03.jpg" alt="이미지3"></div>
+                        <div class="slider"><img src="img/art04.jpg" alt="이미지4"></div>
+                        <div class="slider"><img src="img/art05.jpg" alt="이미지5"></div>
                     </div>               
                 </div>
             </div>

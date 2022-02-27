@@ -41,13 +41,25 @@ body.img05 {
     background-image: url(../img/img05.jpg);
 }
 body.img06 {
-    background-image: url(../img/image06.jpg);
+    background-image: url(../img/img06.jpg);
 }
 body.img07 {
-    background-image: url(../img/image07.jpg);
+    background-image: url(../img/img07.jpg);
 }
 body.img08 {
-    background-image: url(../img/image08.jpg);
+    background-image: url(../img/img08.jpg);
+}
+body.img09 {
+    background-image: url(../img/img09.jpg);
+}
+body.img10 {
+    background-image: url(../img/img10.jpg);
+}
+body.img11 {
+    background-image: url(../img/img011.jpg);
+}
+body.img12 {
+    background-image: url(../img/img12.jpg);
 }
 body::before {
     content: '';

@@ -37,7 +37,7 @@
          position: absolute;
          left: 5px;
          top: 5px;
-         background: rgba(0,0,0,0.4);
+         background: rgba(0, 0, 0, 0.4);
          color: #fff;
          padding: 5px 10px 3px;
         }
@@ -47,10 +47,16 @@
         .slider:nth-child(4)::before { content: '이미지4';}
         .slider:nth-child(5)::before { content: '이미지5';}
         .slider:nth-child(6)::before { content: '이미지1';}
-    
+        body::before {
+            background-color: rgba(6, 65, 12, 0.205);
+        }
+        img {
+           width: 800px;
+           height: 480px;
+        }
     </style>
 </head>
-<body class="img03">
+<body class="img07">
 
 <!-- main -->
     <main>
@@ -58,11 +64,11 @@
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider__inner">
-                        <div class="slider"><img src="img/slider10.jpg" alt="이미지1"></div>
-                        <div class="slider"><img src="img/slider06.jpg" alt="이미지2"></div>
-                        <div class="slider"><img src="img/slider07.jpg" alt="이미지3"></div>
-                        <div class="slider"><img src="img/slider08.jpg" alt="이미지4"></div>
-                        <div class="slider"><img src="img/slider09.jpg" alt="이미지5"></div>
+                        <div class="slider"><img src="img/love01.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="img/love02.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="img/love03.jpg" alt="이미지3"></div>
+                        <div class="slider"><img src="img/love04.jpg" alt="이미지4"></div>
+                        <div class="slider"><img src="img/love05.jpg" alt="이미지5"></div>
                     </div>               
                 </div>
             </div>
