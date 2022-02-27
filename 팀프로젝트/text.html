@@ -90,7 +90,7 @@
     #banner {
         width: 1340px;
         height: 710px;
-        margin: 75px auto;
+        margin: 0 auto;
     }
     #banner h1 {
         font-weight: normal;
@@ -118,11 +118,15 @@
     #contents{
         width: 1340px;
         height: 1800px;
-        margin: 75px auto;
+        margin: 175px auto;
     }
     #contents .contents01 {
         display: flex;
         color: #000;
+        display: none;
+    }
+    #contents .contents01.show {
+        display: flex;
     }
     #contents .contents01 .con01left {}
     #contents .contents01 .con01left h2 {
@@ -187,12 +191,8 @@
     .button__info {
         font-size: 54px;
         text-align: center;
-        display: none;
+      
     }
-    .button__info.show {
-        display: block;
-    }
-    
     .button__info span {
         display: inline-block;
         margin-bottom: 50px;
@@ -207,6 +207,7 @@
     .contents03 {
         margin: 0 auto;
         text-align: center;
+      
     }
     .contents03 .span01 {
         display: block;
@@ -291,10 +292,11 @@
         background: url(img/조별00.jpg) no-repeat 0 0 /contain;
         width: 350px;
         height: 350px;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
         position: absolute;
         left: 300px;
         z-index: 1;
+      
     }
     .img01 {
         background-image:url(img/조별01.jpg);
@@ -303,7 +305,7 @@
         background-size: contain;
         width: 500px;
         height: 500px;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
         position: absolute;
         left: 530px;
         top: 10px;
@@ -314,65 +316,100 @@
         background: url(img/조별02.jpg) no-repeat 0 0 /contain;
         width: 350px;
         height: 350px;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
         position: absolute;
         left: 900px;
         z-index:1;
+      
     }
     .img03 {
         margin-top: 60px;
         background: url(img/조별03.jpg) no-repeat 0 0 /contain;
         width: 250px;
         height: 250px;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
         position: absolute;
         top: 40px;
         left: 1150px;
         z-index:0;
+        opacity: 0.9;
     }
     .img04 {
         margin-top: 60px;
+        
         background: url(img/조별04.jpg) no-repeat 0 0 /contain;
         width: 250px;
         height: 250px;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
         position: absolute;
         left: 150px;
         top: 40px;
-       
         z-index:0;
+        opacity: 0.9;
+      
     }
     .im00 {
         margin-top: 60px;
-        background: url(img/sliderImg01.png) no-repeat 0 0 /contain;
+        background: url(img/조별00.jpg) no-repeat 0 0 /contain;
         width: 350px;
         height: 350px;
-        transition: all 0.6s;
+        transition: all 0.3s ease;
         position: absolute;
-        left: 100px;
+        left: 300px;
         z-index: 1;
+      
     }
     .im01 {
-        background-image:url(img/sliderImg02.png);
+        background-image:url(img/조별01.jpg);
         background-position: 0 0;
         background-repeat: no-repeat;
         background-size: contain;
         width: 500px;
         height: 500px;
-        transition: all 0.6s;
+        transition: all 0.3s ease;
         position: absolute;
         left: 530px;
-        z-index: 1;
+        top: 10px;
+        z-index:2;
     }
     .im02 {
         margin-top: 60px;
-        background: url(img/sliderImg03.png) no-repeat 0 0 /contain;
+        background: url(img/조별02.jpg) no-repeat 0 0 /contain;
         width: 350px;
         height: 350px;
-        transition: all 0.6s;
+        transition: all 0.3s ease;
         position: absolute;
-        left: 1100px;
+        left: 900px;
+        z-index:1;
+      
     }
+    .im03 {
+        margin-top: 60px;
+        background: url(img/조별03.jpg) no-repeat 0 0 /contain;
+        width: 250px;
+        height: 250px;
+        transition: all 0.3s ease;
+        position: absolute;
+        top: 40px;
+        left: 1150px;
+        z-index:0;
+        opacity: 0.9;
+    }
+    .im04 {
+        margin-top: 60px;
+        
+        background: url(img/조별04.jpg) no-repeat 0 0 /contain;
+        width: 250px;
+        height: 250px;
+        transition: all 0.3s ease;
+        position: absolute;
+        left: 150px;
+        top: 40px;
+        z-index:0;
+        opacity: 0.9;
+      
+    }
+   
     .kewordimg span {
         margin-top: 280px;
         font-size: 24px;
@@ -454,6 +491,78 @@
             </article>
         </div>
         <article id="contents">
+            <section class="contents01 show">
+                <div class="con01left">
+                    <h2>실시간 확진자를 알려줍니다.1</h2>
+                    <p>실시간으로 늘어나는 국내 코로나 확진자와, 전 세계<br>
+                        확진자 수  그리고 접종 현황까지 한눈에 볼 수 있도록<br>
+                         디자인 했습니다. <br><br>
+
+                        계속되는 거리두기와 방역패스 시행으로 인해, 장소<br>
+                        별, 상황별 정책이 달라 많은 이들이 혼란스러운 상황<br>
+                        입니다. <br><br>
+                        
+                        방역 투게더는 이러한 어려움을 해소하기 위해 정확한<br>
+                         정보만을 취합하여 알려줍니다.
+                        </p>
+                        <button>Contact</button>
+                </div>
+                <div class="computer"></div>
+            </section>
+            <section class="contents01">
+                <div class="con01left">
+                    <h2>실시간 확진자를 알려줍니다.2</h2>
+                    <p>실시간으로 늘어나는 국내 코로나 확진자와, 전 세계<br>
+                        확진자 수  그리고 접종 현황까지 한눈에 볼 수 있도록<br>
+                         디자인 했습니다. <br><br>
+
+                        계속되는 거리두기와 방역패스 시행으로 인해, 장소<br>
+                        별, 상황별 정책이 달라 많은 이들이 혼란스러운 상황<br>
+                        입니다. <br><br>
+                        
+                        방역 투게더는 이러한 어려움을 해소하기 위해 정확한<br>
+                         정보만을 취합하여 알려줍니다.
+                        </p>
+                        <button>Contact</button>
+                </div>
+                <div class="computer"></div>
+            </section>
+            <section class="contents01">
+                <div class="con01left">
+                    <h2>실시간 확진자를 알려줍니다.</h2>
+                    <p>실시간으로 늘어나는 국내 코로나 확진자와, 전 세계<br>
+                        확진자 수  그리고 접종 현황까지 한눈에 볼 수 있도록<br>
+                         디자인 했습니다. <br><br>
+
+                        계속되는 거리두기와 방역패스 시행으로 인해, 장소<br>
+                        별, 상황별 정책이 달라 많은 이들이 혼란스러운 상황<br>
+                        입니다. <br><br>
+                        
+                        방역 투게더는 이러한 어려움을 해소하기 위해 정확한<br>
+                         정보만을 취합하여 알려줍니다.
+                        </p>
+                        <button>Contact</button>
+                </div>
+                <div class="computer"></div>
+            </section>
+            <section class="contents01">
+                <div class="con01left">
+                    <h2>실시간 확진자를 알려줍니다.</h2>
+                    <p>실시간으로 늘어나는 국내 코로나 확진자와, 전 세계<br>
+                        확진자 수  그리고 접종 현황까지 한눈에 볼 수 있도록<br>
+                         디자인 했습니다. <br><br>
+
+                        계속되는 거리두기와 방역패스 시행으로 인해, 장소<br>
+                        별, 상황별 정책이 달라 많은 이들이 혼란스러운 상황<br>
+                        입니다. <br><br>
+                        
+                        방역 투게더는 이러한 어려움을 해소하기 위해 정확한<br>
+                         정보만을 취합하여 알려줍니다.
+                        </p>
+                        <button>Contact</button>
+                </div>
+                <div class="computer"></div>
+            </section>
             <section class="contents01">
                 <div class="con01left">
                     <h2>실시간 확진자를 알려줍니다.</h2>
@@ -480,45 +589,12 @@
                     <div class="button__box"><div class="button"></div>비대면 커뮤니티<span>asdasd</span></div>
                     <div class="button__box"><div class="button"></div>다크 모드<span>asdasd</span></div>
                 </div>
-                <div class="button__info btn_place">
+                <div class="button__info">
                     <span>방역투게더는 ~~합니다.1</span><br>
                     <P>2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한 시간이였습니다.<br>
                         방역 투게더는 여러개의 테마를 가진 방을 만들어<br>
                         관심사가 비슷한 사람들끼리 모여 그 동안 못 다한 대화를 나눕니다.
-                   
-                        </P>
-                </div>
-                <div class="button__info show">
-                    <span>방역투게더는 ~~합니다.2</span><br>
-                    <P>2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한 시간이였습니다.<br>
-                        방역 투게더는 여러개의 테마를 가진 방을 만들어<br>
-                        관심사가 비슷한 사람들끼리 모여 그 동안 못 다한 대화를 나눕니다.
-                   
-                        </P>
-                </div>
-                <div class="button__info btn_money">
-                    <span>방역투게더는 ~~합니다.3</span><br>
-                    <P>2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한 시간이였습니다.<br>
-                        방역 투게더는 여러개의 테마를 가진 방을 만들어<br>
-                        관심사가 비슷한 사람들끼리 모여 그 동안 못 다한 대화를 나눕니다.
-                   
-                        </P>
-                </div>
-                <div class="button__info btn_comunity">
-                    <span>방역투게더는 ~~합니다.4</span><br>
-                    <P>2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한 시간이였습니다.
-                        그래서 준비 했습니다. 방역 투게더는 놀이터, Q&A, 토론이라는 세 가지 테마를 만들어
-                        그 안에서 회원들끼리 화상으로 얼굴을 직접 마주하고 대화를 하며 의견을 나눌 수 있는
-                        공간을 만들었습니다.                     
                     </P>
-                </div>
-                <div class="button__info btn_dark">
-                    <span>방역투게더는 ~~합니다.5</span><br>
-                    <P>2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한 시간이였습니다.<br>
-                        방역 투게더는 여러개의 테마를 가진 방을 만들어<br>
-                        관심사가 비슷한 사람들끼리 모여 그 동안 못 다한 대화를 나눕니다.
-                   
-                        </P>
                 </div>
             </section>
             <section class="contents03">
@@ -575,17 +651,17 @@
     
     <script>
         const Button = document.querySelectorAll(".button");
-        const btninfo = document.querySelectorAll(".button__info");
+        const contents = document.querySelectorAll(".contents01");
   
         Button.forEach((el,i) => {
           el.addEventListener("click", () => {
               Button.forEach((el, i) => {
               
                   el.classList.remove("active");
-                  btninfo[i].classList.remove("show")
+                  contents[i].classList.remove("show")
               })
               el.classList.add("active");
-              btninfo[i].classList.add("show")
+              contents[i].classList.add("show")
           })
         })
   
@@ -625,7 +701,7 @@
     
        function ImgL(){
           Img001.forEach((el, i) => {
-              num = num+3;
+              num = num+5;
              el.classList.remove("img0"+(num)%5)
              el.classList.remove("im0"+(num)%5)
              el.classList.add("im0"+(num-1)%5)
