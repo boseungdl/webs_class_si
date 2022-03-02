@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페럴랙스 효과</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box;
+        */
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: 'NexonLv1Gothic';
+            font-weight: 300;
+        }
+        #parallax__title {
+            padding: 20px;
+        }
+        #parallax__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 500;
+            display: inline-block;
+        }
+        #parallax__title p {
+            font-size: 16px;
+        }
+        
+        #parallax__nav {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+            background-color: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 50px;
+        }
+        #parallax__nav li {
+            list-style: none;
+            display: inline;
+        }
+        #parallax__nav a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #parallax__nav li.active a {
+            background: #fff;
+            color: #000;
+            border-radius: 50%;
+        }
+        #parallax__cont {}
+        .content__item {
+            width: 1000px;
+            background-color: rgba(255,255,255,0.3);
+        }
+        .content__item__num {}
+        .content__item__title {}
+        .content__item__imgWrap {}
+        .content__item__img {}
+        .conten__item__desc {}
+   
+        #parallax__footer {}
+    </style>
+</head>
+<body>
+
+    <header id="parallax__title">
+        <h1><a href="parallaxEffect.html">Javascript parallax Effect01</a></h1>
+        <p>페럴랙스 스크롤링 효과 - 메뉴 이동</p>
+    </header>
+
+    <nav id="parallax__nav">
+        <ul>
+            <li class="active"><a href="#section1">s1</a></li>
+            <li><a href="#section2">s2</a></li>
+            <li><a href="#section3">s3</a></li>
+            <li><a href="#section4">s4</a></li>
+            <li><a href="#section5">s5</a></li>
+            <li><a href="#section6">s6</a></li>
+            <li><a href="#section7">s7</a></li>
+            <li><a href="#section8">s8</a></li>
+            <li><a href="#section9">s9</a></li>
+        </ul>
+    </nav>
+
+
+<!-- main -->
+    <main>
+        <div id="parallax__cont">
+            <section id="section1" class="content__item">
+                <span class="content__item__num">01</span>
+                <h2 class="content__item__title">Section1</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="conten__item__desc">답은 언제나 나한테 있다. 나를 인정하자.</p>
+            </section>
+
+
+            <section id="section2" class="content__item">
+                <span class="content__item__num">02</span>
+                <h2 class="content__item__title">Section2</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="conten__item__desc">인정한 후부터 남을 볼 수 있다.</p>
+            </section>
+
+
+            <section id="section3" class="content__item">
+                <span class="content__item__num">03</span>
+                <h2 class="content__item__title">Section3</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="conten__item__desc">결과는 같지만 받아들이는 내가 다르다.</p>
+            </section>
+
+
+            <section id="section4" class="content__item">
+                <span class="content__item__num">04</span>
+                <h2 class="content__item__title">Section4</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="conten__item__desc">여유는 어쩌면 살아가는데 가장 필요한 능력이다.</p>
+            </section>
+
+
+            <section id="section5" class="content__item">
+                <span class="content__item__num">05</span>
+                <h2 class="content__item__title">Section5</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="conten__item__desc">나는 지금 여유를 찾기 위해 노력한다.</p>
+            </section>
+
+
+            <section id="section6" class="content__item">
+                <span class="content__item__num">01</span>
+                <h2 class="content__item__title">Section1</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="conten__item__desc">링의 크노에 몰려 버틴 사람은 한 걸음 다가선다.</p>
+            </section>
+
+
+            <section id="section7" class="content__item">
+                <span class="content__item__num">01</span>
+                <h2 class="content__item__title">Section1</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="conten__item__desc">시간은 절대 부족하지 않는다, </p>
+            </section>
+
+
+            <section id="section8" class="content__item">
+                <span class="content__item__num">01</span>
+                <h2 class="content__item__title">Section1</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="conten__item__desc">답은 언제나 나한테 있다. 나를 인정하자.</p>
+            </section>
+
+
+            <section id="section9" class="content__item">
+                <span class="content__item__num">01</span>
+                <h2 class="content__item__title">Section1</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="conten__item__desc">답은 언제나 나한테 있다. 나를 인정하자.</p>
+            </section>
+        </div>
+    </main>
+<!-- //main -->
+
+
+
+<!-- info -->
+    <div class="info">
+      
+    </div>
+<!-- //info -->
+</body>
+</html>
