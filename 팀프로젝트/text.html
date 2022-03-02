@@ -742,10 +742,11 @@
             })
         })
        }
+
        window.addEventListener("scroll", () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
         articles.forEach((el, index) => {
-            if(scrollTop > el.offsetTop - 4){
+            if(scrollTop > el.offsetTop - 400){
                 menu.forEach((el, index) => {
                     menu[index].classList.remove("active")
                 })
