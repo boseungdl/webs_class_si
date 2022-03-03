@@ -330,14 +330,23 @@
                 <h3>13. 내부함수</h3>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    func = str => str;
-            
-    document.write(func("함수가 실행되었습니다."));
+    function funcC(){
+        function funcA(){
+            document.write("함수가 실행되었습니다.");
+        }
+        funcA();
+        function funcB(){
+            document.write("함수가 실행되었습니다.")
+        }
+        funcB();
+    }
+    funcC();
 }</code></pre>
                 </div>                
                 <div class="result">
                     <h4>결과보기</h4>
                     <div class="result012">
+                        함수가 실행되었습니다.<br>
                         함수가 실행되었습니다.
                     </div>
                 </div>
@@ -346,17 +355,22 @@
 
              <!-- sample14 -->
              <div id="sample14" class="sample">
-                <h3>12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <h3>14. 즉시실행 함수</h3>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    func = str => str;
-            
-    document.write(func("함수가 실행되었습니다."));
+    (function (){
+        document.write("함수가 실행되었습니다.");
+    }());
+
+    (() => {
+        document.write("함수가 실행되었습니다.");
+    })();
 }</code></pre>
                 </div>                
                 <div class="result">
                     <h4>결과보기</h4>
                     <div class="result012">
+                        함수가 실행되었습니다.<br>
                         함수가 실행되었습니다.
                     </div>
                 </div>
@@ -365,12 +379,13 @@
 
              <!-- sample15 -->
              <div id="sample15" class="sample">
-                <h3>12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <h3>15. 파라미터 함수</h3>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    func = str => str;
-            
-    document.write(func("함수가 실행되었습니다."));
+    function func(str = "함수가 실행되었습니다."){
+        document.write(str);
+    }
+    func();
 }</code></pre>
                 </div>                
                 <div class="result">
@@ -384,17 +399,20 @@
 
              <!-- sample16 -->
              <div id="sample16" class="sample">
-                <h3>12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <h3>16. 아규먼트 함수</h3>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    func = str => str;
-            
-    document.write(func("함수가 실행되었습니다."));
+    function func(a, b){
+        document.write(arguments[0]);
+        document.write(arguments[1]);
+    }
+    func("함수가 실행되었습니다", "함수가 실행되었습니다.");
 }</code></pre>
                 </div>                
                 <div class="result">
                     <h4>결과보기</h4>
                     <div class="result012">
+                        함수가 실행되었습니다.<Br>
                         함수가 실행되었습니다.
                     </div>
                 </div>
