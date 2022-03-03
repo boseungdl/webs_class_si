@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    * {
+        margin: 0;
+
+    }
+    .wrap {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    #header {
+        background: rgb(184, 55, 55);
+        height: 15vh;
+    }
+    #cont01 {
+        background: rgb(78, 47, 47);
+        height: 70vh;
+        width: 25%;
+        float: left;
+    }
+    #cont02 {
+        background: rgb(87, 8, 8);
+        height: 70vh;
+        width: 75%;
+       float: left;
+    }
+    #footer {
+        background: rgb(158, 75, 75);
+        height: 15vh;
+        clear: both;
+    }
+    @media (max-width: 1220px){
+        .wrap {
+            width: 98%;
+        }
+     
+    }
+    @media (max-width: 768px){
+        .wrap {
+             width: 100%;
+        }
+        #header {
+            height: 30vh;
+        }
+        #cont01 {
+            height: 80vh;
+        }
+        #cont02 {
+            height: 80vh;
+        }
+        #footer {
+            height: 25vh;
+        }
+    }
+    @media (max-width: 480px){
+        .wrap {
+             width: 100%;
+        }
+        #header {
+            height: 40vh;
+        }
+        #cont01 {
+            height: 50vh;
+            width: 100%;
+        }
+        #cont02 {
+            height: 60vh;
+            width: 100%;
+        }
+        #footer {
+            height: 25vh;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <div class="wrap">
+        <header id="header"></header>
+        <article id="cont01"></article>
+        <article id="cont02"></article>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    * {
+        margin: 0;
+
+    }
+    .wrap {
+      
+    }
+    #header {
+        background: rgb(92, 8, 8);
+        height: 10vh;
+    }
+    main {
+        display: flex;
+    }
+    #cont01 {
+        background: rgb(78, 47, 47);
+        height: 80vh;
+        width: 25%;
+    
+    }
+    #cont02 {
+        background: rgb(97, 53, 53);
+        height: 80vh;
+        width: 50%;
+   
+    }
+    #cont03 {
+        background: rgb(151, 121, 121);
+        height: 80vh;
+        width: 25%;
+   
+    }
+    #footer {
+        background: rgb(158, 75, 75);
+        height: 10vh;
+    }
+    @media (max-width: 1220px){
+        .wrap {
+          
+        }
+        #header {
+            height: 15vh;
+        }
+        main {
+            flex-wrap: wrap;
+        }
+        #cont01 {
+            height: 70vh;
+            width: 30%;
+        }
+        #cont02 {
+            background: rgb(97, 53, 53);
+            height: 70vh;
+            width: 70%;
+        }
+        #cont03 {
+            background: rgb(151, 121, 121);
+            height: 30vh;
+            width: 100%;
+        }
+        #footer {
+            height: 25vh;
+        }
+     
+    }
+    @media (max-width: 768px){
+        .wrap {
+             width: 100%;
+        }
+        #header {
+            height: 35vh;
+        }
+        #cont01 {
+            width: 100%;
+            height: 65vh;
+            display: none;
+        }
+        #cont02 {
+            width: 100%;
+            height: 55vh;
+        }
+        #cont03 {
+          width: 100%;
+          height: 50vh;
+        }
+        #footer {
+            height: 25vh;
+        }
+    }
+    @media (max-width: 480px){
+        .wrap {
+             width: 100%;
+        }
+        #header {
+            height: 45vh;
+        }
+        #cont02 {
+            height: 45vh;
+            width: 100%;
+        }
+        #cont03 {
+            height: 60vh;
+            width: 100%;
+        }
+        #footer {
+            height: 25vh;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <div class="wrap">
+        <header id="header"></header>
+        <main>
+            <article id="cont01"></article>
+            <article id="cont02"></article>
+            <article id="cont03"></article>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            background: rgb(184, 187, 27);
+            height: 100px;
+        }
+        #nav {
+            background: rgb(182, 184, 82);
+            height: 300px;
+        }
+        #main {
+            background: rgb(228, 231, 9);
+            height: 400px;
+            display: flex;
+    
+        }
+        #main .divs {
+            width: 80%;
+            height: 400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-evenly;
+            
+            flex-wrap: wrap;
+        }
+        #main .divs div {
+            width: 120px;
+            height: 120px;
+            background: rgb(54, 148, 51);
+            border-radius: 15px;
+            margin: 30px;
+        }
+        #footer {
+            background: rgb(71, 71, 29);
+            height: 100px;
+        }
+        @media (max-width: 1220px){
+            .wrap {
+                 width: 100%;
+             }
+             #main .divs {
+                
+             }
+             #main .divs div {
+                 width: 11.5vw;
+                 height: 11.5vw;
+             }
+            .div9 {display: none;}
+            .div10 {display: none;}
+        }
+        @media (max-width: 768px){
+            #main {
+                height: 450px;
+            }
+            #main .divs div {
+                 width: 13vw;
+                 height: 13vw;
+             }
+            .div9 {display: block;}
+      
+        }
+        @media (max-width: 480px){
+            #main {
+                height: 650px;
+            }
+            #main .divs div {
+                 width: 15vw;
+                 height: 15vw;
+             }
+            .div9 {display: block;}
+            .div10 {display: block;}
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <div class="divs">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+                <div class="div5"></div>
+                <div class="div6"></div>
+                <div class="div7"></div>
+                <div class="div8"></div>
+                <div class="div9"></div>
+                <div class="div10"></div>
+            </div>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+   
+</body>
+</html>

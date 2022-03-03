@@ -325,6 +325,82 @@
             </div>             
             <!-- //sample12 -->
 
+             <!-- sample13 -->
+             <div id="sample13" class="sample">
+                <h3>13. 내부함수</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    func = str => str;
+            
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>
+                </div>                
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result012">
+                        함수가 실행되었습니다.
+                    </div>
+                </div>
+            </div>             
+            <!-- //sample13 -->
+
+             <!-- sample14 -->
+             <div id="sample14" class="sample">
+                <h3>12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    func = str => str;
+            
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>
+                </div>                
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result012">
+                        함수가 실행되었습니다.
+                    </div>
+                </div>
+            </div>             
+            <!-- //sample14 -->
+
+             <!-- sample15 -->
+             <div id="sample15" class="sample">
+                <h3>12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    func = str => str;
+            
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>
+                </div>                
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result012">
+                        함수가 실행되었습니다.
+                    </div>
+                </div>
+            </div>             
+            <!-- //sample15-->
+
+             <!-- sample16 -->
+             <div id="sample16" class="sample">
+                <h3>12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    func = str => str;
+            
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>
+                </div>                
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result012">
+                        함수가 실행되었습니다.
+                    </div>
+                </div>
+            </div>             
+            <!-- //sample16-->
+
         </div>
         <!-- //sample -->
 
@@ -349,169 +425,208 @@
 
 
             //01. 선언적 함수
-            {
-                function func(){
-                    document.write("함수가 실행되었습니다.");
-                }
-                func();
-            }
-            //02. 익명 함수(변수를 대체?)
-            {
-                const func = function(){
-                    document.write("함수가 실행되었습니다.");
-                }
-                func();
-            }
-            //03. 매개변수 함수
-            {
-                function func(str){
-                    document.write(str);
-                }
-                func("함수가 실행되었습니다.");
-            }
-            //04. 리턴값 함수
-            {
-                function func(){
-                    const str = "함수가 실행되었습니다.";
-                    return str;
-                }
-                document.write(func());
-            }
-            //05. 화살표 함수 : 선언적함수
-            {
-                // function func(){
-                //     document.write("함수가 실행되었습니다5.");
-                // }
-                // func();
+        //     {
+        //         function func(){
+        //             document.write("함수가 실행되었습니다.");
+        //         }
+        //         func();
+        //     }
+        //     //02. 익명 함수(변수를 대체?)
+        //     {
+        //         const func = function(){
+        //             document.write("함수가 실행되었습니다.");
+        //         }
+        //         func();
+        //     }
+        //     //03. 매개변수 함수
+        //     {
+        //         function func(str){
+        //             document.write(str);
+        //         }
+        //         func("함수가 실행되었습니다.");
+        //     }
+        //     //04. 리턴값 함수
+        //     {
+        //         function func(){
+        //             const str = "함수가 실행되었습니다.";
+        //             return str;
+        //         }
+        //         document.write(func());
+        //     }
+        //     //05. 화살표 함수 : 선언적함수
+        //     {
+        //         // function func(){
+        //         //     document.write("함수가 실행되었습니다5.");
+        //         // }
+        //         // func();
                 
-                func = () => {
-                    document.write("함수가 실행되었습니다5.");
-                }
-                func();
-            }
-            //06. 화살표 함수 : 익명 함수
-            {
-                // const func = function(){
-                //     document.write("함수가 실행되었습니다.");
-                // }
-                // func();
-
-                const func = () => {
-                    document.write("함수가 실행되었습니다6")
-                }
-                func();
-            }
-            //07. 화살표 함수 : 리턴값 함수
-            {
-                // function func(){
-                //     const str = "함수가 실행되었습니다.7";
-                //     return str;
-                // }
-                // document.write(func());
-
-                func = () => {
-                    const str = "함수가 실행되었습니다.7";
-                    return str;
-                }
-                document.write(func());
-            }
-            //08. 화살표 함수 : 익명함수 + 매개변수 + 리턴값
-            {
-                const func = (str) => {
-                    return str;
-                }
-                document.write(func("함수가 실행되었습니다.8"))
-            }
-
-        //     //함수의 종류(4가지)
-        // //선언적 함수
-        // {
-        //     function func(){
-        //         document.write("함수가 실행되었습니다.");
+        //         func = () => {
+        //             document.write("함수가 실행되었습니다5.");
+        //         }
+        //         func();
         //     }
-        //     func();
-        // }
-        // //익명 함수
-        // {
-        //     const func = function(){
-        //         document.write("함수가 실행되었습니다.");
+        //     //06. 화살표 함수 : 익명 함수
+        //     {
+        //         // const func = function(){
+        //         //     document.write("함수가 실행되었습니다.");
+        //         // }
+        //         // func();
+
+        //         const func = () => {
+        //             document.write("함수가 실행되었습니다6")
+        //         }
+        //         func();
         //     }
-        //     func();           
-        // }
-        // //매개변수 함수
-        // {
-        //     function func(str){
-        //         document.write(str);
+        //     //07. 화살표 함수 : 리턴값 함수
+        //     {
+        //         // function func(){
+        //         //     const str = "함수가 실행되었습니다.7";
+        //         //     return str;
+        //         // }
+        //         // document.write(func());
+
+        //         func = () => {
+        //             const str = "함수가 실행되었습니다.7";
+        //             return str;
+        //         }
+        //         document.write(func());
         //     }
-        //     func("함수가 실행되었습니다.");         
-        // }
-        // //리턴값 함수
+        //     //08. 화살표 함수 : 익명함수 + 매개변수 + 리턴값
+        //     {
+        //         const func = (str) => {
+        //             return str;
+        //         }
+        //         document.write(func("함수가 실행되었습니다.8"))
+        //     }
+
+        // //     //함수의 종류(4가지)
+        // // //선언적 함수
+        // // {
+        // //     function func(){
+        // //         document.write("함수가 실행되었습니다.");
+        // //     }
+        // //     func();
+        // // }
+        // // //익명 함수
+        // // {
+        // //     const func = function(){
+        // //         document.write("함수가 실행되었습니다.");
+        // //     }
+        // //     func();           
+        // // }
+        // // //매개변수 함수
+        // // {
+        // //     function func(str){
+        // //         document.write(str);
+        // //     }
+        // //     func("함수가 실행되었습니다.");         
+        // // }
+        // // //리턴값 함수
+        // // {
+        // //     function func(){
+        // //         const str = "함수가 실행되었습니다.";
+        // //         return str;
+        // //     }
+        // //     document.write(func());       
+        // //     }
+        // // }
+        // // //화살표함수 종류(4가지)
+        // // //화살표함수 : 선언적 함수
+        // // {
+        // //     func = () => {
+        // //         document.write("함수가 실행되었습니다.");
+        // //     }
+        // //     func();
+        // // }
+        // // //화살표함수 : 익명 함수
+        // // {
+        // //     const func = () => {
+        // //         document.write("함수가 실행되었습니다.");
+        // //     }
+        // //     func();
+        // // }
+        // // //화살표함수 : 매개변수 함수
+        // // {
+        // //     func = (str) => {
+        // //         document.write(str);
+        // //     }
+        // //     func("함수가 실행되었습니다.");
+        // // }
+        // // //화살표함수 : 리턴값 함수
+        // // {
+        // //     func = () => {
+        // //         const str = "함수가 실행되었습니다.";
+        // //         return str;
+        // //     }
+        // //     document.write(func());
+        // // }
+        // //09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값
         // {
-        //     function func(){
-        //         const str = "함수가 실행되었습니다.";
+        //     const func = (str) => {
         //         return str;
         //     }
-        //     document.write(func());       
-        //     }
+        //     document.write(func("함수가 실행되었습니다."));
         // }
-        // //화살표함수 종류(4가지)
-        // //화살표함수 : 선언적 함수
+
+        // //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략(매개변수 하나일 경우만)
         // {
-        //     func = () => {
-        //         document.write("함수가 실행되었습니다.");
-        //     }
-        //     func();
-        // }
-        // //화살표함수 : 익명 함수
-        // {
-        //     const func = () => {
-        //         document.write("함수가 실행되었습니다.");
-        //     }
-        //     func();
-        // }
-        // //화살표함수 : 매개변수 함수
-        // {
-        //     func = (str) => {
-        //         document.write(str);
-        //     }
-        //     func("함수가 실행되었습니다.");
-        // }
-        // //화살표함수 : 리턴값 함수
-        // {
-        //     func = () => {
-        //         const str = "함수가 실행되었습니다.";
+        //     const func = str => {
         //         return str;
         //     }
-        //     document.write(func());
+        //     document.write(func("함수가 실행되었습니다."));
         // }
-        //09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값
-        {
-            const func = (str) => {
-                return str;
-            }
-            document.write(func("함수가 실행되었습니다."));
-        }
-
-        //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략(매개변수 하나일 경우만)
-        {
-            const func = str => {
-                return str;
-            }
-            document.write(func("함수가 실행되었습니다."));
-        }
-        //11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
-        {
-            const func = str => str;
+        // //11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
+        // {
+        //     const func = str => str;
             
-            document.write(func("함수가 실행되었습니다."));
-        }
+        //     document.write(func("함수가 실행되었습니다."));
+        // }
         //12. 화살표 함수 : 선언적함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략
         {
-            func = str => str;
+            // func = str => str;
             
-            document.write(func("함수가 실행되었습니다."));
+            // document.write(func("함수가 실행되었습니다."));
+        }
+        //13. 내부함수
+        {
+            function funcC(){
+                function funcA(){
+                    document.write("함수가 실행되었습니다.");
+                }
+                funcA();
+                function funcB(){
+                    document.write("함수가 실행되었습니다.")
+                }
+                funcB();
+            }
+            funcC();
+        }
+        //즉시 실행 함수
+        {
+            (function (){
+                document.write("함수가 실행되었습니다.");
+            }());
+
+            (() => {
+                document.write("함수가 실행되었습니다.");
+            })();
+        }
+        //파라미터 함수
+        {
+            function func(str = "함수가 실행되었습니다."){
+                document.write(str);
+            }
+            func();
         }
 
+        //아규먼트 함수
+        {
+            function func(a, b){
+                document.write(arguments[0]);
+                document.write(arguments[1]);
+            }
+            func("함수가 실행되었습니다", "함수가 실행되었습니다.");
+        }
 
     
 
