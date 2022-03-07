@@ -61,32 +61,34 @@
           background: #fff;
           color: #000;
         }
-        
         #parallax__nav {
             position: fixed;
             right: 20px;
-            top: 20px;
+            top: -200px;
             z-index: 1000;
             background-color: rgba(0,0,0,0.4);
             padding: 15px 20px;
             border-radius: 50px;
+            transition: top 0.3s ease-in-out;
+        }
+        #parallax__nav.show {
+            top: 20px;
         }
         #parallax__nav li {
             list-style: none;
             display: inline;
         }
-        #parallax__nav a {
+        #parallax__nav li a {
             display: inline-block;
-            width: 30px;
-            height: 30px;
-            padding: 5px;
+            padding: 5px 20px;
             text-align: center;
             line-height: 30px;
         }
+      
         #parallax__nav li.active a {
             background: #fff;
             color: #000;
-            border-radius: 50%;
+            border-radius: 30px;
         }
         #parallax__cont {
             max-width: 1600px;
@@ -217,39 +219,73 @@
             list-style: none;
             line-height: 1.6;
         }
+        #parallax__dot {
+          position: fixed;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1000;
+          background: rgba(0,0,0,0.4);
+          padding: 20px 10px;
+          border-radius: 30px;
+        }
+        #parallax__dot li {
+          position: relative;
+          width: 20px; height: 20px;
+          border-radius: 50%;
+          list-style: none;
+          margin: 8px;
+          box-shadow: 0 0 0 2px rgba(255,255,255,0);
+          transition: box-shadow .2s ease;
+        }
+        #parallax__dot li a {
+          background: #fff;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0; left: 0;
+          border-radius: 50%;
+          transition: all .2s ease;
+        }
+        #parallax__dot li.active {
+          box-shadow: 0 0 0 2px rgba(255,255,255,1);
+        }
+        #parallax__dot li.active a {
+          transform: scale(0.4);
+        }
     </style>
 </head>
 <body>
 
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">Javascript parallax Effect01</a></h1>
-        <p>페럴랙스 스크롤링 효과 - 메뉴 이동</p>
+        <h1><a href="parallaxEffect.html">Javascript parallax Effect03</a></h1>
+        <p>페럴랙스 스크롤링 효과 - 숨김 메뉴 이동</p>
         <ul>
-            <li class="active"><a href="parallaxEffect01.html">1</a></li>
-            <li><a href="parallaxEffect02.html">2</a></li>
-            <li><a href="parallaxEffect03.html">3</a></li>
-            <li><a href="parallaxEffect04.html">4</a></li>
-            <li><a href="parallaxEffect05.html">5</a></li>
-            <li><a href="parallaxEffect06.html">6</a></li>
-            <li><a href="parallaxEffect07.html">7</a></li>
-            <li><a href="parallaxEffect08.html">8</a></li>
-            <li><a href="parallaxEffect09.html">9</a></li>
-          </ul>
+          <li><a href="parallaxEffect01.html">1</a></li>
+          <li><a href="parallaxEffect02.html">2</a></li>
+          <li class="active"><a href="parallaxEffect03.html">3</a></li>
+          <li><a href="parallaxEffect04.html">4</a></li>
+          <li><a href="parallaxEffect05.html">5</a></li>
+          <li><a href="parallaxEffect06.html">6</a></li>
+          <li><a href="parallaxEffect07.html">7</a></li>
+          <li><a href="parallaxEffect08.html">8</a></li>
+          <li><a href="parallaxEffect09.html">9</a></li>
+        </ul>
     </header>
 
 
 
     <nav id="parallax__nav">
         <ul>
-            <li class="active"><a href="#section1">s1</a></li>
-            <li><a href="#section2">s2</a></li>
-            <li><a href="#section3">s3</a></li>
-            <li><a href="#section4">s4</a></li>
-            <li><a href="#section5">s5</a></li>
-            <li><a href="#section6">s6</a></li>
-            <li><a href="#section7">s7</a></li>
-            <li><a href="#section8">s8</a></li>
-            <li><a href="#section9">s9</a></li>
+            <li class="active"><a href="#section1">메뉴1</a></li>
+            <li><a href="#section2"><span>메뉴2</span></a></li>
+            <li><a href="#section3"><span>메뉴3</span></a></li>
+            <li><a href="#section4"><span>메뉴4</span></a></li>
+            <li><a href="#section5"><span>메뉴5</span></a></li>
+            <li><a href="#section6"><span>메뉴6</span></a></li>
+            <li><a href="#section7"><span>메뉴7</span></a></li>
+            <li><a href="#section8"><span>메뉴8</span></a></li>
+            <li><a href="#section9"><span>메뉴9</span></a></li>
         </ul>
     </nav>
 
@@ -358,80 +394,84 @@
 <div class="scrollTop">
     scrollTop : <span>0</span>px
 </div>
-<div class="scrollInfo">
-    <ul>
-        <li>#section1 offset() : <span class="offset1">0</span>px</li>
-        <li>#section2 offset() : <span class="offset2">0</span>px</li>
-        <li>#section3 offset() : <span class="offset3">0</span>px</li>
-        <li>#section4 offset() : <span class="offset4">0</span>px</li>
-        <li>#section5 offset() : <span class="offset5">0</span>px</li>
-        <li>#section6 offset() : <span class="offset6">0</span>px</li>
-        <li>#section7 offset() : <span class="offset7">0</span>px</li>
-        <li>#section8 offset() : <span class="offset8">0</span>px</li>
-        <li>#section9 offset() : <span class="offset9">0</span>px</li>
-    </ul>
-</div>
+
 <!-- //info -->
 
     <script>
+      // window.addEventListener("scroll", () => {
+      //   let  scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
 
-        document.querySelectorAll("#parallax__nav li a").forEach(li => {
-            li.addEventListener("click", (e) => {
-                e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
-                    behavior : "smooth"
-                })
+      //   // 스크롤 값이 0보다 크면 show 클래스를 추가
+      //   // if(scrollTop>0){
+      //   //   document.querySelector("#parallax__nav").classList.add("show");
+      //   // }else {
+      //   //   document.querySelector("#parallax__nav").classList.remove("show");
+      //   // }
+        
+
+
+
+      //   document.querySelector(".scrollTop span").innerText = Math.round(scrollTop)
+      // })
+
+      let nowScroll =true;
+      let lastScroll = 0;
+      const nav = document.querySelectorAll("#parallax__nav li");
+      let scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+      function scrollpregress(){
+        nowScroll = true;
+
+        // setInterval(() => {
+        //   if(nowScroll){
+        //     nowScroll = false;
+        //     hasScroll();
+        //   }
+        // }, 300);
+        if(nowScroll){
+            // nowScroll = false;
+            hasScroll();
+        }
+        document.querySelectorAll(".content__item").forEach((el, i) => {
+    
+          if(scrollTop > el.offsetTop -3){
+            nav.forEach(e => {
+              e.classList.remove("active")
             })
+            nav[i].classList.add("active")
+          }
         })
-        //parallax__nav li a 에서 각각의 a태그에 대해서 이벤트를 정지시키고
-        //a의 href가 가리키는 곳으로 스크롤을 스무스하게 움직여 이동시킨다.
 
-        window.addEventListener("scroll", () => {
-           //let scrollTop = window.pageYOffset;
-           //let scrollTop = document.documentElement.scrollTop;
-           //let scrollTop = window.scrollY;
+        document.querySelector(".scrollTop span").innerText = scrollTop;
+      }
+       //각각의 섹션들에 대해 현재의 scrolltop 값이 각 섹션의 offsetTop-2값보다 클때
+      //모든 li에 붙은 active클래스를 제거하고 조건을 충족시킨 li에 active클래스를 추가합니다.
+      //span태그 안에 scrollTop값을 대입시켜준다.
 
-           let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+   
 
-      
-        //    const list = document.querySelectorAll("#parallax__nav ul li");
-        //    const Section = document.querySelectorAll("#parallax__cont section");
-           //for
-        //    for(let i=1; i<=9; i++){
-        //           if(scrollTop >= document.getElementById("section"+i).offsetTop - 2){
-        //                 document.querySelectorAll("#parallax__nav ul li").forEach( li => {
-        //                     li.classList.remove("active");
-        //                 })
-        //                 document.querySelector("#parallax__nav ul li:nth-child("+i+")").classList.add("active")
-        //             }
-        //        }
-           //foreach
-           document.querySelectorAll(".content__item").forEach((element,index) => {
-            if(scrollTop >= element.offsetTop - 2){
-                        document.querySelectorAll("#parallax__nav li").forEach( li => {
-                            li.classList.remove("active");
-                        })
-                        document.querySelector("#parallax__nav li:nth-child("+(index+1)+")").classList.add("active")
-                    }
-           })
-           //스크롤시 각각의 섹션들의 offsetTop-2의 값이 현재의 scrollTop 값보다 작을 시 
-           //li에 붙은 모든 active 클래스를 제거하고 조건을 만족한 li에 active 클래슬 붙혀
-           //위치에 맞게 li가 선택되어지는 효과를 준다.
-           
-           
-           //info
-           document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
 
-           document.querySelector(".offset1").innerText = document.getElementById("section1").offsetTop
-           document.querySelector(".offset2").innerText = document.getElementById("section2").offsetTop
-           document.querySelector(".offset3").innerText = document.getElementById("section3").offsetTop
-           document.querySelector(".offset4").innerText = document.getElementById("section4").offsetTop
-           document.querySelector(".offset5").innerText = document.getElementById("section5").offsetTop
-           document.querySelector(".offset6").innerText = document.getElementById("section6").offsetTop
-           document.querySelector(".offset7").innerText = document.getElementById("section7").offsetTop
-           document.querySelector(".offset8").innerText = document.getElementById("section8").offsetTop
-           document.querySelector(".offset9").innerText = document.getElementById("section9").offsetTop
-        })
+      function hasScroll(){
+          scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+        if(scrollTop > lastScroll){
+          document.querySelector("#parallax__nav").classList.add("show");
+        }else {
+          document.querySelector("#parallax__nav").classList.remove("show");
+        }
+
+        lastScroll = scrollTop;
+        // console.log(`lastScroll : ${lastScroll}`)
+        // console.log(`nowScroll : ${nowScroll}`)
+      }
+      //이 함수의 기능은 현재 scrolltop값이 lastscroll(처음은0) 보다 크면 nav에 show클래스를
+      //추가하여 화면에 보이게 한다. 그후 lastscroll 값에 scrolltop 값을 대입해준다.
+      //그렇게 하게되면 전에 스크롤을 올릴시 scrolltop값은 작아지므로 lastscroll값보다
+      //작이지게되어 조건을 만족시키지 못하기 때문에 show클래스를 제거하여 화면에 보이지 않게된다.
+
+      window.addEventListener("scroll", scrollpregress)
+
+    
     </script>
 </body>
 </html>
