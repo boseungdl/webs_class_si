@@ -419,6 +419,41 @@
             </div>             
             <!-- //sample16-->
 
+             <!-- sample17 -->
+             <div id="sample17" class="sample">
+                <h3>17. 재귀 함수</h3>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    // function func(){
+        //     document.write("함수가 실행되었습니다.");
+        //     func();
+        // }
+        // func();
+
+        function func(num){
+            if(num &lt;= 1){
+                document.write("함수가 실행되었습니다.");
+            } else {
+                document.write("함수가 실행되었습니다.");
+                func(num-1);
+            }
+        }   
+        func(5)
+}</code></pre>
+                </div>                
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div class="result012">
+                        함수가 실행되었습니다.<Br>
+                        함수가 실행되었습니다.
+                        함수가 실행되었습니다.
+                        함수가 실행되었습니다.
+                        함수가 실행되었습니다.
+                    </div>
+                </div>
+            </div>             
+            <!-- //sample17-->
+
         </div>
         <!-- //sample -->
 
@@ -606,45 +641,65 @@
             // document.write(func("함수가 실행되었습니다."));
         }
         //13. 내부함수
+        // {
+        //     function funcC(){
+        //         function funcA(){
+        //             document.write("함수가 실행되었습니다.");
+        //         }
+        //         funcA();
+        //         function funcB(){
+        //             document.write("함수가 실행되었습니다.")
+        //         }
+        //         funcB();
+        //     }
+        //     funcC();
+        // }
+        // //즉시 실행 함수
+        // {
+        //     (function (){
+        //         document.write("함수가 실행되었습니다.");
+        //     }());
+
+        //     (() => {
+        //         document.write("함수가 실행되었습니다.");
+        //     })();
+        // }
+        // //파라미터 함수
+        // {
+        //     function func(str = "함수가 실행되었습니다."){
+        //         document.write(str);
+        //     }
+        //     func();
+        // }
+
+        // //아규먼트 함수
+        // {
+        //     function func(a, b){
+        //         document.write(arguments[0]);
+        //         document.write(arguments[1]);
+        //     }
+        //     func("함수가 실행되었습니다", "함수가 실행되었습니다.");
+        // }
+
+        //재귀 함수 : 자기 스스로를 호출
         {
-            function funcC(){
-                function funcA(){
+            // function func(){
+            //     document.write("함수가 실행되었습니다.");
+            //     func();
+            // }
+            // func();
+
+            function func(num){
+                if(num <= 1){
                     document.write("함수가 실행되었습니다.");
+                } else {
+                    document.write("함수가 실행되었습니다.");
+                    func(num-1);
                 }
-                funcA();
-                function funcB(){
-                    document.write("함수가 실행되었습니다.")
-                }
-                funcB();
-            }
-            funcC();
+            }   
+            func(5)
         }
-        //즉시 실행 함수
-        {
-            (function (){
-                document.write("함수가 실행되었습니다.");
-            }());
-
-            (() => {
-                document.write("함수가 실행되었습니다.");
-            })();
-        }
-        //파라미터 함수
-        {
-            function func(str = "함수가 실행되었습니다."){
-                document.write(str);
-            }
-            func();
-        }
-
-        //아규먼트 함수
-        {
-            function func(a, b){
-                document.write(arguments[0]);
-                document.write(arguments[1]);
-            }
-            func("함수가 실행되었습니다", "함수가 실행되었습니다.");
-        }
+        //콜백 함수 : 
 
     
 
