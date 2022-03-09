@@ -413,6 +413,10 @@
             el.innerHTML = splitWrap;
             el.setAttribute("aria-label", splitText);
       })
+      //각각의 content__item__desc를 splitText에 저장을 한 후 글자 하나하나에 쉼표를 넣고
+      //그 쉼표를 </span><span aria-hidden='true'>으로 바꿔준다. 그리고 맨 앞과 마지막에
+      //스팬을 다시 써주어 각 글자와 공백을 스팬태그로 감싸주고 그것을 다시 content__item__desc
+      //에 넣어준다. 그리고 속성에 aria=label을 추가해 그안에 원래 글자를 넣어 라벨링을 해준다.
      
    
 
@@ -435,6 +439,9 @@
             })
           }
         })
+        //각각의 섹션에 대해 만약 스크롤탑값이 섹션의 offsetTop값보다 크다면 안에 모든 스팬태그
+        //를 50/1000*(index+1)의 시간차를 주면서 클래스 show를 추가하여 글자가 하나씩 보이는
+        //효과를 준다. 
        
 
 

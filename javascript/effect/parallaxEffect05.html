@@ -372,7 +372,7 @@
           let offset1 = (scrollTop - item.offsetTop)*0.1;
           let offset2 = (scrollTop - item.offsetTop)*0.2;
           let offset3 = (scrollTop - item.offsetTop)*0.3;
-
+      console.log(item.offsetTop)
           const target1 = item.querySelector(".content__item__img");
           const target2 = item.querySelector(".content__item__desc");
           const target3= item.querySelector(".content__item__num");
@@ -388,6 +388,11 @@
         requestAnimationFrame(scroll);
       }
       scroll();
+      //offset1, 2, 3값을 설정해준다. scrollTop값에서 각각의 item의offsetTop값을 뺀후 
+      //0.1 0.2 0.3을 각각 곱한다. 그리고 변수 타겟을 설정한 후에
+      //타겟에 대해 애니메이션 효과로 각각의 타겟에 작동시간0.3초 y축으로 offset1,2 만큼 이동하고 
+      //작동 속도를 power1.out로 설정해줌으로 함수가 실행되면서 타겟들이 y축에서 계속 -값쪽인 아래로 이동한다.
+      //
     </script>
    
 </body>
