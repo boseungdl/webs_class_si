@@ -364,7 +364,7 @@
     <script>
      function scroll(){
           let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
-        document.querySelector(".scrollTop span").innerText = scrollTop;
+        document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
 
         // const img = document.querySelector("#section1 .content__item__img");
         // img.style.transform = "translateY("+scrollTop/10+")";

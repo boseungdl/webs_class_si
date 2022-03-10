@@ -595,7 +595,7 @@
 
      function scroll(){
           let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
-        document.querySelector(".scrollTop span").innerText = scrollTop;
+          document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
 
         // document.querySelectorAll(".content__item").forEach(item => {
         //   if(scrollTop >= item.offsetTop){

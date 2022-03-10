@@ -470,7 +470,7 @@
 
       function scroll(){
         let scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-        document.querySelector(".scrollTop span").innerText = scrollTop;
+        document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
 
         document.querySelectorAll(".content__item").forEach(el => {
           if(scrollTop >= el.offsetTop - window.innerHeight/2){
