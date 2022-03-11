@@ -454,9 +454,7 @@
 <!-- //info -->
     <script src="../assets/js/gsap.min.js"></script>
     <script>
-        //만약에 reveal 클래스가 있는데
-        //글씨를 span 으로 감싸주고
-        //글씨를 다시 넣어줘야함
+     
 
         const reveal = document.querySelectorAll(".reveal");
 
@@ -465,19 +463,16 @@
             let revealSpan = `<span>${revealHTML}</span>`;
             if(revealHTML.includes("div") == false){
                 el.innerHTML = revealSpan;
-            } else {
-                el.innerHTML = revealHTML;
-            }
+            } 
         })
+        //리빌 클래스가 들어간 요소들의 수만큼 반복한다. 
+        //요소를 변수에 저장한 후 스팬으로 감싸서 다시 변수에 저장한다.
+        //만약 리빌클래스가 있는 요소 안에 div태그가 없다면 스팬이 들어간 변수를 요소 안에 넣어준다.
 
 
          function scroll(){
           let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
           
-        
-
-      
-
         reveal.forEach((el, i) => {
             let revealOffset = el.offsetTop + el.parentElement.offsetTop;
             let revealDelay = el.dataset.delay;
@@ -493,6 +488,11 @@
                 }
             }
         })
+        //el의 offsetTop값은 부모의 영향을 받아 부모의 top값부터 el의 top값까지의 px값이기 때문에
+        //부모의 offsetTop값을 더해 el의 offsetTop값을 다시 설정한다.
+        //그리고 각각의 el(글자)에 대해 el에서 윈도우의 높이의 반에 해당하는 값을 뺀후 그 값이 scrollTop
+        //값보다 크고 리빌딜래이가 있지 않다면 클래스 show를 추가하여 animation 효과를 주고
+        //딜래이 효과가 있다면 딜래이에 써있는 시간 만큼 지난 후 함수가 실행된다.
         
 
 
