@@ -4,35 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
-
     <style>
-        body {
-            height: 3000px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    div {
-        width: 600px;
-        height: 600px;
- 
-      
-        background: url(../class/img/img01.jpg)no-repeat 0 0/contain;
-        background-attachment: fixed;
-        text-align: center;
-       
-        
-    }
-    a {
-        background-color: rgba(87, 39, 39, 0.185);
-        padding: 10px;
-        color: aliceblue;
-        
-    }
+        ul {
 
+        }
+        li {
+            list-style: none;
+        }
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* grid-auto-rows: minmax(100px, auto); */
+            grid-gap: 1em;
+            
+        }
+        .wrap  #header,#nav,#banner,article {
+            background: #000;
+            color: #fff;
+        }
+        #header {
+            grid-column: 1/3;
+            /* height: 50px; */
+        }
+        #nav {
+            grid-column: 1/3;
+        }
+        #banner {
+            grid-column: 1/3;
+        }
+        
     </style>
 </head>
 <body>
-<div> <a href="">1000</a> </div>
-<a href="">2</a>
+    <div class="wrap">
+        <header id="header">header</header>
+        <div id="nav">
+            <ul>
+                <li>6인 이상 금지</li>
+                <li>22시까지 운영</li>
+                <li>방역패스 일시중단</li>
+            </ul>
+        </div>
+        <div id="banner">banner</div>
+        <article id="article01">article01</article>
+        <article id="article02">article02</article>
+    </div>
+        <!-- <footer>12</footer> -->
+  
+
+    
+
+
     
 </body>
 </html>
