@@ -49,6 +49,7 @@
         .section1__bg img {
             width: 70%;
             height: 17vh;
+          
         }
         .section1__text1 {
             color: #fff;
@@ -73,11 +74,12 @@
         .section2_bg {
             width: 100%;
             height: 100vh;
-            background: rgba(34, 34, 34, 0.966);
+            background: rgba(218, 209, 84, 0.966);
         }
         .section2_text1 {
             font-size: 4vw;
-            color: #fff;
+            color: #000;
+            font-weight: 700;
             white-space: nowrap;
         }
         .section2__img1 {
@@ -91,10 +93,25 @@
             top: 0.5vw;
             transform: translate(-50%);
             width: 38.5vw;
-            height: 26vw;
+            height: 25vw;
             border: 1px solid #fff;
             border-radius: 1vw 20px 0 0;
             overflow: hidden;
+            
+        }
+        .section2_img1_site + a {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 6vw;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            padding: 1vw;
+            font-size: 1vw;
+            background: rgba(124, 86, 128, 0.699);
+            border-radius: 10px;
         }
 
     </style>
@@ -107,7 +124,7 @@
             data-9001="display: none;"
         >
             <div class="section1__bg">
-                <img class="fixed" src="img/sea.jpg" alt="이미지"
+                <img class="fixed" src="img/camera.jpg" alt="이미지"
                 data-0="width: 70%; height: 17vh;"
                 data-1000="width: 100%; height: 17vh;"
                 data-2000="width: 100%; height: 50vh;"
@@ -148,13 +165,19 @@
                 data-9000 ="transform: translate(-50%, -50%) scale(0.5); top: 50%;"
                 data-10000 ="transform: translate(-50%, -50%) scale(1); top: 50%;"
                 data-11000 ="transform: translate(-50%, -50%) scale(0.7); top: 15%; "
+                data-26000 ="transform: translate(-50%, -50%) scale(0.7); top: 15%; "
+                data-26500 ="transform: translate(-50%, -50%) scale(1.5); top: 50%; "
             >
                 i've been working in on sites
             </div>  
             <div class="section2_img1 fixed"
-                data-9000 ="transform: translate(-50%, -50%) scale(0.5); top: 150%;"
-                data-10000 ="transform: translate(-50%, -50%) scale(0.7); top: 150%;"
-                data-11000 ="transform: translate(-50%, -50%) scale(1); top: 55%;"
+                data-9000 ="transform: translate(-50%, -50%) scale(0.5) rotateY(0deg) perspective(600px); top: 150%; opacity: 1; display: block;"
+                data-10000 ="transform: translate(-50%, -50%) scale(0.7) rotateY(0deg) perspective(600px); top: 150%; opacity: 1; display: block;"
+                data-11000 ="transform: translate(-50%, -50%) scale(1) rotateY(0deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-12000 ="transform: translate(-50%, -50%) scale(1) rotateY(0deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-12500 ="transform: translate(-50%, -50%) scale(1) rotateY(0deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-13000 ="transform: translate(-50%, -50%) scale(1) rotateY(180deg) perspective(600px); top: 55%; opacity: 0.5; display: block;"
+                data-13501 ="transform: translate(-50%, -50%) scale(1) rotateY(360deg) perspective(600px); top: 55%; opacity: 0; display: none;"
             >
                 <img src="img/MacBook Pro 13.png" alt="macbook">
                 <div class="section2_img1_site">
@@ -164,8 +187,88 @@
                     data-13000 ="transform: translateY(-75%);"
                     >
                 </div>
+                <a href="../site/webClass/index.html"
+                data-11000 ="display: none; opacity: 0;"
+                data-12000 ="display: block; opacity: 0.5;"
+                data-13000 ="display: block; opacity: 1;"
+                >사이트 이동</a>
             </div>
-        </section><!-- //section2 -->
+
+            <div class="section2_img1 fixed"
+                data-0 ="transform: translate(-50%, -50%) scale(1) rotateY(360deg) perspective(600px); top: 55%; opacity: 1; display: none;"
+                data-13502 ="transform: translate(-50%, -50%) scale(1) rotateY(270deg) perspective(600px); top: 55%; opacity: 0.5; display: block;"
+                data-14500 ="transform: translate(-50%, -50%) scale(1) rotateY(360deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-15500 ="transform: translate(-50%, -50%) scale(1) rotateY(360deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-16500 ="transform: translate(-50%, -50%) scale(1) rotateY(360deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-17000 ="transform: translate(-50%, -50%) scale(1) rotateY(360deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-17500 ="transform: translate(-50%, -50%) scale(1) rotateY(540deg) perspective(600px); top: 55%; opacity: 0.5; display: block;"
+                data-18000 ="transform: translate(-50%, -50%) scale(1) rotateY(720deg) perspective(600px); top: 55%; opacity: 0; display: none;"
+            >
+                <img src="img/MacBook Pro 13.png" alt="macbook">
+                <div class="section2_img1_site">
+                    <img src="img/site01.jpg" alt="사이트01"
+                    data-14500 ="transform: translateY(0%);"
+                    data-15500 ="transform: translateY(-50%);"
+                    data-16500 ="transform: translateY(-75%);"
+                    >
+                </div>
+                <a href="../site/webClass/index.html"
+                data-14500 ="display: none; opacity: 0;"
+                data-15500 ="display: block; opacity: 0.5;"
+                data-16500 ="display: block; opacity: 1;"
+                >사이트 이동</a>
+            </div>
+
+            <div class="section2_img1 fixed"
+                data-0 ="transform: translate(-50%, -50%) scale(1) rotateY(720deg) perspective(600px); top: 55%; opacity: 1; display: none;"
+                data-18001 ="transform: translate(-50%, -50%) scale(1) rotateY(630deg) perspective(600px); top: 55%; opacity: 0.5; display: block;"
+                data-19000 ="transform: translate(-50%, -50%) scale(1) rotateY(720deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-20000 ="transform: translate(-50%, -50%) scale(1) rotateY(720deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-21000 ="transform: translate(-50%, -50%) scale(1) rotateY(720deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-21500 ="transform: translate(-50%, -50%) scale(1) rotateY(720deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-22000 ="transform: translate(-50%, -50%) scale(1) rotateY(900deg) perspective(600px); top: 55%; opacity: 0.5; display: block;"
+                data-22500 ="transform: translate(-50%, -50%) scale(1) rotateY(1080deg) perspective(600px); top: 55%; opacity: 0; display: block;"
+            >
+                <img src="img/MacBook Pro 13.png" alt="macbook">
+                <div class="section2_img1_site">
+                    <img src="img/site01.jpg" alt="사이트01"
+                    data-19000 ="transform: translateY(0%);"
+                    data-20000 ="transform: translateY(-50%);"
+                    data-21000 ="transform: translateY(-75%);"
+                    >
+                </div>
+                <a href="../site/webClass/index.html"
+                data-19000 ="display: none; opacity: 0;"
+                data-20000 ="display: block; opacity: 0.5;"
+                data-21000 ="display: block; opacity: 1;"
+                >사이트 이동</a>
+            </div>
+
+            <div class="section2_img1 fixed"
+                data-0 ="transform: translate(-50%, -50%) scale(1) rotateY(1080deg) perspective(600px); top: 55%; opacity: 1; display: none;"
+                data-22501 ="transform: translate(-50%, -50%) scale(1) rotateY(990deg) perspective(600px); top: 55%; opacity: 0.3; display: block;"
+                data-23500 ="transform: translate(-50%, -50%) scale(1) rotateY(1080deg) perspective(600px); top: 55%; opacity: 0.7; display: block;"
+                data-24500 ="transform: translate(-50%, -50%) scale(1) rotateY(1080deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-25500 ="transform: translate(-50%, -50%) scale(1) rotateY(1080deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-26000 ="transform: translate(-50%, -50%) scale(1) rotateY(1080deg) perspective(600px); top: 55%; opacity: 1; display: block;"
+                data-26500 ="transform: translate(-50%, -50%) scale(1) rotateY(1080deg) perspective(600px); top: 155%; opacity: 0; display: block;"
+            >
+                <img src="img/MacBook Pro 13.png" alt="macbook">
+                <div class="section2_img1_site">
+                    <img src="img/site01.jpg" alt="사이트01"
+                    data-23500 ="transform: translateY(0%);"
+                    data-24500 ="transform: translateY(-50%);"
+                    data-25500 ="transform: translateY(-75%);"
+                    >
+                </div>
+                <a href="../site/webClass/index.html"
+                data-23500 ="display: none; opacity: 0;"
+                data-24500 ="display: block; opacity: 0.5;"
+                data-25500 ="display: block; opacity: 1;"
+                >사이트 이동</a>
+            </div>
+        </section>
+        <!-- //section2 -->
         <section id="section3"></section><!-- section1 -->
         <section id="section4"></section><!-- section1 -->
         <section id="section5"></section><!-- section1 -->
