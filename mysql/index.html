@@ -249,6 +249,24 @@ Query OK, 0 rows affected (0.00 sec)
 <pre class="language-js"><code>mysql> drop table mymember2;
 Query OK, 0 rows affected (0.01 sec)
 </code></pre>
+                    <h3 id="intro5-5" class="page-header">테이블 복사</h3>
+                    <h4>테이블 구조, 데이터 복사</h4>
+                    <div class="bs-callout bs-callout-info">
+                        create table 새로운 테이블명 select * from 복사할 테이블명;
+                    </div>
+<pre class="language-js"><code>create table myMember1 select * from myMember;</code></pre>
+
+                    <h4>테이블 구조 복사</h4>
+                    <div class="bs-callout bs-callout-info">
+                        create table 새로운 테이블명 LIKE 복사할 테이블 명
+                    </div>
+<pre class="language-js"><code>create table mymember2 LIKE myMember;</code></pre>
+
+                    <h4>테이블 데이터 복사</h4>
+                    <div class="bs-callout bs-callout-info">
+                        INSERT INTO 새로운 테이블명 SELECT * FROM 복사할 테이블명;
+                    </div>
+<pre class="language-js"><code>insert into table mymember3 SELECT * FROM myMember2;</code></pre>
                     
                 </div>
                 <!-- //box -->
@@ -320,7 +338,7 @@ Records: 0  Duplicates: 0  Warnings: 0
                     <div class="bs-callout bs-callout-info">
                         INSERT INTO 테이블명(필드명) VALUES(데이터)
                     </div>
-<pre class="language-js"><code>mysql> INSERT INTO myData(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('jungsik321@naver.com', '김정식', '1234', '1993-02-09', '30', '0327');
+<pre class="language-js"><code>mysql> INSERT INTO mydata(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('96tmdqh@naver.com', '한승보', '1234', '19960716', '27', '01020153932', '1234');
 Query OK, 1 row affected (0.00 sec)
 
 mysql> SELECT * FROM myData;
@@ -333,73 +351,146 @@ mysql> SELECT * FROM myData;
 </code></pre>
                     <h3 id="intro7-2" class="page-header">데이터 불러오기</h3>
                     <div class="bs-callout bs-callout-info">
-                        SELECT 대상 FROM 테이블명;
+                        SELECT * FROM 테이블명;
                     </div>
-<pre class="language-js"><code>mysql> SELECT * FROM mydata;
-+------------+-----------------------+---------+---------+------------+--------+---------+
-| myMemberID | youEmail              | youName | youPass | youBirth   | youAge | regTime |
-+------------+-----------------------+---------+---------+------------+--------+---------+
-|          1 | ik6623@naver.com      | 박종호  | 1234    | 95-09-09   | 28     |     123 |
-|          2 | webstoryboy@naver.com | 황상연  | 1234    | 1992-04-05 | 33     |    1234 |
-|          3 | qhd1994@naver.com     | 유희봉  | 0620    | 1994-07-28 | 29     |    1234 |
-|          4 | jungsik321@naver.com  | 김정식  | 1234    | 1993-02-09 | 30     |     327 |
-|          5 | ohwehoh@naver.com     | 이연우  | 1234    | 1995-07-20 | 28     |    1234 |
-|          6 | dnwls7738@naver.com   | 천우진  | 1234    | 1996-03-24 | 27     |    1234 |
-|          7 | jsjh442@naver.com     | 박지선  | 1234    | 98-04-23   | 25     |     327 |
-|          8 | sbxjs6999@naver.com   | 박근희  | 1234    | 1997-02-14 | 26     |    1234 |
-|          9 | lhw1847@gmail.com     | 이현우  | 1234    | 1997-12-21 | 26     |     303 |
-|         10 | wwuu123@naver.com     | 최가영  | 1234    | 1997-05-06 | 26     |    1234 |
-|         11 | dhtpfls321@naver.com  | 오세린  | 1234    | 1998-02-14 | 25     |    1234 |
-+------------+-----------------------+---------+---------+------------+--------+---------+
-11 rows in set (0.00 sec)
+<pre class="language-js"><code>
 </code></pre>
-                    <h4>myMemberID가 6번인 경우</h4>
+                    <h4>전체 데이터 불러오기</h4>
                     <div class="bs-callout bs-callout-info">
-                        SELECT * FROM myMember WHERE myMemberID = 6;
+                        SELECT * FROM myMember;
                     </div>
-<pre class="language-js"><code>mysql> SELECT * FROM mymember WHERE myMemberID = 6;
-+------------+---------------------+---------+---------+------------+--------+---------+
-| myMemberID | youEmail            | youName | youPass | youBirth   | youAge | regTime |
-+------------+---------------------+---------+---------+------------+--------+---------+
-|          6 | dnwls7738@naver.com | 천우진  | 1234    | 1996-03-24 | 27     |    1234 |
-+------------+---------------------+---------+---------+------------+--------+---------+
-1 row in set (0.00 sec)
+<pre class="language-js"><code>SELECT * FROM mymember;
 </code></pre>
 
-                    <h4>이메일 중에 네이버 텍스트를 포함하는 경우</h4>
+                    <h4 class="pt20">조건 데이터 불러오기</h4>
                     <div class="bs-callout bs-callout-info">
-                        SELECT * FROM mymember WHERE youEmail LIKE '%naver%';
+                        SELECT * FROM mymember WHERE 조건;
                     </div>
-<pre class="language-js"><code>mysql> SELECT * FROM mydata WHERE youEmail LIKE '%naver%';
-+------------+-----------------------+---------+---------+------------+--------+---------+
-| myMemberID | youEmail              | youName | youPass | youBirth   | youAge | regTime |
-+------------+-----------------------+---------+---------+------------+--------+---------+
-|          1 | ik6623@naver.com      | 박종호  | 1234    | 95-09-09   | 28     |     123 |
-|          2 | webstoryboy@naver.com | 황상연  | 1234    | 1992-04-05 | 33     |    1234 |
-|          3 | qhd1994@naver.com     | 유희봉  | 0620    | 1994-07-28 | 29     |    1234 |
-|          4 | jungsik321@naver.com  | 김정식  | 1234    | 1993-02-09 | 30     |     327 |
-|          5 | ohwehoh@naver.com     | 이연우  | 1234    | 1995-07-20 | 28     |    1234 |
-|          6 | dnwls7738@naver.com   | 천우진  | 1234    | 1996-03-24 | 27     |    1234 |
-|          7 | jsjh442@naver.com     | 박지선  | 1234    | 98-04-23   | 25     |     327 |
-|          8 | sbxjs6999@naver.com   | 박근희  | 1234    | 1997-02-14 | 26     |    1234 |
-|         10 | wwuu123@naver.com     | 최가영  | 1234    | 1997-05-06 | 26     |    1234 |
-|         11 | dhtpfls321@naver.com  | 오세린  | 1234    | 1998-02-14 | 25     |    1234 |
-+------------+-----------------------+---------+---------+------------+--------+---------+
-10 rows in set (0.00 sec)
-</code></pre>
+
+                    <h4>회원 아이디가 10번인 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID = 10;</code></pre>
+                    
+                    <h4>회원 아이디가 10번이 아닌 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID &lt;$gt; 10;</code></pre>
+
+                    <h4>회원 아이디가 5~10번인 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID >=5 AND memberID &lt; 11</code></pre>
+
+                    <h4>범위 조건 데이터 불러오기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT * FROM 테이블 명 WHERE 컬럼명 BETWEEN 시작 값 AND 끝 값;
+                    </div>
+                    <h4>회원 아이디가 5~10번인 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID BETWEEN 5 AND 10</code></pre>
+
+                    <h4>회원 아이디가 5~10번이 아닌 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID NOT BETWEEN 5 AND 10</code></pre>
+
+                    <h4>해당 조건 데이터 불러오기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT * FROM 테이블 명 WHERE 컬럼명 IN(값1, 값2, 값3....)
+                    </div>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID IN(4, 6, 13, 14);</code></pre>
+
+                    <h4>패턴 조건 데이터 불러오기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT * FROM 테이블 명 WHERE 컬럼명 like 
+                    </div>
+                    <h4>이메일 중에 naver 텍스트가 포함된 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail like '%naver%';</code></pre>
+
+                    <h4>이메일 중에 web 텍스트로 시작되는 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail like 'web%';</code></pre>
+
+                    <h4>이메일 중에 com 텍스트로 끝나는 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail like '%com';</code></pre>
+
+                    <h4>이름 중에 김으로 시작되는 멤버를 출력!</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youName like '김%';</code></pre>
+
+                    <h4>이름 중에 '김'씨 이거나 '황'씨인 경우의 멤버를 출력!</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youName like '김%' OR youName like '황%';</code></pre>
+
+                    <h4>이름 중에 중간 글자가 근인 경우의 멤버를 출력!(%문자열, _ 1개의 글자)</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youName like '_근_';</code></pre>
+
+                    <h4>패턴 조건 데이터 불러오기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT * FROM 테이블 명 WHERE IS NULL
+                    </div>
+                    <h4>이름 중에 중간 글자가 근인 경우의 멤버를 출력!(%문자열, _ 1개의 글자)</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE IS NULL;</code></pre>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE IS NOT NULL;</code></pre>
+
+                    <h4>논리 연산자 데이터 불러오기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT * FROM 테이블 명 WHERE 컬럼명 연산자
+                    </div>
+                    <h4>나이가 20살 이상이거나 또는 성이 김씨인 멤버</h4>
+<pre class="language-js">SELECT * FROM myMember WHERE youAge &gt; '20' or youname like '김%';<code></code></pre>
+
+                    <h4>나이가 20살 이상이면서(AND) 김씨인 멤버</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youAge &gt; '20' AND youname like '김%';</code></pre>
+
+                    <h4>멤버아이디가 2또는 10 그리고 나이가 30이상인 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE (memberID = 2 or memberID = 10) && youage >= 30</code></pre>
+                    
+                    <h4>데이터 갯수 불러오기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT * FROM 테이블 명 LIMIT 표시할 수
+                    </div>
+<pre class="language-js"><code>SELECT * FROM myMember LIMIT 2;</code></pre>
+<pre class="language-js"><code>SELECT * FROM myMember LIMIT 10, 20;</code></pre>
+<pre class="language-js"><code>SELECT youEmail FROM myMember LIMIT 10, 20;</code></pre>
+
+                    <h4>데이터 불러오기(내림차순/오름차순)</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT * FROM 테이블 명 ORDER BY 컬럼명 정렬방식(DESC/ASC)
+                    </div>
+<pre class="language-js"><code>SELECT * FROM myMember ORDER BY youage DESC</code></pre>
+<pre class="language-js"><code>SELECT * FROM myMember ORDER BY youage ASC</code></pre>
+
+
+
+
+
 
                     <h3 id="intro7-3" class="page-header">데이터 수정하기</h3>
                     <div class="bs-callout bs-callout-info">
-
+                        UPDATE 테이블명 SET 컬럼명 조건
                     </div>
-<pre class="language-js"><code>
+                    <h4 class="pt20">모든 회원의 비밀번호를 '1234' 변경</h4>
+<pre class="language-js"><code>UPDATE myMember SET youPass = '1234';
+</code></pre>
+                    <h4 class="pt20">5회원부터 10회원까지의 비밀번호를 '1234' 변경</h4>
+<pre class="language-js"><code>UPDATE myMember SET youPass = '123456' WHERE memberID BETWEEN 5 AND 10;
+</code></pre>
+                    <h4 class="pt20">아이디 내림차순</h4>
+<pre class="language-js"><code>UPDATE myMember SET youPass = '***' ORDER BY memberID DESC LIMIT 10;
 </code></pre>
                     <h3 id="intro7-4" class="page-header">데이터 삭제하기</h3>
+                    <h4>전체 데이터 삭제</h4>
                     <div class="bs-callout bs-callout-info">
-
+                        DELETE FROM 테이블명 OR DELETE * FROM 테이블명
                     </div>
-<pre class="language-js"><code>
+<pre class="language-js"><code>DELETE FROM myMember
 </code></pre>
+
+                    <h4 class="pt20">조건 데이터 삭제</h4>
+                    <div class="bs-callout bs-callout-info">
+                        DELETE FROM 테이블명 조건
+                    </div>
+                    <H4>조건 삭제 : 회원 아이디가 5번 멤버를 삭제</H4>
+<pre class="language-js"><code></code>DELETE FROM myMember WHERE memberID = 5;</pre>
+
+                    <H4>조건 삭제 : 패스워드가 '****' 멤버를 삭제</H4>
+<pre class="language-js"><code>DELETE FROM myMember WHERE youpass = '****';</code></pre>
+
+                    <h4>정렬 삭제 : 멤버를 삭제</h4>
+<pre class="language-js"><code>DELETE FROM myMember ORDER BY youName LIMIT 5</code></pre>
+
+                    <h4>지정 삭제 : 지정한 멤버를 삭제</h4>
+<pre class="language-js"><code>DELETE FROM myMember WHERE memberID IN(8,9,10)</code></pre>
                     
                 </div>
                 <!-- //box -->
@@ -425,6 +516,7 @@ mysql> SELECT * FROM myData;
                                 <li><a href="#intro5-2">테이블 전체보기</a></li>
                                 <li><a href="#intro5-3">테이블 보기</a></li>
                                 <li><a href="#intro5-4">테이블 삭제</a></li>    
+                                <li><a href="#intro5-5">테이블 복사</a></li>    
                             </ul>
                         </li>
                         <li><a href="#intro6">테이블 수정</a>

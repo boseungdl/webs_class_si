@@ -73,7 +73,7 @@
         .section2_bg {
             width: 100%;
             height: 100vh;
-            background: #000;
+            background: rgba(34, 34, 34, 0.966);
         }
         .section2_text1 {
             font-size: 4vw;
@@ -82,8 +82,20 @@
         }
         .section2__img1 {
             width: 50vw;
+            top: 80%;
+   
         }
-
+        .section2_img1_site {
+            position: absolute;
+            left: 50%;
+            top: 0.5vw;
+            transform: translate(-50%);
+            width: 38.5vw;
+            height: 26vw;
+            border: 1px solid #fff;
+            border-radius: 1vw 20px 0 0;
+            overflow: hidden;
+        }
 
     </style>
 </head>
@@ -122,7 +134,8 @@
                 data-9000="transform: translate(-50%,-50%) scale(1); top: 50%; left: -50%;"
             >포트폴리오 보여드리겠습니다.</div>
         </section>
-        <!-- section1 -->
+        <!-- //section1 -->
+
         <section id="section2"
             data-9000="display: none"
             data-9001="display: block"
@@ -143,9 +156,16 @@
                 data-10000 ="transform: translate(-50%, -50%) scale(0.7); top: 150%;"
                 data-11000 ="transform: translate(-50%, -50%) scale(1); top: 55%;"
             >
-                <img src="img/MacBook Pro 13.png" alt="">
+                <img src="img/MacBook Pro 13.png" alt="macbook">
+                <div class="section2_img1_site">
+                    <img src="img/site01.jpg" alt="사이트01"
+                    data-11000 ="transform: translateY(0%);"
+                    data-12000 ="transform: translateY(-50%);"
+                    data-13000 ="transform: translateY(-75%);"
+                    >
+                </div>
             </div>
-        </section><!-- section1 -->
+        </section><!-- //section2 -->
         <section id="section3"></section><!-- section1 -->
         <section id="section4"></section><!-- section1 -->
         <section id="section5"></section><!-- section1 -->
