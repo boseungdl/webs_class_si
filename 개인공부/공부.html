@@ -14,47 +14,95 @@
         }
         body {
             background: #9797fa5b;
+            font-family: 'serif';
         }
-        ul {
-
-        }
+      
         li {
             list-style: none;
         }
         .wrap {
             max-width: 1200px;
+            height: 100vh;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            /* grid-auto-rows: minmax(100px, auto); */
-            grid-gap: 1em;
+            grid-auto-rows: minmax(9vh, auto);
+            align-content: center;
+            grid-gap: 1.5em;
             
         }
         .wrap  #header,#nav,#banner,article {
-            background: #000;
-            color: #fff;
+            background: rgb(212, 144, 144);
+          
         }
         #header {
             grid-column: 1/3;
-            /* height: 50px; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        #nav {
+        #header ul {
+            display: flex;
+            align-items: center;
+        }
+        #header ul li {
+            margin-left: 1vw;
+        }
+       .Darkmode {
+           width: 80px;
+           height: 45px;
+           background-image: url(img/toggle.png);
+       }
+       #nav {
             grid-column: 1/3;
+       }
+        #nav ul {
+            display: flex;
+            justify-content: space-around;
         }
+        #nav ul li {
+            font-size: 22px;
+            font-weight: 800;
+            max-width: 25vw;
+            height: 10vh;
+            background: #fff;
+        }
+        #nav ul li:nth-of-type(1) span {
+            display: block;
+            width: 70px;
+            
+            background: url(img/IMG.jpg) no-repeat 0 -60px 
+        }
+
         #banner {
             grid-column: 1/3;
+            height: 40vh;
+            border-radius: 10px;
+           
         }
+        #article01, #article02 {
+            height: 25vh;
+        }
+
         
     </style>
 </head>
 <body>
     <div class="wrap">
-        <header id="header">header</header>
+        <header id="header">
+            <h1>방역투게더</h1>
+            <ul>
+                <li class="Darkmode"></li>
+                <li>커뮤니티</li>
+                <li>로그인</li>
+                <li>회원가입</li>
+            </ul> 
+        </header>
         <div id="nav">
             <ul>
-                <li>6인 이상 금지</li>
-                <li>22시까지 운영</li>
-                <li>방역패스 일시중단</li>
+                <li><span></span> 6인 이상 금지<span>인원 제한</span></li>
+                <li>22시까지 운영<span>시설 운영시간</span></li>
+                <li>방역패스 일시중단<span>방역패스</span></li>
             </ul>
         </div>
         <div id="banner">banner</div>
