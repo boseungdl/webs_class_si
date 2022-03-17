@@ -1,0 +1,404 @@
+/* 전체 레이아웃 */
+* {
+    font-family: 'BMJua' !important;
+}
+#wrap {
+    height: 2000px;
+}
+.gray {
+    background: #f5f5f5;
+}
+.white {
+    background: #fff !important;
+}
+/* 컨테이너 */
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    /* background: #999; */
+}
+
+
+/* 헤더03 Grid를 사용하는 경우 */
+
+#header {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    min-width: 1200px;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+#header .logo a {
+    font-size: 30px;
+    padding: 12px 18px;
+    display: inline-block;
+}
+
+#header .logo em {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#header .menu {
+    text-align: center;
+}
+
+#header .menu li {
+    display: inline;
+}
+
+#header .menu li a {
+    display: inline-block;
+    padding: 20px 30px;
+    position: relative;
+    transition: background 0.4s;
+}
+
+#header .menu li a:hover {
+    background: #f5f5f5;
+    border-radius: 10px;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+#header .member {
+    text-align: right;
+    padding: 10px 18px;
+}
+
+#header .member a {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 50px;
+    padding: 9px 22px;
+    font-size: 16px;
+}
+
+#header .member a:hover {
+    background: #000;
+    color: #fff;
+}
+
+
+/* 푸터 영역(footer_type01) */
+
+#footer {
+    width: 100%;
+    height: 682px;
+    background-color: #f5f5f5;
+    font-family: 'GmarketSans';
+    padding: 150px 0;
+}
+#footer .footer_wrap {
+    display: flex;
+    justify-content: space-between
+}
+.footer_wrap > div {
+    width: 16%;
+}
+#footer .footer_wrap h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+#footer .footer_wrap ul li a {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    position: relative;
+    color: rgb(95, 95, 95);
+    transition: all 0.3s;
+}
+#footer .footer_wrap ul li a:hover {
+    color: #000;
+}
+#footer .footer_wrap > div li a::before {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -3px;
+    width: 100%; height: 1px;
+    background: #000;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+#footer .footer_wrap > div li a:hover::before {
+    transform: scaleX(1);
+    color: #000;
+}
+#footer address {
+    font-family: 'NexonLv1Gothic';
+    font-size: 14px;
+    text-align: center;
+}
+
+#footer hr {
+    margin: 70px 0 50px 0;
+    color: rgb(205,205,205)
+}
+
+.footer_sns {
+    margin-top: 10px;
+}
+.footer_sns ul {
+    display: flex;
+    justify-content: center;
+}
+.footer_sns li a {
+    width: 40px;
+    height: 40px;
+    margin: 4px 6px;
+    display: inline-block;
+    background-image: url(../img/bg-svg.svg);
+}
+.footer_sns li:nth-child(2) a {
+    background-position: -50px 0;
+}
+.footer_sns li:nth-child(3) a {
+    background-position: -100px 0;
+}
+.footer_sns li:nth-child(4) a {
+    background-position: -150px 0;
+}
+
+/* 회원가입,로그인 : join-type */
+.join-type {
+    padding: 100px 0;
+}
+.social {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.social > div {
+    width: 150px;
+    height: 28px;
+    background: #F7F7F8;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 14px;
+}
+.social img {
+    width: 15px;
+    height: 15px;
+    padding-top: 5px;
+    margin-right: 5px;
+    vertical-align: -3px;
+}
+.or { 
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+.or::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 10px;
+    border: 1px solid #F7F7F8;
+    width: 200px;
+}
+.or::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px;
+    border: 1px solid #F7F7F8;
+    width: 200px;
+}
+.member-form {
+    max-width: 600px;
+    border: 1px solid #dedede;
+    background: #fff;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.member-form h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.join-box label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.join-box input {
+    border: 1px solid #fff;
+    border-radius: 15px;
+    background: #F7F7F8;
+    width: 100%;
+    height: 35px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+input::-webkit-input-placeholder {
+    color: #bcbcbc;
+    font-size: 12px;
+}
+input:-ms-input-placeholder {
+    color: #bcbcbc;
+    font-size: 12px;
+}
+input::placeholder {
+    color: #bcbcbc;
+    font-size: 12px;
+}
+.join-submit {
+    font-size: 16px;
+    background: #605BFF;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 50px;
+} 
+
+.join-submit:hover {
+    transform: scale(1.05);
+}
+#agree {
+    height: 10px;
+    display: inline;
+    width: 10px;
+}
+.agree a {
+    text-decoration: underline;
+    text-underline-position: under;
+    color: #605BFF;
+}
+.already {
+    text-align: center;
+    margin-top: 10px;
+}
+.already a {
+    text-decoration: underline;
+    text-underline-position: under;
+    color: #605BFF;
+}
+
+.join-type {
+    padding: 100px 0;
+    font-family: 'BMJua';
+}
+.login-type {
+    padding: 100px 0;
+    font-family: 'BMJua';
+}
+.member-form {
+    max-width: 600px;
+    border: 1px solid #DEDEDE;
+    background: #fff;
+    margin: 0 auto;
+    padding: 50px;
+}
+.member-form .logo {
+    display: flex;
+    justify-content: center;
+}
+.member-form h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.login-type .member-form h3 {
+    margin-top: 30px;
+}
+.join-box label,
+.login-box label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.join-box input,
+.login-box input {
+    border: 1px solid #fff;
+    border-radius: 15px;
+    background: #F7F7F8;
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.join-submit {
+    font-size: 16px;
+    background: #605BFF;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 50px;
+}
+.login-submit {
+    font-size: 16px;
+    background: #605BFF;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-radius: 30px;
+    margin: 10px 0 10px 0;
+}
+.join-submit:hover,
+.login-submit:hover {
+    transform: scale(1.05);
+}
+#agree {
+    height: 10px;
+    display: inline;
+    width: 10px;
+}
+.agree a {
+    text-decoration: underline;
+    text-underline-position: under;
+    color: #605BFF;
+}
+.another {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.another img {
+    width: 21px;
+    height: 21px;
+    margin: 0 10px;
+}
+.another img:hover {
+    cursor: pointer;
+}
+.already {
+    text-align: center;
+    margin-top: 10px;
+}
+.already a {
+    text-decoration: underline;
+    text-underline-position: under;
+    color: #605BFF;
+}
+.other {
+    text-align: right;
+}
+.other a {
+    color: #605BFF;
+}
+.other a:nth-child(1)::after {
+    content: '';
+    border: 0.5px solid #A3A0F6;
+    width: 1px;
+    height: 10px;
+    margin: 0 0 0 5px;
+}
