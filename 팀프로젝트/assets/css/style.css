@@ -163,7 +163,6 @@
     background-position: -150px 0;
 }
 
-/* 회원가입,로그인 : join-type */
 .join-type {
     padding: 100px 0;
 }
@@ -187,7 +186,7 @@
     margin-right: 5px;
     vertical-align: -3px;
 }
-.or { 
+.or {
     width: 100%;
     text-align: center;
     position: relative;
@@ -209,12 +208,16 @@
 }
 .member-form {
     max-width: 600px;
-    border: 1px solid #dedede;
+    border: 1px solid #DEDEDE;
     background: #fff;
     margin: 0 auto;
     padding: 50px;
 }
-
+.member-form .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
 .member-form h3 {
     font-size: 24px;
     font-weight: 500;
@@ -237,15 +240,15 @@
     margin-bottom: 10px;
 }
 input::-webkit-input-placeholder {
-    color: #bcbcbc;
+    color: #BCBCBC;
     font-size: 12px;
 }
 input:-ms-input-placeholder {
-    color: #bcbcbc;
+    color: #BCBCBC;
     font-size: 12px;
 }
 input::placeholder {
-    color: #bcbcbc;
+    color: #BCBCBC;
     font-size: 12px;
 }
 .join-submit {
@@ -259,8 +262,7 @@ input::placeholder {
     cursor: pointer;
     border-radius: 30px;
     margin-top: 50px;
-} 
-
+}
 .join-submit:hover {
     transform: scale(1.05);
 }
@@ -283,43 +285,20 @@ input::placeholder {
     text-underline-position: under;
     color: #605BFF;
 }
-
-.join-type {
-    padding: 100px 0;
-    font-family: 'BMJua';
-}
+/* login */
 .login-type {
     padding: 100px 0;
     font-family: 'BMJua';
 }
-.member-form {
-    max-width: 600px;
-    border: 1px solid #DEDEDE;
-    background: #fff;
-    margin: 0 auto;
-    padding: 50px;
-}
-.member-form .logo {
-    display: flex;
-    justify-content: center;
-}
-.member-form h3 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 30px;
-    text-align: center;
-}
 .login-type .member-form h3 {
     margin-top: 30px;
 }
-.join-box label,
 .login-box label {
     display: block;
     font-size: 16px;
     margin-bottom: 5px;
     font-weight: 700;
 }
-.join-box input,
 .login-box input {
     border: 1px solid #fff;
     border-radius: 15px;
@@ -328,18 +307,6 @@ input::placeholder {
     height: 50px;
     padding: 15px;
     margin-bottom: 10px;
-}
-.join-submit {
-    font-size: 16px;
-    background: #605BFF;
-    color: #fff;
-    padding: 10px;
-    display: inline-block;
-    width: 100%;
-    transition: all 0.2s;
-    cursor: pointer;
-    border-radius: 30px;
-    margin-top: 50px;
 }
 .login-submit {
     font-size: 16px;
@@ -353,19 +320,8 @@ input::placeholder {
     border-radius: 30px;
     margin: 10px 0 10px 0;
 }
-.join-submit:hover,
 .login-submit:hover {
     transform: scale(1.05);
-}
-#agree {
-    height: 10px;
-    display: inline;
-    width: 10px;
-}
-.agree a {
-    text-decoration: underline;
-    text-underline-position: under;
-    color: #605BFF;
 }
 .another {
     display: flex;
@@ -379,15 +335,6 @@ input::placeholder {
 }
 .another img:hover {
     cursor: pointer;
-}
-.already {
-    text-align: center;
-    margin-top: 10px;
-}
-.already a {
-    text-decoration: underline;
-    text-underline-position: under;
-    color: #605BFF;
 }
 .other {
     text-align: right;
