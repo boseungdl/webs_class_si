@@ -1,85 +1,89 @@
 
+
+
+
+
 <!DOCTYPE html>
 <html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="webstoryboy">
-    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
-    <meta name="keywords"
-        content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
-    <title>mysql</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/css/docs.min.css" rel="stylesheet">
-    <link href="../assets/css/prism.css" rel="stylesheet">
-
-    <!-- 파비콘 -->
-    <link rel="shortcut icon" href="../assets/face/Layout.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/face/Layout.png">
-    <link rel="icon" href="../assets/face/Layout.png">
-    <link rel="icon" href="../assets/face/Layout.png" sizes="16x16">
-    <link rel="icon" href="../assets/face/Layout.png" sizes="32x32">
-    <link rel="icon" href="../assets/face/Layout.png" sizes="48x48">
-    <link rel="icon" href="../assets/face/Layout.png" sizes="64x64">
-    <link rel="icon" href="../assets/face/Layout.png" sizes="128x128">
-
-    <!-- Facebook meta tags -->
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="웹스토리보이" />
-    <meta property="og:url" content="https://webstoryboy.co.kr/" />
-    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
-    <meta property="og:site_name" content="웹스토리보이" />
-    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
-
-    <!-- twitter meta tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@webstoryboy" />
-    <meta name="twitter:title" content="웹스토리보이" />
-    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
-    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
-
-    <!-- 웹 폰트 -->
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-
-<body>
-    <a class="sr-only" href="#content">Skip to main content</a>
-    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="../index.html" class="navbar-brand">boseungdl's &lt;doc&gt;</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="webstoryboy">
+        <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+        <meta name="keywords"
+            content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
+        <title>mysql</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/css/bootstrap.css" rel="stylesheet">
+        <link href="../assets/css/docs.min.css" rel="stylesheet">
+        <link href="../assets/css/prism.css" rel="stylesheet">
+    
+        <!-- 파비콘 -->
+        <link rel="shortcut icon" href="../assets/face/Layout.png">
+        <link rel="apple-touch-icon-precomposed" href="../assets/face/Layout.png">
+        <link rel="icon" href="../assets/face/Layout.png">
+        <link rel="icon" href="../assets/face/Layout.png" sizes="16x16">
+        <link rel="icon" href="../assets/face/Layout.png" sizes="32x32">
+        <link rel="icon" href="../assets/face/Layout.png" sizes="48x48">
+        <link rel="icon" href="../assets/face/Layout.png" sizes="64x64">
+        <link rel="icon" href="../assets/face/Layout.png" sizes="128x128">
+    
+        <!-- Facebook meta tags -->
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="웹스토리보이" />
+        <meta property="og:url" content="https://webstoryboy.co.kr/" />
+        <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+        <meta property="og:site_name" content="웹스토리보이" />
+        <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+    
+        <!-- twitter meta tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@webstoryboy" />
+        <meta name="twitter:title" content="웹스토리보이" />
+        <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+        <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    
+        <!-- 웹 폰트 -->
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    
+    <body>
+        <a class="sr-only" href="#content">Skip to main content</a>
+        <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="../index.html" class="navbar-brand">boseungdl's &lt;doc&gt;</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li><a href="https://seungbostory.tistory.com/">Tistory</a></li>
+                        <li><a href="https://codepen.io/boseungdl">Codepen</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
-                <ul class="nav navbar-nav">
-                    <li><a href="https://seungbostory.tistory.com/">Tistory</a></li>
-                    <li><a href="https://codepen.io/boseungdl">Codepen</a></li>
-                </ul>
-            </nav>
+        </header>
+        <div class="bs-header bgs1" id="content">
+            <div class="container">
+                <h1>MySQL v1.0 &lt;/doc&gt;</h1>
+            </div>
         </div>
-    </header>
-    <div class="bs-header bgs1" id="content">
-        <div class="container">
-            <h1>MySQL v1.0 &lt;/doc&gt;</h1>
-        </div>
-    </div>
 
     <!-- 부트스트랩, 프레임 워크, 워드프레스, 그누보드, 제로보드 -->
     <div class="container bs-docs-container">
@@ -204,14 +208,16 @@ Query OK, 0 rows affected (0.00 sec)
                         create table 테이블 이름;
                     </div>
 <pre class="language-js"><code>CREATE TABLE myMember (
-    myMemberID int(10) unsigned auto_increment comment "회원의 고유번호",
-    youEmail varchar(40) NOT NULL comment "회원 아이디",
-    youName varchar(12) NOT NULL comment "회원 이름",
-    youPass varchar(20) NOT NULL comment "회원 비밀번호",
-    youBirth varchar(12) NOT NULL comment "회원 생일",
-    regTime int(11) NOT NULL comment "회원 가입 시간",
-    PRIMARY KEY (myMemberID)
-) charset=utf8 comment "회원 정보 테이블";
+    memberID int(10) unsigned auto_increment,
+    youEmail varchar(40) NOT NULL,
+    youName varchar(20) NOT NULL,
+    youPass varchar(20) NOT NULL,
+    youBirth int(20) NOT NULL,
+    youAge int(20) NOT NULL,
+    youPhone int(20) NOT NULL,
+    regTime int(11) NOT NULL,
+    PRIMARY KEY (memberID)
+) charset=utf8;
 </code></pre>
                     <h3 id="intro5-2" class="page-header">테이블 전체보기</h3>
                     <div class="bs-callout bs-callout-info">
@@ -249,26 +255,34 @@ Query OK, 0 rows affected (0.00 sec)
 <pre class="language-js"><code>mysql> drop table mymember2;
 Query OK, 0 rows affected (0.01 sec)
 </code></pre>
+
                     <h3 id="intro5-5" class="page-header">테이블 복사</h3>
                     <h4>테이블 구조, 데이터 복사</h4>
                     <div class="bs-callout bs-callout-info">
-                        create table 새로운 테이블명 select * from 복사할 테이블명;
+                        CREATE table 새로운 테이블명 SELECT * FROM 복사할 테이블명
                     </div>
-<pre class="language-js"><code>create table myMember1 select * from myMember;</code></pre>
+<pre class="language-js"><code>CREATE table myMember1 SELECT * FROM myMember;
+Query OK, 20 rows affected (0.05 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+</code></pre>
 
                     <h4>테이블 구조 복사</h4>
                     <div class="bs-callout bs-callout-info">
-                        create table 새로운 테이블명 LIKE 복사할 테이블 명
+                        CREATE table 새로운 테이블명 LIKE 복사할 테이블명;
                     </div>
-<pre class="language-js"><code>create table mymember2 LIKE myMember;</code></pre>
-
+<pre class="language-js"><code>CREATE table myMember2 LIKE myMember;
+Query OK, 0 rows affected (0.03 sec)
+</code></pre>
                     <h4>테이블 데이터 복사</h4>
                     <div class="bs-callout bs-callout-info">
-                        INSERT INTO 새로운 테이블명 SELECT * FROM 복사할 테이블명;
+                        INSERT INTO 기본 테이블명 SELECT * FROM 복사할 테이블명;
                     </div>
-<pre class="language-js"><code>insert into table mymember3 SELECT * FROM myMember2;</code></pre>
-                    
+<pre class="language-js"><code>INSERT INTO myMember3 SELECT * FROM myMember;
+Query OK, 20 rows affected (0.06 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+</code></pre>
                 </div>
+
                 <!-- //box -->
 
                 <!-- box -->
@@ -333,177 +347,199 @@ Records: 0  Duplicates: 0  Warnings: 0
 
                 <!-- box -->
                 <div class="bs-docs-section">
-                    <h2 id="intro7" class="page-header">테이블 테이더</h2>
+                    <h2 id="intro7" class="page-header">테이블 데이터</h2>
                     <h3 id="intro7-1" class="page-header">데이터 입력하기</h3>
                     <div class="bs-callout bs-callout-info">
                         INSERT INTO 테이블명(필드명) VALUES(데이터)
                     </div>
-<pre class="language-js"><code>mysql> INSERT INTO mydata(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('96tmdqh@naver.com', '한승보', '1234', '19960716', '27', '01020153932', '1234');
+<pre class="language-js"><code>mysql> INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('jungsik321@naver.com', '김정식', '1234', '19930209', '30', '01025738580', '20220314');
 Query OK, 1 row affected (0.00 sec)
 
 mysql> SELECT * FROM myData;
 +------------+----------------------+-------------+---------+----------+--------+---------+
 | myMemberID | youEmail             | youName     | youPass | youBirth | youAge | regTime |
 +------------+----------------------+-------------+---------+----------+--------+---------+
-|          1 | 96tmdqh@naver.com | 한승보 | 1234    | 930209   |     30 |     327 |
+|          1 | jungsik321@naver.com | gentlemanjs | 1234    | 930209   |     30 |     327 |
 +------------+----------------------+-------------+---------+----------+--------+---------+
 1 row in set (0.00 sec)  
 </code></pre>
                     <h3 id="intro7-2" class="page-header">데이터 불러오기</h3>
+                    <h4>전체 데이터 불러오기</h4>
                     <div class="bs-callout bs-callout-info">
                         SELECT * FROM 테이블명;
                     </div>
-<pre class="language-js"><code>
+<pre class="language-js"><code>mysql> SELECT * FROM mymember;
++----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
+| memberID | youEmail              | youName | youPass   | youBirth | youAge | youPhone   | regTime   |
++----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
+|        1 | webstoryboy@naver.com | 황상연  | 12dfsdecv | 19920405 |     33 | 1039858583 | 578365839 |
+|        2 | jungsik321@naver.com  | 김정식  | 1234      | 19930209 |     30 | 1025738580 |  20220314 |
+|        3 | rmsgur2275@gmail.com  | 박근혁  | alcls2860 | 19980611 |     25 | 1058122860 |  12345678 |
+|        4 | dnwls7738@naver.com   | 천우진  | 12asdf    | 19960324 |     27 | 1055805274 |  45678941 |
+|        5 | dnstjq6305@naver.com  | 조운섭  | qweasdf   | 19911110 |     32 | 1024068904 |  12345678 |
+|        6 | dhtpfls321@naver.com  | 오세린  | 1234      | 19980214 |     25 | 1032229944 |  12345678 |
+|        7 | GarenChoi@naver.com   | 최근영  | 1234      | 19970117 |     26 | 1054651345 |       234 |
+|        8 | sna12345@naver.com    | 배석찬  | 1234      | 19960727 |     27 | 1033125279 |   3270327 |
+|        9 | sbxjs6999@naver.com   | 박근희  | 1234qwer  | 19970214 |     26 | 1041046999 |  12345678 |
+|       10 | wwuu123@naver.com     | 최가영  | 12345678  | 19970506 |     26 | 1066179991 |  12345678 |
+|       11 | illie@naver.com       | 류성일  | ryuPass   | 19940426 |     29 | 1055327391 |      1440 |
+|       12 | jsjh442@naver.com     | 박지선  | 1234      | 19980423 |     25 | 1057421662 |  12341234 |
+|       13 | ohwehoh@naver.com     | 이연우  | dldus1358 | 19950720 |     28 | 1014141441 |  12341234 |
+|       14 | go_goa@naver.com      | 김현우  | 159753    | 19920126 |     31 | 1087361836 |  40250371 |
+|       15 | placidcy@gmail.com    | 김지섭  | 1234      | 19900212 |     32 | 1011112222 |  20220314 |
+|       16 | 96tmdqh@naver.com     | 한승보  | 1234      | 19960716 |     27 | 1020153932 |      1234 |
+|       17 | ik6623@naver.com      | 박종호  | 1234qwer  | 19950909 |     28 | 1040976623 |  10293857 |
+|       18 | apdlvmf8044@gmail.com | 송준섭  | qweasdf   |   931120 |     30 | 1088648044 |  21846351 |
+|       19 | apdlvmf8044@gmail.com | 송준섭  | qweasdf   | 19931120 |     30 | 1088648044 |  21846351 |
+|       20 | seongwoo@lycos.com    | 박성우  | 123456asd | 19910506 |     32 | 1044779156 |  54216451 |
++----------+-----------------------+---------+-----------+----------+--------+------------+-----------+
+20 rows in set (0.00 sec)
 </code></pre>
-                    <h4>전체 데이터 불러오기</h4>
-                    <div class="bs-callout bs-callout-info">
-                        SELECT * FROM myMember;
-                    </div>
-<pre class="language-js"><code>SELECT * FROM mymember;
-</code></pre>
-
                     <h4 class="pt20">조건 데이터 불러오기</h4>
                     <div class="bs-callout bs-callout-info">
-                        SELECT * FROM mymember WHERE 조건;
+                        SELECT * FROM 테이블명 WHERE 조건;
                     </div>
-
+                    
                     <h4>회원 아이디가 10번인 경우</h4>
 <pre class="language-js"><code>SELECT * FROM myMember WHERE memberID = 10;</code></pre>
                     
                     <h4>회원 아이디가 10번이 아닌 경우</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID &lt;$gt; 10;</code></pre>
-
+<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID &lt;&gt; 10;</code></pre>
+                    
                     <h4>회원 아이디가 5~10번인 경우</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID >=5 AND memberID &lt; 11</code></pre>
-
-                    <h4>범위 조건 데이터 불러오기</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID >=5 AND memberID &lt;11;</code></pre>
+                    
+                    <h4 class="pt20">범위 조건 데이터 불러오기</h4>
                     <div class="bs-callout bs-callout-info">
-                        SELECT * FROM 테이블 명 WHERE 컬럼명 BETWEEN 시작 값 AND 끝 값;
+                        SELECT * FROM 테이블명 WHERE 컬럼명 BETWEEN 시작값 AND 끝값;
                     </div>
+                    
                     <h4>회원 아이디가 5~10번인 경우</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID BETWEEN 5 AND 10</code></pre>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID BETWEEN 5 AND 10;</code></pre>
+                    
+                    <h4>회원 아이디가 5~10번인 경우</h4>
+                    <pre class="language-js"><code>SELECT * FROM myMember WHERE memberID NOT BETWEEN 5 AND 10;</code></pre>
 
-                    <h4>회원 아이디가 5~10번이 아닌 경우</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE memberID NOT BETWEEN 5 AND 10</code></pre>
-
-                    <h4>해당 조건 데이터 불러오기</h4>
+                    <h4 class="pt20">해당 조건 데이터 불러오기</h4>
                     <div class="bs-callout bs-callout-info">
-                        SELECT * FROM 테이블 명 WHERE 컬럼명 IN(값1, 값2, 값3....)
+                        SELECT * FROM 테이블명 WHERE 컬럼명 IN(값1, 값2, 값3....);
                     </div>
 <pre class="language-js"><code>SELECT * FROM myMember WHERE memberID IN(4, 6, 13, 14);</code></pre>
 
-                    <h4>패턴 조건 데이터 불러오기</h4>
+                    <h4 class="pt20">패턴 조건 데이터 불러오기</h4>
                     <div class="bs-callout bs-callout-info">
-                        SELECT * FROM 테이블 명 WHERE 컬럼명 like 
+                        SELECT * FROM 테이블명 WHERE 컬럼명 LIKE 조건;
                     </div>
-                    <h4>이메일 중에 naver 텍스트가 포함된 경우</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail like '%naver%';</code></pre>
+                    <h4">이메일 중에 naver 텍스트가 포함된 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail LIKE '%naver%';</code></pre>
 
-                    <h4>이메일 중에 web 텍스트로 시작되는 경우</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail like 'web%';</code></pre>
+                    <h4 class="pt20">이메일 중에 web 텍스트로 시작되는 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail LIKE 'web%';</code></pre>
 
-                    <h4>이메일 중에 com 텍스트로 끝나는 경우</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail like '%com';</code></pre>
-
-                    <h4>이름 중에 김으로 시작되는 멤버를 출력!</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE youName like '김%';</code></pre>
-
-                    <h4>이름 중에 '김'씨 이거나 '황'씨인 경우의 멤버를 출력!</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE youName like '김%' OR youName like '황%';</code></pre>
-
-                    <h4>이름 중에 중간 글자가 근인 경우의 멤버를 출력!(%문자열, _ 1개의 글자)</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE youName like '_근_';</code></pre>
-
-                    <h4>패턴 조건 데이터 불러오기</h4>
-                    <div class="bs-callout bs-callout-info">
-                        SELECT * FROM 테이블 명 WHERE IS NULL
-                    </div>
-                    <h4>이름 중에 중간 글자가 근인 경우의 멤버를 출력!(%문자열, _ 1개의 글자)</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE IS NULL;</code></pre>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE IS NOT NULL;</code></pre>
-
-                    <h4>논리 연산자 데이터 불러오기</h4>
-                    <div class="bs-callout bs-callout-info">
-                        SELECT * FROM 테이블 명 WHERE 컬럼명 연산자
-                    </div>
-                    <h4>나이가 20살 이상이거나 또는 성이 김씨인 멤버</h4>
-<pre class="language-js">SELECT * FROM myMember WHERE youAge &gt; '20' or youname like '김%';<code></code></pre>
-
-                    <h4>나이가 20살 이상이면서(AND) 김씨인 멤버</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE youAge &gt; '20' AND youname like '김%';</code></pre>
-
-                    <h4>멤버아이디가 2또는 10 그리고 나이가 30이상인 경우</h4>
-<pre class="language-js"><code>SELECT * FROM myMember WHERE (memberID = 2 or memberID = 10) && youage >= 30</code></pre>
+                    <h4 class="pt20">이메일 중에 web 텍스트로 시작되는 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youEmail LIKE '%com';</code></pre>
                     
-                    <h4>데이터 갯수 불러오기</h4>
+                    <h4 class="pt20">이름 중에 '김'으로 시작되는 멤버</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youName LIKE '김%';</code></pre>
+                    
+                    <h4 class="pt20">이름 중에 '김'씨 이거나 '황'씨 인 경우</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youName LIKE '김%' or youName LIKE '황%';</code></pre>
+
+                    <h4 class="pt20">이름 중에 중간 글자가 '근'인 경우(%문자열, _1개의 글자)</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youName LIKE '_근_'</code></pre>
+                    
+                    <h4 class="pt20">NULL 데이터 불러오기</h4>
                     <div class="bs-callout bs-callout-info">
-                        SELECT * FROM 테이블 명 LIMIT 표시할 수
+                        SELECT * FROM 테이블명 WHERE 컬럼명 IS NULL;
                     </div>
-<pre class="language-js"><code>SELECT * FROM myMember LIMIT 2;</code></pre>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youName IS NULL;</code></pre>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youName IS NOT NULL;</code></pre>
+
+                    <h4 class="pt20">논리 연산자 데이터 불러오기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT * FROM 테이블명 WHERE 컬럼명 연산자;
+                    </div>
+                    
+                    <h4 class="pt20">나이가 20살 이상, 김씨인 멤버(AND)</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youAge >=20 && youName LIKE '김%';</code></pre>
+                    
+                    <h4 class="pt20">나이가 20살 이상 또는 김씨인 멤버(OR)</h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE youAge >=20 || youName LIKE '김%';</code></pre>
+                    
+                    <h4 class="pt20">멤버아이디가 2또는 14인데, 나이가 30보다 큰 경우 </h4>
+<pre class="language-js"><code>SELECT * FROM myMember WHERE (memberID=2 OR memberID=14) AND youAge > 30;</code></pre>
+
+                    <h4 class="pt20">데이터 갯수 불러오기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT * FROM 테이블명 LIMIT 표시할 수;
+                    </div>
+<pre class="language-js"><code>SELECT * FROM myMember LIMIT 12;</code></pre>
 <pre class="language-js"><code>SELECT * FROM myMember LIMIT 10, 20;</code></pre>
-<pre class="language-js"><code>SELECT youEmail FROM myMember LIMIT 10, 20;</code></pre>
+<pre class="language-js"><code>SELECT youEmail FROM myMember LIMIT 5, 10;</code></pre>
 
-                    <h4>데이터 불러오기(내림차순/오름차순)</h4>
+                    <h4 class="pt20">데이터 불러오기(내림차순/오름차순)</h4>
                     <div class="bs-callout bs-callout-info">
-                        SELECT * FROM 테이블 명 ORDER BY 컬럼명 정렬방식(DESC/ASC)
+                        SELECT * FROM 테이블명 ORDER BY 컬럼명 정렬방식(DESC/ASC);
                     </div>
-<pre class="language-js"><code>SELECT * FROM myMember ORDER BY youage DESC</code></pre>
-<pre class="language-js"><code>SELECT * FROM myMember ORDER BY youage ASC</code></pre>
-
-
-
+<pre class="language-js"><code>SELECT * FROM myMember ORDER BY youAge ASCE;</code></pre>
 
 
 
                     <h3 id="intro7-3" class="page-header">데이터 수정하기</h3>
                     <div class="bs-callout bs-callout-info">
-                        UPDATE 테이블명 SET 컬럼명 조건
+                        UPDATE 테이블명 SET 컬럼명 조건;
                     </div>
-                    <h4 class="pt20">모든 회원의 비밀번호를 '1234' 변경</h4>
-<pre class="language-js"><code>UPDATE myMember SET youPass = '1234';
-</code></pre>
-                    <h4 class="pt20">5회원부터 10회원까지의 비밀번호를 '1234' 변경</h4>
-<pre class="language-js"><code>UPDATE myMember SET youPass = '123456' WHERE memberID BETWEEN 5 AND 10;
-</code></pre>
-                    <h4 class="pt20">아이디 내림차순</h4>
-<pre class="language-js"><code>UPDATE myMember SET youPass = '***' ORDER BY memberID DESC LIMIT 10;
-</code></pre>
-                    <h3 id="intro7-4" class="page-header">데이터 삭제하기</h3>
-                    <h4>전체 데이터 삭제</h4>
-                    <div class="bs-callout bs-callout-info">
-                        DELETE FROM 테이블명 OR DELETE * FROM 테이블명
-                    </div>
-<pre class="language-js"><code>DELETE FROM myMember
-</code></pre>
+                    <h4 class="pt20">모든 회원의 비밀번호를 '1234'로 변경</h4>
+<pre class="language-js"><code>UPDATE myMember SET youPass = "1234";</code></pre>
 
+                    <h4 class="pt20">5~10번 회원까지 비밀번호를 '4321'로 변경</h4>
+<pre class="language-js"><code>UPDATE myMember SET youPass = "4321" WHERE memberID BETWEEN 5 AND 10;</code></pre>
+                    
+                    <h4 class="pt20">아이디 내림차순 기준 10개의 비밀번호 변경</h4>
+<pre class="language-js"><code>UPDATE myMember SET youPass = "****" ORDER BY memberID DESC LIMIT 10;</code></pre>
+                    
+
+
+
+
+
+                    <h3 id="intro7-3" class="page-header">데이터 삭제하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        DELETE FROM 테이블명 or DELETE * FROM 테이블명
+                    </div>
+<pre class="language-js"><code>DELETE FROM mymember;</code></pre>
+                    
                     <h4 class="pt20">조건 데이터 삭제</h4>
                     <div class="bs-callout bs-callout-info">
-                        DELETE FROM 테이블명 조건
+                        DELETE FROM 테이블명 WHERE 조건;
                     </div>
-                    <H4>조건 삭제 : 회원 아이디가 5번 멤버를 삭제</H4>
-<pre class="language-js"><code></code>DELETE FROM myMember WHERE memberID = 5;</pre>
 
-                    <H4>조건 삭제 : 패스워드가 '****' 멤버를 삭제</H4>
-<pre class="language-js"><code>DELETE FROM myMember WHERE youpass = '****';</code></pre>
+                    <h4>조건 삭제 : 회원 아이디가 5번 멤버 삭제</h4>
+<pre class="language-js"><code>DELETE FROM mymember WHERE memberID = 5;</code></pre>
 
-                    <h4>정렬 삭제 : 멤버를 삭제</h4>
-<pre class="language-js"><code>DELETE FROM myMember ORDER BY youName LIMIT 5</code></pre>
+                    <h4>조건 삭제 : 패스워드가 '****'인 멤버를 삭제</h4>
+<pre class="language-js"><code>DELETE FROM mymember WHERE youPass = '****';</code></pre>
 
-                    <h4>지정 삭제 : 지정한 멤버를 삭제</h4>
-<pre class="language-js"><code>DELETE FROM myMember WHERE memberID IN(8,9,10)</code></pre>
-                    
+                    <h4>정렬 삭제 : 이름을 기준으로 5번째까지 멤버 삭제</h4>
+<pre class="language-js"><code>DELETE FROM mymember ORDER BY youName LIMIT 5;</code></pre>
+
+                    <h4>지정 삭제 : 지정한 멤버 삭제</h4>
+<pre class="language-js"><code>DELETE FROM mymember WHERE memberID IN(4,7,10);</code></pre>
+
                 </div>
                 <!-- //box -->
 
-                 <!-- box -->
-                 <div class="bs-docs-section">
+                <!-- box -->
+                <div class="bs-docs-section">
                     <h2 id="intro8" class="page-header">테이블 합치기</h2>
-                   
+
                     <h3 id="intro8-1" class="page-header">JOIN 사용하기</h3>
                     <div class="bs-callout bs-callout-info">
                         SELECT 필드명 FROM 테이블명 엘리어스 JOIN 연결할 테이블명 엘리어스 ON(조건문);
                     </div>
-<pre class="language-js"><code>SELECT m.youName, m.youEmail, r.youCont, r.regTime FROM myMember m JOIN myReview r ON(m.memberID = r.memberID); </code></pre>
+<pre class="language-js"><code>SELECT m.youName, m.youEmail, r.youCont, r.regTime FROM myMember m JOIN myReview r ON(m.memberID = r.memberID);
+</code></pre>
+
 
 <pre class="language-js"><code>CREATE TABLE myMember (
     memberID int(10) unsigned auto_increment,
@@ -520,45 +556,42 @@ mysql> SELECT * FROM myData;
 CREATE TABLE myReview (
     reviewID int(10) unsigned auto_increment,
     memberID int(10) unsigned,
-    youcont tinytext NOT NULL,
+    youCont tinytext NOT NULL,
     regTime int(11) NOT NULL,
     PRIMARY KEY (reviewID)
-) charset=utf8
+) charset=utf8;
 
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('1', '정말 감사합니다. 너무 좋네요!', '12345');
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('2', '잘봤습니다 또 기대할게요!', '12345');
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('3', '이거 가방 완전 별로에요...', '12345');
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('4', '행복하세요 저두 행복할게요!', '12345');
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('5', '오늘 정말 힘드네요 다들 화이팅!', '12345');
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('6', '행복한 날들의 연속이네요!', '12345');
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('7', '잘 지내 우리 그만 헤이지자!', '12345');
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('8', '반품해주세요 ㅠㅠ 사이즈가 안맞아요!', '12345');
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('9', '정말 감사합니다!..', '12345');
-INSERT INTO myReview(memberID, youCont, regTime) VALUES('10', '정말 감사합니다. 너무 좋네요!', '12345');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('4', '정말 맛있어요! 또 시킬게요', '20220315');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('1', '제 입맛엔 맞지 않았습니다.', '20220315');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('15', '사장님이 친절해서 기분이 좋았어요!', '20220315');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('9', '배달이 빠르고 사장님이 친절해요!', '20220315');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('6', '벌써 3번째 주문이에요! 맛있어요', '20220315');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('12', '첫 주문입니다. 맛있게 잘먹었습니다!', '20220315');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('10', '너무 맛있어요! 또 시킬게요!', '20220315');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('2', '감사합니다 맛있게 먹을게요!', '20220315');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('17', '또 시킬게요 맛있어요!', '20220315');
+INSERT INTO myReview(memberID, youCont, regTime) VALUES('20', '최악입니다 다신 안시킬거에요!', '20220315');
 </code></pre>
-<pre class="language-js"><code>
-</code></pre>
-                    <h3 class="pt20">필드명 바꾸기</h3>
+
+                    <h4 class="pt20">필드명 바꾸기</h4>
                     <div class="bs-callout bs-callout-info">
                         SELECT 필드명 AS 기존 필드명 대신 출력할 필드명 FROM 테이블명
                     </div>
-<pre class="language-js"><code>SELECT m.youName, m.youEmail, r.youCont, r.regTime AS reviewTime FROM myMember m JOIN myReview r ON(m.memberID = r.memberID); 
-</code></pre>
+<pre class="language-js"><code>SELECT m.youName, m.youEmail, r.youCont, r.regTime AS reviewTime FROM myMember m JOIN myReview r ON(m.memberID = r.memberID);</code></pre>
 
+                    <h4 class="pt20">필드 내용이 없는 경우 표시</h4>
                     <div class="bs-callout bs-callout-info">
-                        LEFT JOIN
+                        LEFT JOIN 
                     </div>
-<pre class="language-js"><code>SELECT m.youName, m.youEmail, r.youCont, r.regTime FROM myMember m LEFT JOIN myReview r ON(m.memberID = r.memberID); 
-</code></pre>
-                   
-                    
+<pre class="language-js"><code>SELECT m.youName, m.youEmail, r.youCont, r.regTime FROM myMember m LEFT JOIN myReview r ON(m.memberID = r.memberID);</code></pre>
+
                 </div>
                 <!-- //box -->
 
-                 <!-- box -->
-                 <div class="bs-docs-section">
-                    <h2 id="intro9" class="page-header">집계함수</h2>
-                
+                <!-- box -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">집계 함수</h2>
+
 <pre class="language-js"><code>CREATE TABLE myRecode (
     recodeID int(10) unsigned auto_increment,
     memberID int(10) unsigned,
@@ -570,36 +603,34 @@ INSERT INTO myReview(memberID, youCont, regTime) VALUES('10', '정말 감사합�
     PRIMARY KEY (recodeID)
 ) charset=utf8;
 
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(1, 50, 30, 40, 30, 10);
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(2, 50, 80, 40, 80, 70);
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(3, 70, 50, 60, 70, 80);
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(4, 30, 30, 50, 20, 30);
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(5, 20, 20, 30, 40, 40);
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(6, 40, 30, 10, 30, 10);
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(7, 70, 50, 40, 90, 20);
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(8, 80, 60, 40, 30, 90);
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(9, 50, 30, 50, 30, 10);
-INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(10, 50, 30, 40, 30, 10);
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('1', '50', '30', '40', '30', '20');
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('2', '80', '60', '70', '70', '80');
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('3', '20', '30', '40', '30', '20');
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('4', '70', '90', '80', '80', '60');
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('5', '90', '90', '90', '80', '90');
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('6', '50', '60', '60', '40', '50');
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('7', '60', '70', '60', '50', '50');
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('8', '60', '60', '70', '70', '70');
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('9', '80', '80', '80', '90', '60');
+INSERT INTO myRecode(memberID, javascript, html, css, mysql, react) VALUES('10', '40', '50', '40', '50', '40');
 </code></pre>
-
-                    <h3 id="intro9-1" class="pt20" aria-colspan="page-header">집계함수의 종류</h3>
+                    <h3 id="intro9-1" class="page-header pt20">집계함수의 종류</h3>
 <pre class="language-js"><code>SELECT count(javascript) FROM myRecode;</code></pre>
 <pre class="language-js"><code>SELECT sum(javascript) FROM myRecode;</code></pre>
 <pre class="language-js"><code>SELECT avg(javascript) FROM myRecode;</code></pre>
 <pre class="language-js"><code>SELECT max(javascript) FROM myRecode;</code></pre>
 <pre class="language-js"><code>SELECT min(javascript) FROM myRecode;</code></pre>
 
-                    <h3 id="intro9-2" class="pt20" aria-colspan="page-header">그룹별 집계</h3>
+                    <h3  id="intro9-2" class="page-header pt20">그룹별 집계</h3>
                     <h4>GROUP BY</h4>
                     <div class="bs-callout bs-callout-info">
                         SELECT 필드명 FROM 테이블명 GROUP BY 필드명
                     </div>
-<pre class="language-js"><code></code></pre>
-
+<pre class="language-js"><code>SELECT memberID avg(javscript) FROM myRecode WHERE memberID IN(1,2,3,4) GROUP BY memberID;</code></pre>
                 </div>
                 <!-- //box -->
 
-            
+            </div>
             <div class="col-md-3">
                 <div class="bs-sidebar hidden-print" role="complementary">
                     <ul class="nav bs-sidenav">
@@ -645,8 +676,8 @@ INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(10, 
                         </li>
                         <li><a href="#intro9">집계함수</a>
                             <ul class="nav bs-sidenav">
-                                <li><a href="#intro9-1"></a></li>
-                            
+                                <li><a href="#intro9-1">집계함수의 종류</a></li>
+                                <li><a href="#intro9-2">그룹별 집계</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -678,3 +709,4 @@ INSERT INTO myRecode (memberID, javascript, html, css, mysql, react) VALUES(10, 
     <script src="../assets/js/prism.js"></script>
 </body>
 </html>
+
