@@ -1,0 +1,167 @@
+<?php
+   include "../../connect/connect.php";
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- style -->
+     <link rel="stylesheet" href="../팀프로젝트/assets/css/reset.css">
+
+    <style>
+        
+        body {
+            background-color: #fafafb;
+        }
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+        #header h2 {
+            font-size: 24px;
+            font-weight: 800;
+        }
+        fieldset {
+            display: flex;
+        }
+        fieldset > div{
+           margin-left: 10px;
+        }
+        .search-form {
+            height: 35px;
+            padding: 0 10px;
+            border-radius: 10px;
+            font-size: 16px;
+            border: 1px solid #000;
+        }
+        .search-option {
+            height: 35px;
+            border-radius: 10px;
+        }
+        .search-btn {
+            width: 120px;
+            height: 35px;
+           
+            border-radius: 10px;
+            background-color: #605bff;
+            color: #fff;
+        }
+        main {
+            
+        }
+        #nav ul {
+            height: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 5fr 1.5fr 1fr;
+            align-items: center;
+        }
+        #nav ul li {
+            color: #030229;
+            opacity: 0.7;
+            font-size: 12px;
+            text-align: center;
+        }
+        .board {
+            height: 70px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 5fr 1.5fr 1fr;
+            align-items: center;
+            border-radius: 10px;
+            background-color: #fff;
+            
+        }
+        .board div {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #000
+        }
+        .board div:nth-child(2) {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+        }
+        .board div:nth-child(2) img,
+        .board div:nth-child(3) img,
+        .board div:nth-child(4) img
+         {
+            margin-right: 5px;
+        }
+        .board div:nth-child(5) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+            height: 45px;
+            opacity: 0.1;
+            border-radius: 22.5px;
+            background-color: #f29339;
+            overflow: hidden;
+        }
+       
+      
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="header">
+            <h2>Q&A</h2>
+            <form action="boardSearch.php" name="boardSearch" method="get">
+                <fieldset>
+                    <legend class="ir_so">게시판 검색 영역</legend>
+                    <div>
+                        <input type="search" name="searchKeyword" class="search-form" placeholder="search" aria-label="search" requierd >
+                    </div>
+                    <div>
+                        <select name="searchOption" class="search-option">
+                            <option value="title">제목</option>
+                            <option value="content">내용</option>
+                            <option value="name">등록자</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="sumbit" class="search-btn">검색</button>
+                    </div>
+                    <!-- <div>
+                        <a href="boardWrite.php" class="search-btn black">글쓰기</a>
+                    </div> -->
+                </fieldset>
+            </form>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul>
+                    <li>번호</li>
+                    <li>이름</li>
+                    <li>제목</li>
+                    <li>등록일</li>
+                    <li>상태</li>
+                </ul>
+            </nav>
+            <div class="board">
+                <div>1</div>
+                <div><img src="img/Group 465.jpg" alt="">한승보</div>
+                <div><img src="img/Message.jpg" alt=""><a href="#">제목sdsdsdsdsdasdasd</a></div>
+                <div><img src="img/Calendar.png" alt="">2022-03-22</div>
+                <div>complete</div>
+            </div>
+        </main>
+
+        
+
+    </div>
+    
+</body>
+</html>
