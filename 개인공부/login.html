@@ -20,8 +20,12 @@
             background-color: #fafafb;
         }
         .wrap {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            display: flex;
+        }
+        .mainPage {
+           flex: 1;
         }
         #header {
             display: flex;
@@ -110,55 +114,83 @@
             background-color: #f29339;
             overflow: hidden;
         }
-       
+       .sidebar {
+           width: 10px;
+       }
       
     </style>
 </head>
 <body>
     <div class="wrap">
-        <header id="header">
-            <h2>Q&A</h2>
-            <form action="boardSearch.php" name="boardSearch" method="get">
-                <fieldset>
-                    <legend class="ir_so">게시판 검색 영역</legend>
-                    <div>
-                        <input type="search" name="searchKeyword" class="search-form" placeholder="search" aria-label="search" requierd >
-                    </div>
-                    <div>
-                        <select name="searchOption" class="search-option">
-                            <option value="title">제목</option>
-                            <option value="content">내용</option>
-                            <option value="name">등록자</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button type="sumbit" class="search-btn">검색</button>
-                    </div>
-                    <!-- <div>
-                        <a href="boardWrite.php" class="search-btn black">글쓰기</a>
-                    </div> -->
-                </fieldset>
-            </form>
-        </header>
-        <main>
-            <nav id="nav">
-                <ul>
-                    <li>번호</li>
-                    <li>이름</li>
-                    <li>제목</li>
-                    <li>등록일</li>
-                    <li>상태</li>
-                </ul>
-            </nav>
-            <div class="board">
-                <div>1</div>
-                <div><img src="img/Group 465.jpg" alt="">한승보</div>
-                <div><img src="img/Message.jpg" alt=""><a href="#">제목sdsdsdsdsdasdasd</a></div>
-                <div><img src="img/Calendar.png" alt="">2022-03-22</div>
-                <div>complete</div>
+        <div class="sidebar">
+            <div class="logo">
+                <img src="img/Logo.png" alt="">
+                <a href="">방투</a>
             </div>
-        </main>
-
+            <figure class="menu">
+                <ul class="menu">
+                    <li><img src="img/Category.jpg" alt=""> </li>
+                    <li><img src="img/Analytics.jpg" alt=""> </li>
+                    <li><img src="img/Invoice.jpg" alt=""> </li>
+                    <li><img src="img/Schedule.jpg" alt=""> </li>
+                    <li><img src="img/Calendar.jpg" alt=""> </li>
+                    <li><img src="img/Activity.jpg" alt=""> </li>
+                </ul>
+            </figure>
+            <div class="mypage">
+                <figure class="darkmode">
+                    <img src="img/Sun.jpg" alt="">
+                    <img src="img/Moon.jpg" alt="">
+                </figure>
+                <img src="img/Profile photo.jpg" alt="">
+                <img src="img/Logout.jpg" alt="">
+            </div>
+        </div>
+        <div class="mainPage">
+            <header id="header">
+                <h2>Q&A</h2>
+                <form action="boardSearch.php" name="boardSearch" method="get">
+                    <fieldset>
+                        <legend class="ir_so">게시판 검색 영역</legend>
+                        <div>
+                            <input type="search" name="searchKeyword" class="search-form" placeholder="search" aria-label="search" requierd >
+                        </div>
+                        <div>
+                            <select name="searchOption" class="search-option">
+                                <option value="title">제목</option>
+                                <option value="content">내용</option>
+                                <option value="name">등록자</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="sumbit" class="search-btn">검색</button>
+                        </div>
+                        <!-- <div>
+                            <a href="boardWrite.php" class="search-btn black">글쓰기</a>
+                        </div> -->
+                    </fieldset>
+                </form>
+            </header>
+            <main>
+                <nav id="nav">
+                    <ul>
+                        <li>번호</li>
+                        <li>이름</li>
+                        <li>제목</li>
+                        <li>등록일</li>
+                        <li>상태</li>
+                    </ul>
+                </nav>
+                <div class="board">
+                    <div>1</div>
+                    <div><img src="img/Group 465.jpg" alt="">한승보</div>
+                    <div><img src="img/Message.jpg" alt=""><a href="#">제목sdsdsdsdsdasdasd</a></div>
+                    <div><img src="img/Calendar.png" alt="">2022-03-22</div>
+                    <div>complete</div>
+                </div>
+            </main>
+        </div>
+        
         
 
     </div>
