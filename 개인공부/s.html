@@ -13,15 +13,14 @@
    const IM = document.querySelectorAll('.Like');
             
    IM.forEach(el => {
-    el.addEventListener('click', () => {
-                  if(IM.getAttribute('src') == 'img/Like.jpg'){
-                    IM.setAttribute('src', 'img/Like2.jpg');
-            } else {
-                IM.setAttribute('src', 'img/Like.jpg');
-            }
-
-            })
-   });
+       el.addEventListener("click", () => {
+           if(el.getAttribute('src') == 'img/Like.jpg'){
+                el.setAttribute('src') == 'img/Like2.jpg'
+           } else {
+                el.setAttribute('src') == 'img/Like.jpg'
+           }
+       })
+   })
   
 
     </script>
