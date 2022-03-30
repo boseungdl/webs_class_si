@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://webfontworld.github.io/BMJua/BMJua.css" rel="stylesheet">
+</head>
+<style>
+   
+    * {
+        font-family: 'BMJua' !important;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        color: #7E878D;
+    }
+    a {
+       
+
+    }
+    #sidebar2 {
+        width: 200px;
+        height: 100vh;
+        border-radius: 10px;
+        border: 1px solid #000;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .logo2 {
+        margin-top: 20px;
+        flex-basis: 15%;
+    }
+    .logo2 a {
+        display: block;
+        font-size: 24px;
+        font-weight: 800;
+        color: #000;
+    }
+    .logo2 img {
+        width: 45px;
+     
+    }
+    .menu2 {
+        flex-basis: 55%;
+        color: #030229;
+    }
+    .menu2 ul {
+        display: flex;
+        flex-direction: column;
+       align-items: center;
+    }
+    .menu2 li {
+        padding: 10px;
+        transition: all 0.3s;
+        min-width: 140px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .menu2 li:hover {
+        background: linear-gradient(to right, #aca9ff 0%, rgba(172, 169, 255, 0) 91%);
+    }
+   
+    .side__search {
+        margin: 0 10px;
+        padding: 10px;
+        background: #F7F7F8;
+        border-radius: 10px;
+        border-color: #fff;
+        margin-bottom: 7vh;
+    }
+    .etc2 {
+        display: flex;
+        justify-content: center;
+    }
+    .collection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .collection div,a {
+        padding: 3px 5px;
+    }
+    .collection .name {
+        flex-basis: 100%;
+    }
+
+</style>
+<body>
+    <div id="sidebar2">
+        <div class="logo2">
+            <img src="assets/img/Logo.png" alt="">
+            <a href="">방역투게더</a>
+        </div>
+        <input class="side__search" type="text" value="검색">
+        <div class="menu2">
+            <figure>
+                <figcaption class="ir_so"></figcaption>
+                <ul>
+                    <li><img src="assets/img/Category.jpg" alt=""><a href="">확진자 통계</a></li>
+                    <li><img src="assets/img/Analytics.jpg" alt=""><a href="">장소별 수칙</a></li>
+                    <li><img src="assets/img/Invoice.jpg" alt=""><a href="">상황별 수칙</a></li>
+                    <li><img src="assets/img/Schedule.jpg" alt=""><a href="">지원금 정보</a></li>
+                    <li><img src="assets/img/Calendar.jpg" alt=""><a href="">관련 뉴스</a></li>
+                    <li><img src="assets/img/Activity.jpg" alt=""><a href="">커뮤니티</a></li>
+                </ul>
+            </figure>
+        </div>
+        <div class="etc2">
+            <div class="sidemypage">
+                <img src="assets/img/Profile photo.jpg" alt="">
+            </div>
+            <div class="collection">
+                <a class="name">아무개</a>
+                <div class="sun"><img src="assets/img/Sun.jpg" alt=""></div>
+                <div class="moon"><img src="assets/img/moon.jpg" alt=""></div>
+                <a href=""><img src="assets/img/Logout.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>
