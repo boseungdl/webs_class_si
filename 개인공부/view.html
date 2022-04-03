@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            margin-top: 50px;
+            background: rgb(236, 204, 204);
+            border-radius: 10px;
+        }
+        body {
+            background: rgb(235, 216, 250);
+        }
+        .Nheader {
+            display: flex;
+            justify-content: space-between;
+        }
+        .Ntitle {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            margin-top: 10px;
+        }
+        .Nheader .Ntitle span {
+            font-size: 36px;
+            font-weight: 800;
+        }
+        .Nheader .Ntitle a {
+            margin-left: 30px;
+            padding: 10px 30px;
+            background-color: red;
+            border-radius: 10px;
+        }
+        .Nheader .Ncontents {
+            background: #fff;
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            padding: 20px;
+            font-weight: 600;
+            
+        }
+        .Nheader .Ncontents {}
+        .Nphoto img {
+            background: #fff;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 150px;
+            margin-top: 20px;
+
+        }
+        .Nphoto {
+            background: url(img/Camera.png) no-repeat 120px 23px;
+         
+        }
+        .chating__room {
+            height: 350px;
+            margin: 50px 100px 0 100px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            overflow: scroll;
+          
+        }
+        .chating__room::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera*/
+        }
+        .chating__room .user {
+            width: 100px;
+            background: rgb(233, 201, 201);
+            margin-bottom: 5px;
+        }
+        fieldset {
+            border: 0;
+            margin: 10px 100px;
+        }
+        form input {
+            width: 85%;
+            height: 30px;
+            margin-right: 10px;
+        }
+        form button {
+            width: 9%;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="Nheader">
+            <div class="Nleft">
+                <div class="Ntitle"><span>같이 놀아요!</span><a href="">입장</a></div>
+                <div class="Ncontents">#같이 놀아요 재밌게 </div>
+            </div>
+            <div class="Ninfo">
+                <div class="Nphoto"><img src="img/Activity.jpg" alt=""></div>
+                <div class="Nid">
+                    <span>닉네임 : tmdqh0</span>
+                </div>
+                <div class="Nregtime">2020 : 03 : 22</div>
+            </div>
+        </div>
+      
+        <div class="Nmain">
+            <div class="resent__list">
+                <div>최근 2시간 내 방문자 :</div>
+                <div></div>
+            </div>
+            <div class="chating__room">
+                <div class="user">
+                    <img src="img/Like.jpg" alt="">
+                    <span>tmdqh0</span>
+                    <p>안녕하세요</p>
+                </div>
+                <div class="user">
+                    <img src="img/Like.jpg" alt="">
+                    <span>tmdqh0</span>
+                    <p>안녕하세요</p>
+                </div>
+                <div class="user">
+                    <img src="img/Like.jpg" alt="">
+                    <span>tmdqh0</span>
+                    <p>안녕하세요</p>
+                </div>
+                <div class="user">
+                    <img src="img/Like.jpg" alt="">
+                    <span>tmdqh0</span>
+                    <p>안녕하세요</p>
+                </div>
+                <div class="user">
+                    <img src="img/Like.jpg" alt="">
+                    <span>tmdqh0</span>
+                    <p>안녕하세요</p>
+                </div>
+                <div class="user">
+                    <img src="img/Like.jpg" alt="">
+                    <span>tmdqh0</span>
+                    <p>안녕하세요</p>
+                </div>
+                <div class="user">
+                    <img src="img/Like.jpg" alt="">
+                    <span>tmdqh0</span>
+                    <p>안녕하세요</p>
+                </div>
+                <div class="user">
+                    <img src="img/Like.jpg" alt="">
+                    <span>tmdqh0</span>
+                    <p>안녕하세요</p>
+                </div>
+            </div>
+            <form action="" method="get" >
+                <fieldset>
+                    <legend style="left: 1000px;"></legend>
+                    <label for=""></label>
+                    <input type="text" name="">
+                    <button type="submit">보내기</button>
+                </fieldset>
+            </form>
+            
+        </div>
+
+    </div>
+    
+</body>
+</html>
