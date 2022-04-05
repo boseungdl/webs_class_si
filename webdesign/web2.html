@@ -197,7 +197,7 @@
                 </ul>
             </section>
             <section id="section2">
-                <h2><span>실시간 베스트</span> | <span>생생한 리뷰</span></h2>
+                <h2><span class="live">실시간 베스트</span> | <span class="review">생생한 리뷰</span></h2>
                 <div class="menu">
                     <div class="img img1">
                         <img src="img/cont1.jpg" alt="">
@@ -234,6 +234,23 @@
             </div>
         </footer>
     </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        const live = document.querySelector(".live")
+        const review = document.querySelector(".review")
+
+        live.addEventListener("click", () => {
+            review.style.color = "#f2f2f2";
+            live.style.color = "#000";
+        })
+        review.addEventListener("click", () => {
+            live.style.color = "#f2f2f2";
+            review.style.color = "#000";
+        })
+
+    </script>
     
 </body>
 </html>
