@@ -36,15 +36,17 @@
             width: 100px;
             height: 50px;
         }
-        #header ul {
+        #header #nav > ul {
             display: flex;
         }
-        #header ul li {
+        #header #nav > ul > li {
             margin-left: 40px;
             font-size: 22px;
+            padding: 10px;
+            background: rgb(128, 124, 124);
         }
         #main {}
-        #main img {
+        #main #section2 img {
             width: 100%;
         }
         #main #section1 {
@@ -162,26 +164,113 @@
             line-height: 2;
             color: #808080;
         }
+        #nav > ul > li {
+            position: relative;
+        } 
+        ul.menu2 {
+            position: absolute;
+            z-index: 1;
+            top: 50px;
+            display: none;
+        }
+        ul.menu2 li {
+            width: 80px;
+            background: rgb(233, 212, 212);
+        }
+        .block2 {
+            display: none;
+        }
+        /* .menu2:nth-child(2) {
+            
+        } */
+        .slide {
+            top: 100px;
+            width: 960px;
+         
+        }
+        .img__slide {
+            width: 960px;
+            overflow: hidden;
+          
+        }
+        .banner {
+            width: 4800px;
+        
+        }
+        .side1 {left: 30px;}
+        .side2 {left: 30px;}
+        .side3 {left: -5px;}
+        .side4 {left: 5px;}
+        .side5 {}
 
-
+        .layer_bg {display: none; position: fixed; left: 0; top: 0; z-index: 900;
+        width: 100%; height: 100%; background: rgba(0,0,0,0.8);}
+        .layer {display: none; position: absolute; left: 30px; top: 30px; z-index: 1000;
+        width: 500px; height: 500px; border: 3px solid #000; background: #fff;}
+        .layer h2 {padding: 20px; color: #000;}
+        .layer .close {position: absolute; bottom: 20px; right: 20px;}
     </style>
 </head>
 <body>
     <div class="wrap">
         <header id="header">
-            <img src="img/logo1.jpg" alt="">
+            <img class="logo" src="img/logo1.jpg" alt="">
             <nav id="nav">
                 <ul>
-                    <li>COOKIT소개</li>
-                    <li>COOKT메뉴</li>
-                    <li>리뷰</li>
-                    <li>이벤트</li>
-                    <li>MY쿡킷</li>
+                    <li><a href="">COOKIT소개</a>
+                        <ul class="menu2 side1">
+                            <li><a href="">이벤트1</a></li>
+                            <li><a href="">이벤트2</a></li>
+                            <li><a href="">이벤트3</a></li>
+                            <li><a href="">이벤트4</a></li>
+                            <li><a href="">이벤트5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">COOKT메뉴</a>
+                        <ul class="menu2 side2">
+                            <li><a href="">이벤트1</a></li>
+                            <li><a href="">이벤트2</a></li>
+                            <li><a href="">이벤트3</a></li>
+                            <li><a href="">이벤트4</a></li>
+                            <li><a href="">이벤트5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">리뷰</a>
+                        <ul class="menu2 side3">
+                            <li><a href="">이벤트1</a></li>
+                            <li><a href="">이벤트2</a></li>
+                            <li><a href="">이벤트3</a></li>
+                            <li><a href="">이벤트4</a></li>
+                            <li><a href="">이벤트5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">이벤트</a>
+                        <ul class="menu2 side4">
+                            <li><a href="">이벤트1</a></li>
+                            <li><a href="">이벤트2</a></li>
+                            <li><a href="">이벤트3</a></li>
+                            <li><a href="">이벤트4</a></li>
+                            <li><a href="">이벤트5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">MY쿡킷</a>
+                        <ul class="menu2 side5">
+                            <li><a href="">이벤트1</a></li>
+                            <li><a href="">이벤트2</a></li>
+                            <li><a href="">이벤트3</a></li>
+                            <li><a href="">이벤트4</a></li>
+                            <li><a href="">이벤트5</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </header>
         <main id="main">
-            <img src="img/banner.jpg" alt="">
+            <div class="img__slide">
+                <div class="banner">
+                    <img class="slide" src="img/banner.jpg" alt=""><img class="slide" src="img/banner.jpg" alt=""><img class="slide" src="img/banner.jpg" alt=""><img class="slide" src="img/banner.jpg" alt=""><img class="slide" src="img/banner.jpg" alt="">
+                </div>
+            </div>
             <section id="section1">
                 <ul>
                     <li>
@@ -199,17 +288,34 @@
             <section id="section2">
                 <h2><span class="live">실시간 베스트</span> | <span class="review">생생한 리뷰</span></h2>
                 <div class="menu">
-                    <div class="img img1">
+                    <div class="img img1 block1">
                         <img src="img/cont1.jpg" alt="">
                         <h4>평양식 어북쟁반</h4>
                         <span>33,800d원<span>/3인분</span></span>
                     </div>
-                    <div class="img img2">
+                    <div class="img img2 block1">
                         <img src="img/cont2.jpg" alt="">
                         <h4>새우쭈꾸미삼겹살</h4>
                         <span>29,800원<span>/3인분</span></span>
                     </div>
-                    <div class="img img3">
+                    <div class="img img3 block1">
+                        <img src="img/cont3.jpg" alt="">
+                        <h4>방풍나물 아귀찜</h4>
+                        <span>32,800d원<span>/3인분</span></span>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="img img1 block2">
+                        <img src="img/cont1.jpg" alt="">
+                        <h4>평양식 어북쟁반2</h4>
+                        <span>33,800d원<span>/3인분</span></span>
+                    </div>
+                    <div class="img img2 block2">
+                        <img src="img/cont2.jpg" alt="">
+                        <h4>새우쭈꾸미삼겹살</h4>
+                        <span>29,800원<span>/3인분</span></span>
+                    </div>
+                    <div class="img img3 block2">
                         <img src="img/cont3.jpg" alt="">
                         <h4>방풍나물 아귀찜</h4>
                         <span>32,800d원<span>/3인분</span></span>
@@ -233,6 +339,13 @@
                 </div>
             </div>
         </footer>
+
+        <!-- layer -->
+    <div class="layer_bg"></div>
+    <div class="layer">
+        <h2>제목</h2>
+        <a href="#" class="close">닫기</a>
+    </div>
     </div>
 
 
@@ -240,15 +353,92 @@
     <script>
         const live = document.querySelector(".live")
         const review = document.querySelector(".review")
+        const block1 = document.querySelectorAll(".block1")
+        const block2 = document.querySelectorAll(".block2")
 
         live.addEventListener("click", () => {
             review.style.color = "#f2f2f2";
             live.style.color = "#000";
+            block1.forEach(e => {
+                e.style.display = "block";
+            })
+            block2.forEach(e => {
+                e.style.display = "none";
+            })
         })
         review.addEventListener("click", () => {
             live.style.color = "#f2f2f2";
             review.style.color = "#000";
+            block1.forEach(e => {
+                e.style.display = "none";
+            })
+            block2.forEach(e => {
+                e.style.display = "block";
+            })
         })
+
+
+
+        //이미지슬라이드
+       let index = 1;
+       const slide = document.querySelectorAll('.slide');
+       const banner = document.querySelector('.banner');
+    //    let sliderClone = banner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
+    //     banner.appendChild(sliderClone);       
+        
+        setInterval(() => {
+         
+            let sliderCount = slide.length;   
+           
+            let count  = index%sliderCount;//0~4
+        
+            if(index == sliderCount){
+                index = 1;
+                
+            } else {
+                index = index + 1;
+            }
+           
+            console.log(count)
+            banner.style.transition = "all 0.3s";
+            banner.style.transform = "translateX("+-960*+count+"px)";
+            if(index == sliderCount){
+                
+                setTimeout(() => {
+                    banner.style.transition = "0s";
+                    banner.style.transform = "translateX("+count+"px)";
+                },300)
+                
+            }
+        },2000)
+        //첫번째 유형
+        $("#nav > ul > li").mouseover(function(){
+            $(this).find(".menu2").stop().slideDown(300);
+        })
+        $("#nav > ul > li").mouseout(function(){
+            $(this).find(".menu2").stop().slideUp(300);
+        })
+          //세번째 유형
+        // $(".nav > ul > li").mouseover(function(){
+        //     $(this).find(".menu2").stop().slideDown(300);
+        // })
+        // $(".nav > ul > li").mouseout(function(){
+        //     $(this).find(".menu2").stop().slideUp(300);
+        // })
+
+
+        $(".logo").click(function(){
+            $(".layer").slideDown(300);
+            $(".layer_bg").show();
+        });
+        $(".layer .close").click(function(){
+            $(".layer").slideUp(300);
+            $(".layer_bg").hide();
+        })
+
+        
+
+        
 
     </script>
     
