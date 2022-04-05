@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-weight: 600;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        li {
+            list-style: none;
+        }
+        
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #header img {
+            width: 100px;
+            height: 50px;
+        }
+        #header ul {
+            display: flex;
+        }
+        #header ul li {
+            margin-left: 40px;
+            font-size: 22px;
+        }
+        #main {}
+        #main img {
+            width: 100%;
+        }
+        #main #section1 {
+            margin: 20px 0;
+        }
+        #main #section1 ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        #main #section1 ul li {
+            width: 48%;
+            background: #f2f2f2;
+            padding: 20px;
+            background-image: url(img/icon1.png);
+            background-position: 370px;
+            background-size: 50px 50px;
+            background-repeat: no-repeat;
+        }
+        #main #section1 ul li:nth-child(2) {
+            background-image: url(img/icon2.jpg);
+        }
+        #main #section1 ul li h3 {
+            margin-bottom: 5px;
+        }
+        #main #section1 ul li p {
+            font-size: 10px;
+            margin-bottom: 10px;
+        }
+        #main #section1 ul li a {
+            padding-left: 20px;
+            height: 25px;
+            display: inline-block;
+            font-size: 12px;
+            background: url(img/icon5.jpg) no-repeat 0 0/15px 15px;
+        }
+        #main #section1 ul li:nth-child(2) a {
+            background: url(img/icon4.jpg) no-repeat 0 0/15px 15px;
+        }
+        #main #section1 ul li:nth-child(2) span {
+            font-size: 10px;
+            color: rgb(173, 164, 164);  
+            margin-left: 10px;
+        }
+        #section2 .menu {
+            display: flex;
+            justify-content: space-between;
+        }
+        #section2 .menu .img {
+           
+        }
+        #section2 .menu .img::before {
+            position: absolute;
+            content: '';
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            background: #000;
+            margin: 10px;
+            font-size: 16px;
+            padding-left: 5px;
+            padding-top: 5px;
+            white-space: pre;
+            
+        }
+        #section2 .menu .img1::before {
+            content: 'BEST \A 01';
+            
+        }
+        #section2 .menu .img2::before {
+            content: 'BEST \A 02';
+            
+        }
+        #section2 .menu .img3::before {
+            content: 'BEST \A 03';
+            
+        }
+        #section2 h2 {
+            margin: 40px 0;
+        }
+        #section2 h2 span:nth-child(2) {
+            color: #949090;
+        }
+        #section2 .img {
+            width: 30%;
+            background: url(img/icon3.jpg) no-repeat bottom right/30px 30px;
+        }
+        #section2 .img h4 {
+            margin-bottom: 8px;
+        }
+        #section2 .img span span {
+            color: #f2f2f2;
+            margin-left: 3px;
+        }
+        #footer {
+            margin: 50px 0;
+            padding: 20px 10px;
+            display: flex;
+            justify-content: space-between;
+            background: #000;
+            color: #fff;
+            font-size: 10px;
+        }
+        #footer img {
+            width: 100px;
+            height: 50px;
+        }
+        .footer__cont ul {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .footer__cont ul li {
+           margin-right: 30px;
+        }
+        .footer__right {
+            line-height: 2;
+            color: #808080;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="header">
+            <img src="img/logo1.jpg" alt="">
+            <nav id="nav">
+                <ul>
+                    <li>COOKIT소개</li>
+                    <li>COOKT메뉴</li>
+                    <li>리뷰</li>
+                    <li>이벤트</li>
+                    <li>MY쿡킷</li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main">
+            <img src="img/banner.jpg" alt="">
+            <section id="section1">
+                <ul>
+                    <li>
+                        <h3>우리집도 COOKIT 배송이 되나요?</h3>
+                        <p>배송이 가능한지 알려드려요.</p>
+                        <a href="">배송지 검색</a>
+                    </li>
+                    <li>
+                        <h3>7월 30일(화)에 받을 수 있어요</h3>
+                        <p>오전 7시까지 주문하시면 다음날 배송됩니다.</p>
+                        <a href="">63:25:32</a><span>남은 시간</span>
+                    </li>
+                </ul>
+            </section>
+            <section id="section2">
+                <h2><span>실시간 베스트</span> | <span>생생한 리뷰</span></h2>
+                <div class="menu">
+                    <div class="img img1">
+                        <img src="img/cont1.jpg" alt="">
+                        <h4>평양식 어북쟁반</h4>
+                        <span>33,800d원<span>/3인분</span></span>
+                    </div>
+                    <div class="img img2">
+                        <img src="img/cont2.jpg" alt="">
+                        <h4>새우쭈꾸미삼겹살</h4>
+                        <span>29,800원<span>/3인분</span></span>
+                    </div>
+                    <div class="img img3">
+                        <img src="img/cont3.jpg" alt="">
+                        <h4>방풍나물 아귀찜</h4>
+                        <span>32,800d원<span>/3인분</span></span>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <img src="img/logo2.jpg" alt="">
+            <div class="footer__cont">
+                <ul>
+                    <li>이용약관</li>
+                    <li>개인정보처리방침</li>
+                    <li>법적고지</li>
+                    <li>사업자정보 확인</li>
+                </ul>
+                <div class="footer__right">
+                    <h4>씨제이제일제당(주) 대표자:신현재</h4>
+                    <address>주소: 서울 중구 동호로 330CJ제일제당 센터(우) 사업자 등록번호:104-86-09535</address>
+                    <p>통신판매업신고 중구 제07767호 개인정보보호책임자: 류화정</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>
