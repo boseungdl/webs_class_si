@@ -184,7 +184,7 @@
             
         } */
         .slide {
-            top: 100px;
+         
             width: 960px;
          
         }
@@ -380,37 +380,55 @@
 
 
         //이미지슬라이드
-       let index = 1;
+       let index = 0;
        const slide = document.querySelectorAll('.slide');
        const banner = document.querySelector('.banner');
     //    let sliderClone = banner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
-    //     banner.appendChild(sliderClone);       
-        
-        setInterval(() => {
-         
-            let sliderCount = slide.length;   
-           
-            let count  = index%sliderCount;//0~4
-        
-            if(index == sliderCount){
+    //     banner.appendChild(sliderClone);   
+    let sliderCount = slide.length;                //이미지 갯수
+    
+    
+    setInterval(() => {
+        if(index == sliderCount-1){
+            banner.style.transform ="translateX("+-960*+index+"px)";
+            setTimeout(() => {
+                banner.style.transition = "all 0s";
+                banner.style.transform = "translateX(0px)";
                 index = 1;
-                
-            } else {
-                index = index + 1;
-            }
-           
-            console.log(count)
+            }, 300)
+        } else {
             banner.style.transition = "all 0.3s";
-            banner.style.transform = "translateX("+-960*+count+"px)";
-            if(index == sliderCount){
+            banner.style.transform ="translateX("+-960*+index+"px)";
+            index++;
+            console.log(index);
+        }
+    }, 2000);
+        
+        // setInterval(() => {
+         
+        //     let sliderCount = slide.length;   
+           
+        //     let count  = index%sliderCount;//0~4
+        
+        //     if(index == sliderCount){
+        //         index = 1;
                 
-                setTimeout(() => {
-                    banner.style.transition = "0s";
-                    banner.style.transform = "translateX("+count+"px)";
-                },300)
+        //     } else {
+        //         index = index + 1;
+        //     }
+           
+        //     console.log(count)
+        //     banner.style.transition = "all 0.3s";
+        //     banner.style.transform = "translateX("+-960*+count+"px)";
+        //     if(index == sliderCount){
                 
-            }
-        },2000)
+        //         setTimeout(() => {
+        //             banner.style.transition = "0s";
+        //             banner.style.transform = "translateX("+count+"px)";
+        //         },300)
+                
+        //     }
+        // },2000)
         //첫번째 유형
         $("#nav > ul > li").mouseover(function(){
             $(this).find(".menu2").stop().slideDown(300);
