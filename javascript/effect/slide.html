@@ -424,12 +424,12 @@ document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
         let dotIndex = "";
         let sliderTimer = "";
         let interval = 1000;
-       
-
+     
         //이미지 복사
         sliderInner.appendChild(cloneFirst);
         sliderInner.insertBefore(cloneLast, sliderFirst);
-      
+        console.log(sliderLength);
+
         //닷 만들기
         function dotInit(){
             for(let i=0; i<sliderLength; i++){
@@ -442,7 +442,7 @@ document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
         }dotInit();
 
         const dot = document.querySelectorAll(".dot");
-        console.log(dot);
+      
 
 
 
@@ -459,6 +459,9 @@ document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
             //세번째 이미지 : left : -2400px
             //네번째 이미지 : left : -3200px
             //다섯번째 이미지 : left : -4000px
+            dot.forEach((e, i) => {
+                dot[i].classList.remove("active");
+            })
             dot[currentIndex].classList.add("active");
         };
 
