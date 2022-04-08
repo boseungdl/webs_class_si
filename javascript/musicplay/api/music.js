@@ -1,24 +1,24 @@
 let allMusic = [
     {
-        name : "i'm your man",
+        name : "i'm your man1",
         artist : "Leonard Cohen",
         img : "../images/music01",
         audio : "music-1" 
     },
     {
-        name : "Extreme Ways",
+        name : "Extreme Ways2",
         artist : "Mody",
         img : "../images/music02",
         audio : "music-2" 
     },
     {
-        name : "beyond",
+        name : "beyond3",
         artist : "Jone Mickal",
         img : "../images/music03",
         audio : "music-3" 
     },
     {
-        name : "sky",
+        name : "sky4",
         artist : "Jone Mickal",
         img : "../images/music04",
         audio : "music-4" 
