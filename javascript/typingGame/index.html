@@ -190,6 +190,8 @@
         let maxTime = 60;
         let timeLeft = maxTime;
         let isTyping = 0;
+
+
         function randomParagraphs(){
             let randIndex = Math.floor(Math.random()*paragraphs.length);
             typingText.innerHTML = "";
@@ -201,6 +203,9 @@
             typingText.addEventListener("click", () => inputField.focus());
         }
         randomParagraphs();
+
+
+
         function initTyping(){
             const characters = typingText.querySelectorAll("span");
             let typedChar = inputField.value.split("")[charIndex];
@@ -238,6 +243,11 @@
                 inputField.value = "";
             }
         }
+
+
+
+
+
         function initTimer(){
             if(timeLeft > 0){
                 timeLeft--;
@@ -246,6 +256,9 @@
                 clearInterval(timer);
             }
         }
+
+
+        
 
         function resetGame(){
             randomParagraphs();
