@@ -1,4 +1,4 @@
-# webs_class
+# webs_class_si
 
 ## 메인페이지
 https://boseungdl.github.io/webs_class_si/
