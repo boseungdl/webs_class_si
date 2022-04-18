@@ -1,7 +1,7 @@
 # webs_class
 
 ## 메인페이지
-https://boseungdl.github.io/webs_class_si/
+https://github.com/boseungdl/webs_class_si.git
 
 ## 자바스크립트
 https://boseungdl.github.io/webs_class_si/javascript/index.html
