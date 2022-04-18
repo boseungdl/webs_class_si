@@ -75,6 +75,36 @@
         .cards li.shake {
             animation: shake 0.35s ease-in-out;
         }
+        .card__sound {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .card__sound button {
+            border: 0;
+            background: #fff;
+            width: 40px; height: 40px;
+            color: #007bff;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+            line-height: 40px;
+        }
+        .card__start {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        .card__start button {
+            border: 0;
+            background: #fff;
+            width: 40px; height: 40px;
+            color: #007bff;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+            line-height: 40px;
+        }
         @keyframes shake {
             0%   {transform: translateX(0);}
             20%  {transform: translateX(-13px);}
@@ -90,6 +120,13 @@
 <body>
     <div class="wrap__card">
         <div class="card__inner">
+            <div class="card__start">
+                <button class="material-icons">start</button>
+            </div>
+            <div class="card__sound">
+                <button class="material-icons">volume_off</button>
+                <audio id="song" src="audio/Jeremy_Black.mp3"></audio>
+            </div>
             <ul class="cards">
                 <li>
                     <div class="view front">
@@ -224,6 +261,7 @@
     </div>
 </body>
 
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 <script>
     //01. HTML/CSS 디자인 구성
     //02. 클릭한 카드 뒤집기
@@ -232,12 +270,54 @@
     //05. 두개의 이미지 비교하기
     //06. 틀린 이미지 애니메이션 효과 주기
     //07. 빨리 클릭하면 버그 발생
+    //08. 다 완성했을 때
+    //09. 카드 섞기
 
 
     const cards = document.querySelectorAll(".cards li");
+    const cardSound = document.querySelector(".card__sound button");
+    const cardSong = document.querySelector("#song");
+    const cardStart = document.querySelector(".card__start");
+
+    cardSound.addEventListener("click", () => {
+        cardSound.classList.toggle("is-playing");
+
+        if(cardSound.classList.contains("is-playing")){
+            cardSound.innerText = "volume_up";
+            cardSong.play();
+        } else {
+            cardSound.innerText = "volume_off";
+            cardSong.pause();
+        }
+    })
+
+    // cardSound.addEventListener("click", function(){
+    //     this.classList.toggle("is-playing");
+
+    //     if(cardSound.classList.contains("is-playing")){
+    //         this.innerText = "volume_up";
+    //         cardSong.play();
+    //     } else {
+    //         this.innerText = "volume_off";
+    //         cardSong.pause();
+    //     }
+    // })
+    
+
 
     let cardOne, cardTwo;
     let disableDeck = false;
+    let matchedCard = 0;
+
+    let sound = [
+        "audio/match2.mp3",
+        "audio/match.mp3",
+        "audio/up.mp3",
+    ]
+
+    let soundMatch = new Audio(sound[0]);
+    let soundNoMatch = new Audio(sound[1]);
+    let soundSuccess = new Audio(sound[2]);
 
     function flipCard(e){
         let clickedCard = e.target;
@@ -261,10 +341,23 @@
     //05. 두개의 이미지 비교하기
     function matchCards(img1, img2){
         if(img1 == img2){
+            matchedCard++;
+
+            if(matchedCard == 8){
+                setTimeout(() => {
+                    shuffledCard();
+                },1000)
+
+
+              
+            }
+
+
             cardOne.removeEventListener("click", flipCard);
             cardTwo.removeEventListener("click", flipCard);
             cardOne = cardTwo = "";
             disableDeck = false;
+            soundMatch.play();
         } else {
             setTimeout(() => {
                 cardOne.classList.add("shake");
@@ -276,11 +369,47 @@
                 cardOne = cardTwo = "";
                 disableDeck = false;
             }, 1200);
+
+            soundNoMatch.play();
         }
     }
 
+    //카드 섞기
+    function shuffledCard(){
+        cardOne, cardTwo = "";
+        disableDeck = false;
+        matchedCard = 0;
+        
+
+        let arr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8];
+        let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1);
+
+        cards.forEach((card, index) => {
+
+            setTimeout(() => {
+                card.classList.add("flip");
+            }, 200*index)
+
+            setTimeout(() => {
+                card.classList.remove("flip");
+            }, 4000)
+
+            let imgTag = card.querySelector(".back img");
+            imgTag.src = `../assets/img/card0${arr[index]}.png`;
+        })
+    }
+    // shuffledCard();
+
+    //시작 버튼
+    cardStart.addEventListener("click", () => {
+        shuffledCard();
+    })
+
     cards.forEach(card => {
+        // card.classList.add("flip");
         card.addEventListener("click", flipCard);
     })
+
+
 </script>
 </html>
