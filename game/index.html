@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+    <style>
+@font-face {
+    font-family: 'LABDigital';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
+    font-display: swap;
+}        
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'LABDigital';
+        }
+        #header {
+            height: 30px;
+            background: rgb(119, 63, 141);
+            display: flex;
+            align-items: center;
+        }
+        h4 {
+            color: #fff;
+            padding: 3px 15px;
+            background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+        }
+        body {
+            height: 100%;
+            background: url(../assets/img/image\ 11.jpg) no-repeat center / cover;
+        }
+      
+        .img {
+            position: absolute;
+            /* background: #000; */
+            right: 5%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        img {
+          
+            width: 50px;
+            height: 50px;
+        }
+        .img01 {
+            bottom: 10%;
+        }
+        .img02 {
+            bottom: 20%;
+        }
+        .img03 {
+            bottom: 30%;
+        }
+        .img04 {
+            bottom: 40%;
+        }
+        .img05 {
+            bottom: 50%;
+        }
+    </style>
+<body>
+    <header id="header">Game Site</header>
+    <main id="main">
+        <!-- <figure class="start">>
+            <button><img src="../assets/img/guitar-light.svg" alt=""></button>
+            <h4>MUSIC</h4>
+        </figure> -->
+        <figure class="img img01">
+            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <h4>MUSIC</h4>
+        </figure>
+        <figure class="img img02">
+            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <h4>Game</h4>
+        </figure>
+        <figure class="img img03">
+            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <h4>Game</h4>
+        </figure>
+        <figure class="img img04">
+            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <h4>Game</h4>
+        </figure>
+        <figure class="img img05">
+            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <h4>Game</h4>
+        </figure>
+    </main>
+    <iframe src="" frameborder="0"></iframe>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    $(".img").draggable();
+  
+
+</script>
+</html>
