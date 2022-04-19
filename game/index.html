@@ -68,6 +68,61 @@
         .img05 {
             bottom: 50%;
         }
+        .cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            user-select: none;
+            pointer-events: none;
+        }
+        #iframe1 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            height: 610px;
+            border-radius: 20px;
+            text-align: center;
+            width: 330px;
+            display: none;
+            flex-direction: column;
+            justify-content: end;
+            background: rgb(177, 72, 72);
+        }
+        #iframe2 {
+            position: absolute;
+            width: 800px;
+            display: none;
+            text-align: center;
+            flex-direction: column;
+            justify-content: end;
+            border-radius: 20px;
+            background: rgb(177, 72, 72);
+        }
+        #iframe3 {
+            position: absolute;
+            width: 1200px;
+            display: none;
+            text-align: center;
+            flex-direction: column;
+            justify-content: end;
+            border-radius: 20px;
+            background: rgb(177, 72, 72);
+        }
+        @keyframes sibal {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        @keyframes sibal2 {
+            0% {opacity: 1;}
+            100% {opacity: 0;}
+        }
     </style>
 <body>
     <header id="header">Game Site</header>
@@ -77,27 +132,40 @@
             <h4>MUSIC</h4>
         </figure> -->
         <figure class="img img01">
-            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <img  src="../assets/img/video-console.png" alt="">
             <h4>MUSIC</h4>
         </figure>
         <figure class="img img02">
-            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <img  src="../assets/img/video-console.png" alt="">
             <h4>Game</h4>
         </figure>
         <figure class="img img03">
-            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <img  src="../assets/img/video-console.png" alt="">
             <h4>Game</h4>
         </figure>
         <figure class="img img04">
-            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <img  src="../assets/img/video-console.png" alt="">
             <h4>Game</h4>
         </figure>
         <figure class="img img05">
-            <a href=""><img  src="../assets/img/video-console.png" alt=""></a>
+            <img  src="../assets/img/video-console.png" alt="">
             <h4>Game</h4>
         </figure>
     </main>
-    <iframe src="" frameborder="0"></iframe>
+    <div id="iframe1">
+        handle
+        <iframe class="iframe01" style="border-radius: 20px;" height="589px" width="330px" src="https://boseungdl.github.io/webs_class_si/javascript/musicplay/index.html" frameborder="0"></iframe>
+    </div>
+    <div id="iframe2">
+        handle
+        <iframe class="iframe02" style="border-radius: 20px;" height="800px" width="800px" src="https://boseungdl.github.io/webs_class_si/javascript/memoryGame/index.html" frameborder="0"></iframe>
+    </div>
+    <div id="iframe3">
+        handle
+        <iframe class="iframe03" style="border-radius: 20px;" height="800px" width="800px" src="https://boseungdl.github.io/webs_class_si/javascript/typingGame/index.html" frameborder="0"></iframe>
+    </div>
+    <div class="cursor"></div>
+    
 </body>
 
 
@@ -105,6 +173,51 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script>
     $(".img").draggable();
+    $("#iframe1").draggable();
+    $(".img01").click(() => {
+        if($("#iframe1").css("display") == "none"){
+            $("#iframe1").css("animation", "sibal 0.3s");
+            $("#iframe1").css("display", "flex");
+        } else {
+            $("#iframe1").css("animation", "sibal2 0.3s");
+            setTimeout(() => {
+                $("#iframe1").css("display", "none");
+            },300)
+        }
+    })
+    $(".img02").click(() => {
+        if($("#iframe2").css("display") == "none"){
+            $("#iframe2").css("animation", "sibal 0.3s");
+            $("#iframe2").css("display", "flex");
+        } else {
+            $("#iframe2").css("animation", "sibal2 0.3s");
+            setTimeout(() => {
+                $("#iframe2").css("display", "none");
+            },300)
+        }
+    })
+    $(".img03").click(() => {
+        if($("#iframe3").css("display") == "none"){
+            $("#iframe3").css("animation", "sibal 0.3s");
+            $("#iframe3").css("display", "flex");
+        } else {
+            $("#iframe3").css("animation", "sibal2 0.3s");
+            setTimeout(() => {
+                $("#iframe3").css("display", "none");
+            },300)
+        }
+    })
+    
+
+    window.addEventListener("mousemove", (e) => {
+            // document.querySelector(".cursor").style.left = e.clientX -25 + "px"
+            // document.querySelector(".cursor").style.top = e.clientY -25 + "px"
+
+            let x =  e.clientX -25 + "px";
+            let y =  e.clientY -25 + "px";
+            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y
+        });
+    
   
 
 </script>
