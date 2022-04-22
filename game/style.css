@@ -35,8 +35,11 @@ body {
     overflow: hidden;
     background: url(../assets/img/image\ 11.jpg) no-repeat center / cover;
 }
-
-.img {
+.img a {
+    display: block;
+    text-align: center;
+}
+.img{
     position: absolute;
     /* background: #000; */
     right: 5%;
