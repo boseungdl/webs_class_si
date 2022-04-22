@@ -39,6 +39,9 @@ body {
     display: block;
     text-align: center;
 }
+.img:hover h4 {
+    background: rgb(187, 245, 42);
+}
 .img{
     position: absolute;
     /* background: #000; */
@@ -48,6 +51,7 @@ body {
     flex-direction: column;
     width: 10%;
 }
+
 img {
     
     width: 50px;
