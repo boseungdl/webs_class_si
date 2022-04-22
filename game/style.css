@@ -93,7 +93,7 @@ img {
     display: none;
     flex-direction: column;
     justify-content: end;
-    background: rgb(177, 72, 72);
+    background: rgb(224, 67, 159);
 }
 #iframe1::before, #iframe2::before, #iframe3::before {
     position: absolute;
@@ -124,7 +124,7 @@ img {
     flex-direction: column;
     justify-content: end;
     border-radius: 20px;
-    background: rgb(177, 72, 72);
+    background: rgb(77, 160, 216);
 }
 #iframe3 {
     position: absolute;
@@ -135,7 +135,7 @@ img {
     flex-direction: column;
     justify-content: end;
     border-radius: 20px;
-    background: rgb(177, 72, 72);
+    background: rgb(91, 92, 163);
 }
 #iframe3 iframe, #iframe2 iframe, #iframe1 iframe {
     width: 100%;
