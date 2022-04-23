@@ -197,6 +197,20 @@
             60% {transform: translateX(-8px);}
             80% {transform: translateX(8px);}
         }
+        .time {
+            position: absolute;
+            left: 50%;
+            top: -4%;
+            width: 20%;
+            padding: 0.5vw 1vw;
+            text-align: center;
+            background: rgb(123, 231, 21);
+            transform: translateX(-50%);
+        }
+        .source {
+            height: 10vh;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -223,10 +237,10 @@
     </div>
 
 
-
     <div class="card__wrap">
         <div class="card__inner">
             <ul class="cards">
+                <div class="time">TIME : <span class="time__left">60</span> </div>
                 <li>
                     <div class="view front">
                         <img src="../../javascript/assets/img/cardfront.png" alt="카드앞면">
@@ -380,10 +394,15 @@
     const infoBoxStart = infoBox.querySelector(".start");
     const resultBoxRestart = resultBox.querySelector(".restart");
     const source = resultBox.querySelector(".source");
+    const TimeLeft = document.querySelector(".time__left");
+    const timebg = document.querySelector(".time");
+    const stopBtn = document.querySelectorAll(".stop");
     let cardOne, cardTwo;
     let disableDeck = false;
     let matchedCard = 0;
     let gameScore = 0;
+    let time = 60;
+    let lastScore = gameScore*time;
     let sound = [
         "audio/match2.mp3",
         "audio/match.mp3",
@@ -392,17 +411,52 @@
     let soundMatch = new Audio(sound[0]);
     let soundNoMatch = new Audio(sound[1]);
     let soundSuccess = new Audio(sound[2]);
+ 
+    function timer(){
+
+        let timeInterval = setInterval(() => {
+                    time--;
+                    console.log(lastScore)
+                    TimeLeft.innerHTML = time;
+                    if(time < 1 || matchedCard == 8){
+                        setTimeout(() => {
+                            lastScore = gameScore*time;
+                            source.innerText = "당신의 점수는 "+Math.round(lastScore/880*100)+"점입니다.";
+                            gameScore = 0;
+                            time = 60;
+                            TimeLeft.innerHTML = time;
+                            timebg.style.background = 'rgb(123, 231, 21)';
+                        },1300)
+                        setTimeout(() => {
+                            cardWrap.classList.remove("active");
+                            resultBox.classList.add("active");
+                        }, 1000)
+                       
+                        clearInterval(timeInterval)
+                    }
+                    if(time < 50){
+                        timebg.style.background = 'red';
+                    }
+
+                },1000)
+    }
+    
+  
     // 시작 버튼
     startBtn.onclick = () => {
+        
         infoBox.classList.add("active");
         startBtn.classList.remove("active");
     }
     // 도전하기 버튼
     infoBoxStart.onclick = () => {
+
+        
         cardWrap.classList.add("active");
         document.querySelector(".cards").classList.add("none");
         setTimeout(() => {
             document.querySelector(".cards").classList.remove("none");
+            timer();
         },5000)
         setTimeout(() => {
             infoBox.classList.remove("active");
@@ -411,15 +465,27 @@
     }
     // 게임 다시 시작 버튼
     resultBoxRestart.onclick = () => {
+ 
         cardWrap.classList.add("active");
         document.querySelector(".cards").classList.add("none");
         setTimeout(() => {
             document.querySelector(".cards").classList.remove("none");
+            timer();
         },4000)
         resultBox.classList.remove("active");
         cardWrap.classList.add("active");
         shuffledCard();
     }
+    //그만하기버튼
+    stopBtn.forEach(el => {
+        el.addEventListener("click", () => {
+            resultBox.classList.remove("active");
+            infoBox.classList.remove("active");
+            startBtn.classList.add("active");
+            console.log(1)
+        })
+    })
+  
     //카드 클릭
     cards.forEach(card => {
         //card.classList.add("flip")
@@ -444,14 +510,15 @@
         if(img1 == img2){
             matchedCard++;
             gameScore = gameScore +2;
+            console.log(gameScore)
             //완성했을 때
-            if(matchedCard == 8){
-                setTimeout(() => {
-                    cardWrap.classList.remove("active");
-                    resultBox.classList.add("active");
-                    source.innerText = "당신의 점수는 "+gameScore+"점입니다.";
-                }, 1000)
-            }
+            // if(matchedCard == 8){
+            //     setTimeout(() => {
+            //         cardWrap.classList.remove("active");
+            //         resultBox.classList.add("active");
+            //         source.innerText = "당신의 점수는 "+gameScore+"점입니다.";
+            //     }, 1000)
+            // }
             cardOne.removeEventListener("click", flipCard);
             cardTwo.removeEventListener("click", flipCard);
             cardOne = cardTwo = "";
