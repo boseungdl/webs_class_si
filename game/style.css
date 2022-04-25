@@ -122,6 +122,7 @@ img {
 }
 #iframe2 {
     position: absolute;
+    top: 0;
     width: 800px;
     height: 800px;
     display: none;
@@ -133,6 +134,7 @@ img {
 }
 #iframe3 {
     position: absolute;
+    top: 0;
     width: 950px;
     height: 700px;
     display: none;
