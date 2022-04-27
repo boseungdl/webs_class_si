@@ -20,12 +20,14 @@
         .start__btn,
         .info__box,
         .result__box {display: none;}
+
         .tetris__inner {
             width: 250px;
             margin: 100px auto;
         }
         .tetris__inner > ul {
             border: 3px solid #ccc;
+            display: none;
         }
         .tetris__inner > ul > li {
             width: 100%;
@@ -68,6 +70,25 @@
             border: 6px outset #FF861A !important;
             background-color: #FF7900;
         }
+        .s {
+            text-align: center;
+            background: rgb(209, 166, 74);
+            padding: 10px;
+            font-size: 30px;
+            font-weight: 800;
+        }
+        .rule {
+            background: rgb(78, 199, 183);
+            padding: 20px 5px;
+            font-weight: 700;
+        }
+        .rule h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .rule li {
+            padding: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -90,7 +111,7 @@
     </div>
     <!-- 결과 박스 -->
     <div class="result__box">
-        <div class="title">게임을 성공하였습니다.!!</div>
+        <div class="title">게임이 끝났습니다.!!</div>
         <div class="score">
             당신의 점수는 몇 00점입니다.
         </div>
@@ -102,11 +123,25 @@
     <!-- 테트리스 박스 -->
     <div class="tetris__wrap">
         <div class="tetris__inner">
+        <div class="s">start</div>
+        <div class="rule">
+            <h3>!RULE!</h3>
+            <ol>
+                <li>1. 한줄 제거시 10점 획득!!</li>
+                <li>2. 단계 클리어 시마다 속도 up!!</li>
+                <li>3. 마음의 준비가 되신 후</li>
+                <li>4. 시작버튼을 눌러주세요!!</li>
+            </ol>
+        </div>
             <ul></ul>
         </div>
     </div>
     <script>
         const tetrisInner = document.querySelector(".tetris__inner > ul");
+        const tetrisWrap = document.querySelector(".tetris__wrap");
+        const tetrisS = document.querySelector(".tetris__wrap .s");
+        const rule = document.querySelector(".rule");
+        const resultBox = document.querySelector(".result__box");
         const game_rows = 20;
         const game_cols = 10;
         let gameScore = 0;
@@ -159,21 +194,37 @@
             ]
         }
         const movingItem = {
-            type: "Lmino",
+            type: "Jmino",
             direction: 0,
             top: 0,
             left: 0,
         }
-        init()
+
+        tetrisS.addEventListener("click", () => {
+            if(tetrisS.innerText == "start"){
+                init();
+                rule.style.display = "none";
+                tetrisInner.style.display = "block";
+            }
+        })
+       
+  
         // 시작하기
         function init(){
+            gameScore = gameScore;
+            tetrisS.innerText = gameScore+"점";
+
             gameMovingItem = {...movingItem};
-            //console.log(gameMovingItem)
+
+            console.log(gameMovingItem)
+
             for(let i=0; i<game_rows; i++){
                 tetrisLine();
             }
-            renderBlocks();
-        }
+            // renderBlocks();
+            generateNewBlock();
+        }   
+
         // 블록 만들기
         function tetrisLine(){
             const li = document.createElement("li");
@@ -185,54 +236,135 @@
             li.prepend(ul)
             tetrisInner.prepend(li);
         }
+
         // 블록 출력하기
-        function renderBlocks(){
+        function renderBlocks(moveType = " "){
             const {type, direction, top, left} = gameMovingItem;
+
             const movingBlocks = document.querySelectorAll(".moving");
             movingBlocks.forEach(moving => {
                 moving.classList.remove(type, "moving");
             })
-            blocks[type][direction].forEach(block => {
+
+            blocks[type][direction].some(block => {
                 const x = block[0] + left;
                 const y = block[1] + top;
                 //console.log(tetrisInner)
                 const target = tetrisInner.childNodes[y] ? tetrisInner.childNodes[y].childNodes[0].childNodes[x] : null;
                 const isAvailable = checkEmpty(target);
+
                 if(isAvailable){
                     target.classList.add(type, "moving");
                 } else {
                     gameMovingItem = {...movingItem};
+
+                    if(moveType === "retry"){
+                        clearInterval(gameInterval);
+                        gameover();
+                    }
+
                     setTimeout(() => {
-                        renderBlocks();
+
+                        
+                        renderBlocks("retry");
+
                         if(moveType === "top"){
                             seizeBlock();
                         }
-                    },10)
+                    }, 0)
+                    return true;
                 }
             })
             movingItem.left = left;
             movingItem.top = top;
             movingItem.direction = direction
         }
+
         function seizeBlock(){
             const movingBlocks = document.querySelectorAll(".moving");
+            movingBlocks.forEach(moving => {
+                moving.classList.remove("moving");
+                moving.classList.add("seized");
+            })
+            checkMatch();
+            
         }
+        //블록 한 줄 제거
+        function checkMatch(){
+            const childNodes = tetrisInner.childNodes;
+            childNodes.forEach(child => {
+                let matched = true;
+                child.children[0].childNodes.forEach(li => {
+                    if(!li.classList.contains("seized")){
+                        matched = false;
+                    }
+                })
+                if(matched){
+                    child.remove();
+                    tetrisLine(); 
+                    gameScore = gameScore + 10;
+                    tetrisS.innerText = gameScore+"점";
+                }
+            })
+            generateNewBlock();
+        }
+
+
+        //새로운 블럭만들기
+        function generateNewBlock(){
+
+            clearInterval(gameInterval);
+            gameInterval = setInterval(() => {
+                moveBlock("top", 1)
+            }, gameDuration)
+
+            const blockArray = Object.entries(blocks);
+            const randomIndex = Math.floor(Math.random()*blockArray.length)
+            movingItem.type = blockArray[randomIndex][0];
+            movingItem.top = 0;
+            movingItem.left = 0;
+            movingItem.direction = 0;
+            gameMovingItem = {...movingItem};
+            renderBlocks();
+        }
+
         function checkEmpty(target){
-            if(!target){
+            if(!target || target.classList.contains("seized")){
                 return false;
             }
             return true;
         }
+
+        //블록 움직이기
         function moveBlock(moveType, amount){
             gameMovingItem[moveType] += amount;
-            renderBlocks();
+            renderBlocks(moveType);
         }
+
         // 모양 변경하기
         function changeDirectioin(){
             const direction = gameMovingItem.direction;
             direction === 3 ? gameMovingItem.direction = 0 : gameMovingItem.direction += 1;
             renderBlocks();
         }
+
+        //스페이스바 누르기
+        function dropBlock(){
+            clearInterval(gameInterval);
+            gameInterval = setInterval(() => {
+                moveBlock("top", 1)
+            }, 10)
+        }
+
+        //게임오버
+        function gameover(){
+            //게임 끝났을 때
+            tetrisWrap.style.display = "none";
+            resultBox.style.display = "block";
+            gameScore = 0;
+            tetrisS.innerText = start;
+        }
+
         // 키보드 이벤트
         document.addEventListener("keydown", e => {
             //console.log(e)
@@ -248,10 +380,15 @@
                     break;
                 case 38:
                     changeDirectioin();
+                    break;
+                case 32:
+                    dropBlock();
+                    break;
                 default:
                 break;
             }
         })
+        
     </script>
 </body>
 </html>
