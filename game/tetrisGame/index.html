@@ -168,8 +168,9 @@
           <ol>
             <li>1. 한줄 제거시 10점 획득!!</li>
             <li>2. 최대한 많은 점수를 얻으세요!</li>
-            <li>3. 마음의 준비가 되신 후</li>
-            <li>4. 시작버튼을 눌러주세요!!</li>
+            <li>3. 30초 마다 속도가 빨라집니다!</li>
+            <li>4. 마음의 준비가 되신 후</li>
+            <li>5. 시작버튼을 눌러주세요!!</li>
           </ol>
         </div>
         <ul></ul>
@@ -384,6 +385,7 @@
 
       tetrisS.addEventListener("click", () => {
         if (tetrisS.innerText == "start") {
+          gameDuration = 500;
           init();
           rule.style.display = "none";
           tetrisInner.style.display = "block";
@@ -395,6 +397,7 @@
         tetrisS.innerText = gameScore;
         resultBox.style.display = "none";
         tetrisWrap.style.display = "block";
+        gameDuration = 500;
         init();
       });
       stopBtn.addEventListener("click", () => {
@@ -419,6 +422,9 @@
         }
         // renderBlocks();
         generateNewBlock();
+        setInterval(() => {
+          gameDuration -= 30;
+        }, 30000);
       }
 
       // 블록 만들기
