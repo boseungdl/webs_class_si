@@ -67,6 +67,10 @@
         handle
         <iframe class="iframe03" src="https://boseungdl.github.io/webs_class_si/game/typingGame/index.html" frameborder="0"></iframe>
     </div>
+    <div id="iframe4">
+        handle
+        <iframe src="./tetrisGame/index.html" frameborder="0"></iframe>
+    </div>
     <div class="cursor"></div>
     
 </body>
@@ -79,6 +83,7 @@
     $("#iframe1").draggable();
     $("#iframe2").draggable();
     $("#iframe3").draggable();
+    $("#iframe4").draggable();
     $(".img01").click(() => {
         if($("#iframe1").css("display") == "none"){
             $("#iframe1").css("animation", "sibal 0.3s");
@@ -112,6 +117,23 @@
             },300)
         }
     })
+    $(".img04").click(() => {
+        if($("#iframe4").css("display") == "none"){
+            $("#iframe4").css("animation", "sibal 0.3s");
+            $("#iframe4").css("display", "flex");
+        } else {
+            $("#iframe4").css("animation", "sibal2 0.3s");
+            setTimeout(() => {
+                $("#iframe4").css("display", "none");
+            },300)
+        }
+    })
+    $('#iframe4').after().click(function () {
+        $("#iframe4").css("display", "none");
+    });
+    $('#iframe3').before().click(function () {
+        $("#iframe3").css("display", "none");
+    });
     $('#iframe3').after().click(function () {
         $("#iframe3").css("display", "none");
     });
