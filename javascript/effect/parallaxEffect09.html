@@ -40,7 +40,7 @@
         position: fixed;
         top: 30px;
         left: 20px;
-        z-index: 1000;
+        z-index: 10000;
       }
       #parallax__title h1 {
         font-size: 30px;
@@ -79,7 +79,7 @@
         position: fixed;
         left: 20px;
         bottom: 20px;
-        z-index: 1000;
+        z-index: 9999;
         background: rgba(0, 0, 0, 0.4);
         color: #fff;
         padding: 10px 30px;
@@ -89,7 +89,7 @@
         position: fixed;
         left: 20px;
         bottom: 60px;
-        z-index: 1000;
+        z-index: 10000;
         background: rgba(0, 0, 0, 0.4);
         color: #fff;
         padding: 10px 30px;
@@ -139,7 +139,7 @@
       .content__item__num {
         position: absolute;
         right: 0;
-        top: 0;
+        bottom: 0;
         font-size: 20vw;
         font-family: "Lato";
         font-weight: 100;
@@ -148,49 +148,62 @@
 
       /* option */
       #parallax__cont {
-        position: fixed;
-        left: 0;
-        top: 0;
-        display: flex;
-        /* flex-wrap: nowrap; */
       }
       .content__item {
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         position: relative;
       }
       #section1 {
         background-color: #999;
+        z-index: 7000;
       }
       #section2 {
         background-color: #888;
+        z-index: 6000;
       }
       #section3 {
         background-color: #777;
+        z-index: 5000;
+      }
+      #section4 .sec4 {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 400vh;
+        height: 100%;
+        background-color: red;
       }
       #section4 {
         background-color: #666;
+        z-index: 4000;
+        height: 500vh;
       }
       #section5 {
         background-color: #555;
+        z-index: 5000;
       }
       #section6 {
         background-color: #444;
+        z-index: 6000;
       }
       #section7 {
         background-color: #333;
+        z-index: 7000;
       }
       #section8 {
         background-color: #222;
+        z-index: 8000;
       }
       #section9 {
         background-color: #111;
+        z-index: 9000;
       }
     </style>
   </head>
   <body>
     <header id="parallax__title">
-      <h1><a href="parallaxEffect.html">Javascript parallax Effect08</a></h1>
+      <h1><a href="parallaxEffect.html">Javascript parallax Effect09</a></h1>
       <p>페럴랙스 스크롤링 효과 - 가로모드</p>
       <ul>
         <li><a href="parallaxEffect01.html">1</a></li>
@@ -200,8 +213,8 @@
         <li><a href="parallaxEffect05.html">5</a></li>
         <li><a href="parallaxEffect06.html">6</a></li>
         <li><a href="parallaxEffect07.html">7</a></li>
-        <li class="active"><a href="parallaxEffect08.html">8</a></li>
-        <li><a href="parallaxEffect09.html">9</a></li>
+        <li><a href="parallaxEffect08.html">8</a></li>
+        <li class="active"><a href="parallaxEffect09.html">9</a></li>
       </ul>
     </header>
 
@@ -218,7 +231,9 @@
           <span class="content__item__num">03</span>
         </section>
         <section id="section4" class="content__item">
-          <span class="content__item__num">04</span>
+          <div class="sec4">
+            <span class="content__item__num">04</span>
+          </div>
         </section>
         <section id="section5" class="content__item">
           <span class="content__item__num">05</span>
@@ -245,26 +260,25 @@
     <!-- //info -->
     <script src="../assets/js/gsap.min.js"></script>
     <script>
-      const parallaxCont = document.getElementById("parallax__cont");
-
-      //패럴랙스 박스 전체 가로 값
-      const parallaxWidth = parallaxCont.offsetWidth;
-      const xx = window.innerWidth;
-      const yy = window.innerHeight;
-      //body에 높이값에  -->페럴랙스 박스 전체 가로 값
-      document.body.style.height = parallaxWidth - xx * 0.99 + yy + "px";
-      //스크롤 했을 때 left: scrollTop값
+      //section4 섹션에 왔을 때 red를 blue로 변경하세요!
+      const section4 = document.getElementById("section4");
+      const sec = document.querySelector(".sec4");
+      const section4Top = section4.offsetTop;
+      console.log(section4Top);
       function scroll() {
         let scrollTop =
           window.pageYOffset ||
           window.scrollY ||
           document.documentElement.scrollTop;
 
-        gsap.to(parallaxCont, { left: -scrollTop });
+        // 4번째 섹션에 왔을 때 스크롤탑을 0으로
+        let offset = scrollTop - section4Top;
+        if (scrollTop >= section4Top) {
+          sec.style.backgroundColor = "blue";
+          gsap.to(".sec4", { left: -offset, ease: "linear" });
+        }
+        document.querySelector(".scrollTop span").innerText = scrollTop;
 
-        // parallaxCont.style.left = -scrollTop + "px";
-        // console.log(parallaxWidth);
-        // console.log(scrollTop);
         requestAnimationFrame(scroll);
       }
       scroll();
