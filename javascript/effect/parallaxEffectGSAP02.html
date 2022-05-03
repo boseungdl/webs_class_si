@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>페럴랙스 효과</title>
+
+    <link
+      href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Poppins:wght@100;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Poppins:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box;
+        */
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      body {
+        /* background-color: rgb(185, 140, 140); */
+        color: #fff;
+        font-family: "NexonLv1Gothic";
+        font-weight: 300;
+      }
+      #parallax__title {
+        padding: 20px;
+        position: relative;
+        z-index: 1000;
+      }
+      #parallax__title h1 {
+        font-size: 30px;
+        border-bottom: 1px dashed #fff;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        font-weight: 500;
+        display: inline-block;
+      }
+      #parallax__title p {
+        font-size: 16px;
+      }
+      #parallax__title ul {
+        margin-top: 10px;
+      }
+      #parallax__title li {
+        display: inline;
+      }
+      #parallax__title li a {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px dashed #fff;
+        display: inline-block;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+      }
+      #parallax__title li.active a {
+        background: #fff;
+        color: #000;
+      }
+
+      #parallax__cont {
+        max-width: 1600px;
+        width: 98%;
+        margin: 0 auto;
+        /* background-color: rgba(255,255,255,0.3); */
+      }
+      .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        /* background-color: rgba(255,255,255,0.3); */
+        margin: 30vw auto;
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 15vw;
+      }
+      .content__item:nth-child(even) {
+        margin-left: 0;
+        text-align: right;
+      }
+      .content__item:nth-child(even) .content__item__num {
+        left: auto; /*기준점 해제*/
+        right: -5vw;
+      }
+      .content__item__num {
+        font-size: 35vw;
+        position: absolute;
+        left: -5vw;
+        top: -13vw;
+        opacity: 0.07;
+        font-family: "Lato";
+        font-weight: 100;
+        /* font-family: 'Poppins';
+            font-weight: 900; */
+      }
+      .content__item__title {
+        padding-bottom: 5px;
+        font-weight: 400;
+      }
+      .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+      }
+      .content__item__img {
+        position: absolute;
+        left: -5%;
+        top: -5%;
+        width: 110%;
+        height: 110%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        filter: saturate(0);
+        transition: all 1s;
+      }
+      .content__item__img:hover {
+        filter: saturate(100%);
+        transform: scale(1.025);
+      }
+      .content__item:nth-child(1) .content__item__img {
+        background-image: url(img/slider01.jpg);
+      }
+      .content__item:nth-child(2) .content__item__img {
+        background-image: url(img/slider02.jpg);
+      }
+      .content__item:nth-child(3) .content__item__img {
+        background-image: url(img/slider03.jpg);
+      }
+      .content__item:nth-child(4) .content__item__img {
+        background-image: url(img/slider04.jpg);
+      }
+      .content__item:nth-child(5) .content__item__img {
+        background-image: url(img/slider05.jpg);
+      }
+      .content__item:nth-child(6) .content__item__img {
+        background-image: url(img/slider06.jpg);
+      }
+      .content__item:nth-child(7) .content__item__img {
+        background-image: url(img/slider07.jpg);
+      }
+      .content__item:nth-child(8) .content__item__img {
+        background-image: url(img/slider08.jpg);
+      }
+      .content__item:nth-child(9) .content__item__img {
+        background-image: url(img/slider09.jpg);
+      }
+      .conten__item__desc {
+        font-size: 4vw;
+        margin-top: -6vw;
+        margin-left: -5vw;
+        z-index: 100;
+        position: relative;
+        word-break: keep-all;
+        line-height: 1.4;
+      }
+      .content__item:nth-child(even) .conten__item__desc {
+        margin-right: auto;
+        margin-right: -5vw;
+      }
+      #parallax__footer {
+      }
+      /* info */
+      #gradient {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <header id="parallax__title">
+      <h1><a href="parallaxEffect.html">Javascript parallax Effect01</a></h1>
+      <p>페럴랙스 스크롤링 효과 - 메뉴 이동</p>
+      <ul>
+        <li class="active"><a href="parallaxGSAP01.html">1</a></li>
+        <li><a href="parallaxGSAP02.html">2</a></li>
+        <li><a href="parallaxGSAP03.html">3</a></li>
+        <li><a href="parallaxGSAP04.html">4</a></li>
+        <li><a href="parallaxGSAP05.html">5</a></li>
+        <li><a href="parallaxGSAP06.html">6</a></li>
+        <li><a href="parallaxGSAP07.html">7</a></li>
+        <li><a href="parallaxGSAP08.html">8</a></li>
+        <li><a href="parallaxGSAP09.html">9</a></li>
+      </ul>
+    </header>
+
+    <!-- <nav id="parallax__nav">
+        <ul>
+            <li class="active"><a href="#section1">s1</a></li>
+            <li><a href="#section2">s2</a></li>
+            <li><a href="#section3">s3</a></li>
+            <li><a href="#section4">s4</a></li>
+            <li><a href="#section5">s5</a></li>
+            <li><a href="#section6">s6</a></li>
+            <li><a href="#section7">s7</a></li>
+            <li><a href="#section8">s8</a></li>
+            <li><a href="#section9">s9</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- main -->
+    <main>
+      <div id="parallax__cont">
+        <div id="gradient"></div>
+        <section id="section1" class="content__item">
+          <span class="content__item__num">01</span>
+          <h2 class="content__item__title">Section1</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="conten__item__desc">
+            답은 언제나 나한테 있다. 나를 인정하자.
+          </p>
+        </section>
+
+        <section id="section2" class="content__item">
+          <span class="content__item__num">02</span>
+          <h2 class="content__item__title">Section2</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="conten__item__desc">인정한 후부터 남을 볼 수 있다.</p>
+        </section>
+
+        <section id="section3" class="content__item">
+          <span class="content__item__num">03</span>
+          <h2 class="content__item__title">Section3</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="conten__item__desc">
+            결과는 같지만 받아들이는 내가 다르다.
+          </p>
+        </section>
+
+        <section id="section4" class="content__item">
+          <span class="content__item__num">04</span>
+          <h2 class="content__item__title">Section4</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="conten__item__desc">
+            여유는 어쩌면 살아가는데 가장 필요한 능력이다.
+          </p>
+        </section>
+
+        <section id="section5" class="content__item">
+          <span class="content__item__num">05</span>
+          <h2 class="content__item__title">Section5</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="conten__item__desc">나는 지금 여유를 찾기 위해 노력한다.</p>
+        </section>
+
+        <section id="section6" class="content__item">
+          <span class="content__item__num">06</span>
+          <h2 class="content__item__title">Section7</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="conten__item__desc">
+            링의 코너에 몰려 버틴 사람은 한 걸음 다가선다.
+          </p>
+        </section>
+
+        <section id="section7" class="content__item">
+          <span class="content__item__num">07</span>
+          <h2 class="content__item__title">Section7</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="conten__item__desc">
+            시간은 절대 부족하지 않다, 시간을 탓하기 전에 하루를 생각하자.
+          </p>
+        </section>
+
+        <section id="section8" class="content__item">
+          <span class="content__item__num">08</span>
+          <h2 class="content__item__title">Section8</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="conten__item__desc">스스로를 관조하고 더 알아가자.</p>
+        </section>
+
+        <section id="section9" class="content__item">
+          <span class="content__item__num">09</span>
+          <h2 class="content__item__title">Section9</h2>
+          <figure class="content__item__imgWrap">
+            <div class="content__item__img"></div>
+          </figure>
+          <p class="conten__item__desc">
+            이 길의 끝에는 조금은 나은 사람이 되어있기를..
+          </p>
+        </section>
+      </div>
+    </main>
+    <!-- //main -->
+
+    <!-- info -->
+    <!-- <div class="scrollTop">scrollTop : <span>0</span>px</div>
+    <div class="scrollInfo">
+      <ul>
+        <li>#section1 offset() : <span class="offset1">0</span>px</li>
+        <li>#section2 offset() : <span class="offset2">0</span>px</li>
+        <li>#section3 offset() : <span class="offset3">0</span>px</li>
+        <li>#section4 offset() : <span class="offset4">0</span>px</li>
+        <li>#section5 offset() : <span class="offset5">0</span>px</li>
+        <li>#section6 offset() : <span class="offset6">0</span>px</li>
+        <li>#section7 offset() : <span class="offset7">0</span>px</li>
+        <li>#section8 offset() : <span class="offset8">0</span>px</li>
+        <li>#section9 offset() : <span class="offset9">0</span>px</li>
+      </ul>
+    </div> -->
+    <!-- //info -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.utils.toArray(".content__item__imgWrap").forEach((elem) => {
+        ScrollTrigger.create({
+          trigger: elem,
+          start: "top 100%",
+          end: "bottom 0%",
+          markers: true,
+          onEnter: function () {
+            gsap.fromTo(
+              elem,
+              {
+                y: 200,
+                autoAlpha: 0, //opacity === autoAlpha
+              },
+              {
+                duration: 1.25,
+                y: 0,
+                autoAlpha: 1,
+                ease: "power4.out",
+                overwrite: "auto",
+              }
+            );
+          },
+          onLeave: function () {
+            gsap.fromTo(
+              elem,
+              {
+                autoAlpha: 1,
+              },
+              {
+                autoAlpha: 0,
+                overwrite: "auto",
+              }
+            );
+          },
+          onEnterBack: function () {
+            gsap.fromTo(
+              elem,
+              {
+                y: -100,
+                autoAlpha: 0,
+              },
+              {
+                duration: 1.25,
+                y: 0,
+                autoAlpha: 1,
+                ease: "power4.out",
+                overwrite: "auto",
+              }
+            );
+          },
+          onLeaveBack: function () {
+            gsap.fromTo(
+              elem,
+              {
+                autoAlpha: 1,
+              },
+              {
+                autoAlpha: 0,
+                overwrite: "auto",
+              }
+            );
+          },
+        });
+      });
+      gsap.utils.toArray(".conten__item__desc").forEach((elem) => {
+        ScrollTrigger.create({
+          trigger: elem,
+          start: "top 100%",
+          end: "bottom 0%",
+          markers: true,
+          onEnter: function () {
+            gsap.fromTo(
+              elem,
+              {
+                y: 200,
+                autoAlpha: 0, //opacity === autoAlpha
+              },
+              {
+                duration: 1.25,
+                y: 0,
+                autoAlpha: 1,
+                ease: "power4.out",
+                overwrite: "auto",
+              }
+            );
+          },
+          onLeave: function () {
+            gsap.fromTo(
+              elem,
+              {
+                autoAlpha: 1,
+              },
+              {
+                autoAlpha: 0,
+                overwrite: "auto",
+              }
+            );
+          },
+          onEnterBack: function () {
+            gsap.fromTo(
+              elem,
+              {
+                y: -100,
+                autoAlpha: 0,
+              },
+              {
+                duration: 1.25,
+                y: 0,
+                autoAlpha: 1,
+                ease: "power4.out",
+                overwrite: "auto",
+              }
+            );
+          },
+          onLeaveBack: function () {
+            gsap.fromTo(
+              elem,
+              {
+                autoAlpha: 1,
+              },
+              {
+                autoAlpha: 0,
+                overwrite: "auto",
+              }
+            );
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

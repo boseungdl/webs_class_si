@@ -166,18 +166,36 @@
         background-color: #777;
         z-index: 5000;
       }
-      #section4 .sec4 {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 400vh;
-        height: 100%;
-        background-color: red;
-      }
       #section4 {
         background-color: #666;
         z-index: 4000;
         height: 500vh;
+      }
+      #section4 .sec4 {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 320vw;
+        height: 100%;
+        background-color: red;
+        display: flex;
+      }
+      #section4 .sec4 .item {
+        width: 80vw;
+        height: 100vh;
+        position: relative;
+      }
+      #section4 .sec4 .item:nth-child(1) {
+        background-color: rgb(26, 77, 41);
+      }
+      #section4 .sec4 .item:nth-child(2) {
+        background-color: rgb(109, 50, 50);
+      }
+      #section4 .sec4 .item:nth-child(3) {
+        background-color: rgb(37, 41, 90);
+      }
+      #section4 .sec4 .item:nth-child(4) {
+        background-color: rgb(173, 119, 126);
       }
       #section5 {
         background-color: #555;
@@ -189,7 +207,34 @@
       }
       #section7 {
         background-color: #333;
-        z-index: 7000;
+        z-index: 3900;
+        height: 500vh;
+      }
+      #section7 .sec7 {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 320vw;
+        height: 100%;
+        background-color: red;
+        display: flex;
+      }
+      #section7 .sec7 .item {
+        width: 80vw;
+        height: 100vh;
+        position: relative;
+      }
+      #section7 .sec7 .item:nth-child(1) {
+        background-color: rgb(26, 77, 41);
+      }
+      #section7 .sec7 .item:nth-child(2) {
+        background-color: rgb(109, 50, 50);
+      }
+      #section7 .sec7 .item:nth-child(3) {
+        background-color: rgb(37, 41, 90);
+      }
+      #section7 .sec7 .item:nth-child(4) {
+        background-color: rgb(173, 119, 126);
       }
       #section8 {
         background-color: #222;
@@ -232,7 +277,18 @@
         </section>
         <section id="section4" class="content__item">
           <div class="sec4">
-            <span class="content__item__num">04</span>
+            <span class="item"
+              ><span class="content__item__num">4-1</span></span
+            >
+            <span class="item"
+              ><span class="content__item__num">4-2</span></span
+            >
+            <span class="item"
+              ><span class="content__item__num">4-3</span></span
+            >
+            <span class="item"
+              ><span class="content__item__num">4-4</span></span
+            >
           </div>
         </section>
         <section id="section5" class="content__item">
@@ -242,7 +298,20 @@
           <span class="content__item__num">06</span>
         </section>
         <section id="section7" class="content__item">
-          <span class="content__item__num">07</span>
+          <div class="sec7">
+            <span class="item"
+              ><span class="content__item__num">7-1</span></span
+            >
+            <span class="item"
+              ><span class="content__item__num">7-2</span></span
+            >
+            <span class="item"
+              ><span class="content__item__num">7-3</span></span
+            >
+            <span class="item"
+              ><span class="content__item__num">7-4</span></span
+            >
+          </div>
         </section>
         <section id="section8" class="content__item">
           <span class="content__item__num">08</span>
@@ -263,7 +332,9 @@
       //section4 섹션에 왔을 때 red를 blue로 변경하세요!
       const section4 = document.getElementById("section4");
       const sec = document.querySelector(".sec4");
+      const sec7 = document.querySelector(".sec7");
       const section4Top = section4.offsetTop;
+      const section7Top = section7.offsetTop;
       console.log(section4Top);
       function scroll() {
         let scrollTop =
@@ -273,9 +344,14 @@
 
         // 4번째 섹션에 왔을 때 스크롤탑을 0으로
         let offset = scrollTop - section4Top;
+        let offset7 = scrollTop - section7Top;
         if (scrollTop >= section4Top) {
           sec.style.backgroundColor = "blue";
           gsap.to(".sec4", { left: -offset, ease: "linear" });
+        }
+        if (scrollTop >= section7Top) {
+          sec7.style.backgroundColor = "blue";
+          gsap.to(".sec7", { left: -offset7, ease: "linear" });
         }
         document.querySelector(".scrollTop span").innerText = scrollTop;
 
