@@ -11,6 +11,9 @@
         @import url(../assets/css/custom.css);
         @import url(../assets/css/cssitom.css);
        /* slider */
+       body {
+           background-image: url(img/coffee2.jpg);
+       }
        .slider__wrap {
             display: flex;
             justify-content: center;
@@ -20,8 +23,12 @@
         .slider__img {      /*화면 보이는 구간*/
             position: relative;
             width: 800px;
-            height: 480px;  
-            overflow : hidden 
+            height: 550px;  
+            overflow : hidden;
+            border-radius: 150px;
+        }
+        img {
+            height: 540px;
         }
         .slider__inner {  
             position: relative;      
@@ -34,6 +41,7 @@
         }
         .slider {            
             width: 800px;
+            height: 550px;
             position: relative;
         }
         .slider::before {
@@ -97,7 +105,7 @@
     </style>
     </style>
 </head>
-<body class="img03">
+<body class="">
 
 <!-- main -->
     <main>
@@ -105,7 +113,7 @@
             <div class="slider__wrap">
                 <div class="slider__img">
                     <div class="slider__inner">
-                        <div class="slider s1"><img src="img/slider10.jpg" alt="이미지1"></div>
+                        <div class="slider s1"><img src="img/cake.jpg" alt="이미지1"></div>
                         <div class="slider s2"><img src="img/slider06.jpg" alt="이미지2"></div>
                         <div class="slider s3"><img src="img/slider07.jpg" alt="이미지3"></div>
                         <div class="slider s4"><img src="img/slider08.jpg" alt="이미지4"></div>

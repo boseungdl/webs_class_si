@@ -1,157 +1,156 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>마우스 이펙트</title>
 
-    <link rel="stylesheet" href="../assets/css/cssnexon.css">
-    <link rel="stylesheet" href="../assets/css/custom.css">
-    <link rel="stylesheet" href="../assets/css/cssitom.css">
+    <link rel="stylesheet" href="../assets/css/cssnexon.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+    <link rel="stylesheet" href="../assets/css/cssitom.css" />
     <style>
-        body::before {
-            background-color: rgba(46, 38, 37, 0.418);
-        }
-        #mouseType01 {}
-        
-        .mouse__wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: #fff;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-       
-        }
-        .mouse__img {
-            position: relative;
-            cursor: none;
-        }
-        .mouse__img figure {
-            position: relative;
-            width: 50vw;
-            height: 53vh;
-            overflow: hidden;
-            /* border: 3px solid #fff; */
-            background-color: #ccc; 
-            transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
-        }
-        .mouse__img figure:hover {
-            transform: scale(1.025);
-        }
-        .mouse__img figure img {
-            position: absolute;
-            left: -5%;
-            top: -5%;
-            width: 110%;
-            height: 110%;
-            opacity: 0.4;
-            /* background-size: cover; */
-            object-fit: cover;
-        }
-        .mouse__img figcaption {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-size: 1.3vw;
-            line-height: 1.6;
-            white-space: nowrap;
-        }
-        
+      body {
+        background-image: url(img/Rectangle\ 10705.jpg);
+      }
+      body::before {
+        background-color: rgba(46, 38, 37, 0.418);
+      }
+      #mouseType01 {
+      }
+
+      .mouse__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .mouse__img {
+        position: relative;
+        cursor: none;
+      }
+      .mouse__img figure {
+        position: relative;
+        width: 50vw;
+        height: 53vh;
+        overflow: hidden;
+        /* border: 3px solid #fff; */
+        background-color: #ccc;
+        transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+      }
+      .mouse__img figure:hover {
+        transform: scale(1.025);
+      }
+      .mouse__img figure img {
+        position: absolute;
+        left: -5%;
+        top: -5%;
+        width: 110%;
+        height: 110%;
+        opacity: 0.4;
+        /* background-size: cover; */
+        object-fit: cover;
+      }
+      .mouse__img figcaption {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 1.3vw;
+        line-height: 1.6;
+        white-space: nowrap;
+      }
+
       .cursor {
-          position: absolute;
-          left: -30px;
-          top: -30px;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: #fff;
-          z-index: 1000;
-          user-select: none;
-          pointer-events: none;
+        position: absolute;
+        left: -30px;
+        top: -30px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        z-index: 1000;
+        user-select: none;
+        pointer-events: none;
       }
       .cursor ul {
-          position: absolute;
-          left: 40px; top: 0;
+        position: absolute;
+        left: 40px;
+        top: 0;
       }
       .cursor ul li {
         white-space: nowrap;
       }
-      
-     
     </style>
-</head>
-<body class="img04">
+  </head>
+  <body class="">
     <!-- main -->
     <main>
-        <section id="mouseType01">
-            <div class="cursor">
-              
-            </div>
-            <div class="cursor-follower"></div>
+      <section id="mouseType01">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
 
-            <div class="mouse__wrap">
-                <div class="mouse__img">
-                    <figure>
-                        <img src="../assets/img/img4-1.jpg" alt="">
-                    </figure>
-                    <figcaption>
-                        <p>길을 잃어 헤매이는 작은 고양이는 눈이 보이지 않는다.</p>
-                        <p>The little cat lost and lost is blind.</p>
-                    </figcaption>
-                </div>
-            </div>
-        </section>
+        <div class="mouse__wrap">
+          <div class="mouse__img">
+            <figure>
+              <img src="../assets/img/img4-1.jpg" alt="" />
+            </figure>
+            <figcaption>
+              <p>길을 잃어 헤매이는 작은 고양이는 눈이 보이지 않는다.</p>
+              <p>The little cat lost and lost is blind.</p>
+            </figcaption>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- //main -->
 
-
     <!-- info -->
     <div class="info">
-        <div class="title">
-            <h1><a href="mouseEffect.html.html">Javascript mouse Effect04</a></h1>
-            <p>마우스 이펙트 - 이미지효과</p>
-        </div>
-        
-        <div class="number">
-            <ul>
-                <li><a href="mouseEffect01.html">1</a></li>
-                <li><a href="mouseEffect02.html">2</a></li>
-                <li><a href="mouseEffect03.html">3</a></li>
-                <li class="active"><a href="mouseEffect04.html">4</a></li>
-                <li><a href="mouseEffect05.html">5</a></li>
-                <li><a href="mouseEffect06.html">6</a></li>
-                <li><a href="mouseEffect07.html">7</a></li>
-                <li><a href="mouseEffect08.html">8</a></li>
-            </ul>
-        </div>
-        
-        <div class="source">
-            <button class="source-btn">소스보기</button>
-            <div id="modal">
-                <div class="modal-wrap">
-                    <div class="modal-cont">
-                        <div class="code-view">
-                            <div class="view-header" aria-hidden="true">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="view-title">
-                                <ul>
-                                    <li class="active"><a href="#">HTML</a></li>
-                                    <li><a href="#">CSS</a></li>
-                                    <li><a href="#">JavaScript</a></li>
-                                </ul>
-                            </div>
-                            <div class="view-cont">
-                                <div>
-<pre><code class="language-html">&lt;main&gt;
+      <div class="title">
+        <h1><a href="mouseEffect.html.html">Javascript mouse Effect04</a></h1>
+        <p>마우스 이펙트 - 이미지효과</p>
+      </div>
+
+      <div class="number">
+        <ul>
+          <li><a href="mouseEffect01.html">1</a></li>
+          <li><a href="mouseEffect02.html">2</a></li>
+          <li><a href="mouseEffect03.html">3</a></li>
+          <li class="active"><a href="mouseEffect04.html">4</a></li>
+          <li><a href="mouseEffect05.html">5</a></li>
+          <li><a href="mouseEffect06.html">6</a></li>
+          <li><a href="mouseEffect07.html">7</a></li>
+          <li><a href="mouseEffect08.html">8</a></li>
+        </ul>
+      </div>
+
+      <div class="source">
+        <button class="source-btn">소스보기</button>
+        <div id="modal">
+          <div class="modal-wrap">
+            <div class="modal-cont">
+              <div class="code-view">
+                <div class="view-header" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="view-title">
+                  <ul>
+                    <li class="active"><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                  </ul>
+                </div>
+                <div class="view-cont">
+                  <div>
+                    <pre><code class="language-html">&lt;main&gt;
     &lt;section id="mouseType01"&gt;
         &lt;div class="cursor"&gt;
        
@@ -172,9 +171,9 @@
     &lt;/section&gt;
 &lt;/main&gt;
 </code></pre>
-                                </div>
-                                <div>
-<pre><code class="language-css">.mouse__wrap {
+                  </div>
+                  <div>
+                    <pre><code class="language-css">.mouse__wrap {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -233,10 +232,10 @@
   user-select: none;
   pointer-events: none;
 }
-</code></pre>                                                   
-                                </div>
-                                <div>
-<pre><code class="language-javascript">const circle = document.querySelector(".cursor").getBoundingClientRect(); 
+</code></pre>
+                  </div>
+                  <div>
+                    <pre><code class="language-javascript">const circle = document.querySelector(".cursor").getBoundingClientRect(); 
     
     document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
     
@@ -257,80 +256,83 @@
         document.querySelector(".centerPageY").textContent = centerPageY;
     })
 
-</code></pre>  
-                                </div>                               
-                            </div>
-                        </div>
-                    </div>
-                    <button class="modal-close">닫기</button>
+</code></pre>
+                  </div>
                 </div>
+              </div>
             </div>
+            <button class="modal-close">닫기</button>
+          </div>
         </div>
+      </div>
 
-        <div class="attr">
-            <ul>
-                <li>mousepageX : <span class="mousePageX">0</span>px</li>
-                <li>mousepageY : <span class="mousePageY">0</span>px</li>
-                <li>centerpageY : <span class="centerPageY">0</span>px</li>
-                <li>centerpageX : <span class="centerPageX">0</span>px</li>
-            </ul>
-        </div>
-    </div>   
-<!-- //info -->
+      <div class="attr">
+        <ul>
+          <li>mousepageX : <span class="mousePageX">0</span>px</li>
+          <li>mousepageY : <span class="mousePageY">0</span>px</li>
+          <li>centerpageY : <span class="centerPageY">0</span>px</li>
+          <li>centerpageX : <span class="centerPageX">0</span>px</li>
+        </ul>
+      </div>
+    </div>
+    <!-- //info -->
 
+    <script src="../assets/js/highright.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/gsap.min.js"></script>
+    <script>
+      // modal();
+      // highlight();
+      // tabMenu();
 
-<script src="../assets/js/highright.js"></script>
-<script src="../assets/js/custom.js"></script>
-<script src="../assets/js/gsap.min.js"></script>
-<script>      
-    // modal();
-    // highlight();
-    // tabMenu();
+      const circle = document.querySelector(".cursor").getBoundingClientRect();
+      //cursor에 대한 정보를 가져온다.
 
-    const circle = document.querySelector(".cursor").getBoundingClientRect(); 
-    //cursor에 대한 정보를 가져온다.
+      document
+        .querySelector(".mouse__img")
+        .addEventListener("mousemove", (e) => {
+          //
+          gsap.to(".cursor", {
+            duration: 0.2,
+            left: e.pageX - circle.width / 2,
+            top: e.pageY - circle.height / 2,
+          });
 
-    document.querySelector(".mouse__img").addEventListener("mousemove", (e) => {
-      //
-      gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2})
+          //마우스 좌표 값
+          let mousePageX = e.pageX;
+          let mousePageY = e.pageY;
 
-      //마우스 좌표 값
-      let mousePageX = e.pageX;
-      let mousePageY = e.pageY;
-    
-      //마우스 좌표 값을 가운데 초기화
-      //전체 가로
-      //window.innerWidth 1920 //브라우저 크기
-      //window.outerWidth 1920 //브라우저 크기
+          //마우스 좌표 값을 가운데 초기화
+          //전체 가로
+          //window.innerWidth 1920 //브라우저 크기
+          //window.outerWidth 1920 //브라우저 크기
 
-      //마우스 좌표 값을 가운데 초기화
-      //전체 길이/2
-      let centerPageX = window.innerWidth/2 - mousePageX;
-      let centerPageY = window.innerHeight/2 - mousePageY;
-     
-      //이미지 움직이기
-      //const imgMove = document.querySelector(".mouse__img figure img")
-      //imgMove.style.transform = "translate(" +centerPageX/20+ "px, ", centerPageY/20+"px)";
+          //마우스 좌표 값을 가운데 초기화
+          //전체 길이/2
+          let centerPageX = window.innerWidth / 2 - mousePageX;
+          let centerPageY = window.innerHeight / 2 - mousePageY;
 
-        gsap.to(".mouse__img figure img", {duration: 0.3, x: centerPageX/20, y: centerPageY/20});
+          //이미지 움직이기
+          //const imgMove = document.querySelector(".mouse__img figure img")
+          //imgMove.style.transform = "translate(" +centerPageX/20+ "px, ", centerPageY/20+"px)";
 
-      //출력
-      //document.querySelector(".pageX").textContent = centerPageX;
-      //document.querySelector(".pageY").textContent = centerPageY;
-      document.querySelector(".mousePageX").textContent = mousePageX;
-      document.querySelector(".mousePageY").textContent = mousePageY;
-      document.querySelector(".centerPageX").textContent = centerPageX;
-      document.querySelector(".centerPageY").textContent = centerPageY;
-  })
-  //마우스가 클래스mouse__img 내에서 움직일 때 실행된다
-  //애니메이션으로 커서가 움직일 때마다 작동시간을 0.2초로 설정한다.
-  //또한 img태그에도 작동시간 0.3초를 설정한다. 그리고 x, y축의 값에 센터페이지 값을 넣어주어 값이 변하도록 설정한다.
+          gsap.to(".mouse__img figure img", {
+            duration: 0.3,
+            x: centerPageX / 20,
+            y: centerPageY / 20,
+          });
 
-   
- 
-
-
-  
-</script>
-</body>
+          //출력
+          //document.querySelector(".pageX").textContent = centerPageX;
+          //document.querySelector(".pageY").textContent = centerPageY;
+          document.querySelector(".mousePageX").textContent = mousePageX;
+          document.querySelector(".mousePageY").textContent = mousePageY;
+          document.querySelector(".centerPageX").textContent = centerPageX;
+          document.querySelector(".centerPageY").textContent = centerPageY;
+        });
+      //마우스가 클래스mouse__img 내에서 움직일 때 실행된다
+      //애니메이션으로 커서가 움직일 때마다 작동시간을 0.2초로 설정한다.
+      //또한 img태그에도 작동시간 0.3초를 설정한다. 그리고 x, y축의 값에 센터페이지 값을 넣어주어 값이 변하도록 설정한다.
+    </script>
+  </body>
 </html>
