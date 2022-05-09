@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      #main {
+        display: flex;
+        left: 0;
+        top: 0;
+        position: fixed;
+        background-color: #ccc;
+      }
+      #Portfolio {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+      }
+      .side {
+        flex-basis: 10%;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+      }
+      .side ul {
+        margin-left: 20px;
+        border-left: 1px solid #000;
+        height: 95vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .side__title {
+        transform: rotate(-90deg);
+      }
+      .title {
+        flex-basis: 90%;
+        margin-right: 5vw;
+      }
+      .title > ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .title > ul li {
+        width: 15vw;
+      }
+      .main__title > ul {
+        display: flex;
+        height: 80vh;
+        justify-content: end;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+      .small__title {
+        font-family: "Montserrat";
+        display: inline-block;
+        font-size: 3vw;
+      }
+      .big__title {
+        font-family: "Eros Romano";
+        font-size: 10vw;
+      }
+      .big__title:nth-child(2) {
+        margin-left: 5vw;
+      }
+      .big__title:nth-child(3) {
+        margin-left: 30vw;
+      }
+      .big__title:nth-child(2)::after {
+        font-family: "Montserrat";
+        content: "DEVELOPER";
+        font-size: 3vw;
+        margin-left: 30px;
+      }
+      .big__title:nth-child(2)::before {
+        font-family: "Montserrat";
+        content: "THE";
+        font-size: 3vw;
+        margin-right: 30px;
+      }
+      #about {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #about .section1 {
+        flex-basis: 40%;
+        margin-right: 5%;
+      }
+      #about .section2 {
+        flex-basis: 40%;
+      }
+      #about .section1 p {
+        margin-left: 35%;
+      }
+      #about .section1 h3 {
+        margin: 30px 0;
+        margin-left: 35%;
+        font-size: 22px;
+      }
+      #about .section2 img {
+        margin-left: 40%;
+      }
+      #about .section2 p {
+        width: 70%;
+        margin: 30px 0;
+      }
+      #about .section2 h3 {
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main">
+      <div id="Portfolio">
+        <div class="side">
+          <ul>
+            <li><img src="img/moon.png" alt="" /></li>
+            <li class="side__title">BY SEUNGBO H</li>
+            <li class="side__title">bo sueng H</li>
+            <li class="side__title">PORTFOLIO</li>
+            <li><img src="img/hamberger.png" alt="" /></li>
+          </ul>
+        </div>
+        <div class="title">
+          <div class="main__title">
+            <ul>
+              <li>
+                <ul>
+                  <li class="big__title">seungbo</li>
+                  <li class="big__title">Frontend</li>
+                  <li class="big__title">Portfolio</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <ul>
+            <li>
+              1. I WILL BECOME A NEWCOMER WHO KNOWS THE ATTITUDE OF LEARNIG.
+            </li>
+            <li>
+              2. I WILL THINK AND MOVE IN THE DIRECTION THE COMPANY IS GOING.
+            </li>
+            <li>3. I WILL WORK REPONSIBLY FOR THE WORK ASSIGNED TO ME.</li>
+            <li>
+              4. WE WILL DO OUR BEST TO BECOME A BETTER DEVELOPER WITHOUT BEING
+              COMPLACENT WITH OUR CURRENT ABILITIES
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="about">
+        <section class="section1">
+          <figure>
+            <img src="img/busan2.jpg" alt="" />
+          </figure>
+          <h3>코딩을 선택한 나의 6개월</h3>
+          <p>
+            대학교를 졸업한 후의 저는 어쩌면 평생이 될지도 모를 제 직업에 대한
+            많은 고민을 할 수 밖에 없었습니다. 그런 시점에서 처음으로 코딩을
+            접하게 되었고 나름 과감히 바로 뛰어들었습니다. 시작부터 많은
+            어려움이 있었지만 평소에 새로운 것을 경험 할 때 익숙치 않은 것에서
+            오는 어려움은 당연하고 노력과 반복이 해결해 줄 것이란 것을 믿고
+            있었기 때문에 원리가 이해될 때까지 최선을 다했습니다. 새로운 것을
+            배우고 그것을 저의 무기로 만드는 데 재미와 성취감을 느낍니다.
+            앞으로도 안주하지 않고 부딪히겠습니다. 지켜봐주세요.
+          </p>
+        </section>
+        <section class="section2">
+          <h3>기업 성장에 이바지할 프로트엔드 개발자를 꿈꾸며</h3>
+          <p>
+            무엇이 가독성 좋은 코드일까, 이부분은어떻게 하면 좀 더 효율적이고
+            보기좋게축소할 수 있을까, 이건 어떻게 표현할 수 있을까. 항상
+            고민하고 공부하면서 제 부족함을 채우기 위해 노력합니다. 열심히도
+            하는데 심지어 잘하기까지 하는 퍼블리셔로 도약하기 위해 배우고 또
+            배우겠습니다.
+          </p>
+          <figure>
+            <img src="img/busan.jpg" alt="" />
+          </figure>
+        </section>
+      </div>
+    </main>
+  </body>
+
+  <script src="../javascript/assets/js/gsap.min.js"></script>
+  <script>
+    const Maincont = document.getElementById("main");
+    const contentItem = document.querySelector(".content__item");
+
+    function scroll() {
+      let scrollTop =
+        window.pageYOffset ||
+        window.scrollY ||
+        document.documentElement.scrollTop;
+
+      //패럴랙스 박스 전체 가로 값
+      let parallaxWidth = Maincont.offsetWidth;
+      document.body.style.height = parallaxWidth + "px";
+
+      let viewWidth = parallaxWidth - window.innerWidth;
+      let viewHeight = parallaxWidth - window.innerHeight;
+      let goLeft = scrollTop * (viewWidth / viewHeight);
+
+      gsap.to(Maincont, { left: -goLeft });
+
+      // parallaxCont.style.left = -scrollTop + "px";
+      // console.log(parallaxWidth);
+      // console.log(scrollTop);
+      requestAnimationFrame(scroll);
+    }
+    scroll();
+
+    window.addEventListener("resize", scroll);
+    window.addEventListener("scroll", scroll);
+  </script>
+</html>
