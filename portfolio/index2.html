@@ -12,8 +12,11 @@
     />
     <title>Document</title>
     <style>
-      .section1 {
-        height: 480vw;
+      body {
+        background: #000;
+      }
+      .section01 {
+        height: 500vw;
       }
       #main {
         display: flex;
@@ -153,6 +156,12 @@
       .title.work .main__title ul li:nth-child(3) {
         margin-right: -10vw;
       }
+      #main2 {
+        width: 100vw;
+        height: 100vh;
+        /* position: fixed; */
+        z-index: 10;
+      }
 
       .scrollTop {
         position: fixed;
@@ -164,19 +173,18 @@
         padding: 10px 30px;
         border-radius: 50px;
       }
-      .section2 {
-        background: #000;
-        color: #fff;
-        width: 100vw;
-        height: 100vh;
+
+      .article01 {
+        display: flex;
       }
-      .section2 img {
+      .article01 figure {
+        display: inline-block;
         position: relative;
       }
     </style>
   </head>
   <body>
-    <section class="section1">
+    <section class="section01">
       <main id="main">
         <div id="Portfolio">
           <div class="side">
@@ -260,15 +268,22 @@
         </div>
       </main>
     </section>
-    <section class="section2">
-      <article>
+    <section class="section02">
+      <article class="article01">
         <figure>
           <img src="img/webstandard.png" alt="" />
         </figure>
+        <div>
+          <h3>WebStandard</h3>
+          <p>
+            코딩이 무엇인지, 웹 사이트가 어떤식으로 작동이 되는지, html, css,
+            javascrip 등 모든게 처음이였기 때문에 6개월이라는 시간동안 저에게
+            가장 큰 시련을 주었던 수업이였습니다. 이 수업을 통해 웹 사이트의
+            기본 구조를 배우고, 웹 사이트를 만들 수 있게 되었고, 기존 웹 사이트
+            들의 코드 들을 해석하고 분석할 수 있는 법을 배운 수 있었습니다.
+          </p>
+        </div>
       </article>
-      <article></article>
-      <article></article>
-      <article></article>
     </section>
 
     <div class="scrollTop">scrollTop : <span>0</span>px</div>
