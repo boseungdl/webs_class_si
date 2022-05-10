@@ -12,6 +12,9 @@
     />
     <title>Document</title>
     <style>
+      .section1 {
+        height: 480vw;
+      }
       #main {
         display: flex;
         left: 0;
@@ -36,7 +39,6 @@
         margin-left: 20px;
         border-left: 1px solid #000;
         height: 95vh;
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -46,21 +48,23 @@
       }
       .title {
         flex-basis: 90%;
-        margin-right: 5vw;
+        margin-left: 5vw;
       }
-      .title > ul {
+      .title ul {
         display: flex;
         justify-content: space-between;
+        margin-right: 15vw;
       }
-      .title > ul li {
-        width: 15vw;
+      .title ul:nth-of-type(1) li {
+        width: 13vw;
       }
-      .main__title > ul {
+      .main__title ul {
         display: flex;
         height: 80vh;
-        justify-content: end;
-        align-items: center;
+        justify-content: center;
+        align-items: start;
         margin-bottom: 50px;
+        flex-direction: column;
       }
       .small__title {
         font-family: "Montserrat";
@@ -110,8 +114,12 @@
         margin-left: 35%;
         font-size: 22px;
       }
+      #about .section1 img {
+        width: 75%;
+      }
       #about .section2 img {
         margin-left: 40%;
+        width: 45%;
       }
       #about .section2 p {
         width: 70%;
@@ -120,84 +128,157 @@
       #about .section2 h3 {
         font-size: 22px;
       }
+      #alone img {
+        width: 100vw;
+        height: 100vh;
+      }
+      #work {
+        background: #000;
+      }
+      .title.work {
+        width: 100vw;
+        background: #000;
+        color: #fff;
+      }
+      .title.work .main__title ul {
+        align-items: center;
+        height: 100vh;
+      }
+      .title.work .main__title ul li:nth-child(1) {
+        margin-right: 38vw;
+      }
+      .title.work .main__title ul li:nth-child(2) {
+        margin-right: 30vw;
+      }
+      .title.work .main__title ul li:nth-child(3) {
+        margin-right: -10vw;
+      }
+
+      .scrollTop {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 50px;
+      }
+      .section2 {
+        background: #000;
+        color: #fff;
+        width: 100vw;
+        height: 100vh;
+      }
+      .section2 img {
+        position: relative;
+      }
     </style>
   </head>
   <body>
-    <main id="main">
-      <div id="Portfolio">
-        <div class="side">
-          <ul>
-            <li><img src="img/moon.png" alt="" /></li>
-            <li class="side__title">BY SEUNGBO H</li>
-            <li class="side__title">bo sueng H</li>
-            <li class="side__title">PORTFOLIO</li>
-            <li><img src="img/hamberger.png" alt="" /></li>
-          </ul>
-        </div>
-        <div class="title">
-          <div class="main__title">
+    <section class="section1">
+      <main id="main">
+        <div id="Portfolio">
+          <div class="side">
+            <ul>
+              <li><img src="img/moon.png" alt="" /></li>
+              <li class="side__title">BY SEUNGBO H</li>
+              <li class="side__title">bo sueng H</li>
+              <li class="side__title">PORTFOLIO</li>
+              <li><img src="img/hamberger.png" alt="" /></li>
+            </ul>
+          </div>
+          <div class="title">
+            <div class="main__title">
+              <ul>
+                <li class="big__title">seungbo</li>
+                <li class="big__title">Frontend</li>
+                <li class="big__title">Portfolio</li>
+              </ul>
+            </div>
             <ul>
               <li>
-                <ul>
-                  <li class="big__title">seungbo</li>
-                  <li class="big__title">Frontend</li>
-                  <li class="big__title">Portfolio</li>
-                </ul>
+                1. I WILL BECOME A NEWCOMER WHO KNOWS THE ATTITUDE OF LEARNIG.
+              </li>
+              <li>
+                2. I WILL THINK AND MOVE IN THE DIRECTION THE COMPANY IS GOING.
+              </li>
+              <li>3. I WILL WORK REPONSIBLY FOR THE WORK ASSIGNED TO ME.</li>
+              <li>
+                4. WE WILL DO OUR BEST TO BECOME A BETTER DEVELOPER WITHOUT
+                BEING COMPLACENT WITH OUR CURRENT ABILITIES
               </li>
             </ul>
           </div>
-          <ul>
-            <li>
-              1. I WILL BECOME A NEWCOMER WHO KNOWS THE ATTITUDE OF LEARNIG.
-            </li>
-            <li>
-              2. I WILL THINK AND MOVE IN THE DIRECTION THE COMPANY IS GOING.
-            </li>
-            <li>3. I WILL WORK REPONSIBLY FOR THE WORK ASSIGNED TO ME.</li>
-            <li>
-              4. WE WILL DO OUR BEST TO BECOME A BETTER DEVELOPER WITHOUT BEING
-              COMPLACENT WITH OUR CURRENT ABILITIES
-            </li>
-          </ul>
         </div>
-      </div>
-      <div id="about">
-        <section class="section1">
+        <div id="about">
+          <section class="section1">
+            <figure>
+              <img src="img/busan2.jpg" alt="" />
+            </figure>
+            <h3>코딩을 선택한 나의 6개월</h3>
+            <p>
+              대학교를 졸업한 후의 저는 어쩌면 평생이 될지도 모를 제 직업에 대한
+              많은 고민을 할 수 밖에 없었습니다. 그런 시점에서 처음으로 코딩을
+              접하게 되었고 나름 과감히 바로 뛰어들었습니다. 시작부터 많은
+              어려움이 있었지만 평소에 새로운 것을 경험 할 때 익숙치 않은 것에서
+              오는 어려움은 당연하고 노력과 반복이 해결해 줄 것이란 것을 믿고
+              있었기 때문에 원리가 이해될 때까지 최선을 다했습니다. 새로운 것을
+              배우고 그것을 저의 무기로 만드는 데 재미와 성취감을 느낍니다.
+              앞으로도 안주하지 않고 부딪히겠습니다. 지켜봐주세요.
+            </p>
+          </section>
+          <section class="section2">
+            <h3>기업에 맞는 프로트엔드 개발자</h3>
+            <p>
+              무엇이 가독성 좋은 코드일까, 이부분은어떻게 하면 좀 더 효율적이고
+              보기좋게축소할 수 있을까, 이건 어떻게 표현할 수 있을까. 항상
+              고민하고 공부하면서 제 부족함을 채우기 위해 노력합니다. 열심히도
+              하는데 심지어 잘하기까지 하는 퍼블리셔로 도약하기 위해 배우고 또
+              배우겠습니다.
+            </p>
+            <figure>
+              <img src="img/busan.jpg" alt="" />
+            </figure>
+          </section>
+        </div>
+        <div id="alone">
           <figure>
-            <img src="img/busan2.jpg" alt="" />
+            <img src="img/alone.jpg" alt="" />
           </figure>
-          <h3>코딩을 선택한 나의 6개월</h3>
-          <p>
-            대학교를 졸업한 후의 저는 어쩌면 평생이 될지도 모를 제 직업에 대한
-            많은 고민을 할 수 밖에 없었습니다. 그런 시점에서 처음으로 코딩을
-            접하게 되었고 나름 과감히 바로 뛰어들었습니다. 시작부터 많은
-            어려움이 있었지만 평소에 새로운 것을 경험 할 때 익숙치 않은 것에서
-            오는 어려움은 당연하고 노력과 반복이 해결해 줄 것이란 것을 믿고
-            있었기 때문에 원리가 이해될 때까지 최선을 다했습니다. 새로운 것을
-            배우고 그것을 저의 무기로 만드는 데 재미와 성취감을 느낍니다.
-            앞으로도 안주하지 않고 부딪히겠습니다. 지켜봐주세요.
-          </p>
-        </section>
-        <section class="section2">
-          <h3>기업 성장에 이바지할 프로트엔드 개발자를 꿈꾸며</h3>
-          <p>
-            무엇이 가독성 좋은 코드일까, 이부분은어떻게 하면 좀 더 효율적이고
-            보기좋게축소할 수 있을까, 이건 어떻게 표현할 수 있을까. 항상
-            고민하고 공부하면서 제 부족함을 채우기 위해 노력합니다. 열심히도
-            하는데 심지어 잘하기까지 하는 퍼블리셔로 도약하기 위해 배우고 또
-            배우겠습니다.
-          </p>
-          <figure>
-            <img src="img/busan.jpg" alt="" />
-          </figure>
-        </section>
-      </div>
-    </main>
+        </div>
+        <div id="work">
+          <div class="title work">
+            <div class="main__title">
+              <ul>
+                <li class="big__title">seungbo</li>
+                <li class="big__title">Frontend</li>
+                <li class="big__title">work</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+    <section class="section2">
+      <article>
+        <figure>
+          <img src="img/webstandard.png" alt="" />
+        </figure>
+      </article>
+      <article></article>
+      <article></article>
+      <article></article>
+    </section>
+
+    <div class="scrollTop">scrollTop : <span>0</span>px</div>
   </body>
 
   <script src="../javascript/assets/js/gsap.min.js"></script>
   <script>
     const Maincont = document.getElementById("main");
+
+    const Maincont2 = document.getElementById("main2");
     const contentItem = document.querySelector(".content__item");
 
     function scroll() {
@@ -208,8 +289,11 @@
 
       //패럴랙스 박스 전체 가로 값
       let parallaxWidth = Maincont.offsetWidth;
-      document.body.style.height = parallaxWidth + "px";
 
+      document.body.style.height = parallaxWidth + 10000 + "px";
+
+      let windowW = window.innerWidth;
+      let windowH = window.innerHeight;
       let viewWidth = parallaxWidth - window.innerWidth;
       let viewHeight = parallaxWidth - window.innerHeight;
       let goLeft = scrollTop * (viewWidth / viewHeight);
@@ -219,6 +303,8 @@
       // parallaxCont.style.left = -scrollTop + "px";
       // console.log(parallaxWidth);
       // console.log(scrollTop);
+      document.querySelector(".scrollTop span").innerText =
+        Math.round(scrollTop);
       requestAnimationFrame(scroll);
     }
     scroll();
