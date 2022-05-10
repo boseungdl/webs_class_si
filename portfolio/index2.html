@@ -32,13 +32,14 @@
         display: flex;
       }
       .side {
-        flex-basis: 10%;
-        height: 100vh;
+        /* flex-basis: 10%; */
         text-align: center;
         display: flex;
         align-items: center;
+        font-size: 1vw;
       }
       .side ul {
+        width: 30%;
         margin-left: 20px;
         border-left: 1px solid #000;
         height: 95vh;
@@ -47,19 +48,29 @@
         justify-content: space-between;
       }
       .side__title {
+        margin-top: 8vw;
         transform: rotate(-90deg);
+        white-space: nowrap;
+        letter-spacing: 0.3em;
+      }
+      .side__title:nth-child(3) {
+        font-size: 1.5em;
+        font-weight: 900;
+        letter-spacing: 0;
       }
       .title {
         flex-basis: 90%;
         margin-left: 5vw;
+        text-transform: uppercase;
       }
       .title ul {
         display: flex;
         justify-content: space-between;
-        margin-right: 15vw;
+        margin-right: 300px;
       }
-      .title ul:nth-of-type(1) li {
-        width: 13vw;
+      .title ul:nth-child(2) li {
+        width: 15vw;
+        font-size: 1vw;
       }
       .main__title ul {
         display: flex;
@@ -76,7 +87,8 @@
       }
       .big__title {
         font-family: "Eros Romano";
-        font-size: 10vw;
+        font-size: 8vw;
+        line-height: 1;
       }
       .big__title:nth-child(2) {
         margin-left: 5vw;
@@ -88,19 +100,29 @@
         font-family: "Montserrat";
         content: "DEVELOPER";
         font-size: 3vw;
-        margin-left: 30px;
+        margin-left: 1vw;
+        display: inline;
+        vertical-align: 1vw;
       }
       .big__title:nth-child(2)::before {
         font-family: "Montserrat";
         content: "THE";
         font-size: 3vw;
-        margin-right: 30px;
+        margin-right: 1vw;
+        display: inline;
+        vertical-align: 1vw;
       }
       #about {
         width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+      #about h3 {
+        font-size: 1.3vw;
+      }
+      #about p {
+        font-size: 0.7vw;
       }
       #about .section1 {
         flex-basis: 40%;
@@ -115,7 +137,6 @@
       #about .section1 h3 {
         margin: 30px 0;
         margin-left: 35%;
-        font-size: 22px;
       }
       #about .section1 img {
         width: 75%;
@@ -128,9 +149,7 @@
         width: 70%;
         margin: 30px 0;
       }
-      #about .section2 h3 {
-        font-size: 22px;
-      }
+
       #alone img {
         width: 100vw;
         height: 100vh;
@@ -151,16 +170,10 @@
         margin-right: 38vw;
       }
       .title.work .main__title ul li:nth-child(2) {
-        margin-right: 30vw;
+        margin-right: 10vw;
       }
       .title.work .main__title ul li:nth-child(3) {
-        margin-right: -10vw;
-      }
-      #main2 {
-        width: 100vw;
-        height: 100vh;
-        /* position: fixed; */
-        z-index: 10;
+        margin-right: 30vw;
       }
 
       .scrollTop {
@@ -174,12 +187,52 @@
         border-radius: 50px;
       }
 
-      .article01 {
+      .article {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+      .web {
         display: flex;
       }
-      .article01 figure {
+      .web__desc {
+        margin-left: -50px;
+        margin-top: 19vw;
+        color: #fff;
+        z-index: 10;
+      }
+      .web__desc h3 {
+        text-transform: uppercase;
+        font-family: "Eros Romano";
+        font-size: 7vw;
+        font-weight: 400;
+      }
+      .web__desc p {
+        width: 40vw;
+        color: #ccc;
+        font-size: 0.8vw;
+        margin-bottom: 20px;
+      }
+      .web__desc a {
+        text-transform: uppercase;
+        font-family: "Eros Romano";
+        padding: 0.8vw 3vw;
+        font-size: 1.5vw;
+        font-weight: 600;
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+      }
+      .article figure {
         display: inline-block;
         position: relative;
+      }
+      .article figure img {
+        width: 30vw;
+      }
+
+      .article02 .web__desc {
+        margin-right: -50px;
       }
     </style>
   </head>
@@ -269,20 +322,44 @@
       </main>
     </section>
     <section class="section02">
-      <article class="article01">
-        <figure>
-          <img src="img/webstandard.png" alt="" />
-        </figure>
-        <div>
-          <h3>WebStandard</h3>
-          <p>
-            코딩이 무엇인지, 웹 사이트가 어떤식으로 작동이 되는지, html, css,
-            javascrip 등 모든게 처음이였기 때문에 6개월이라는 시간동안 저에게
-            가장 큰 시련을 주었던 수업이였습니다. 이 수업을 통해 웹 사이트의
-            기본 구조를 배우고, 웹 사이트를 만들 수 있게 되었고, 기존 웹 사이트
-            들의 코드 들을 해석하고 분석할 수 있는 법을 배운 수 있었습니다.
-          </p>
+      <article class="article">
+        <div class="web">
+          <figure>
+            <img src="img/webstandard.png" alt="" />
+          </figure>
+          <div class="web__desc">
+            <h3>WebStandard</h3>
+            <p>
+              코딩이 무엇인지, 웹 사이트가 어떤식으로 작동이 되는지, html, css,
+              javascrip 등 모든게 처음이였기 때문에 6개월이라는 시간동안 저에게
+              가장 큰 시련을 주었던 수업이였습니다. 이 수업을 통해 웹 사이트의
+              기본 구조를 배우고, 웹 사이트를 만들 수 있게 되었고, 기존 웹
+              사이트 들의 코드 들을 해석하고 분석할 수 있는 법을 배운 수
+              있었습니다.
+            </p>
+            <a href="">CODE</a>
+            <a href="">VIEW</a>
+          </div>
         </div>
+      </article>
+      <article class="article article02">
+        <div class="web">
+          <div class="web__desc">
+            <h3>PHP-Project</h3>
+            <p>
+              서버, DB라는 개념을 배우고 서버와 클라이언트가 어떤식으로 데이터를
+              주고 받는지 흐름을 알 수 있었던 수업이였습니다. 조별활동을 통해
+              필요하고 정확한 데이터를 받아내어 그 정보를 어디에 어떤 식으로
+              바인딩시킬지를 고민하며 조원들과 의견을 주고 받으며 시간가는 줄
+              모르고 하루하루를 불태웠던 수업이였습니다.
+            </p>
+            <a href="">CODE</a>
+            <a href="">VIEW</a>
+          </div>
+        </div>
+        <figure>
+          <img src="img/php.png" alt="" />
+        </figure>
       </article>
     </section>
 
