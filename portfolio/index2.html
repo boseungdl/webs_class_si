@@ -100,8 +100,10 @@
         height: 80vh;
         justify-content: center;
         align-items: start;
-        margin-bottom: 50px;
+        padding-bottom: 250px;
         flex-direction: column;
+        margin-bottom: 50px;
+        margin-top: 30px;
       }
       .small__title {
         font-family: "Montserrat";
@@ -112,14 +114,28 @@
         font-family: "Eros Romano";
         font-size: 8vw;
         line-height: 1;
+        display: inline;
+      }
+      .big__title:nth-child(1) {
+        margin-left: 25%;
       }
       .big__title:nth-child(2) {
-        margin-left: 5vw;
+        margin-left: 25%;
+      }
+      .big__title:nth-child(2) span:first-child {
+        font-size: 3vw;
+        vertical-align: 5px;
+        font-family: "Montserrat";
+      }
+      .big__title:nth-child(2) span:last-child {
+        font-size: 3vw;
+        vertical-align: 5px;
+        font-family: "Montserrat";
       }
       .big__title:nth-child(3) {
-        margin-left: 30vw;
+        margin-left: 40%;
       }
-      .big__title:nth-child(2)::after {
+      /* .big__title:nth-child(2)::after {
         font-family: "Montserrat";
         content: "DEVELOPER";
         font-size: 3vw;
@@ -135,7 +151,7 @@
         display: inline;
         vertical-align: 1vw;
         font-family: "ChosunNm";
-      }
+      } */
       .about {
         width: 100vw;
         display: flex;
@@ -491,8 +507,15 @@
           <div class="title">
             <div class="main__title">
               <ul>
-                <li class="big__title">seungbo</li>
-                <li class="big__title">Frontend</li>
+                <li class="big__title">
+                  <span>s</span><span>e</span><span>u</span><span>n</span
+                  ><span>g</span><span>b</span><span>o</span>
+                </li>
+                <li class="big__title">
+                  <span>the</span><span>F</span><span>r</span><span>o</span
+                  ><span>n</span><span>t</span><span>e</span><span>n</span
+                  ><span>d</span><span>DEVELOPER</span>
+                </li>
                 <li class="big__title">Portfolio</li>
               </ul>
             </div>
@@ -552,7 +575,11 @@
             <div class="main__title">
               <ul>
                 <li class="big__title">seungbo</li>
-                <li class="big__title">Frontend</li>
+                <li class="big__title">
+                  <span>the</span><span>F</span><span>r</span><span>o</span
+                  ><span>n</span><span>t</span><span>e</span><span>n</span
+                  ><span>d</span><span>DEVELOPER</span>
+                </li>
                 <li class="big__title">work</li>
               </ul>
             </div>
@@ -646,8 +673,16 @@
         <div class="title">
           <div class="main__title">
             <ul>
-              <li class="big__title">seungbo</li>
-              <li class="big__title">Frontend</li>
+              <li class="big__title">
+                <span>s</span><span>e</span><span>u</span><span>n</span
+                ><span>g</span><span>b</span><span>o</span>
+              </li>
+              <li class="big__title">
+                <span>the</span><span>F</span><span>r</span><span>o</span
+                ><span>n</span><span>t</span><span>e</span><span>n</span
+                ><span>d</span><span>DEVELOPER</span>
+              </li>
+
               <li class="big__title">script</li>
             </ul>
           </div>
@@ -732,8 +767,52 @@
 
   <script src="../javascript/assets/js/gsap.min.js"></script>
   <script>
-    const Maincont = document.getElementById("main");
+    let tl = gsap.timeline();
+    const first = document.querySelectorAll(".big__title");
 
+    // gsap.utils.toArray(first).forEach((li) => {
+    //   console.log(li);
+    // });
+    // tl.fromTo(
+    //   first[0],
+    //   1,
+    //   { width: 0, opacity: 0, overflow: "hidden" },
+    //   { opacity: 1, width: "40%" }
+    // )
+    //   .fromTo(
+    //     first[1],
+    //     1,
+    //     { width: 0, opacity: 0, overflow: "hidden" },
+    //     { opacity: 1, width: "70%" }
+    //   )
+    //   .fromTo(
+    //     first[2],
+    //     1,
+    //     { width: 0, opacity: 0, overflow: "hidden" },
+    //     { opacity: 1, width: "50%" }
+    //   );
+    gsap.fromTo(
+      first[0],
+      1,
+      { color: "#fff", width: 0, opacity: 0, overflow: "hidden" },
+      { color: "#000", opacity: 1, width: "40%" }
+    );
+    gsap.fromTo(
+      first[1],
+      1,
+      { color: "#fff", width: 0, opacity: 0, overflow: "hidden" },
+      { color: "#000", opacity: 1, width: "80%" },
+      0.3
+    );
+    gsap.fromTo(
+      first[2],
+      1,
+      { color: "#fff", width: 0, opacity: 0, overflow: "hidden" },
+      { color: "#000", opacity: 1, width: "50%" },
+      0.7
+    );
+
+    const Maincont = document.getElementById("main");
     const sec2 = document.querySelector(".section02");
     const sec3 = document.querySelector(".section03");
     const contentItem = document.querySelector(".content__item");
@@ -762,13 +841,13 @@
       let viewHeight = parallaxWidth - window.innerHeight;
       let goLeft = scrollTop * (viewWidth / viewHeight);
 
-      gsap.to(Maincont, { left: -goLeft });
+      gsap.to(Maincont, { x: -goLeft, ease: "linear", duration: 1 });
 
       let bgTop = document.querySelector(".nothing").offsetTop;
 
       let offset = scrollTop - bgTop;
       if (scrollTop > bgTop) {
-        gsap.to(section03, { left: -offset });
+        gsap.to(section03, { x: -offset, ease: "linear", duration: 1 });
       }
 
       document.querySelector(".scrollTop span").innerText =
@@ -778,7 +857,7 @@
     scroll();
 
     window.addEventListener("resize", scroll);
-    window.addEventListener("scroll", scroll);
+    // window.addEventListener("scroll", scroll);
 
     const menu = document.querySelector(".hamberger");
     const close = document.querySelector(".close");

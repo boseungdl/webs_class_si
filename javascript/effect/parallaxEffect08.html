@@ -250,9 +250,7 @@
 
       const xx = window.innerWidth;
       const yy = window.innerHeight;
-      //body에 높이값에  -->페럴랙스 박스 전체 가로 값
-      // document.body.style.height = parallaxWidth - xx * 0.99 + yy + "px";
-      //스크롤 했을 때 left: scrollTop값
+
       function scroll() {
         let scrollTop =
           window.pageYOffset ||
@@ -269,15 +267,12 @@
 
         gsap.to(parallaxCont, { left: -goLeft });
 
-        // parallaxCont.style.left = -scrollTop + "px";
-        // console.log(parallaxWidth);
-        // console.log(scrollTop);
         requestAnimationFrame(scroll);
       }
       scroll();
 
       window.addEventListener("resize", scroll);
-      window.addEventListener("scroll", scroll);
+      // window.addEventListener("scroll", scroll);
     </script>
   </body>
 </html>
