@@ -21,7 +21,7 @@ section:not(.horizontal-scroll) {
   /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2rem; */
-  padding: 50px 10vw;
+  /* padding: 50px 10vw; */
   margin: auto;
   place-items: center;
 }
@@ -84,8 +84,10 @@ h2 {
   padding: 50px 10vw;
 }
 .pin-wrap > * {
-  min-width: 60vw;
-  padding: 0 5vw;
+  min-width: 80vw;
+  height: 80vh;
+  margin: 0 5vw;
+  background: #000;
 }
 
 p {

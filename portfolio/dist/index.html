@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <title>
       CodePen - Dynamic background color &amp; horizontal scroll section ( GSAP
       ScrollTrigger &amp; Locomotive Scroll)
     </title>
+    <link rel="stylesheet" href="../font/font.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -61,31 +62,57 @@
         flex-direction: column;
         justify-content: space-between;
       }
+      #section01 .title {
+        width: 100%;
+      }
       #section01 .title ul {
-        margin-top: 50px;
+        margin-top: 100px;
         align-items: end;
         display: flex;
         flex-direction: column;
       }
       #section01 .title ul li {
-        font-size: 7vw;
+        font-size: 9vw;
+        font-family: 'Eros Romano';
+        text-transform: uppercase;
+        opacity: 1;
+        display: block;
       }
       #section01 .title ul li:nth-child(1) {
-        margin-right: 30vw;
+        margin-right: 35vw;
       }
       #section01 .title ul li:nth-child(2) {
+        margin-right: 10vw;
       }
       #section01 .title ul li:nth-child(3) {
-        margin-right: 15vw;
+       margin-right: 15vw;
       }
       #section01 ul li span {
-        font-size: 2vw;
+        font-size: 1.5vw;
+        font-weight: 300;
+        font-family: 'Montserrat';
+        vertical-align: 0.5vw;
+      }
+      #section01 ul li span:nth-child(1) {
+        margin-right: 10px;
+      }
+      #section01 ul li span:nth-child(2) {
+        margin-left: 10px;
       }
       .bottom ul {
         display: flex;
-        height: 100%;
-        align-items: end;
+        margin-left: 10vw;
+        /* height: 100px; */
+        /* align-items: end; */
+        width: 80%;
+        justify-content: space-between;
         margin-bottom: 50px;
+        font-size: 1vw;
+        font-weight: 300;
+      }
+      .bottom ul li {
+        width: 22%;
+        font-family: 'Montserrat';
       }
     </style>
   </head>
@@ -108,9 +135,9 @@
     </div> -->
         <div class="title">
           <ul>
-            <li>seungbo</li>
-            <li><span>the</span>frontended<span>developer</span></li>
-            <li>Portfolio</li>
+            <li data-scroll data-scroll-speed="0.8" data-scroll-direction="horizontal">seungbo</li>
+            <li data-scroll data-scroll-speed="-0.8" data-scroll-direction="horizontal"><span>the</span>frontended<span>developer</span></li>
+            <li data-scroll data-scroll-speed="0.8" data-scroll-direction="horizontal">Portfolio</li>
           </ul>
         </div>
         <div class="bottom">
@@ -136,7 +163,7 @@
       >
         <div class="pin-wrap">
           <h2>This whole horizontal section should be brown</h2>
-          <img
+          <!-- <img
             src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
             alt=""
           />
@@ -147,7 +174,10 @@
           <img
             src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
             alt=""
-          />
+          /> -->
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </section>
       <section data-textcolor="#032f35" data-bgcolor="#bcb8ad">
