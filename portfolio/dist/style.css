@@ -18,23 +18,21 @@ section:not(.horizontal-scroll) {
   min-height: 100vh;
   width: 100%;
   position: relative;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 2rem; */
   padding: 50px 10vw;
   margin: auto;
   place-items: center;
 }
 
-.img {
-  margin-right: 20px;
+img {
   height: 80vh;
-  /* width: auto;
-  object-fit: cover; */
-  background: #000;
+  width: auto;
+  object-fit: cover;
 }
 
-/* h1 {
+h1 {
   font-size: 5rem;
   line-height: 1;
   font-weight: 800;
@@ -45,8 +43,8 @@ section:not(.horizontal-scroll) {
   z-index: 4;
   overflow-wrap: break-word;
   hyphens: auto;
-} */
-/* @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
   h1 {
     font-size: 16vw;
   }
@@ -69,7 +67,7 @@ h2 {
 
 * {
   box-sizing: border-box;
-} */
+}
 
 .horizontal-scroll {
   height: 100vh;
@@ -86,7 +84,7 @@ h2 {
   padding: 50px 10vw;
 }
 .pin-wrap > * {
-  width: 100vw;
+  min-width: 60vw;
   padding: 0 5vw;
 }
 

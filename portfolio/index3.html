@@ -234,13 +234,14 @@
         z-index: 30;
         background: #000;
         height: 100vh;
+        overflow-y: hidden;
         /* padding-top: 100vw; */
       }
       .article {
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
-        margin-bottom: 35vw;
+        padding-bottom: 35vw;
         background: #000;
       }
       .web {
@@ -333,14 +334,13 @@
       }
       .section03 {
         color: #fff;
-        position: fixed;
+        position: relative;
         top: 0;
         left: 0;
-        z-index: 5;
-        width: 740vw;
-        display: flex;
-
-        background: #9e9e9e;
+        overflow: hidden;
+        z-index: 115;
+        /* width: 740vw; */
+        height: 740vw;
       }
       .bg {
         width: 140vw;
@@ -501,6 +501,14 @@
         left: 0;
         padding-top: 20vw;
         z-index: 40;
+      }
+      .sticky2 {
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 740vw;
+        /* background: #9e9e9e; */
       }
     </style>
   </head>
@@ -684,80 +692,84 @@
     </section>
     <div class="nothing" id="script"></div>
     <section class="section03">
-      <div class="bg"></div>
-      <div id="Portfolio">
-        <div class="title">
-          <div class="main__title">
-            <ul>
-              <li class="big__title">
-                <span>s</span><span>e</span><span>u</span><span>n</span
-                ><span>g</span><span>b</span><span>o</span>
-              </li>
-              <li class="big__title">
-                <span>the</span><span>F</span><span>r</span><span>o</span
-                ><span>n</span><span>t</span><span>e</span><span>n</span
-                ><span>d</span><span>DEVELOPER</span>
-              </li>
+      <div class="sticky2">
+        <div class="bg"></div>
+        <div id="Portfolio">
+          <div class="title">
+            <div class="main__title">
+              <ul>
+                <li class="big__title">
+                  <span>s</span><span>e</span><span>u</span><span>n</span
+                  ><span>g</span><span>b</span><span>o</span>
+                </li>
+                <li class="big__title">
+                  <span>the</span><span>F</span><span>r</span><span>o</span
+                  ><span>n</span><span>t</span><span>e</span><span>n</span
+                  ><span>d</span><span>DEVELOPER</span>
+                </li>
 
-              <li class="big__title">script</li>
-            </ul>
+                <li class="big__title">script</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="sec3">
-        <div class="sec3__cont">
-          <figure>
-            <a href=""><img src="img/slider.jpg" alt="" /></a>
-          </figure>
-          <h4>01. slider effect</h4>
+        <div class="sec3">
+          <div class="sec3__cont">
+            <figure>
+              <a href=""><img src="img/slider.jpg" alt="" /></a>
+            </figure>
+            <h4>01. slider effect</h4>
+          </div>
         </div>
-      </div>
-      <div class="sec3">
-        <div class="sec3__cont">
-          <figure>
-            <a href=""><img src="img/mouse.jpg" alt="" /></a>
-          </figure>
-          <h4>02. mouse effect</h4>
+        <div class="sec3">
+          <div class="sec3__cont">
+            <figure>
+              <a href=""><img src="img/mouse.jpg" alt="" /></a>
+            </figure>
+            <h4>02. mouse effect</h4>
+          </div>
         </div>
-      </div>
-      <div class="sec3">
-        <div class="sec3__cont">
-          <figure>
-            <a href=""><img src="img/parallax.jpg" alt="" /></a>
-          </figure>
-          <h4>03. parallax effect</h4>
+        <div class="sec3">
+          <div class="sec3__cont">
+            <figure>
+              <a href=""><img src="img/parallax.jpg" alt="" /></a>
+            </figure>
+            <h4>03. parallax effect</h4>
+          </div>
         </div>
-      </div>
 
-      <div class="about last">
-        <section class="section1">
-          <figure>
-            <img src="img/choose.jpg" alt="" />
-          </figure>
-          <h3>선택에 대한 책임</h3>
-          <p>
-            살아가는 데 있어 많은 선택을 해왔습니다. 결과는 모두 저의
-            몫이였습니다. 그 수 많은 선택들 중 코딩의 길을 고른 저의 선택은
-            스스로에게 가장 도전적이였고, 그 이상의 책임감을 갖게 만들었습니다.
-            지금 제가 보여드릴 수 있는 건 단지 이 몇 줄의 문장들과 6개월간의
-            흔적 뿐이지만 이 흔적들이 작은 기회를 만들어 낸다면 주어진 책임에
-            대한 기대에 꼭 부응할 수 있는 선택을 할것입니다.
-          </p>
-        </section>
-        <section class="section2">
-          <h3>오늘보다 내일 더</h3>
-          <p>
-            최근 들었 던 말 중에 와닿았던 문장이 있습니다. “누울 때 행복하기
-            위해 걷습니다.” 돌이켜 저를 생각해 보면 멈춰져 있을 때 항상 불안감을
-            느꼈습니다. 그런 시기 저 문장은 제가 평소에 생각하고 있던 제
-            생각들의 실체를 알려주었습니다. 안주하기를 싫어해 더 나아지기 위해
-            애썼던 내가 사실은 누구보다 안주하기를 원하 는 사람이였습니다.
-            앞으로도 저는 안주하기를 원하는 만큼 더 나아갈 것입니다.
-          </p>
-          <figure>
-            <img src="img/gentle.jpg" alt="" />
-          </figure>
-        </section>
+        <div class="about last">
+          <section class="section1">
+            <figure>
+              <img src="img/choose.jpg" alt="" />
+            </figure>
+            <h3>선택에 대한 책임</h3>
+            <p>
+              살아가는 데 있어 많은 선택을 해왔습니다. 결과는 모두 저의
+              몫이였습니다. 그 수 많은 선택들 중 코딩의 길을 고른 저의 선택은
+              스스로에게 가장 도전적이였고, 그 이상의 책임감을 갖게
+              만들었습니다. 지금 제가 보여드릴 수 있는 건 단지 이 몇 줄의
+              문장들과 6개월간의 흔적 뿐이지만 이 흔적들이 작은 기회를 만들어
+              낸다면 주어진 책임에 대한 기대에 꼭 부응할 수 있는 선택을
+              할것입니다.
+            </p>
+          </section>
+          <section class="section2">
+            <h3>오늘보다 내일 더</h3>
+            <p>
+              최근 들었 던 말 중에 와닿았던 문장이 있습니다. “누울 때 행복하기
+              위해 걷습니다.” 돌이켜 저를 생각해 보면 멈춰져 있을 때 항상
+              불안감을 느꼈습니다. 그런 시기 저 문장은 제가 평소에 생각하고 있던
+              제 생각들의 실체를 알려주었습니다. 안주하기를 싫어해 더 나아지기
+              위해 애썼던 내가 사실은 누구보다 안주하기를 원하 는
+              사람이였습니다. 앞으로도 저는 안주하기를 원하는 만큼 더 나아갈
+              것입니다.
+            </p>
+            <figure>
+              <img src="img/gentle.jpg" alt="" />
+            </figure>
+          </section>
+        </div>
       </div>
     </section>
     <nav class="modal">
@@ -794,6 +806,18 @@
       trigger: ".sticky",
       start: "top bottom",
       end: "+=" + sec2Height,
+      markers: true,
+      scrub: 1.5,
+      // pin: true,
+      // pinSpacing: false,
+    });
+    const main = gsap.to("#main", { x: -300 + "vw" });
+    const mainW = document.querySelector("#main").offsetWidth;
+    ScrollTrigger.create({
+      animation: main,
+      trigger: "#main",
+      start: "top top",
+      end: "+=" + mainW,
       markers: true,
       scrub: 1.5,
       // pin: true,
@@ -871,7 +895,7 @@
     const sec2 = document.querySelector(".section02");
     const sec3 = document.querySelector(".section03");
     const contentItem = document.querySelector(".content__item");
-    const section03 = document.querySelector(".section03");
+    const section03 = document.querySelector(".section03 .sticky2");
     const sec_child = document.querySelector(".sec3");
     const section3Top = section03.offsetTop;
 
@@ -897,7 +921,7 @@
       let viewHeight = parallaxWidth - window.innerHeight;
       let goLeft = scrollTop * (viewWidth / viewHeight);
 
-      gsap.to(Maincont, { x: -goLeft, ease: "linear", duration: 1 });
+      //   gsap.to(Maincont, { x: -goLeft, ease: "linear", duration: 1 });
 
       let bgTop = document.querySelector(".nothing").offsetTop;
 

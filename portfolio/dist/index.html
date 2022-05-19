@@ -16,35 +16,117 @@
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
     />
     <link rel="stylesheet" href="./style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        /* background: #000; */
+        border-left: 1px solid #000;
+        margin-left: 10px;
+      }
+      #header .nav ul {
+        height: 95vh;
+        width: 60px;
+        display: flex;
+        flex-direction: column;
+        /* background: rgb(153, 22, 22); */
+        justify-content: space-between;
+      }
+      #header .nav ul li {
+        font-size: 12px;
+        text-align: center;
+      }
+      #header .nav ul li img {
+        height: auto;
+        width: 50%;
+        /* background: rgb(247, 225, 225); */
+      }
+      #header .nav ul li:nth-child(2) {
+        font-size: 16px;
+        transform: rotate(-90deg);
+        margin-top: 7vw;
+      }
+      #section01 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #section01 .title ul {
+        margin-top: 50px;
+        align-items: end;
+        display: flex;
+        flex-direction: column;
+      }
+      #section01 .title ul li {
+        font-size: 7vw;
+      }
+      #section01 .title ul li:nth-child(1) {
+        margin-right: 30vw;
+      }
+      #section01 .title ul li:nth-child(2) {
+      }
+      #section01 .title ul li:nth-child(3) {
+        margin-right: 15vw;
+      }
+      #section01 ul li span {
+        font-size: 2vw;
+      }
+      .bottom ul {
+        display: flex;
+        height: 100%;
+        align-items: end;
+        margin-bottom: 50px;
+      }
+    </style>
   </head>
   <body>
+    <header id="header">
+      <div class="nav">
+        <ul>
+          <li><img src="../img/hamberger.png" alt="" /></li>
+          <li>PORTFOLIO</li>
+          <li><img src="../img/moon.png" alt="" /></li>
+        </ul>
+      </div>
+    </header>
     <!-- partial:index.partial.html -->
     <div class="container">
-      <section data-textcolor="#bcb8ad" data-bgcolor="#032f35">
-        <div>
-          <h1>
-            <span
-              data-scroll
-              data-scroll-direction="horizontal"
-              data-scroll-speed="-1"
-              >Horizontal</span
-            >
-            <span
-              data-scroll
-              data-scroll-direction="horizontal"
-              data-scroll-speed="-2"
-              >scroll</span
-            >
-            <span
-              data-scroll
-              data-scroll-direction="horizontal"
-              data-scroll-speed="-3"
-              >+ colors</span
-            >
-          </h1>
-          <!-- <p data-scroll data-scroll-speed="2" data-scroll-delay="0.2">
-            with GSAP ScrollTrigger & Locomotive Scroll.
-          </p> -->
+      <section id="section01" data-textcolor="#bcb8ad" data-bgcolor="#032f35">
+        <!-- <div>
+      <h1><span data-scroll data-scroll-direction="horizontal" data-scroll-speed="-1">Horizontal</span> <span data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2">scroll</span> <span data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3">+ colors</span></h1>
+      <p data-scroll data-scroll-speed="2" data-scroll-delay="0.2">with GSAP ScrollTrigger & Locomotive Scroll.</p>
+    </div> -->
+        <div class="title">
+          <ul>
+            <li>seungbo</li>
+            <li><span>the</span>frontended<span>developer</span></li>
+            <li>Portfolio</li>
+          </ul>
+        </div>
+        <div class="bottom">
+          <ul>
+            <li>
+              1. I WILL BECOME A NEWCOMER WHO KNOWS THE ATTITUDE OF LEARNIG.
+            </li>
+            <li>
+              2. I WILL THINK AND MOVE IN THE DIRECTION THE COMPANY IS GOING.
+            </li>
+            <li>3. I WILL WORK REPONSIBLY FOR THE WORK ASSIGNED TO ME.</li>
+            <li>
+              4. WE WILL DO OUR BEST TO BECOME A BETTER DEVELOPER WITHOUT BEING
+              COMPLACENT WITH OUR CURRENT ABILITIES
+            </li>
+          </ul>
         </div>
       </section>
       <section
@@ -53,10 +135,19 @@
         data-bgcolor="#815946"
       >
         <div class="pin-wrap">
-          <!-- <h2>This whole horizontal section should be brown</h2> -->
-          <div class="img"></div>
-          <div class="img"></div>
-          <div class="img"></div>
+          <h2>This whole horizontal section should be brown</h2>
+          <img
+            src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
         </div>
       </section>
       <section data-textcolor="#032f35" data-bgcolor="#bcb8ad">
@@ -82,10 +173,19 @@
         data-bgcolor="#815946"
       >
         <div class="pin-wrap">
-          <!-- <h2>This whole horizontal section should be brown</h2> -->
-          <div class="img"></div>
-          <div class="img"></div>
-          <div class="img"></div>
+          <h2>This whole horizontal section should be brown</h2>
+          <img
+            src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
+          <img
+            src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
+            alt=""
+          />
         </div>
       </section>
       <section data-textcolor="#032f35" data-bgcolor="#bcb8ad">
