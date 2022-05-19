@@ -1,760 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
+  </head>
+  <style>
     @font-face {
-    font-family: 'BMJua';
-    font-weight: normal;
-    font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.ttf') format("truetype");
-    font-display: swap;
-} 
+      font-family: "BMJua";
+      font-weight: normal;
+      font-style: normal;
+      src: url("https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.eot");
+      src: url("https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.eot?#iefix")
+          format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.woff2")
+          format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.woff")
+          format("woff"),
+        url("https://cdn.jsdelivr.net/gh/webfontworld/BMJua/BMJua.ttf")
+          format("truetype");
+      font-display: swap;
+    }
     * {
-        padding: 0;
-        margin: 0;
-        box-sizing:border-box;
-        font-family: 'BMJua';
-    }  
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "BMJua";
+    }
     a {
-        color: #fff;
-        text-decoration: none;
+      color: #fff;
+      text-decoration: none;
+    }
+    html {
+      scroll-behavior: smooth;
     }
     #wrap {
     }
     .headerbg {
-        
-        width: 100%;
-        height: 800px;
-        background: url(img/phone.png) no-repeat right;
-        background-color: rgb(40, 75, 189);
-        color: #fff;
+      width: 100%;
+      height: 800px;
+      background: url(img/phone.png) no-repeat right;
+      background-color: rgb(40, 75, 189);
+      color: #fff;
     }
     #header {
-        min-width: 1200px;
-        width: 100%;
-        height: 90px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;        
-        flex-wrap: nowrap;
-        background: rgba(40,75,189,0.8);
-        z-index: 10;
+      min-width: 1200px;
+      width: 100%;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      flex-wrap: nowrap;
+      background: rgba(40, 75, 189, 0.8);
+      z-index: 10;
     }
     #header .headerleft {
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
     }
     #header .logo {
-        margin-right: 210px;
-        width: 70px;
-        height: 70px;
-        background: url(img/조별logo.jpg);     
+      margin-right: 210px;
+      width: 70px;
+      height: 70px;
+      background: url(img/조별logo.jpg);
     }
-    #header .logo+a {
-        font-size: 30px;
+    #header .logo + a {
+      font-size: 30px;
     }
     #header ul {
-        display: flex;
+      display: flex;
     }
     #header ul li {
-        margin-left: 50px;
-        list-style: none;
-        font-size: 24px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        transition: all 0.1s;
+      margin-left: 50px;
+      list-style: none;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.1s;
     }
     #header ul li:hover {
-        color: #000;
-        background-color: rgba(255,255,255,0.5);
-        border-radius: 5px;
+      color: #000;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
     }
     #header ul li.active a {
-     color: #000;
-     /* border: 1px solid #000; */
-     padding: 10px;
-     background-color: #fff;
-     border-radius: 5px;
-   }
+      color: #000;
+      /* border: 1px solid #000; */
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+    }
     #header .icon {
-        margin-left: 150px;
-        display: flex;        
+      margin-left: 150px;
+      display: flex;
     }
     #header .icon01 {
-        width: 30px;
-        height: 30px;
-        background: url(img/Facebook.jpg);
+      width: 30px;
+      height: 30px;
+      background: url(img/Facebook.jpg);
     }
     #header .icon02 {
-        margin-left: 10px;
-        width: 30px;
-        height: 30px;
-        background: url(img/Facebook.jpg);
+      margin-left: 10px;
+      width: 30px;
+      height: 30px;
+      background: url(img/Facebook.jpg);
     }
     #header .icon03 {
-        margin-left: 10px;
-        width: 30px;
-        height: 30px;
-        background: url(img/Facebook.jpg);
+      margin-left: 10px;
+      width: 30px;
+      height: 30px;
+      background: url(img/Facebook.jpg);
     }
-
 
     #banner {
-        width: 1340px;
-        height: 710px;
-        margin: 0 auto;
-        padding-top: 100px;
+      width: 1340px;
+      height: 710px;
+      margin: 0 auto;
+      padding-top: 100px;
     }
     #banner h1 {
-        font-weight: normal;
-        font-size: 130px;
-        margin-bottom: 50px;
+      font-weight: normal;
+      font-size: 130px;
+      margin-bottom: 50px;
     }
     #banner p {
-        font-size: 70px;
+      font-size: 70px;
     }
     #banner span {
-        display: inline-block;
-        margin-top: 50px;
-        font-size: 32px;
+      display: inline-block;
+      margin-top: 50px;
+      font-size: 32px;
     }
     #banner button {
-        margin-top: 30px;
-        width: 189px;
-        height: 37.6px;
-        padding: 10px 19.5px 11.6px;
-        box-shadow: 0 4px 0 0 #202020;
-        border: solid 1px #1c1c1d;
-        border-radius: 9px;
-        background-color: #ffc636;
+      margin-top: 30px;
+      width: 189px;
+      height: 37.6px;
+      padding: 10px 19.5px 11.6px;
+      box-shadow: 0 4px 0 0 #202020;
+      border: solid 1px #1c1c1d;
+      border-radius: 9px;
+      background-color: #ffc636;
     }
-    #contents{
-        width: 1340px;
-        height: 1800px;
-        margin: 120px auto;
+    #contents {
+      width: 1340px;
+      height: 1800px;
+      margin: 120px auto;
     }
     #contents .contents01 {
-        display: flex;
-        color: #000;
-        display: none;
-        height: 530px;
+      display: flex;
+      color: #000;
+      display: none;
+      height: 530px;
     }
     #contents .contents01.show {
-        display: flex;
+      display: flex;
     }
     #contents .contents01 .con01left {
-        height: 300px;
-        width: 500px;
+      height: 300px;
+      width: 500px;
     }
     #contents .contents01 .con01left h2 {
-        font-size: 48px;
-        margin-bottom: 24px;
+      font-size: 48px;
+      margin-bottom: 24px;
     }
     #contents .contents01 .con01left p {
-        font-size: 24px;
-        color: #474a57;
-        line-height: 1.5;
+      font-size: 24px;
+      color: #474a57;
+      line-height: 1.5;
     }
     #contents .contents01 .con01left button {
-        width: 189px;
-        height: 48.1px;
-        padding: 16px 22px 16.1px;
-        box-shadow: 0 4px 0 0 #202020;
-        border: solid 1px #1c1c1d;
-        border-radius: 5px;
-        background-color: #4f66af;
-        margin-left: 100px;
-        margin-top: 70px;
+      width: 189px;
+      height: 48.1px;
+      padding: 16px 22px 16.1px;
+      box-shadow: 0 4px 0 0 #202020;
+      border: solid 1px #1c1c1d;
+      border-radius: 5px;
+      background-color: #4f66af;
+      margin-left: 100px;
+      margin-top: 70px;
     }
     #contents .contents01 .computer {
-        background: url(img/computer.jpg) no-repeat center center/contain;
-        width: 750px;
-        height: 480px;
-        margin-top: 30px;
-        margin-left: 60px;
+      background: url(img/computer.jpg) no-repeat center center/contain;
+      width: 750px;
+      height: 480px;
+      margin-top: 30px;
+      margin-left: 60px;
     }
     .contents02 {
-        margin: 150px auto;        
+      margin: 150px auto;
     }
     .contents02 .buttons {
-        width: 1000px;
-        display: flex;  
-        justify-content: space-between;
-        margin: 150px auto;
+      width: 1000px;
+      display: flex;
+      justify-content: space-between;
+      margin: 150px auto;
     }
     .button__box {
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        align-items: center;
-        
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: center;
     }
     .button {
-        width: 100px;
-        height: 150px;        
-        background: url(img/조별button.jpg) no-repeat;
-        cursor: pointer;
-    }   
+      width: 100px;
+      height: 150px;
+      background: url(img/조별button.jpg) no-repeat;
+      cursor: pointer;
+    }
     .button.active {
-        background: url(img/조별active버튼.jpg) no-repeat;
+      background: url(img/조별active버튼.jpg) no-repeat;
     }
     .button02 {
-        background: url(img/조별active버튼.jpg) no-repeat;
+      background: url(img/조별active버튼.jpg) no-repeat;
     }
     .button__box span {
-        font-size: 18px;
-        color: #474a57;
+      font-size: 18px;
+      color: #474a57;
     }
     .button__info {
-        font-size: 54px;
-        text-align: center;
-      
+      font-size: 54px;
+      text-align: center;
     }
     .button__info span {
-        display: inline-block;
-        margin-bottom: 50px;
-
+      display: inline-block;
+      margin-bottom: 50px;
     }
     .button__info p {
-        font-size: 22px;
-        line-height: 1.5;
-        letter-spacing: 0.45px;
-        color: #424b5a;
+      font-size: 22px;
+      line-height: 1.5;
+      letter-spacing: 0.45px;
+      color: #424b5a;
     }
     .contents03 {
-        margin: 0 auto;
-        text-align: center;
-      
+      margin: 0 auto;
+      text-align: center;
     }
     .contents03 .span01 {
-        display: block;
-        font-size: 45px;
-        margin-bottom: 25px;
+      display: block;
+      font-size: 45px;
+      margin-bottom: 25px;
     }
     .contents03 .span02 {
-        font-size: 18px;
-        color: #474a57;
+      font-size: 18px;
+      color: #474a57;
     }
     .contents03 .box {
-        margin-top: 75px;
-        display: flex;        
-        justify-content: center;
+      margin-top: 75px;
+      display: flex;
+      justify-content: center;
     }
     .contents03 .inbox {
-        width: 400px;
-        height: 230px;
-        background: url(img/mountain.png) #00c6ae no-repeat 20px 20px;
-        border-radius: 12.5px;
-        box-shadow: 2px 5px 2px 2px #202020;
-        margin-right: 30px;
+      width: 400px;
+      height: 230px;
+      background: url(img/mountain.png) #00c6ae no-repeat 20px 20px;
+      border-radius: 12.5px;
+      box-shadow: 2px 5px 2px 2px #202020;
+      margin-right: 30px;
     }
     .contents03 .inbox:last-child {
-        margin-right: 0;
+      margin-right: 0;
     }
     .contents03 .inbox h3 {
-        padding-top: 40px;
-        margin: 0 0 40px 120px;
-        font-size: 30.1px;
+      padding-top: 40px;
+      margin: 0 0 40px 120px;
+      font-size: 30.1px;
     }
     .contents03 .inbox p {
-        font-size: 20.1px;
-        text-align: left;
-        margin: 0 10px 0 28px;
+      font-size: 20.1px;
+      text-align: left;
+      margin: 0 10px 0 28px;
     }
     .contents03 .box .resent {
-        background-color: #4f66af;
+      background-color: #4f66af;
     }
     .contents03 .box .comunity {
-        background-color: #f589b7;
+      background-color: #f589b7;
     }
     #keyword {
-        width: 100%;
-        height: 1065px;
-        background-color: #fa6648;
-         text-align: center;
-         display: flex;
-         justify-content: center;
-        
+      width: 100%;
+      height: 1065px;
+      background-color: #fa6648;
+      text-align: center;
+      display: flex;
+      justify-content: center;
     }
     .kewordimg {
-        width: 1550px;
-        margin: 75px 0 75px 0;
+      width: 1550px;
+      margin: 75px 0 75px 0;
     }
     .kewordimg h3 {
-        font-size: 45px;
-        color: #3f1a12;
-        margin-bottom: 125px;
+      font-size: 45px;
+      color: #3f1a12;
+      margin-bottom: 125px;
     }
     .kewordimg .imgslide {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
     }
     .leftarrow {
-        margin-right: 50px;
-        margin-top: 200px;
-        width: 70px;
-        height: 70px;
-        background: url(img/leftArrow.png) no-repeat center center ;
-        cursor: pointer;
+      margin-right: 50px;
+      margin-top: 200px;
+      width: 70px;
+      height: 70px;
+      background: url(img/leftArrow.png) no-repeat center center;
+      cursor: pointer;
     }
     .rightarrow {
-        margin-left: 50px;
-        margin-top: 200px;
-        width: 70px;
-        height: 70px;
-        background: url(img/right_arrow.png) no-repeat center center ;
-        cursor: pointer;
+      margin-left: 50px;
+      margin-top: 200px;
+      width: 70px;
+      height: 70px;
+      background: url(img/right_arrow.png) no-repeat center center;
+      cursor: pointer;
     }
-    .img001 
-    {   
-        position: absolute;
-      
+    .img001 {
+      position: absolute;
     }
     .img00 {
-        margin-top: 60px;
-        background: url(img/조별00.jpg) no-repeat 0 0 /contain;
-        width: 350px;
-        height: 350px;
-        transition: all 0.3s ease;
-        position: absolute;
-        left: 200px;
-        z-index: 1;
-        filter: blur(1px);
-        transform: perspective(600px) rotateY(-50deg);
-        opacity: 0.8;
+      margin-top: 60px;
+      background: url(img/조별00.jpg) no-repeat 0 0 / contain;
+      width: 350px;
+      height: 350px;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 200px;
+      z-index: 1;
+      filter: blur(1px);
+      transform: perspective(600px) rotateY(-50deg);
+      opacity: 0.8;
     }
     .img01 {
-        background-image:url(img/조별01.jpg);
-        background-position: 0 0;
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 500px;
-        height: 500px;
-        transition: all 0.3s ease;
-        position: absolute;
-        left: 530px;
-        top: 10px;
-        z-index:2;
-  
+      background-image: url(img/조별01.jpg);
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 500px;
+      height: 500px;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 530px;
+      top: 10px;
+      z-index: 2;
     }
     .img02 {
-        margin-top: 60px;
-        background: url(img/조별02.jpg) no-repeat 0 0 /contain;
-        width: 350px;
-        height: 350px;
-        transition: all 0.3s ease;
-        position: absolute;
-        left: 1015px;
-        z-index:1;
-        filter: blur(1px);
-        transform: perspective(600px) rotateY(50deg);
-        opacity: 0.8;
+      margin-top: 60px;
+      background: url(img/조별02.jpg) no-repeat 0 0 / contain;
+      width: 350px;
+      height: 350px;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 1015px;
+      z-index: 1;
+      filter: blur(1px);
+      transform: perspective(600px) rotateY(50deg);
+      opacity: 0.8;
     }
     .img03 {
-        margin-top: 60px;
-        background: url(img/조별03.jpg) no-repeat 0 0 /contain;
-        width: 250px;
-        height: 250px;
-        transition: all 0.3s ease;
-        position: absolute;
-        top: 40px;
-        left: 1050px;
-        z-index:0;
-        opacity: 0.5;
-        filter: blur(2px);
-     
+      margin-top: 60px;
+      background: url(img/조별03.jpg) no-repeat 0 0 / contain;
+      width: 250px;
+      height: 250px;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 40px;
+      left: 1050px;
+      z-index: 0;
+      opacity: 0.5;
+      filter: blur(2px);
     }
     .img04 {
-        margin-top: 60px;
-        
-        background: url(img/조별04.jpg) no-repeat 0 0 /contain;
-        width: 250px;
-        height: 250px;
-        transition: all 0.3s ease;
-        position: absolute;
-        left: 260px;
-        top: 40px;
-        z-index:0;
-        opacity: 0.5;
-        filter: blur(2px);
-        
+      margin-top: 60px;
+
+      background: url(img/조별04.jpg) no-repeat 0 0 / contain;
+      width: 250px;
+      height: 250px;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 260px;
+      top: 40px;
+      z-index: 0;
+      opacity: 0.5;
+      filter: blur(2px);
     }
     .im00 {
-        margin-top: 60px;
-        background: url(img/조별00.jpg) no-repeat 0 0 /contain;
-        width: 350px;
-        height: 350px;
-        transition: all 0.3s ease;
-        position: absolute;
-        left: 200px;
-        transform: perspective(600px) rotateY(-50deg);
-        z-index: 1;
-        filter: blur(1px);
+      margin-top: 60px;
+      background: url(img/조별00.jpg) no-repeat 0 0 / contain;
+      width: 350px;
+      height: 350px;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 200px;
+      transform: perspective(600px) rotateY(-50deg);
+      z-index: 1;
+      filter: blur(1px);
     }
     .im01 {
-        background-image:url(img/조별01.jpg);
-        background-position: 0 0;
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 500px;
-        height: 500px;
-        transition: all 0.3s ease;
-        position: absolute;
-        left: 530px;
-        top: 10px;
-        z-index:2;
+      background-image: url(img/조별01.jpg);
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 500px;
+      height: 500px;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 530px;
+      top: 10px;
+      z-index: 2;
     }
     .im02 {
-        margin-top: 60px;
-        background: url(img/조별02.jpg) no-repeat 0 0 /contain;
-        width: 350px;
-        height: 350px;
-        transition: all 0.3s ease;
-        position: absolute;
-        left: 1015px;
-        transform: perspective(600px) rotateY(50deg);
-        z-index:1;
-        filter: blur(1px);
+      margin-top: 60px;
+      background: url(img/조별02.jpg) no-repeat 0 0 / contain;
+      width: 350px;
+      height: 350px;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 1015px;
+      transform: perspective(600px) rotateY(50deg);
+      z-index: 1;
+      filter: blur(1px);
     }
     .im03 {
-        margin-top: 60px;
-        background: url(img/조별03.jpg) no-repeat 0 0 /contain;
-        width: 250px;
-        height: 250px;
-        transition: all 0.3s ease;
-        position: absolute;
-        top: 40px;
-        left: 1050px;
-        z-index:0;
-        opacity: 0.9;
-        filter: blur(2px);
+      margin-top: 60px;
+      background: url(img/조별03.jpg) no-repeat 0 0 / contain;
+      width: 250px;
+      height: 250px;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 40px;
+      left: 1050px;
+      z-index: 0;
+      opacity: 0.9;
+      filter: blur(2px);
     }
     .im04 {
-        margin-top: 60px;
-        background: url(img/조별04.jpg) no-repeat 0 0 /contain;
-        width: 250px;
-        height: 250px;
-        transition: all 0.3s ease;
-        position: absolute;
-        left: 260px;
-        top: 40px;
-        z-index:0;
-        opacity: 0.9;
-        filter: blur(2px);
+      margin-top: 60px;
+      background: url(img/조별04.jpg) no-repeat 0 0 / contain;
+      width: 250px;
+      height: 250px;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 260px;
+      top: 40px;
+      z-index: 0;
+      opacity: 0.9;
+      filter: blur(2px);
     }
-   
+
     .kewordimg span {
-        margin-top: 280px;
-        font-size: 24px;
-        display: block;
-        margin-bottom: 20px;
+      margin-top: 280px;
+      font-size: 24px;
+      display: block;
+      margin-bottom: 20px;
     }
     .kewordimg a {
-        font-size: 52px;
-        color: #000;
+      font-size: 52px;
+      color: #000;
     }
     .kewordflow h2 {
       text-align: center;
       font-size: 80px;
-     margin-top: 200px;
+      margin-top: 200px;
     }
     .kewordflow {
-        width: 80%;
-        height: 1000px;
-        background: url(img/affinity.jpg) center center no-repeat;
-        background-size:contain;
-        margin: 0 auto;
+      width: 80%;
+      height: 1000px;
+      background: url(img/affinity.jpg) center center no-repeat;
+      background-size: contain;
+      margin: 0 auto;
     }
     #wireframe {
-        width: 100%;
-        height: 1500px;
-        background-color: #00c6ae;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        
+      width: 100%;
+      height: 1500px;
+      background-color: #00c6ae;
+      display: flex;
+      justify-content: center;
+      align-content: center;
     }
     #wireframe .wireimg {
-        /* width: 1645px; */
-        width: 80%;
-        height: 1210px;
-        background: url(img/wireframe.png) no-repeat center center /contain;
-        margin: 150px auto;
+      /* width: 1645px; */
+      width: 80%;
+      height: 1210px;
+      background: url(img/wireframe.png) no-repeat center center / contain;
+      margin: 150px auto;
     }
-
- 
-    
-
-   
-</style>
-<body>
-
+  </style>
+  <body>
     <div class="wrap">
-        <div class="headerbg">
-            <header id="header">
-                <div class="headerleft"> 
-                    <div class="logo"></div>
-                    <a href=""></a>
-                </div>
-                <ul>
-                    <li class="active"><a>banner</a></li>
-                    <li><a>main</a></li>
-                    <li><a>keword 정리</a></li>
-                    <li><a>Affinity Diagram</a></li>
-                    <li><a>wireframe</a></li>
-                </ul>
-    
-                <div class="icon">
-                    <div class="icon01"></div>
-                    <div class="icon02"></div>
-                    <div class="icon03"></div>
-                </div>
-    
-            </header>
-            <article id="banner">
-                <div class="bannerleft">
-                    <h1>방역투게더</h1>
-                    <p>지치고 힘들 때, <br>
-                        우리 함께 이겨내요.<br>
-                        
-                        <span> 모두가 힘든 시기에 방투가 함께 하겠습니다. <br>
-                        코로나에 대한 모든 정보를 제공하겠습니다.</span></p>
-                        <button>Contact</button>
-                </div>
-            </article>
-        </div>
-        <article id="contents">
-            <section class="contents01">
-                <div class="con01left">
-                    <h2>장소별 방역 수칙을 알려줍니다.</h2>
-                    <p>시시때때로 바뀌는 정부지침과 장소별로 다르게 적용되는<br> 방역수칙에 많은 혼란을 겪고 있습니다. <br><br>
-                        이러한 문제점을 해결하기 위해 장소에<br> 따른 거리두기 수칙을 정리하여 알려줍니다.<br><br>
-                        더 나아가, 상황에 따른 격리기준, PCR 검사 기준, <br>해외입국자 행동수칙 등 다양한 정보를 제공합니다.
-                        </p>
-                        <button>Contact</button>
-                </div>
-                <div class="computer"></div>
-            </section>
-            <section class="contents01 show">
-                <div class="con01left">
-                    <h2>실시간 확진자를 알려줍니다.</h2>
-                    <p>실시간으로 늘어나는 국내 코로나 확진자와, 전 세계<br>
-                        확진자 수  그리고 접종 현황까지 한눈에 볼 수 있도록<br>
-                         디자인 했습니다. <br><br>
+      <div class="headerbg">
+        <header id="header">
+          <div class="headerleft">
+            <div class="logo"></div>
+            <a href=""></a>
+          </div>
+          <ul>
+            <li class="active"><a>banner</a></li>
+            <li><a>main</a></li>
+            <li><a>keword 정리</a></li>
+            <li><a>Affinity Diagram</a></li>
+            <li><a>wireframe</a></li>
+          </ul>
 
-                        계속되는 거리두기와 방역패스 시행으로 인해, 장소<br>
-                        별, 상황별 정책이 달라 많은 이들이 혼란스러운 상황<br>
-                        입니다. <br><br>
-                        
-                        방역 투게더는 이러한 어려움을 해소하기 위해 정확한<br>
-                         정보만을 취합하여 알려줍니다.
-                        </p>
-                        <button>Contact</button>
-                </div>
-                <div class="computer"></div>
-            </section>
-            <section class="contents01">
-                <div class="con01left">
-                    <h2>지원금 관련 정보를 알려줍니다.</h2>
-                    <p>코로나로 인해 힘들어진 분들이 받을 수 있는 다양한 지원금이 있습니다.<br><br> 하지만 이런 지원금들을 정보의 부재로 놓치고 있는 분들이 꽤 있습니다.<br><br>
-                        지원금의 종류, 지원 기준, 신청 기간 등 다양한 지원금 관련 정보를 제공합니다.
-                        </p>
-                        <button>Contact</button>
-                </div>
-                <div class="computer"></div>
-            </section>
-            <section class="contents01">
-                <div class="con01left">
-                    <h2>비대면 커뮤니티 활성화</h2>
-                    <p>2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기<br> 충분한 시간이였습니다.
-                        그래서 준비 했습니다.<br><br> 방역 투게더는 놀이터, Q&A, 토론이라는 세 가지<br> 테마를 만들어
-                        그 안에서 회원들끼리<br><br> 화상으로 얼굴을 직접 마주하고 대화를 하며 의견을 나눌 수<br> 있는
-                        공간을 만들었습니다.
-                        </p>
-                        <button>Contact</button>
-                </div>
-                <div class="computer"></div>
-            </section>
-            <section class="contents01">
-                <div class="con01left">
-                    <h2>다크모드를 지원합니다.</h2>
-                    <p>우리는 요즘 밤낮으로 컴퓨터나 모바일 기기를 사용하고 있고,<br> 우리 눈은 밤 늦게 까지 스크린을 쳐다보는 것이 익숙하지 않습니다.<br><br>
-                        이러한 부담을 덜어 주기 위해 방역투게더는<br> 시대에 맞추어 다크모드를 지원합니다.<br><br>
-                        사용 환경에 맞추어 자유롭게 on/off 할 수 있도록 디자인하였습니다.
-                        </p>
-                        <button>Contact</button>
-                </div>
-                <div class="computer"></div>
-            </section>
-            <section class="contents02">
-                <div class="buttons">
-                    <div class="button__box"><div class="button"></div>장소별 방역 수칙<span>asdasd</span></div>
-                    <div class="button__box"><div class="button active"></div>실시간 확진자<span>asdasd</span></div>
-                    <div class="button__box"><div class="button"></div>지원금 관련 정보<span>asdasd</span></div>
-                    <div class="button__box"><div class="button"></div>비대면 커뮤니티<span>asdasd</span></div>
-                    <div class="button__box"><div class="button"></div>다크 모드<span>asdasd</span></div>
-                </div>
-                <div class="button__info">
-                    <span>방역투게더는 함께 합니다.</span><br>
-                    <P>2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한 시간이였습니다.<br>
-                        방역 투게더는 여러개의 테마를 가진 방을 만들어<br>
-                        관심사가 비슷한 사람들끼리 모여 그 동안 못 다한 대화를 나눕니다.
-                    </P>
-                </div>
-            </section>
-            <section class="contents03">
-                <span class="span01">UI/UX 전략</span>
-                <span class="span02">Top Web Development Specialists</span>
-                <div class="box">
-                    <div class="inbox ul">
-                        <h3>심플하고 효율적인 <br>
-                            UI 디자인</h3>
-                            <P>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. </P>
-                    </div>
-                    <div class="inbox resent">
-                        <h3>최신 정보를 <br>
-                            빠르게 업데이트</h3>
-                            <P>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. </P>
-                    </div>
-                    <div class="inbox comunity">
-                        <h3>비대면 커뮤니티 <br>
-                            컨텐츠 활성화</h3>
-                            <P>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. </P>
-                    </div>
-                </div>
-            </section>
+          <div class="icon">
+            <div class="icon01"></div>
+            <div class="icon02"></div>
+            <div class="icon03"></div>
+          </div>
+        </header>
+        <article id="banner">
+          <div class="bannerleft">
+            <h1>방역투게더</h1>
+            <p>
+              지치고 힘들 때, <br />
+              우리 함께 이겨내요.<br />
+
+              <span>
+                모두가 힘든 시기에 방투가 함께 하겠습니다. <br />
+                코로나에 대한 모든 정보를 제공하겠습니다.</span
+              >
+            </p>
+            <button>Contact</button>
+          </div>
         </article>
-        <article id="keyword">
-            <section class="kewordimg">
-                <h3>keword 정리</h3>
-                <div class="imgslide">
-                    <div class="leftarrow"></div>
-                    <div class="img001">
-                        <div class="img00 active00"></div>
-                        <div class="img01 active01"></div>
-                        <div class="img02 active02"></div>
-                        <div class="img03 active02"></div>
-                        <div class="img04 active02"></div>
-                    </div>
-                    <div class="rightarrow"></div>
-                </div>
-                <span>Team Project</span>
-                <a href="#">방역투게더</a>
-            </section>
-        </article>
+      </div>
+      <article id="contents">
+        <section class="contents01">
+          <div class="con01left">
+            <h2>장소별 방역 수칙을 알려줍니다.</h2>
+            <p>
+              시시때때로 바뀌는 정부지침과 장소별로 다르게 적용되는<br />
+              방역수칙에 많은 혼란을 겪고 있습니다. <br /><br />
+              이러한 문제점을 해결하기 위해 장소에<br />
+              따른 거리두기 수칙을 정리하여 알려줍니다.<br /><br />
+              더 나아가, 상황에 따른 격리기준, PCR 검사 기준, <br />해외입국자
+              행동수칙 등 다양한 정보를 제공합니다.
+            </p>
+            <button>Contact</button>
+          </div>
+          <div class="computer"></div>
+        </section>
+        <section class="contents01 show">
+          <div class="con01left">
+            <h2>실시간 확진자를 알려줍니다.</h2>
+            <p>
+              실시간으로 늘어나는 국내 코로나 확진자와, 전 세계<br />
+              확진자 수 그리고 접종 현황까지 한눈에 볼 수 있도록<br />
+              디자인 했습니다. <br /><br />
 
+              계속되는 거리두기와 방역패스 시행으로 인해, 장소<br />
+              별, 상황별 정책이 달라 많은 이들이 혼란스러운 상황<br />
+              입니다. <br /><br />
 
-        <article id="affinity">
-            <div class="kewordflow">
-                <h2>Affinity Diagram</h2>
+              방역 투게더는 이러한 어려움을 해소하기 위해 정확한<br />
+              정보만을 취합하여 알려줍니다.
+            </p>
+            <button>Contact</button>
+          </div>
+          <div class="computer"></div>
+        </section>
+        <section class="contents01">
+          <div class="con01left">
+            <h2>지원금 관련 정보를 알려줍니다.</h2>
+            <p>
+              코로나로 인해 힘들어진 분들이 받을 수 있는 다양한 지원금이
+              있습니다.<br /><br />
+              하지만 이런 지원금들을 정보의 부재로 놓치고 있는 분들이 꽤
+              있습니다.<br /><br />
+              지원금의 종류, 지원 기준, 신청 기간 등 다양한 지원금 관련 정보를
+              제공합니다.
+            </p>
+            <button>Contact</button>
+          </div>
+          <div class="computer"></div>
+        </section>
+        <section class="contents01">
+          <div class="con01left">
+            <h2>비대면 커뮤니티 활성화</h2>
+            <p>
+              2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기<br />
+              충분한 시간이였습니다. 그래서 준비 했습니다.<br /><br />
+              방역 투게더는 놀이터, Q&A, 토론이라는 세 가지<br />
+              테마를 만들어 그 안에서 회원들끼리<br /><br />
+              화상으로 얼굴을 직접 마주하고 대화를 하며 의견을 나눌 수<br />
+              있는 공간을 만들었습니다.
+            </p>
+            <button>Contact</button>
+          </div>
+          <div class="computer"></div>
+        </section>
+        <section class="contents01">
+          <div class="con01left">
+            <h2>다크모드를 지원합니다.</h2>
+            <p>
+              우리는 요즘 밤낮으로 컴퓨터나 모바일 기기를 사용하고 있고,<br />
+              우리 눈은 밤 늦게 까지 스크린을 쳐다보는 것이 익숙하지
+              않습니다.<br /><br />
+              이러한 부담을 덜어 주기 위해 방역투게더는<br />
+              시대에 맞추어 다크모드를 지원합니다.<br /><br />
+              사용 환경에 맞추어 자유롭게 on/off 할 수 있도록 디자인하였습니다.
+            </p>
+            <button>Contact</button>
+          </div>
+          <div class="computer"></div>
+        </section>
+        <section class="contents02">
+          <div class="buttons">
+            <div class="button__box">
+              <div class="button"></div>
+              장소별 방역 수칙<span>asdasd</span>
             </div>
-        </article>
+            <div class="button__box">
+              <div class="button active"></div>
+              실시간 확진자<span>asdasd</span>
+            </div>
+            <div class="button__box">
+              <div class="button"></div>
+              지원금 관련 정보<span>asdasd</span>
+            </div>
+            <div class="button__box">
+              <div class="button"></div>
+              비대면 커뮤니티<span>asdasd</span>
+            </div>
+            <div class="button__box">
+              <div class="button"></div>
+              다크 모드<span>asdasd</span>
+            </div>
+          </div>
+          <div class="button__info">
+            <span>방역투게더는 함께 합니다.</span><br />
+            <p>
+              2년간의 거리두기는 새로 사귄 친구라는 말을 어색하게 만들기 충분한
+              시간이였습니다.<br />
+              방역 투게더는 여러개의 테마를 가진 방을 만들어<br />
+              관심사가 비슷한 사람들끼리 모여 그 동안 못 다한 대화를 나눕니다.
+            </p>
+          </div>
+        </section>
+        <section class="contents03">
+          <span class="span01">UI/UX 전략</span>
+          <span class="span02">Top Web Development Specialists</span>
+          <div class="box">
+            <div class="inbox ul">
+              <h3>
+                심플하고 효율적인 <br />
+                UI 디자인
+              </h3>
+              <p>
+                Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.
+              </p>
+            </div>
+            <div class="inbox resent">
+              <h3>
+                최신 정보를 <br />
+                빠르게 업데이트
+              </h3>
+              <p>
+                Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.
+              </p>
+            </div>
+            <div class="inbox comunity">
+              <h3>
+                비대면 커뮤니티 <br />
+                컨텐츠 활성화
+              </h3>
+              <p>
+                Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.
+              </p>
+            </div>
+          </div>
+        </section>
+      </article>
+      <article id="keyword">
+        <section class="kewordimg">
+          <h3>keword 정리</h3>
+          <div class="imgslide">
+            <div class="leftarrow"></div>
+            <div class="img001">
+              <div class="img00 active00"></div>
+              <div class="img01 active01"></div>
+              <div class="img02 active02"></div>
+              <div class="img03 active02"></div>
+              <div class="img04 active02"></div>
+            </div>
+            <div class="rightarrow"></div>
+          </div>
+          <span>Team Project</span>
+          <a href="#">방역투게더</a>
+        </section>
+      </article>
 
+      <article id="affinity">
+        <div class="kewordflow">
+          <h2>Affinity Diagram</h2>
+        </div>
+      </article>
 
-        <article id="wireframe">
-            <div class="wireimg"></div>
-        </article>
-        
+      <article id="wireframe">
+        <div class="wireimg"></div>
+      </article>
     </div>
-    
+
     <script>
-        const Button = document.querySelectorAll(".button");
-        const contents = document.querySelectorAll(".contents01");
-  
-        Button.forEach((el,i) => {
-          el.addEventListener("click", () => {
-              Button.forEach((el, i) => {
-              
-                  el.classList.remove("active");
-                  contents[i].classList.remove("show")
-              })
-              el.classList.add("active");
-              contents[i].classList.add("show")
-          })
-        })
-  
-        const Img01 = document.querySelector(".img00");
-        const Img02 = document.querySelector(".img01");
-        const Img03 = document.querySelector(".img02");
-        const arrowR = document.querySelector(".rightarrow");
-        const arrowL = document.querySelector(".leftarrow");
-        
-        const Img001 = document.querySelectorAll(".img001 div")
-        
-  
-        arrowR.addEventListener("click", () => {
-         
-          ImgR();     
-        })
-        arrowL.addEventListener("click", () => {
-          ImgL();     
-        })
-  
-        let num = 0;
-        let currentnum = 0;
-       
-       function ImgR(){
-          Img001.forEach((el, i) => {
-             el.classList.remove("im0"+(num)%5)
-             el.classList.remove("img0"+num%5)
+      const Button = document.querySelectorAll(".button");
+      const contents = document.querySelectorAll(".contents01");
+
+      Button.forEach((el, i) => {
+        el.addEventListener("click", () => {
+          Button.forEach((el, i) => {
+            el.classList.remove("active");
+            contents[i].classList.remove("show");
+          });
+          el.classList.add("active");
+          contents[i].classList.add("show");
+        });
+      });
+
+      const Img01 = document.querySelector(".img00");
+      const Img02 = document.querySelector(".img01");
+      const Img03 = document.querySelector(".img02");
+      const arrowR = document.querySelector(".rightarrow");
+      const arrowL = document.querySelector(".leftarrow");
+
+      const Img001 = document.querySelectorAll(".img001 div");
+
+      arrowR.addEventListener("click", () => {
+        ImgR();
+      });
+      arrowL.addEventListener("click", () => {
+        ImgL();
+      });
+
+      let num = 0;
+      let currentnum = 0;
+
+      function ImgR() {
+        Img001.forEach((el, i) => {
+          el.classList.remove("im0" + (num % 5));
+          el.classList.remove("img0" + (num % 5));
           //el.classList.remove("active0"+num%3)
-             num++;
-             el.classList.add("img0"+num%5)
-             
-             el.style.backgroundImage = `url(img/조별0${(i)}.jpg)`
-          })
           num++;
-        }
-  
-    
-       function ImgL(){
-          Img001.forEach((el, i) => {
-              num = num+5;
-             el.classList.remove("img0"+(num)%5)
-             el.classList.remove("im0"+(num)%5)
-             el.classList.add("im0"+(num-1)%5)
-             num++;
-             el.style.backgroundImage = `url(img/조별0${(i)}.jpg)`
-          })
-          num--;
-        }
+          el.classList.add("img0" + (num % 5));
 
-        const menu = document.querySelectorAll("#header ul li");
-        const articles = document.querySelectorAll(".wrap article");
-      
-        
-       for(let i=0; i<menu.length; i++){
+          el.style.backgroundImage = `url(img/조별0${i}.jpg)`;
+        });
+        num++;
+      }
+
+      function ImgL() {
+        Img001.forEach((el, i) => {
+          num = num + 5;
+          el.classList.remove("img0" + (num % 5));
+          el.classList.remove("im0" + (num % 5));
+          el.classList.add("im0" + ((num - 1) % 5));
+          num++;
+          el.style.backgroundImage = `url(img/조별0${i}.jpg)`;
+        });
+        num--;
+      }
+
+      const menu = document.querySelectorAll("#header ul li");
+      const articles = document.querySelectorAll(".wrap article");
+
+      for (let i = 0; i < menu.length; i++) {
         menu[i].addEventListener("click", () => {
-            articles[i].scrollIntoView({
-                behavior : "smooth"
-            })
-        })
-       }
+          articles[i].scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      }
 
-       window.addEventListener("scroll", () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+      window.addEventListener("scroll", () => {
+        let scrollTop =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          window.scrollY;
         articles.forEach((el, index) => {
-            if(scrollTop > el.offsetTop - 400){
-                menu.forEach((el, index) => {
-                    menu[index].classList.remove("active")
-                })
-                menu[index].classList.add("active")
-            }
-        })
-       })
-
+          if (scrollTop > el.offsetTop - 400) {
+            menu.forEach((el, index) => {
+              menu[index].classList.remove("active");
+            });
+            menu[index].classList.add("active");
+          }
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

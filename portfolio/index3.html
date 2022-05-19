@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://webfontworld.github.io/ChosunNm/ChosunNm.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        background: #000;
+      }
+      .section01 {
+        height: 500vw;
+        position: relative;
+        z-index: 29;
+        background: #000;
+      }
+      #main {
+        display: flex;
+        left: 0;
+        top: 0;
+        position: fixed;
+        background-color: #ccc;
+      }
+      #Portfolio {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+      }
+      .side {
+        /* flex-basis: 10%; */
+        text-align: center;
+        display: flex;
+        align-items: center;
+        font-size: 0.9vw;
+        font-family: "Montserrat";
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        color: #fff;
+        mix-blend-mode: difference;
+        z-index: 31;
+      }
+      .side ul {
+        width: 30%;
+        margin-left: 20px;
+        border-left: 1px solid #fff;
+        height: 95vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .side__title {
+        margin-top: 8vw;
+        transform: rotate(-90deg);
+        white-space: nowrap;
+        letter-spacing: 0.3em;
+      }
+      .side img {
+        width: 1.5vw;
+        background: #fff;
+      }
+      .side li:nth-child(5) img {
+        border-radius: 50%;
+      }
+      .side__title:nth-child(3) {
+        font-size: 1.5em;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+      .title {
+        flex-basis: 80%;
+
+        text-transform: uppercase;
+      }
+      .title ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .title ul:nth-child(2) li {
+        width: 15vw;
+        font-size: 0.8vw;
+        font-weight: 400;
+      }
+      .main__title ul {
+        display: flex;
+        height: 80vh;
+        justify-content: center;
+        align-items: start;
+        padding-bottom: 250px;
+        flex-direction: column;
+        margin-bottom: 50px;
+        margin-top: 30px;
+      }
+      .small__title {
+        font-family: "Montserrat";
+        display: inline-block;
+        font-size: 3vw;
+      }
+      .big__title {
+        font-family: "Eros Romano";
+        font-size: 8vw;
+        line-height: 1;
+        display: inline;
+      }
+      .big__title:nth-child(1) {
+        margin-left: 25%;
+      }
+      .big__title:nth-child(2) {
+        margin-left: 25%;
+      }
+      .big__title:nth-child(2) span:first-child {
+        font-size: 3vw;
+        vertical-align: 5px;
+        font-family: "Montserrat";
+      }
+      .big__title:nth-child(2) span:last-child {
+        font-size: 3vw;
+        vertical-align: 5px;
+        font-family: "Montserrat";
+      }
+      .big__title:nth-child(3) {
+        margin-left: 40%;
+      }
+      /* .big__title:nth-child(2)::after {
+        font-family: "Montserrat";
+        content: "DEVELOPER";
+        font-size: 3vw;
+        margin-left: 1vw;
+        display: inline;
+        vertical-align: 1vw;
+      }
+      .big__title:nth-child(2)::before {
+        font-family: "Montserrat";
+        content: "THE";
+        font-size: 3vw;
+        margin-right: 1vw;
+        display: inline;
+        vertical-align: 1vw;
+        font-family: "ChosunNm";
+      } */
+      .about {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "ChosunNm";
+      }
+      .about h3 {
+        font-weight: 500;
+        font-size: 1.5vw;
+      }
+      .about p {
+        font-size: 0.75vw;
+      }
+      .about .section1 {
+        flex-basis: 40%;
+        margin-right: 5%;
+      }
+      .about .section2 {
+        flex-basis: 40%;
+      }
+      .about .section1 p {
+        margin-left: 35%;
+      }
+      .about .section1 h3 {
+        margin: 30px 0;
+        margin-left: 35%;
+      }
+      .about .section1 img {
+        width: 75%;
+      }
+      .about .section2 img {
+        margin-left: 40%;
+        width: 45%;
+      }
+      .about .section2 p {
+        width: 70%;
+        margin: 30px 0;
+      }
+
+      #alone img {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #work {
+        background: #000;
+      }
+      .title.work {
+        width: 100vw;
+        background: #000;
+        color: #fff;
+      }
+      .title.work .main__title ul {
+        align-items: center;
+        height: 100vh;
+      }
+      .title.work .main__title ul li:nth-child(1) {
+        margin-right: 38vw;
+      }
+      .title.work .main__title ul li:nth-child(2) {
+        margin-right: 10vw;
+      }
+      .title.work .main__title ul li:nth-child(3) {
+        margin-right: 30vw;
+      }
+
+      .scrollTop {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 50px;
+      }
+      .section02 {
+        position: relative;
+        z-index: 30;
+        background: #000;
+        height: 450vh;
+      }
+      .article {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        margin-bottom: 35vw;
+        background: #000;
+      }
+      .web {
+        display: flex;
+      }
+      article:nth-child(1) .web figure::after {
+        content: "01";
+        font-size: 25vw;
+        position: absolute;
+        top: -20vw;
+        right: -17vw;
+        color: rgba(255, 255, 255, 0.178);
+        font-family: "Theramy";
+      }
+      article:nth-child(2) .web figure:after {
+        content: "02";
+        font-size: 25vw;
+        position: absolute;
+        top: -20vw;
+        left: -21vw;
+        color: rgba(255, 255, 255, 0.178);
+        font-family: "Theramy";
+      }
+      article:nth-child(3) .web figure:after {
+        content: "03";
+        font-size: 25vw;
+        position: absolute;
+        top: -20vw;
+        right: -24vw;
+        color: rgba(255, 255, 255, 0.178);
+        font-family: "Theramy";
+      }
+      article:nth-child(4) .web figure:after {
+        content: "04";
+        font-size: 25vw;
+        position: absolute;
+        top: -20vw;
+        left: -21vw;
+        color: rgba(255, 255, 255, 0.178);
+        font-family: "Theramy";
+      }
+
+      .web__desc {
+        margin-left: -50px;
+        margin-top: 19vw;
+        color: #fff;
+        position: relative;
+        z-index: 13;
+      }
+      .web__desc h3 {
+        font-family: "Eros Romano";
+        font-size: 7vw;
+        font-weight: 400;
+        position: relative;
+      }
+      .web__desc p {
+        width: 30vw;
+        color: #ccc;
+        font-size: 0.8vw;
+        margin-bottom: 50px;
+        font-family: "ChosunNm";
+      }
+      .web__desc a {
+        text-transform: uppercase;
+        font-family: "Eros Romano";
+        padding: 0.8vw 3vw;
+        font-size: 1.5vw;
+        font-weight: 600;
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+      }
+      .article figure {
+        display: inline-block;
+        position: relative;
+        z-index: 12;
+      }
+      .article figure img {
+        width: 30vw;
+        position: relative;
+        z-index: 1;
+      }
+
+      .article02 .web__desc {
+        margin-right: -150px;
+      }
+      .section02 > figure img {
+        object-fit: contain;
+        width: 100vw;
+      }
+      .section03 {
+        color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        width: 740vw;
+        display: flex;
+
+        background: #9e9e9e;
+      }
+      .bg {
+        width: 140vw;
+        height: 100vh;
+        background: #000;
+      }
+      .section03 #Portfolio {
+        background: url(img/desert.jpg) no-repeat 0 0 / cover;
+      }
+      .section03 #Portfolio .side ul {
+        border-color: #fff;
+      }
+      .section03 #Portfolio .side ul img {
+      }
+      .section03 .main__title ul {
+        height: 100vh;
+      }
+
+      .sec3 {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #d6d6d6;
+        position: relative;
+        z-index: -2;
+      }
+      .sec3 figure {
+        display: inline-block;
+        position: relative;
+      }
+      .sec3 img {
+        width: 100%;
+        z-index: 2;
+      }
+      .sec3:nth-child(3) figure::before {
+        position: absolute;
+        content: "01";
+        top: -17vw;
+        left: -7vw;
+        font-size: 23vw;
+        font-family: "Theramy";
+        z-index: -1;
+      }
+      .sec3:nth-child(4) figure::before {
+        position: absolute;
+        content: "02";
+        top: -17vw;
+        left: -7vw;
+        font-size: 23vw;
+        font-family: "Theramy";
+        z-index: -1;
+      }
+      .sec3:nth-child(5) figure::before {
+        position: absolute;
+        content: "03";
+        top: -17vw;
+        left: -7vw;
+        font-size: 23vw;
+        font-family: "Theramy";
+        z-index: -3;
+      }
+      .sec3 h4 {
+        text-align: right;
+        font-family: "Eros Romano";
+        font-size: 2.5vw;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #000;
+      }
+      .sec3__cont {
+        width: 50vw;
+      }
+      .last {
+        background: #9e9e9e;
+        color: #000;
+      }
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 35;
+        background: #9e9e9e;
+        height: 100vh;
+        width: 25vw;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .modal h4 {
+        margin-left: 2vw;
+        font-size: 3vw;
+      }
+      .modal ul {
+        margin: 50px 0;
+      }
+      .modal ul li {
+        padding: 5px 4vw;
+        font-size: 1.3vw;
+        /* font-family: "Eros Romano"; */
+        /* font-family: "Theramy"; */
+        text-transform: uppercase;
+      }
+      .modal ul li a {
+        color: #fff;
+      }
+      .modal address {
+        margin-left: 2vw;
+        font-size: 1vw;
+        font-weight: 300;
+      }
+      .modal h3 {
+        display: inline-block;
+        transform: rotate(-90deg);
+        text-align: center;
+        margin-top: 10vw;
+        margin-right: -20vw;
+        color: #fff;
+        font-size: 1.3vw;
+      }
+      .close {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        right: -30px;
+        background: #fff;
+        border-radius: 5px;
+      }
+      .modal .close span:nth-child(1) {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        transform: rotate(-45deg);
+        display: block;
+        background: #9e9e9e;
+        position: absolute;
+        top: 11px;
+      }
+      .modal span:nth-of-type(2) {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        transform: rotate(45deg);
+        display: block;
+        background: #9e9e9e;
+        position: absolute;
+        top: 11px;
+      }
+      .section02 > * {
+        position: sticky;
+        top: 100px;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="side">
+      <ul>
+        <li class="hamberger"><img src="img/hamberger.png" alt="" /></li>
+        <!-- <li class="side__title">H S B</li> -->
+        <li class="side__title">PORTFOLIO</li>
+        <!-- <li class="side__title">boseungdl</li> -->
+        <li><img src="img/moon.png" alt="" /></li>
+      </ul>
+    </header>
+    <section class="section01" id="top">
+      <main id="main">
+        <div id="Portfolio">
+          <div class="title">
+            <div class="main__title">
+              <ul>
+                <li class="big__title">
+                  <span>s</span><span>e</span><span>u</span><span>n</span
+                  ><span>g</span><span>b</span><span>o</span>
+                </li>
+                <li class="big__title">
+                  <span>the</span><span>F</span><span>r</span><span>o</span
+                  ><span>n</span><span>t</span><span>e</span><span>n</span
+                  ><span>d</span><span>DEVELOPER</span>
+                </li>
+                <li class="big__title">Portfolio</li>
+              </ul>
+            </div>
+            <ul>
+              <li>
+                1. I WILL BECOME A NEWCOMER WHO KNOWS THE ATTITUDE OF LEARNIG.
+              </li>
+              <li>
+                2. I WILL THINK AND MOVE IN THE DIRECTION THE COMPANY IS GOING.
+              </li>
+              <li>3. I WILL WORK REPONSIBLY FOR THE WORK ASSIGNED TO ME.</li>
+              <li>
+                4. WE WILL DO OUR BEST TO BECOME A BETTER DEVELOPER WITHOUT
+                BEING COMPLACENT WITH OUR CURRENT ABILITIES
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="about">
+          <section class="section1">
+            <figure>
+              <img src="img/busan2.jpg" alt="" />
+            </figure>
+            <h3>코딩을 선택한 나의 6개월</h3>
+            <p>
+              대학교를 졸업한 후의 저는 어쩌면 평생이 될지도 모를 제 직업에 대한
+              많은 고민을 할 수 밖에 없었습니다. 그런 시점에서 처음으로 코딩을
+              접하게 되었고 나름 과감히 바로 뛰어들었습니다. 시작부터 많은
+              어려움이 있었지만 평소에 새로운 것을 경험 할 때 익숙치 않은 것에서
+              오는 어려움은 당연하고 노력과 반복이 해결해 줄 것이란 것을 믿고
+              있었기 때문에 원리가 이해될 때까지 최선을 다했습니다. 새로운 것을
+              배우고 그것을 저의 무기로 만드는 데 재미와 성취감을 느낍니다.
+              앞으로도 안주하지 않고 부딪히겠습니다. 지켜봐주세요.
+            </p>
+          </section>
+          <section class="section2">
+            <h3>기업에 맞는 프로트엔드 개발자</h3>
+            <p>
+              무엇이 가독성 좋은 코드일까, 이부분은어떻게 하면 좀 더 효율적이고
+              보기좋게축소할 수 있을까, 이건 어떻게 표현할 수 있을까. 항상
+              고민하고 공부하면서 제 부족함을 채우기 위해 노력합니다. 열심히도
+              하는데 심지어 잘하기까지 하는 퍼블리셔로 도약하기 위해 배우고 또
+              배우겠습니다.
+            </p>
+            <figure>
+              <img src="img/busan.jpg" alt="" />
+            </figure>
+          </section>
+        </div>
+        <div id="alone">
+          <figure>
+            <img src="img/alone.jpg" alt="" />
+          </figure>
+        </div>
+        <div id="work">
+          <div class="title work">
+            <div class="main__title">
+              <ul>
+                <li class="big__title">seungbo</li>
+                <li class="big__title">
+                  <span>the</span><span>F</span><span>r</span><span>o</span
+                  ><span>n</span><span>t</span><span>e</span><span>n</span
+                  ><span>d</span><span>DEVELOPER</span>
+                </li>
+                <li class="big__title">work</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+    <div id="project"></div>
+    <section class="section02">
+      <article class="article">
+        <div class="web">
+          <figure>
+            <img src="img/webstandard.png" alt="" />
+          </figure>
+          <div class="web__desc">
+            <h3>WebStandard</h3>
+            <p>
+              코딩이 무엇인지, 웹 사이트가 어떤식으로 작동이 되는지, html, css,
+              javascrip 등 모든게 처음이였기 때문에 6개월이라는 시간동안 저에게
+              가장 큰 시련을 주었던 수업이였습니다. 이 수업을 통해 웹 사이트의
+              기본 구조를 배우고, 웹 사이트를 만들 수 있게 되었고, 기존 웹
+              사이트 들의 코드 들을 해석하고 분석할 수 있는 법을 배운 수
+              있었습니다.
+            </p>
+            <a href="">CODE</a>
+            <a href="">VIEW</a>
+          </div>
+        </div>
+      </article>
+      <article class="article article02">
+        <div class="web">
+          <div class="web__desc">
+            <h3>PHP-Project</h3>
+            <p>
+              서버, DB라는 개념을 배우고 서버와 클라이언트가 어떤식으로 데이터를
+              주고 받는지 흐름을 알 수 있었던 수업이였습니다. 조별활동을 통해
+              필요하고 정확한 데이터를 받아내어 그 정보를 어디에 어떤 식으로
+              바인딩시킬지를 고민하며 조원들과 의견을 주고 받으며 시간가는 줄
+              모르고 하루하루를 불태웠던 수업이였습니다.
+            </p>
+            <a href="">CODE</a>
+            <a href="">VIEW</a>
+          </div>
+          <figure>
+            <img src="img/php.png" alt="" />
+          </figure>
+        </div>
+      </article>
+      <article class="article">
+        <div class="web">
+          <figure>
+            <img src="img/react.png" alt="" />
+          </figure>
+          <div class="web__desc">
+            <h3>React</h3>
+            <p>
+              처음 이 수업을 배울 때 html, css, javascript에 php를 섞어 만든 것
+              같다는 느낌을 받았습니다. 프로젝트를 만드는 과정을 더 효율적이고
+              프로그래밍 적으로 만들어 마치 내가 개발자가 된 거 같은 기분을 느낄
+              수 있었던 수업이였습니다. 그래서 더 잘하고 익숙해지기위해 더 많은
+              노력을 하고 있습니다.
+            </p>
+            <a href="">CODE</a>
+            <a href="">VIEW</a>
+          </div>
+        </div>
+      </article>
+      <article class="article article02">
+        <div class="web">
+          <div class="web__desc">
+            <h3>vue</h3>
+            <p>
+              웹에 관심이 많았던 저는 웹디자인을 처음으로 코딩을 접하게
+              되었습니다. 배워보지도 못한 영역이라 처음엔 개념이 안 잡혀있어서
+              어려웠지만, 매일매일 메모장에 그날의 수업을 \웹 수업 1일 차, 2일
+              차 이렇게 적어가며 네이버 클라우드에 저장해 집에서도 복습했습니다.
+            </p>
+            <a href="">CODE</a>
+            <a href="">VIEW</a>
+          </div>
+          <figure>
+            <img src="img/vue.png" alt="" />
+          </figure>
+        </div>
+      </article>
+    </section>
+    <div class="nothing" id="script"></div>
+    <section class="section03">
+      <div class="bg"></div>
+      <div id="Portfolio">
+        <div class="title">
+          <div class="main__title">
+            <ul>
+              <li class="big__title">
+                <span>s</span><span>e</span><span>u</span><span>n</span
+                ><span>g</span><span>b</span><span>o</span>
+              </li>
+              <li class="big__title">
+                <span>the</span><span>F</span><span>r</span><span>o</span
+                ><span>n</span><span>t</span><span>e</span><span>n</span
+                ><span>d</span><span>DEVELOPER</span>
+              </li>
+
+              <li class="big__title">script</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sec3">
+        <div class="sec3__cont">
+          <figure>
+            <a href=""><img src="img/slider.jpg" alt="" /></a>
+          </figure>
+          <h4>01. slider effect</h4>
+        </div>
+      </div>
+      <div class="sec3">
+        <div class="sec3__cont">
+          <figure>
+            <a href=""><img src="img/mouse.jpg" alt="" /></a>
+          </figure>
+          <h4>02. mouse effect</h4>
+        </div>
+      </div>
+      <div class="sec3">
+        <div class="sec3__cont">
+          <figure>
+            <a href=""><img src="img/parallax.jpg" alt="" /></a>
+          </figure>
+          <h4>03. parallax effect</h4>
+        </div>
+      </div>
+
+      <div class="about last">
+        <section class="section1">
+          <figure>
+            <img src="img/choose.jpg" alt="" />
+          </figure>
+          <h3>선택에 대한 책임</h3>
+          <p>
+            살아가는 데 있어 많은 선택을 해왔습니다. 결과는 모두 저의
+            몫이였습니다. 그 수 많은 선택들 중 코딩의 길을 고른 저의 선택은
+            스스로에게 가장 도전적이였고, 그 이상의 책임감을 갖게 만들었습니다.
+            지금 제가 보여드릴 수 있는 건 단지 이 몇 줄의 문장들과 6개월간의
+            흔적 뿐이지만 이 흔적들이 작은 기회를 만들어 낸다면 주어진 책임에
+            대한 기대에 꼭 부응할 수 있는 선택을 할것입니다.
+          </p>
+        </section>
+        <section class="section2">
+          <h3>오늘보다 내일 더</h3>
+          <p>
+            최근 들었 던 말 중에 와닿았던 문장이 있습니다. “누울 때 행복하기
+            위해 걷습니다.” 돌이켜 저를 생각해 보면 멈춰져 있을 때 항상 불안감을
+            느꼈습니다. 그런 시기 저 문장은 제가 평소에 생각하고 있던 제
+            생각들의 실체를 알려주었습니다. 안주하기를 싫어해 더 나아지기 위해
+            애썼던 내가 사실은 누구보다 안주하기를 원하 는 사람이였습니다.
+            앞으로도 저는 안주하기를 원하는 만큼 더 나아갈 것입니다.
+          </p>
+          <figure>
+            <img src="img/gentle.jpg" alt="" />
+          </figure>
+        </section>
+      </div>
+    </section>
+    <nav class="modal">
+      <h4>Have Fun</h4>
+      <h4>boseung Pf</h4>
+      <ul>
+        <li><a href="#top">Top</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#script">Script</a></li>
+        <li><a href="#last">Contact</a></li>
+      </ul>
+      <address>2022 boseungdl. All rights reserved.</address>
+      <h3>table of contents</h3>
+      <div class="close">
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <div class="scrollTop">scrollTop : <span>0</span>px</div>
+  </body>
+
+  <script src="../javascript/assets/js/gsap.min.js"></script>
+  <script>
+    let tl = gsap.timeline();
+    const first = document.querySelectorAll(".big__title");
+
+    // gsap.utils.toArray(first).forEach((li) => {
+    //   console.log(li);
+    // });
+    // tl.fromTo(
+    //   first[0],
+    //   1,
+    //   { width: 0, opacity: 0, overflow: "hidden" },
+    //   { opacity: 1, width: "40%" }
+    // )
+    //   .fromTo(
+    //     first[1],
+    //     1,
+    //     { width: 0, opacity: 0, overflow: "hidden" },
+    //     { opacity: 1, width: "70%" }
+    //   )
+    //   .fromTo(
+    //     first[2],
+    //     1,
+    //     { width: 0, opacity: 0, overflow: "hidden" },
+    //     { opacity: 1, width: "50%" }
+    //   );
+    gsap.fromTo(
+      first[0],
+      1,
+      { color: "#fff", width: 0, opacity: 0, overflow: "hidden" },
+      { color: "#000", opacity: 1, width: "40%" }
+    );
+    gsap.fromTo(
+      first[1],
+      1,
+      { color: "#fff", width: 0, opacity: 0, overflow: "hidden" },
+      { color: "#000", opacity: 1, width: "70%" },
+      0.3
+    );
+    gsap.fromTo(
+      first[2],
+      1,
+      { color: "#fff", width: 0, opacity: 0, overflow: "hidden" },
+      { color: "#000", opacity: 1, width: "45%" },
+      0.7
+    );
+    window.addEventListener("resize", (sec) => {
+      gsap.set(sec2, { height: sec2.offsetHeight });
+    });
+
+    const Maincont = document.getElementById("main");
+    const sec2 = document.querySelector(".section02");
+    const sec3 = document.querySelector(".section03");
+    const contentItem = document.querySelector(".content__item");
+    const section03 = document.querySelector(".section03");
+    const sec_child = document.querySelector(".sec3");
+    const section3Top = section03.offsetTop;
+
+    function scroll() {
+      let scrollTop =
+        window.pageYOffset ||
+        window.scrollY ||
+        document.documentElement.scrollTop;
+
+      //패럴랙스 박스 전체 가로 값
+      let parallaxWidth = Maincont.offsetWidth;
+      let parallaxWidth2 = sec2.offsetHeight;
+      let parallaxWidth3 = sec3.offsetWidth;
+      let width = sec_child.offsetWidth;
+      let height = sec_child.offsetHeight;
+
+      document.body.style.height =
+        parallaxWidth + parallaxWidth2 + parallaxWidth3 - width + height + "px";
+
+      let windowW = window.innerWidth;
+      let windowH = window.innerHeight;
+      let viewWidth = parallaxWidth - window.innerWidth;
+      let viewHeight = parallaxWidth - window.innerHeight;
+      let goLeft = scrollTop * (viewWidth / viewHeight);
+
+      gsap.to(Maincont, { x: -goLeft, ease: "linear", duration: 1 });
+
+      let bgTop = document.querySelector(".nothing").offsetTop;
+
+      let offset = scrollTop - bgTop;
+      if (scrollTop > bgTop) {
+        gsap.to(section03, { x: -offset, ease: "linear", duration: 1 });
+      }
+
+      document.querySelector(".scrollTop span").innerText =
+        Math.round(scrollTop);
+      requestAnimationFrame(scroll);
+    }
+    scroll();
+
+    // window.addEventListener("resize", scroll);
+    // window.addEventListener("scroll", scroll);
+
+    const menu = document.querySelector(".hamberger");
+    const close = document.querySelector(".close");
+    const modal = document.querySelector(".modal");
+    const modalLi = document.querySelectorAll(".modal ul li ");
+    menu.addEventListener("click", () => {
+      modal.style.display = "flex";
+    });
+    close.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+    modalLi.forEach((el) => {
+      el.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+    });
+  </script>
+</html>

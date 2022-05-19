@@ -489,6 +489,11 @@
         position: absolute;
         top: 11px;
       }
+      .section02 > * {
+        position: sticky;
+        top: 100px;
+        left: 0;
+      }
     </style>
   </head>
   <body>
@@ -589,7 +594,7 @@
     </section>
     <div id="project"></div>
     <section class="section02">
-      <article class="article">
+      <article class="article article1">
         <div class="web">
           <figure>
             <img src="img/webstandard.png" alt="" />
@@ -764,12 +769,36 @@
 
     <div class="scrollTop">scrollTop : <span>0</span>px</div>
   </body>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
   <script src="../javascript/assets/js/gsap.min.js"></script>
   <script>
     let tl = gsap.timeline();
     const first = document.querySelectorAll(".big__title");
+    const sec2Child = document.querySelector(".article1");
+    const a = gsap.to(".article1", 3, { opacity: 0, y: -300 });
+    ScrollTrigger.create({
+      animation: a,
+      trigger: ".article1",
+      start: "top bottom",
+      end: "+=400",
+      markers: true,
+      scrub: 1,
+      // pin: true,
+      // pinSpacing: false,
+    });
 
+    // gsap.utils.toArray(".article").forEach((article, i) => {
+    //   ScrollTrigger.create({
+    //     trigger: article,
+    //     start: "top top",
+    //     end: "+=1400",
+    //     markers: true,
+    //     scrub: 1,
+    //     // pin: true,
+    //     // pinSpacing: false,
+    //   });
+    //   gsap.to(article, { opacity: 0 });
+    // });
     // gsap.utils.toArray(first).forEach((li) => {
     //   console.log(li);
     // });
@@ -801,16 +830,19 @@
       first[1],
       1,
       { color: "#fff", width: 0, opacity: 0, overflow: "hidden" },
-      { color: "#000", opacity: 1, width: "80%" },
+      { color: "#000", opacity: 1, width: "70%" },
       0.3
     );
     gsap.fromTo(
       first[2],
       1,
       { color: "#fff", width: 0, opacity: 0, overflow: "hidden" },
-      { color: "#000", opacity: 1, width: "50%" },
+      { color: "#000", opacity: 1, width: "45%" },
       0.7
     );
+    window.addEventListener("resize", (sec) => {
+      gsap.set(sec2, { height: sec2.offsetHeight });
+    });
 
     const Maincont = document.getElementById("main");
     const sec2 = document.querySelector(".section02");
@@ -819,6 +851,7 @@
     const section03 = document.querySelector(".section03");
     const sec_child = document.querySelector(".sec3");
     const section3Top = section03.offsetTop;
+
     function scroll() {
       let scrollTop =
         window.pageYOffset ||
@@ -856,7 +889,7 @@
     }
     scroll();
 
-    window.addEventListener("resize", scroll);
+    // window.addEventListener("resize", scroll);
     // window.addEventListener("scroll", scroll);
 
     const menu = document.querySelector(".hamberger");

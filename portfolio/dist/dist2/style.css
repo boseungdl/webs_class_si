@@ -1,0 +1,37 @@
+body {
+  overflow-x: hidden;
+}
+
+.section {
+  font-size: 5rem;
+}
+.section--large {
+  width: 100vw;
+  background-color: #e4002b;
+  color: white;
+}
+.section--small {
+  width: 46rem;
+}
+.section--dark {
+  color: white;
+  background-color: black;
+}
+
+.center-marker {
+  position: fixed;
+  width: 2px;
+  height: 100vh;
+  background: tomato;
+  top: 0;
+  left: calc(50vw - 1px);
+}
+
+section {
+  font-weight: 900;
+  transition: color 0.3s;
+}
+
+section.active {
+  color: orange;
+}
