@@ -54,8 +54,8 @@ h1 span {
 }
 
 h2 {
-  font-size: 2rem;
-  max-width: 400px;
+  /* font-size: 2rem;
+  max-width: 400px; */
 }
 
 .credit {
@@ -81,7 +81,7 @@ h2 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 50px 10vw;
+  padding: 50px 0;
 }
 .pin-wrap > * {
   width: 60vw;
