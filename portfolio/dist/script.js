@@ -7,8 +7,8 @@ window.addEventListener("load", function () {
   const scroller = new LocomotiveScroll({
     el: pageContainer,
     smooth: true,
-    getDirection: true });
-
+    getDirection: true,
+  });
 
   scroller.on("scroll", function (t) {
     document.documentElement.setAttribute("data-direction", t.direction);
@@ -18,26 +18,26 @@ window.addEventListener("load", function () {
 
   ScrollTrigger.scrollerProxy(pageContainer, {
     scrollTop(value) {
-      return arguments.length ?
-      scroller.scrollTo(value, 0, 0) :
-      scroller.scroll.instance.scroll.y;
+      return arguments.length
+        ? scroller.scrollTo(value, 0, 0)
+        : scroller.scroll.instance.scroll.y;
     },
     getBoundingClientRect() {
       return {
         left: 0,
         top: 0,
         width: window.innerWidth,
-        height: window.innerHeight };
-
+        height: window.innerHeight,
+      };
     },
-    pinType: pageContainer.style.transform ? "transform" : "fixed" });
-
+    pinType: pageContainer.style.transform ? "transform" : "fixed",
+  });
 
   // Pinning and horizontal scrolling
 
   let horizontalSections = document.querySelectorAll(".horizontal-scroll");
 
-  horizontalSections.forEach(horizontalSection => {
+  horizontalSections.forEach((horizontalSection) => {
     let pinWrap = horizontalSection.querySelector(".pin-wrap");
     let pinWrapWidth = pinWrap.offsetWidth;
     let horizontalScrollLength = pinWrapWidth - window.innerWidth;
@@ -49,11 +49,12 @@ window.addEventListener("load", function () {
         pin: true,
         start: "top top",
         end: () => `+=${pinWrapWidth}`,
-        invalidateOnRefresh: true },
+        invalidateOnRefresh: true,
+      },
 
       x: -horizontalScrollLength,
-      ease: "none" });
-
+      ease: "none",
+    });
   });
 
   /* COLOR CHANGER */
@@ -68,21 +69,24 @@ window.addEventListener("load", function () {
       scroller: "[data-scroll-container]",
       start: "top 50%",
       onEnter: () =>
-      gsap.to("body", {
-        backgroundColor: colorSection.dataset.bgcolor,
-        color: colorSection.dataset.textcolor,
-        overwrite: "auto" }),
+        gsap.to("body", {
+          backgroundColor: colorSection.dataset.bgcolor,
+          color: colorSection.dataset.textcolor,
+          overwrite: "auto",
+        }),
 
       onLeaveBack: () =>
-      gsap.to("body", {
-        backgroundColor: prevBg,
-        color: prevText,
-        overwrite: "auto" }) });
-
-
+        gsap.to("body", {
+          backgroundColor: prevBg,
+          color: prevText,
+          overwrite: "auto",
+        }),
+    });
   });
 
   ScrollTrigger.addEventListener("refresh", () => scroller.update());
 
   ScrollTrigger.refresh();
 });
+
+window.addEventListener("resize", () => {});
