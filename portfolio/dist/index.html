@@ -33,7 +33,7 @@
         align-items: center;
         /* background: #000; */
         z-index: 1;
-        background: rgba(0, 0, 0, 0.267);
+        background: rgba(15, 15, 15, 0.767);
         backdrop-filter: blur(20px);
         mix-blend-mode: difference;
       }
@@ -128,10 +128,12 @@
       .sec1_1 {
       }
       .sec1_1 figure {
-        width: 100%;
+        width: 60%;
+        overflow: hidden;
       }
       .sec1_1 figure img {
-        width: 60%;
+        width: 120%;
+        transform: translate(-10%);
       }
       .sec_desc {
         width: 70%;
@@ -147,18 +149,27 @@
         line-height: 1.5;
       }
       .sec1_2 {
-        align-items: start;
-        padding-right: 20vw;
+        flex-direction: row;
+        align-items: center;
+        padding-right: 10vw;
       }
       .sec1_2 figure {
-        width: 100%;
+        width: 35%;
+        height: 30vw;
         text-align: right;
+        overflow: hidden;
+        margin-left: 4vw;
+        position: relative;
       }
       .sec1_2 figure img {
-        width: 40%;
+        width: 160%;
+        height: 120%;
+        position: absolute;
+        top: -10%;
+        left: -30%;
       }
       .sec1_2 .sec_desc {
-        width: 100%;
+        width: 35%;
       }
       .sec1_2 p {
       }
@@ -406,6 +417,15 @@
       .lastSection .sec_desc {
         width: 100%;
       }
+
+      html.has-scroll-smooth {
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
     </style>
   </head>
   <body>
@@ -543,9 +563,9 @@
       >
         <div>
           <h2 data-scroll data-scroll-speed="1">
-            <span style="margin: 80px; font-family: ChosunilboNM"
+            <!-- <span style="margin: 80px; font-family: ChosunilboNM"
               >잠깐 느릴 수 있지만 오래 간직하는 사람.</span
-            >
+            > -->
           </h2>
           <article class="article article1">
             <div class="web">
@@ -807,41 +827,50 @@
     <script src="./script.js"></script>
     <script>
       function scroll() {
-        const secs = document.querySelector(".xxx");
+        // const secs = document.querySelector(".xxx");
 
-        if (-secs.getBoundingClientRect().left > 0) {
-          gsap.to(".xxx", {
-            x: -secs.getBoundingClientRect().left / 4,
-          });
-        } else if (-secs.getBoundingClientRect().left == 0) {
-          gsap.to(".xxx", {
-            x: secs.getBoundingClientRect().left,
-          });
-        }
+        // if (-secs.getBoundingClientRect().left > 0) {
+        //   gsap.to(".xxx", {
+        //     x: -secs.getBoundingClientRect().left / 4,
+        //   });
+        // } else if (-secs.getBoundingClientRect().left == 0) {
+        //   gsap.to(".xxx", {
+        //     x: secs.getBoundingClientRect().left,
+        //   });
+        // }
+        // const gsap1 = document.querySelectorAll(".gsap1");
+        // gsap1.forEach((el, index) => {
+        //   // console.log(el);
+        //   if (el.getBoundingClientRect().right < window.innerWidth) {
+        //     gsap.to(el.querySelector(".child2"), {
+        //       // x: -(window.innerWidth - el.getBoundingClientRect().right) / 4,
+        //       fontSize:
+        //         (window.innerWidth / el.getBoundingClientRect().right) * 2.1 +
+        //         "vw",
+        //       opacity:
+        //         (el.getBoundingClientRect().right - window.innerWidth / 1.5) /
+        //         (window.innerWidth - window.innerWidth / 1.5),
+        //     });
+        //     gsap.to(el.querySelector(".child3"), {
+        //       y: (window.innerWidth - el.getBoundingClientRect().right) / 15,
+        //       opacity:
+        //         (el.getBoundingClientRect().right - window.innerWidth / 1.5) /
+        //         (window.innerWidth - window.innerWidth / 1.5),
+        //     });
+        //     gsap.to(el.querySelector(".child1"), {
+        //       y: -(window.innerWidth - el.getBoundingClientRect().right) / 15,
+        //       opacity:
+        //         (el.getBoundingClientRect().right - window.innerWidth / 1.5) /
+        //         (window.innerWidth - window.innerWidth / 1.5),
+        //     });
+        //   }
+        // });
+        const xx = document.querySelectorAll(".gsap1 img");
         const gsap1 = document.querySelectorAll(".gsap1");
-        gsap1.forEach((el, index) => {
-          // console.log(el);
+        gsap1.forEach((el) => {
           if (el.getBoundingClientRect().right < window.innerWidth) {
-            gsap.to(el.querySelector(".child2"), {
-              // x: -(window.innerWidth - el.getBoundingClientRect().right) / 4,
-              fontSize:
-                (window.innerWidth / el.getBoundingClientRect().right) * 2.1 +
-                "vw",
-              opacity:
-                (el.getBoundingClientRect().right - window.innerWidth / 1.5) /
-                (window.innerWidth - window.innerWidth / 1.5),
-            });
-            gsap.to(el.querySelector(".child3"), {
-              y: (window.innerWidth - el.getBoundingClientRect().right) / 15,
-              opacity:
-                (el.getBoundingClientRect().right - window.innerWidth / 1.5) /
-                (window.innerWidth - window.innerWidth / 1.5),
-            });
-            gsap.to(el.querySelector(".child1"), {
-              y: -(window.innerWidth - el.getBoundingClientRect().right) / 15,
-              opacity:
-                (el.getBoundingClientRect().right - window.innerWidth / 1.5) /
-                (window.innerWidth - window.innerWidth / 1.5),
+            gsap.to(el.querySelector("img"), {
+              x: (el.getBoundingClientRect().right - window.innerWidth) / 10,
             });
           }
         });
