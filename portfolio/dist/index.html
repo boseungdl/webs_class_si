@@ -868,7 +868,10 @@
         const xx = document.querySelectorAll(".gsap1 img");
         const gsap1 = document.querySelectorAll(".gsap1");
         gsap1.forEach((el) => {
-          if (el.getBoundingClientRect().right < window.innerWidth) {
+          if (
+            el.querySelector("img").getBoundingClientRect().right <
+            window.innerWidth
+          ) {
             gsap.to(el.querySelector("img"), {
               x: (el.getBoundingClientRect().right - window.innerWidth) / 10,
             });
