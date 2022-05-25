@@ -455,26 +455,32 @@
       }
       .xxx span {
         margin-bottom: 15px;
+        font-size: 1.5vw;
       }
       .xxx span:nth-child(1) {
         transform: translate(-50px, -150px);
         opacity: 0;
+        font-size: 3vw;
       }
       .xxx span:nth-child(2) {
         transform: translate(100px, -100px);
         opacity: 0;
+        font-size: 6vw;
       }
       .xxx span:nth-child(3) {
         transform: translate(-130px, -70px);
         opacity: 0;
+        font-size: 3vw;
       }
       .xxx span:nth-child(4) {
         transform: translate(200px, -50px);
         opacity: 0;
+        font-size: 1vw;
       }
       .xxx span:nth-child(5) {
         transform: translate(-200px, -40px);
         opacity: 0;
+        font-size: 4vw;
       }
       .xxx span:nth-child(6) {
         transform: translate(300px, -30px);
@@ -898,7 +904,13 @@
         console.log(span[0].style.transform);
         if (xxx.getBoundingClientRect().top < xxx.offsetHeight / 2) {
           span.forEach((el) => {
-            gsap.to(el, { x: 0, y: 0, duration: 1.5, opacity: 1 });
+            gsap.to(el, {
+              x: 0,
+              y: 0,
+              duration: 1.5,
+              opacity: 1,
+              fontSize: 1.5 + "vw",
+            });
           });
         }
         // const secs = document.querySelector(".xxx");
