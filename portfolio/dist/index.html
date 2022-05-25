@@ -129,16 +129,24 @@
       }
       .sec1_1 figure {
         width: 60%;
+        height: 15vw;
         overflow: hidden;
+        position: relative;
       }
       .sec1_1 figure img {
-        width: 120%;
-        transform: translate(-10%);
+        width: 130%;
+        position: absolute;
+        left: -5%;
+        top: -15%;
+        /* transform: translateX(100%); */
+        /* transition: all 0.2s; */
       }
       .sec_desc {
         width: 70%;
         font-size: 0.8vw;
         font-family: "ChosunilboNM";
+        opacity: 0;
+        transform: translateY(-50px);
       }
       .sec1_1 h3 {
         font-size: 1.5vw;
@@ -163,9 +171,9 @@
       }
       .sec1_2 figure img {
         width: 160%;
-        height: 120%;
+        height: 105%;
         position: absolute;
-        top: -10%;
+        /* top: -10%; */
         left: -30%;
       }
       .sec1_2 .sec_desc {
@@ -403,19 +411,38 @@
       .lastSection .sec {
         width: 45%;
       }
-
+      .lastSection figure {
+        width: 100%;
+        height: 13vw;
+      }
+      .lastSection figure img {
+        position: static;
+      }
+      .lastSection .sec1_1 img {
+        width: 100%;
+      }
+      .lastSection .sec1_1 .sec_desc {
+        transform: translateY(20px);
+      }
       .lastSection .sec1_2 {
         padding: 0;
         margin-top: 8vw;
       }
-      .lastSection .sec1_2 .sec_desc {
-        margin-bottom: 30px;
+
+      .lastSection .sec1_2 figure {
+        width: 60%;
+        height: 100%;
       }
       .lastSection .sec1_2 img {
-        width: 35%;
+        width: 100%;
       }
       .lastSection .sec_desc {
         width: 100%;
+        opacity: 1;
+      }
+      .lastSection .sec1_2 .sec_desc {
+        margin-bottom: 30px;
+        width: 60%;
       }
 
       html.has-scroll-smooth {
@@ -425,6 +452,37 @@
         right: 0;
         top: 0;
         bottom: 0;
+      }
+      .xxx span {
+        margin-bottom: 15px;
+      }
+      .xxx span:nth-child(1) {
+        transform: translate(-50px, -150px);
+        opacity: 0;
+      }
+      .xxx span:nth-child(2) {
+        transform: translate(100px, -100px);
+        opacity: 0;
+      }
+      .xxx span:nth-child(3) {
+        transform: translate(-130px, -70px);
+        opacity: 0;
+      }
+      .xxx span:nth-child(4) {
+        transform: translate(200px, -50px);
+        opacity: 0;
+      }
+      .xxx span:nth-child(5) {
+        transform: translate(-200px, -40px);
+        opacity: 0;
+      }
+      .xxx span:nth-child(6) {
+        transform: translate(300px, -30px);
+        opacity: 0;
+      }
+      .xxx span:nth-child(7) {
+        transform: translate(-300px, -20px);
+        opacity: 0;
       }
     </style>
   </head>
@@ -477,7 +535,13 @@
         data-bgcolor="rgb(159 126 111)"
       >
         <div class="pin-wrap xx">
-          <h2 class="sec xxx">꾸준함이 내 눈이 되어 나를 인도할거야.</h2>
+          <h2 class="sec xxx">
+            <span>꾸</span> <span>준</span><span>함</span><span>이</span
+            ><span>내</span><span>눈</span><span>이</span><span>되</span
+            ><span> 어 </span><span>나</span><span>를</span> <span>인</span
+            ><span>도</span><span>할</span><span>거</span><span>야</span
+            ><span>.</span>
+          </h2>
           <!-- <img
             src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
             alt=""
@@ -826,7 +890,17 @@
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script src="./script.js"></script>
     <script>
+      const xxx = document.querySelector(".xxx");
+      const span = document.querySelectorAll(".xxx span");
+      const xx = document.querySelectorAll(".gsap1 img");
+      const gsap1 = document.querySelectorAll(".gsap1");
       function scroll() {
+        console.log(span[0].style.transform);
+        if (xxx.getBoundingClientRect().top < xxx.offsetHeight / 2) {
+          span.forEach((el) => {
+            gsap.to(el, { x: 0, y: 0, duration: 1.5, opacity: 1 });
+          });
+        }
         // const secs = document.querySelector(".xxx");
 
         // if (-secs.getBoundingClientRect().left > 0) {
@@ -865,15 +939,35 @@
         //     });
         //   }
         // });
-        const xx = document.querySelectorAll(".gsap1 img");
-        const gsap1 = document.querySelectorAll(".gsap1");
+
+        // console.log(gsap1[0].getBoundingClientRect().left);
         gsap1.forEach((el) => {
           if (
-            el.querySelector("img").getBoundingClientRect().right <
+            el.querySelector("img").getBoundingClientRect().left +
+              el.querySelector("img").offsetWidth / 2 <
             window.innerWidth
           ) {
             gsap.to(el.querySelector("img"), {
-              x: (el.getBoundingClientRect().right - window.innerWidth) / 10,
+              x:
+                -(
+                  window.innerWidth -
+                  el.querySelector("img").getBoundingClientRect().left
+                ) / 25,
+            });
+            gsap.to(el.querySelector(".sec_desc"), {
+              duration: 1.5,
+              y: 0,
+              opacity: 1,
+            });
+          } else if (
+            el.querySelector("img").getBoundingClientRect().left +
+              el.querySelector("img").offsetWidth / 2 >
+            window.innerWidth
+          ) {
+            gsap.to(el.querySelector(".sec_desc"), {
+              duration: 1.5,
+              y: -50,
+              opacity: 0,
             });
           }
         });
