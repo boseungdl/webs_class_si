@@ -87,7 +87,7 @@
         font-size: 9vw;
         font-family: "Eros Romano";
         text-transform: uppercase;
-        opacity: 1;
+
         display: block;
       }
       .start .title ul li:nth-child(1) {
@@ -460,22 +460,22 @@
       .xxx span:nth-child(1) {
         transform: translate(-50px, -150px);
         opacity: 0;
-        font-size: 3vw;
+        font-size: 8vw;
       }
       .xxx span:nth-child(2) {
         transform: translate(100px, -100px);
         opacity: 0;
-        font-size: 6vw;
+        font-size: 16vw;
       }
       .xxx span:nth-child(3) {
         transform: translate(-130px, -70px);
         opacity: 0;
-        font-size: 3vw;
+        font-size: 4vw;
       }
       .xxx span:nth-child(4) {
         transform: translate(200px, -50px);
         opacity: 0;
-        font-size: 1vw;
+        font-size: 11vw;
       }
       .xxx span:nth-child(5) {
         transform: translate(-200px, -40px);
@@ -489,6 +489,13 @@
       .xxx span:nth-child(7) {
         transform: translate(-300px, -20px);
         opacity: 0;
+      }
+      .start2 .title {
+        transform: translateX(-50%);
+        opacity: 0;
+      }
+      .start2 .title ul li {
+        font-size: 15vw;
       }
     </style>
   </head>
@@ -983,6 +990,16 @@
             });
           }
         });
+        const alone = document.querySelector(".sec1_3");
+        if (alone.getBoundingClientRect().right < window.innerWidth) {
+          let tl = gsap.timeline();
+          tl.to(".start2 .title ", { opacity: 1, xPercent: 5, duration: 1 }).to(
+            ".start2 .title li",
+            {
+              fontSize: 9 + "vw",
+            }
+          );
+        }
         requestAnimationFrame(scroll);
       }
       scroll();
