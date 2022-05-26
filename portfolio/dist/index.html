@@ -2,10 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>
-      CodePen - Dynamic background color &amp; horizontal scroll section ( GSAP
-      ScrollTrigger &amp; Locomotive Scroll)
-    </title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="../font/font.css" />
     <link
       rel="stylesheet"
@@ -22,6 +19,10 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
       }
       #header {
         position: fixed;
@@ -274,8 +275,25 @@
         font-weight: 600;
         background: #fff;
         color: #000;
+        transition: all 0.2s;
+        position: relative;
         /* border: 1px solid #000; */
       }
+      /* .web__desc a::before {
+        content: "";
+        position: absolute;
+        background: #000;
+        width: 22px;
+        height: 22px;
+        transform: rotate(45deg);
+      }
+      .web__desc a:hover {
+      } */
+      .web__desc a:hover {
+        background: #a39993;
+        color: #fff;
+      }
+
       .article figure {
         display: inline-block;
         position: relative;
@@ -342,6 +360,8 @@
       .sec3 img {
         width: 100%;
         z-index: 2;
+        opacity: 0;
+        transform: translateX(-300px);
       }
       .sec3:nth-child(2) figure::before {
         position: absolute;
@@ -377,6 +397,8 @@
         font-weight: 500;
         text-transform: uppercase;
         color: #000;
+        opacity: 0;
+        transform: translateX(-100px);
       }
       .sec3__cont {
         width: 50vw;
@@ -552,9 +574,15 @@
     <header id="header">
       <div class="nav">
         <ul>
-          <li>boseungdl</li>
-          <li>PORTFOLIO</li>
-          <li>seungbo</li>
+          <li>
+            <a href="https://boseungdl.github.io/webs_class_si/"> boseungdl</a>
+          </li>
+          <li>
+            <a href="https://boseungdl.github.io/webs_class_si/"> PORTFOLIO</a>
+          </li>
+          <li>
+            <a href="https://boseungdl.github.io/webs_class_si/"> seungbo</a>
+          </li>
         </ul>
       </div>
     </header>
@@ -594,7 +622,7 @@
       <section
         class="horizontal-scroll"
         data-textcolor="#bcb8ad"
-        data-bgcolor="rgb(159 126 111)"
+        data-bgcolor="rgb(167 118 114 / 93%)"
       >
         <div class="pin-wrap xx">
           <h2 class="sec xxx">
@@ -684,7 +712,7 @@
                   data-scroll-speed="0.8"
                   data-scroll-direction="horizontal"
                 >
-                  Portfolio
+                  project
                 </li>
               </ul>
             </div>
@@ -692,7 +720,16 @@
           <article class="article article1">
             <div class="web">
               <figure>
-                <img src="../img/webstandard.png" alt="" />
+                <a
+                  href="https://boseungdl.github.io/webs_class_si/webstandard/index.html"
+                >
+                  <img
+                    src="../img/webstandard.png "
+                    data-scroll
+                    data-scroll-speed="1"
+                    alt=""
+                  />
+                </a>
               </figure>
               <div class="web__desc" data-scroll data-scroll-speed="1">
                 <h3>WebStandard</h3>
@@ -725,14 +762,28 @@
                 <a href="">VIEW</a>
               </div>
               <figure>
-                <img src="../img/php.png" alt="" />
+                <a href="http://tmdqh0.dothome.co.kr/php/pages/main.php#">
+                  <img
+                    src="../img/php.png"
+                    data-scroll
+                    data-scroll-speed="1"
+                    alt=""
+                  />
+                </a>
               </figure>
             </div>
           </article>
           <article class="article">
             <div class="web">
               <figure>
-                <img src="../img/react.png" alt="" />
+                <a href="https://boseungdl.netlify.app/">
+                  <img
+                    src="../img/react.png"
+                    data-scroll
+                    data-scroll-speed="1"
+                    alt=""
+                  />
+                </a>
               </figure>
               <div class="web__desc" data-scroll data-scroll-speed="1">
                 <h3>React</h3>
@@ -763,7 +814,16 @@
                 <a href="">VIEW</a>
               </div>
               <figure>
-                <img src="../img/vue.png" alt="" />
+                <a
+                  href="https://boseungdl.github.io/webs_class_si/game/index.html"
+                >
+                  <img
+                    src="../img/vue.png"
+                    data-scroll
+                    data-scroll-speed="1"
+                    alt=""
+                  />
+                </a>
               </figure>
             </div>
           </article>
@@ -780,7 +840,7 @@
           data-scroll-speed="1"
           style="margin: 80px; font-family: ChosunilboNM"
         >
-          배울 수 있는 그릇을 만들기 위해 노력했습니다.
+          <!-- 배울 수 있는 그릇을 만들기 위해 노력했습니다. -->
         </h2>
       </section>
       <section
@@ -917,7 +977,8 @@
               스스로에게 가장 도전적이였고, 그 이상의 책임감을 갖게
               만들었습니다. 지금 제가 보여드릴 수 있는 건 단지 이 몇 줄의
               문장들과 6개월간의 흔적 뿐이지만 이 흔적들이 기회를 만들어 낸다면
-              주어진 책임에 대한 기대에 꼭 부응할 수 있는 선택을 할것입니다.
+              주어진 책임에 대해 책임감을 갖고 기대에 꼭 부응할 수 있는 선택이
+              되도록 만들겠습니다.
             </p>
           </div>
         </div>
@@ -927,11 +988,10 @@
             <p>
               최근 들었 던 말 중에 와닿았던 문장이 있습니다. “누울 때 행복하기
               위해 걷습니다.” 돌이켜 저를 생각해 보면 멈춰져 있을 때 항상
-              불안감을 느꼈습니다. 그런 시기 저 문장은 제가 평소에 생각하고 있던
-              제 생각들의 실체를 알려주었습니다. 안주하기를 싫어해 더 나아지기
-              위해 애썼던 내가 사실은 누구보다 안주하기를 원하 는
-              사람이였습니다. 앞으로도 저는 안주하기를 원하는 만큼 더 나아갈
-              것입니다.
+              불안감을 느꼈습니다. 그런 시기 저 문장은 제가 평소에 제 생각들의
+              실체를 알려주었습니다. 안주하기를 싫어해 더 나아지기 위해 애썼던
+              내가 사실은 누구보다 안주하기를 원하는 사람이였습니다. 앞으로도
+              저는 안주하기를 원하는 만큼 더 나아갈 것입니다.
             </p>
           </div>
           <figure>
@@ -952,9 +1012,10 @@
       const span = document.querySelectorAll(".xxx span");
       const xx = document.querySelectorAll(".gsap1 img");
       const gsap1 = document.querySelectorAll(".gsap1");
-      function scroll() {
-        console.log(span[0].style.transform);
-        if (xxx.getBoundingClientRect().top < xxx.offsetHeight / 2) {
+
+      let one = true;
+      function func() {
+        if (xxx.getBoundingClientRect().top < xxx.offsetHeight / 1.3 && one) {
           span.forEach((el) => {
             gsap.to(el, {
               x: 0,
@@ -964,7 +1025,21 @@
               fontSize: 1.5 + "vw",
             });
           });
+          one = false;
         }
+      }
+
+      const a = document.querySelectorAll("web__desc a::before");
+      console.log(a);
+      document.querySelectorAll(".web__desc a").forEach((el) => {
+        el.addEventListener("mouseover", (e) => {
+          gsap.to(el + "::before", { x: 50 });
+        });
+      });
+
+      function scroll() {
+        console.log(span[0].style.transform);
+        func();
         // const secs = document.querySelector(".xxx");
 
         // if (-secs.getBoundingClientRect().left > 0) {
@@ -1003,7 +1078,7 @@
         //     });
         //   }
         // });
-
+        console.log(1);
         // console.log(gsap1[0].getBoundingClientRect().left);
         gsap1.forEach((el) => {
           if (
@@ -1045,6 +1120,17 @@
         //     }
         //   );
         // }
+        const sec3Cont = document.querySelectorAll(".sec3");
+        sec3Cont.forEach((el) => {
+          if (el.getBoundingClientRect().left < window.innerWidth / 2) {
+            let tl = gsap.timeline();
+            tl.to(el.querySelector("img"), {
+              x: 0,
+              duration: 0.5,
+              opacity: 1,
+            }).to(el.querySelector("h4"), { x: 0, opacity: 1, duration: 0.5 });
+          }
+        });
         requestAnimationFrame(scroll);
       }
       scroll();
