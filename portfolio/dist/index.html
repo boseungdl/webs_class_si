@@ -251,6 +251,7 @@
         color: #fff;
         position: relative;
         z-index: 13;
+        opacity: 0;
       }
       .web__desc h3 {
         font-family: "Eros Romano";
@@ -298,9 +299,12 @@
         display: inline-block;
         position: relative;
         z-index: 12;
+        transform: translateY(200px);
+        opacity: 0;
       }
       .article figure img {
         width: 30vw;
+
         position: relative;
         z-index: 1;
       }
@@ -437,12 +441,18 @@
       .lastSection figure {
         width: 100%;
         height: 13vw;
+        transform: translateY(50px);
+        opacity: 0;
       }
-      .lastSection figure img {
-        position: static;
+
+      .lastSection p {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      .lastSection h3 span {
+        opacity: 0;
       }
       .lastSection .sec1_1 img {
-        width: 100%;
       }
       .lastSection .sec1_1 .sec_desc {
         transform: translateY(20px);
@@ -456,8 +466,13 @@
         width: 60%;
         height: 100%;
       }
-      .lastSection .sec1_2 img {
+      .lastSection .sec1_2 h3 {
+      }
+      .lastSection figure img {
+        position: static;
+
         width: 100%;
+        height: 100%;
       }
       .lastSection .sec_desc {
         width: 100%;
@@ -741,15 +756,21 @@
                   수 있게 되었고, 기존 웹 사이트 들의 코드 들을 해석하고 분석할
                   수 있는 법을 배운 수 있었습니다.
                 </p>
-                <a href="">CODE</a>
-                <a href="">VIEW</a>
+                <a
+                  href="https://github.com/boseungdl/webs_class_si/blob/master/webstandard/index.html"
+                  >CODE</a
+                >
+                <a
+                  href="https://boseungdl.github.io/webs_class_si/webstandard/index.html"
+                  >VIEW</a
+                >
               </div>
             </div>
           </article>
           <article class="article article02">
             <div class="web">
               <div class="web__desc" data-scroll data-scroll-speed="1">
-                <h3>PHP-Project</h3>
+                <h3>PHP</h3>
                 <p>
                   서버, DB라는 개념을 배우고 서버와 클라이언트가 어떤식으로
                   데이터를 주고 받는지 흐름을 알 수 있었던 수업이였습니다.
@@ -758,8 +779,12 @@
                   주고 받으며 시간가는 줄 모르고 하루하루를 불태웠던
                   수업이였습니다.
                 </p>
-                <a href="">CODE</a>
-                <a href="">VIEW</a>
+                <a href="https://github.com/boseungdl/Team/tree/master/php"
+                  >CODE</a
+                >
+                <a href="http://tmdqh0.dothome.co.kr/php/pages/main.php"
+                  >VIEW</a
+                >
               </div>
               <figure>
                 <a href="http://tmdqh0.dothome.co.kr/php/pages/main.php#">
@@ -794,24 +819,29 @@
                   같은 기분을 느낄 수 있었던 수업이였습니다. 그래서 더 잘하고
                   익숙해지기위해 더 많은 노력을 하고 있습니다.
                 </p>
-                <a href="">CODE</a>
-                <a href="">VIEW</a>
+                <a href="https://github.com/boseungdl/web_class_react">CODE</a>
+                <a href="https://boseungdl.netlify.app/">VIEW</a>
               </div>
             </div>
           </article>
           <article class="article article02">
             <div class="web">
               <div class="web__desc" data-scroll data-scroll-speed="1">
-                <h3>vue</h3>
+                <h3>game</h3>
                 <p>
-                  웹에 관심이 많았던 저는 웹디자인을 처음으로 코딩을 접하게
-                  되었습니다. 배워보지도 못한 영역이라 처음엔 개념이 안
-                  잡혀있어서 어려웠지만, 매일매일 메모장에 그날의 수업을 \웹
-                  수업 1일 차, 2일 차 이렇게 적어가며 네이버 클라우드에 저장해
-                  집에서도 복습했습니다.
+                  다양한 스크립트를 짜보면서 여러 기능을 구현하고 개개인마다
+                  완전 다른 방식으로 코드를 완성해가는 모습이 신기했습니다. 더
+                  효율적이고 쉽게 코드를 짜기위해 여러 메서드와 알고리즘을
+                  익혀야겠다는 마음이 들었습니다.
                 </p>
-                <a href="">CODE</a>
-                <a href="">VIEW</a>
+                <a
+                  href="https://github.com/boseungdl/webs_class_si/tree/master/game"
+                  >CODE</a
+                >
+                <a
+                  href="https://boseungdl.github.io/webs_class_si/game/index.html"
+                  >VIEW</a
+                >
               </div>
               <figure>
                 <a
@@ -886,7 +916,10 @@
           <div class="sec3">
             <div class="sec3__cont">
               <figure>
-                <a href=""><img src="../img/script1.jpg" alt="" /></a>
+                <a
+                  href="https://boseungdl.github.io/webs_class_si/javascript/effect/sliderEffect.html"
+                  ><img src="../img/script1.jpg" alt=""
+                /></a>
               </figure>
               <h4>01. slider effect</h4>
             </div>
@@ -894,7 +927,10 @@
           <div class="sec3">
             <div class="sec3__cont">
               <figure>
-                <a href=""><img src="../img/script2.jpg" alt="" /></a>
+                <a
+                  href="https://boseungdl.github.io/webs_class_si/javascript/effect/mouseEffect.html"
+                  ><img src="../img/script2.jpg" alt=""
+                /></a>
               </figure>
               <h4>02. mouse effect</h4>
             </div>
@@ -902,7 +938,10 @@
           <div class="sec3">
             <div class="sec3__cont">
               <figure>
-                <a href=""><img src="../img/script3.jpg" alt="" /></a>
+                <a
+                  href="https://boseungdl.github.io/webs_class_si/parallax/index.html"
+                  ><img src="../img/script3.jpg" alt=""
+                /></a>
               </figure>
               <h4>03. parallax effect</h4>
             </div>
@@ -970,7 +1009,10 @@
             <img src="../img/choose.jpg" alt="" />
           </figure>
           <div class="sec_desc">
-            <h3>선택에 대한 책임</h3>
+            <h3>
+              <span>선</span><span>택</span><span>에</span><span>대</span
+              ><span>한</span><span>책</span><span>임</span>
+            </h3>
             <p>
               살아가는 데 있어 많은 선택을 해왔습니다. 결과는 모두 저의
               몫이였습니다. 그 수 많은 선택들 중 코딩의 길을 고른 저의 선택은
@@ -984,7 +1026,10 @@
         </div>
         <div class="sec sec1_1 sec1_2">
           <div class="sec_desc">
-            <h3>오늘보다 내일 더</h3>
+            <h3>
+              <span>오</span><span>늘</span><span>보</span><span>다</span
+              ><span>내</span><span>일</span><span>더</span>
+            </h3>
             <p>
               최근 들었 던 말 중에 와닿았던 문장이 있습니다. “누울 때 행복하기
               위해 걷습니다.” 돌이켜 저를 생각해 보면 멈춰져 있을 때 항상
@@ -1126,11 +1171,58 @@
             let tl = gsap.timeline();
             tl.to(el.querySelector("img"), {
               x: 0,
-              duration: 0.5,
+              duration: 1.5,
               opacity: 1,
-            }).to(el.querySelector("h4"), { x: 0, opacity: 1, duration: 0.5 });
+            }).to(
+              el.querySelector("h4"),
+              { x: 0, opacity: 1, duration: 1 },
+              "<0.5"
+            );
           }
         });
+        const web = document.querySelectorAll(".web");
+        web.forEach((el) => {
+          tl2 = gsap.timeline();
+          if (el.getBoundingClientRect().top < window.innerHeight / 2) {
+            tl2
+              .to(el.querySelector("figure"), {
+                opacity: 1,
+                y: 0,
+                duration: 2,
+                ease: "back.out(1.7)",
+              })
+              .to(
+                el.querySelector(".web__desc"),
+                {
+                  opacity: 1,
+                },
+                "<0.5"
+              );
+          }
+        });
+        const lastSec = document.querySelector(".lastSection");
+        const lastSecDesc = document.querySelectorAll(".lastSection .sec_desc");
+        const lastSecSpan = document.querySelectorAll(
+          ".lastSection .sec_desc span"
+        );
+        const lastSecImg = document.querySelectorAll(".lastSection figure");
+        let tl3 = gsap.timeline();
+        lastSecDesc.forEach((el) => {
+          if (lastSec.getBoundingClientRect().top < window.innerHeight / 2) {
+            lastSecSpan.forEach((el2) => {
+              tl3.to(el2, { opacity: 1, duration: 0.5 }, "<0.2");
+            });
+            gsap.to(lastSecImg, { y: 0, opacity: 1, duration: 1, delay: 3 });
+            gsap.to(".lastSection p", {
+              x: 0,
+              opacity: 1,
+              duration: 3,
+              delay: 4,
+              ease: "power3.out",
+            });
+          }
+        });
+
         requestAnimationFrame(scroll);
       }
       scroll();
