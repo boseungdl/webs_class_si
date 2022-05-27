@@ -299,12 +299,19 @@
         display: inline-block;
         position: relative;
         z-index: 12;
-        transform: translateY(300px);
-        opacity: 0;
+        /* transform: translateY(300px);
+        opacity: 0; */
       }
       .article figure img {
         width: 30vw;
-
+        transform: translate(-80px) perspective(250px) rotateY(45deg);
+        position: relative;
+        z-index: 1;
+        opacity: 0;
+      }
+      .article:nth-child(2n) figure img {
+        width: 30vw;
+        transform: translate(80px) perspective(250px) rotateY(-45deg);
         position: relative;
         z-index: 1;
       }
@@ -754,15 +761,10 @@
                   target="_blank"
                   href="https://boseungdl.github.io/webs_class_si/webstandard/index.html"
                 >
-                  <img
-                    src="../img/webstandard.png "
-                    data-scroll
-                    data-scroll-speed="1"
-                    alt=""
-                  />
+                  <img src="../img/webstandard.png " alt="" />
                 </a>
               </figure>
-              <div class="web__desc" data-scroll data-scroll-speed="1">
+              <div class="web__desc">
                 <h3>WebStandard</h3>
                 <p>
                   코딩이 무엇인지, 웹 사이트가 어떤식으로 작동이 되는지, html,
@@ -787,7 +789,7 @@
           </article>
           <article class="article article02">
             <div class="web">
-              <div class="web__desc" data-scroll data-scroll-speed="1">
+              <div class="web__desc">
                 <h3>PHP</h3>
                 <p>
                   서버, DB라는 개념을 배우고 서버와 클라이언트가 어떤식으로
@@ -813,12 +815,7 @@
                   target="_blank"
                   href="http://tmdqh0.dothome.co.kr/php/pages/main.php#"
                 >
-                  <img
-                    src="../img/php.png"
-                    data-scroll
-                    data-scroll-speed="1"
-                    alt=""
-                  />
+                  <img src="../img/php.png" alt="" />
                 </a>
               </figure>
             </div>
@@ -827,15 +824,10 @@
             <div class="web">
               <figure>
                 <a target="_blank" href="https://boseungdl.netlify.app/">
-                  <img
-                    src="../img/react.png"
-                    data-scroll
-                    data-scroll-speed="1"
-                    alt=""
-                  />
+                  <img src="../img/react.png" alt="" />
                 </a>
               </figure>
-              <div class="web__desc" data-scroll data-scroll-speed="1">
+              <div class="web__desc">
                 <h3>React</h3>
                 <p>
                   처음 이 수업을 배울 때 html, css, javascript에 php를 섞어 만든
@@ -857,7 +849,7 @@
           </article>
           <article class="article article02">
             <div class="web">
-              <div class="web__desc" data-scroll data-scroll-speed="1">
+              <div class="web__desc">
                 <h3>game</h3>
                 <p>
                   다양한 스크립트를 짜보면서 여러 기능을 구현하고 개개인마다
@@ -881,12 +873,7 @@
                   target="_blank"
                   href="https://boseungdl.github.io/webs_class_si/game/index.html"
                 >
-                  <img
-                    src="../img/vue.png"
-                    data-scroll
-                    data-scroll-speed="1"
-                    alt=""
-                  />
+                  <img src="../img/vue.png" alt="" />
                 </a>
               </figure>
             </div>
@@ -1023,6 +1010,7 @@
       <section data-textcolor="#032f35" data-bgcolor="#bcb8ad">
         <div>
           <h2
+            style="text-align: center; margin-top: 50vh"
             data-scroll
             data-scroll-speed="1"
             style="margin: 80px; font-family: ChosunilboNM"
@@ -1222,12 +1210,14 @@
           tl2 = gsap.timeline();
           if (el.getBoundingClientRect().top < window.innerHeight / 2) {
             tl2
-              .to(el.querySelector("figure"), {
+              .to(el.querySelector("img"), {
                 opacity: 1,
-                y: 0,
-                duration: 2,
+                x: 0,
+                duration: 2.5,
                 ease: "back.out(1.7)",
+                rotateY: 0,
               })
+
               .to(
                 el.querySelector(".web__desc"),
                 {
