@@ -147,14 +147,15 @@
         width: 70%;
         font-size: 0.8vw;
         font-family: "ChosunilboNM";
-        opacity: 0;
+        opacity: 1;
       }
       .sec_desc:nth-child(2) {
         transform: translateX(15vw);
       }
       .sec1_1 h3 {
-        font-size: 1.5vw;
+        font-size: 1.2vw;
         margin: 30px 0;
+        font-weight: 600;
       }
       .sec1_1 p {
         letter-spacing: 0px;
@@ -254,7 +255,9 @@
         position: relative;
         z-index: 13;
         opacity: 0;
+        transform: translateX(150px);
       }
+    
       .web__desc h3 {
         font-family: "Eros Romano";
         font-size: 7vw;
@@ -322,6 +325,7 @@
       }
       .article02 .web__desc {
         margin-right: -50px;
+        transform: translate(-150px);
       }
       .section02 > figure img {
         object-fit: contain;
@@ -409,7 +413,7 @@
         font-size: 2.5vw;
         font-weight: 500;
         text-transform: uppercase;
-        color: #000;
+        color: #fff;
         opacity: 0;
         transform: translateX(-100px);
       }
@@ -500,12 +504,18 @@
         top: 0;
         bottom: 0;
       }
+      .xxx {
+      
+        
+      }
       .xxx span {
         display: inline-block;
         margin-right: 0.5vw;
         font-size: 1.3vw;
+        opacity: 0;
+        transform: translateY(-300px);
       }
-      .xxx span:nth-child(1) {
+      /* .xxx span:nth-child(1) {
         transform: translate(600px, 650px);
         opacity: 0;
         font-size: 8vw;
@@ -584,10 +594,13 @@
         transform: translate(10px, -330px);
         opacity: 0;
         font-size: 7vw;
-      }
+      } */
       .start2 .title {
         /* transform: translateX(-50%); */
         opacity: 1;
+      }
+      .start2 .title ul {
+        padding-right: 5vw;
       }
       .start2 .title ul li {
         font-size: 9vw;
@@ -691,7 +704,7 @@
             <figure>
               <img class="child1" src="../img/busan2.png" alt="" />
             </figure>
-            <div class="sec_desc">
+            <div class="sec_desc solo">
               <h3 class="child2">코딩을 선택한 나의 6개월</h3>
               <p class="child3">
                 대학교를 졸업한 후의 저는 어쩌면 평생이 될지도 모를 제 직업에
@@ -725,10 +738,28 @@
               <img class="child3" src="../img/busan.jpg" alt="" />
             </figure>
           </div>
+          <div class="gsap1 sec sec1_1">
+            <figure>
+              <img class="child1" src="../img/busan2.png" alt="" />
+            </figure>
+            <div class="sec_desc solo">
+              <h3 class="child2">코딩을 선택한 나의 6개월</h3>
+              <p class="child3">
+                대학교를 졸업한 후의 저는 어쩌면 평생이 될지도 모를 제 직업에
+                대한 많은 고민을 하게되었습니다. 그런 시점에서 처음으로 코딩을
+                접하게 되었고 나름 과감히 바로 뛰어들었습니다. 시작부터 많은
+                어려움이 있었지만 평소에 새로운 것을 경험 할 때 익숙치 않은
+                것에서 오는 어려움은 당연하고 노력과 반복이 해결해 줄 것이란
+                것을 믿고 있었기 때문에 원리가 이해될 때까지 최선을 다했습니다.
+                새로운 것을 배우고 그것을 저의 무기로 만드는 데 재미와 성취감을
+                느낍니다. 앞으로도 안주하지 않고 부딪히겠습니다.
+              </p>
+            </div>
+          </div>
           <div class="sec sec1_3"></div>
         </div>
       </section>
-      <section id="section02" data-textcolor="#032f35" data-bgcolor="#000">
+      <section id="section02" data-textcolor="#fff" data-bgcolor="#000">
         <div>
           <h2 data-scroll data-scroll-speed="1">
             <!-- <span style="margin: 80px; font-family: ChosunilboNM"
@@ -1097,20 +1128,19 @@
               y: 0,
               duration: 1.5,
               opacity: 1,
-              fontSize: 1.2 + "vw",
             });
           });
           one = false;
         }
       }
 
-      const a = document.querySelectorAll("web__desc a::before");
-      console.log(a);
-      document.querySelectorAll(".web__desc a").forEach((el) => {
-        el.addEventListener("mouseover", (e) => {
-          gsap.to(el + "::before", { x: 50 });
-        });
-      });
+      // const a = document.querySelectorAll("web__desc a::before");
+      // console.log(a);
+      // document.querySelectorAll(".web__desc a").forEach((el) => {
+      //   el.addEventListener("mouseover", (e) => {
+      //     gsap.to(el + "::before", { x: 50 });
+      //   });
+      // });
 
       function scroll() {
         console.log(span[0].style.transform);
@@ -1168,26 +1198,27 @@
             });
           }
         });
+      
         if (xx[0].getBoundingClientRect().left < window.innerWidth) {
-          gsap.to(gsap1[0].querySelector(".sec_desc"), {
+          gsap.to(document.querySelector(".solo"), {
             duration: 1.5,
             x:
-              gsap1[0].querySelector(".sec_desc").getBoundingClientRect().left /
-                15 -
-              window.innerWidth / 15 +
+            document.querySelector(".solo").getBoundingClientRect().left /
+                20 -
+              window.innerWidth / 20 +
               (window.innerWidth * 15) / 100,
             opacity: 1,
           });
-        } else if (
-          xx[0].querySelector("img").getBoundingClientRect().left +
-            xx[0].querySelector("img").offsetWidth / 2 >
-          window.innerWidth
-        ) {
-          gsap.to(gsap1[0].querySelector(".sec_desc"), {
-            duration: 1.5,
+        // } else if (
+        //   xx[0].getBoundingClientRect().left +
+        //     xx[0].offsetWidth / 2 >
+        //   window.innerWidth
+        // ) {
+        //   gsap.to(document.querySelector(".solo"), {
+        //     duration: 1.5,
 
-            opacity: 0,
-          });
+        //     opacity: 0,
+        //   });
         }
 
         const alone = document.querySelector(".sec1_3");
@@ -1231,6 +1262,8 @@
               .to(
                 el.querySelector(".web__desc"),
                 {
+                  duration: 1.5,
+                  x:0,
                   opacity: 1,
                 },
                 "<0.5"
