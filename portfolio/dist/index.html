@@ -138,20 +138,18 @@
       .sec1_1 figure img {
         width: 130%;
         position: absolute;
-        left: -5%;
+        left: -15%;
         top: -15%;
-        /* transform: translateX(100%); */
+        /* transform: translateX(200px); */
         /* transition: all 0.2s; */
       }
       .sec_desc {
-        width: 70%;
+        width: 55%;
         font-size: 0.8vw;
         font-family: "ChosunilboNM";
         opacity: 1;
       }
-      .sec_desc:nth-child(2) {
-        transform: translateX(15vw);
-      }
+
       .sec1_1 h3 {
         font-size: 1.2vw;
         margin: 30px 0;
@@ -208,44 +206,33 @@
         display: flex;
         width: 60%;
       }
+      article .num {
+        position: relative;
+      }
+      figure + span {
+        display: block;
+        font-size: 25vw;
+        position: absolute;
+        left: 20vw;
+        top: -8vw;
+        transform: scale(3.5);
+        color: rgba(255, 255, 255, 0.178);
+        font-family: "Theramy";
+        color: #fff;
+        opacity: 0;
+      }
+      .article02 figure + span {
+        font-size: 25vw;
+        position: absolute;
+        left: -18vw;
+        top: -8vw;
+        color: rgba(255, 255, 255, 0.178);
+        font-family: "Theramy";
+        color: #fff;
+        opacity: 0;
+      }
       article:nth-child(3) {
         margin-top: 300px;
-      }
-      article:nth-child(3) .web figure::after {
-        content: "01";
-        font-size: 25vw;
-        position: absolute;
-        top: -12vw;
-        right: -17vw;
-        color: rgba(255, 255, 255, 0.178);
-        font-family: "Theramy";
-      }
-      article:nth-child(4) .web figure:after {
-        content: "02";
-        font-size: 25vw;
-        position: absolute;
-        top: -12vw;
-        left: -21vw;
-        color: rgba(255, 255, 255, 0.178);
-        font-family: "Theramy";
-      }
-      article:nth-child(5) .web figure:after {
-        content: "03";
-        font-size: 25vw;
-        position: absolute;
-        top: -12vw;
-        right: -24vw;
-        color: rgba(255, 255, 255, 0.178);
-        font-family: "Theramy";
-      }
-      article:nth-child(6) .web figure:after {
-        content: "04";
-        font-size: 25vw;
-        position: absolute;
-        top: -12vw;
-        left: -21vw;
-        color: rgba(255, 255, 255, 0.178);
-        font-family: "Theramy";
       }
 
       .web__desc {
@@ -506,9 +493,9 @@
         bottom: 0;
       }
       .xxx span {
-        transform-origin: 0 100%;
-        transform: rotateZ(-70deg);
-        font-size: 1.3vw;
+        /* transform-origin: 0 100%;
+        transform: rotateZ(-70deg); */
+        font-size: 2vw;
       }
       .xxx span {
       }
@@ -602,20 +589,20 @@
       .start2 .title ul li {
         font-size: 9vw;
       }
-      .gsap1:nth-child(2) {
+      /* .gsap1:nth-child(2) {
         display: flex;
         align-items: center;
+        
+      } */
+      .gsap1:nth-of-type(2) .sec_desc {
+        padding-bottom: 6vw;
       }
-
-      iframe {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 30vw;
-        height: 50vh;
-        background: #000;
-        z-index: 9999;
+      .gsap1:nth-of-type(3) .sec_desc {
+        /* margin-left: -15vw; */
+        margin-bottom: 3vw;
+      }
+      .black {
+        color: #fff;
       }
     </style>
   </head>
@@ -742,10 +729,7 @@
               <img class="child3" src="../img/walks.jpg" alt="" />
             </figure>
           </div>
-          <div class="gsap1 sec sec1_1">
-            <figure>
-              <img class="child1" src="../img/run3.jpg" alt="" />
-            </figure>
+          <div class="gsap1 sec sec1_1 sec1">
             <div class="sec_desc solo">
               <h3 class="child2">코딩을 선택한 나의 6개월</h3>
               <p class="child3">
@@ -759,8 +743,15 @@
                 느낍니다. 앞으로도 안주하지 않고 부딪히겠습니다.
               </p>
             </div>
+            <figure>
+              <img class="child1" src="../img/run3.jpg" alt="" />
+            </figure>
           </div>
-          <div class="sec sec1_3"></div>
+          <div class="sec sec1_3">
+            <h2 class="sec xxx black">
+              <span> 토끼와 거북이는 닮아있따.</span>
+            </h2>
+          </div>
         </div>
       </section>
       <section id="section02" data-textcolor="#fff" data-bgcolor="#000">
@@ -797,14 +788,18 @@
           </div>
           <article class="article article1">
             <div class="web">
-              <figure>
-                <a
-                  target="_blank"
-                  href="https://boseungdl.github.io/webs_class_si/webstandard/index.html"
-                >
-                  <img src="../img/webstandard.png " alt="" />
-                </a>
-              </figure>
+              <div class="num">
+                <figure>
+                  <a
+                    target="_blank"
+                    href="https://boseungdl.github.io/webs_class_si/webstandard/index.html"
+                  >
+                    <img src="../img/webstandard.png " alt="" />
+                  </a>
+                </figure>
+                <span>01</span>
+              </div>
+
               <div class="web__desc">
                 <h3>WebStandard</h3>
                 <p>
@@ -851,23 +846,30 @@
                   >VIEW</a
                 >
               </div>
-              <figure>
-                <a
-                  target="_blank"
-                  href="http://tmdqh0.dothome.co.kr/php/pages/main.php#"
-                >
-                  <img src="../img/php.png" alt="" />
-                </a>
-              </figure>
+              <div class="num">
+                <figure>
+                  <a
+                    target="_blank"
+                    href="http://tmdqh0.dothome.co.kr/php/pages/main.php#"
+                  >
+                    <img src="../img/php.png" alt="" />
+                  </a>
+                </figure>
+                <span>02</span>
+              </div>
             </div>
           </article>
           <article class="article">
             <div class="web">
-              <figure>
-                <a target="_blank" href="https://boseungdl.netlify.app/">
-                  <img src="../img/react.png" alt="" />
-                </a>
-              </figure>
+              <div class="num">
+                <figure>
+                  <a target="_blank" href="https://boseungdl.netlify.app/">
+                    <img src="../img/react.png" alt="" />
+                  </a>
+                </figure>
+                <span>03</span>
+              </div>
+
               <div class="web__desc">
                 <h3>React</h3>
                 <p>
@@ -909,14 +911,17 @@
                   >VIEW</a
                 >
               </div>
-              <figure>
-                <a
-                  target="_blank"
-                  href="https://boseungdl.github.io/webs_class_si/game/index.html"
-                >
-                  <img src="../img/vue.png" alt="" />
-                </a>
-              </figure>
+              <div class="num">
+                <figure>
+                  <a
+                    target="_blank"
+                    href="https://boseungdl.github.io/webs_class_si/game/index.html"
+                  >
+                    <img src="../img/vue.png" alt="" />
+                  </a>
+                </figure>
+                <span>04</span>
+              </div>
             </div>
           </article>
         </div>
@@ -1011,41 +1016,6 @@
               <h4>03. parallax effect</h4>
             </div>
           </div>
-
-          <!-- <div class="sec sec1_1">
-            <figure>
-              <img src="../img/choose.jpg" alt="" />
-            </figure>
-            <div class="sec_desc">
-              <h3>선택에 대한 책임</h3>
-              <p>
-                살아가는 데 있어 많은 선택을 해왔습니다. 결과는 모두 저의
-                몫이였습니다. 그 수 많은 선택들 중 코딩의 길을 고른 저의 선택은
-                스스로에게 가장 도전적이였고, 그 이상의 책임감을 갖게
-                만들었습니다. 지금 제가 보여드릴 수 있는 건 단지 이 몇 줄의
-                문장들과 6개월간의 흔적 뿐이지만 이 흔적들이 작은 기회를 만들어
-                낸다면 주어진 책임에 대한 기대에 꼭 부응할 수 있는 선택을
-                할것입니다.
-              </p>
-            </div>
-          </div>
-          <div class="sec sec1_1 sec1_2">
-            <div class="sec_desc">
-              <h3>오늘보다 내일 더</h3>
-              <p>
-                최근 들었 던 말 중에 와닿았던 문장이 있습니다. “누울 때 행복하기
-                위해 걷습니다.” 돌이켜 저를 생각해 보면 멈춰져 있을 때 항상
-                불안감을 느꼈습니다. 그런 시기 저 문장은 제가 평소에 생각하고
-                있던 제 생각들의 실체를 알려주었습니다. 안주하기를 싫어해 더
-                나아지기 위해 애썼던 내가 사실은 누구보다 안주하기를 원하 는
-                사람이였습니다. 앞으로도 저는 안주하기를 원하는 만큼 더 나아갈
-                것입니다.
-              </p>
-            </div>
-            <figure>
-              <img src="../img/gentle.jpg" alt="" />
-            </figure>
-          </div> -->
         </div>
       </section>
       <section data-textcolor="#032f35" data-bgcolor="#bcb8ad">
@@ -1111,11 +1081,7 @@
         <h2 data-scroll data-scroll-speed="1">invite me to your world</h2>
       </section>
     </div>
-    <iframe
-      src="../../javascript/effect/sliderEffect.html"
-      frameborder="0"
-      class="iframe1"
-    ></iframe>
+
     <!-- partial -->
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
@@ -1140,55 +1106,10 @@
         }
       }
 
-      // const a = document.querySelectorAll("web__desc a::before");
-      // console.log(a);
-      // document.querySelectorAll(".web__desc a").forEach((el) => {
-      //   el.addEventListener("mouseover", (e) => {
-      //     gsap.to(el + "::before", { x: 50 });
-      //   });
-      // });
-
       function scroll() {
         console.log(span[0].style.transform);
         func();
-        // const secs = document.querySelector(".xxx");
 
-        // if (-secs.getBoundingClientRect().left > 0) {
-        //   gsap.to(".xxx", {
-        //     x: -secs.getBoundingClientRect().left / 4,
-        //   });
-        // } else if (-secs.getBoundingClientRect().left == 0) {
-        //   gsap.to(".xxx", {
-        //     x: secs.getBoundingClientRect().left,
-        //   });
-        // }
-        // const gsap1 = document.querySelectorAll(".gsap1");
-        // gsap1.forEach((el, index) => {
-        //   // console.log(el);
-        //   if (el.getBoundingClientRect().right < window.innerWidth) {
-        //     gsap.to(el.querySelector(".child2"), {
-        //       // x: -(window.innerWidth - el.getBoundingClientRect().right) / 4,
-        //       fontSize:
-        //         (window.innerWidth / el.getBoundingClientRect().right) * 2.1 +
-        //         "vw",
-        //       opacity:
-        //         (el.getBoundingClientRect().right - window.innerWidth / 1.5) /
-        //         (window.innerWidth - window.innerWidth / 1.5),
-        //     });
-        //     gsap.to(el.querySelector(".child3"), {
-        //       y: (window.innerWidth - el.getBoundingClientRect().right) / 15,
-        //       opacity:
-        //         (el.getBoundingClientRect().right - window.innerWidth / 1.5) /
-        //         (window.innerWidth - window.innerWidth / 1.5),
-        //     });
-        //     gsap.to(el.querySelector(".child1"), {
-        //       y: -(window.innerWidth - el.getBoundingClientRect().right) / 15,
-        //       opacity:
-        //         (el.getBoundingClientRect().right - window.innerWidth / 1.5) /
-        //         (window.innerWidth - window.innerWidth / 1.5),
-        //     });
-        //   }
-        // });
         console.log(1);
         // console.log(gsap1[0].getBoundingClientRect().left);
         gsap1.forEach((el) => {
@@ -1215,28 +1136,10 @@
               (window.innerWidth * 15) / 100,
             opacity: 1,
           });
-          // } else if (
-          //   xx[0].getBoundingClientRect().left +
-          //     xx[0].offsetWidth / 2 >
-          //   window.innerWidth
-          // ) {
-          //   gsap.to(document.querySelector(".solo"), {
-          //     duration: 1.5,
-
-          //     opacity: 0,
-          //   });
         }
 
         const alone = document.querySelector(".sec1_3");
-        // if (alone.getBoundingClientRect().right < window.innerWidth) {
-        //   let tl = gsap.timeline();
-        //   tl.to(".start2 .title ", { opacity: 1, xPercent: 5, duration: 1 }).to(
-        //     ".start2 .title li",
-        //     {
-        //       fontSize: 9 + "vw",
-        //     }
-        //   );
-        // }
+
         const sec3Cont = document.querySelectorAll(".sec3");
         sec3Cont.forEach((el) => {
           if (el.getBoundingClientRect().left < window.innerWidth / 2) {
@@ -1257,13 +1160,22 @@
           tl2 = gsap.timeline();
           if (el.getBoundingClientRect().top < window.innerHeight / 2) {
             tl2
-              .to(el.querySelector("img"), {
-                opacity: 1,
-                x: 0,
-                duration: 2.5,
-                ease: "back.out(1.7)",
-                rotateY: 0,
+              .to(el.querySelector("span"), {
+                scale: 1,
+                opacity: 0.6,
+                duration: 1.5,
               })
+              .to(
+                el.querySelector("img"),
+                {
+                  opacity: 1,
+                  x: 0,
+                  duration: 2.5,
+                  ease: "back.out(1.7)",
+                  rotateY: 0,
+                },
+                "<0.7"
+              )
 
               .to(
                 el.querySelector(".web__desc"),
