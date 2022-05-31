@@ -604,6 +604,13 @@
       .black {
         color: #fff;
       }
+      .h2_last {
+        margin-top: 10vw;
+      }
+      .photo {
+        display: flex;
+        justify-content: center;
+      }
     </style>
   </head>
   <body>
@@ -731,16 +738,15 @@
           </div>
           <div class="gsap1 sec sec1_1 sec1">
             <div class="sec_desc solo">
-              <h3 class="child2">코딩을 선택한 나의 6개월</h3>
+              <h3 class="child2">선택에 대한 책임</h3>
               <p class="child3">
-                대학교를 졸업한 후의 저는 어쩌면 평생이 될지도 모를 제 직업에
-                대한 많은 고민을 하게되었습니다. 그런 시점에서 처음으로 코딩을
-                접하게 되었고 나름 과감히 바로 뛰어들었습니다. 시작부터 많은
-                어려움이 있었지만 평소에 새로운 것을 경험 할 때 익숙치 않은
-                것에서 오는 어려움은 당연하고 노력과 반복이 해결해 줄 것이란
-                것을 믿고 있었기 때문에 원리가 이해될 때까지 최선을 다했습니다.
-                새로운 것을 배우고 그것을 저의 무기로 만드는 데 재미와 성취감을
-                느낍니다. 앞으로도 안주하지 않고 부딪히겠습니다.
+                살아가는 데 있어 많은 선택을 해왔습니다. 결과는 모두 저의
+                몫이였습니다. 그 수 많은 선택들 중 코딩의 길을 고른 저의 선택은
+                스스로에게 가장 도전적이였고, 그 이상의 책임감을 갖게
+                만들었습니다. 지금 저를 보여드릴 수 있는 건 단지 이 몇 줄의
+                문장들과 그것을 모아둔 포트폴리오 뿐이지만 이것이 기회를 만들어
+                낸다면 주어진 일에 대해 책임감을 갖고 기대에 꼭 부응해 후회없는
+                선택이 되도록 만들겠습니다.
               </p>
             </div>
             <figure>
@@ -749,7 +755,10 @@
           </div>
           <div class="sec sec1_3">
             <h2 class="sec xxx black">
-              <span> 토끼와 거북이는 닮아있따.</span>
+              <span>
+                묵묵히 나아가다보면 도착해 있을거야. 토끼든 거북이든 도착지점이
+                보이는 건 같아.
+              </span>
             </h2>
           </div>
         </div>
@@ -927,18 +936,11 @@
         </div>
       </section>
 
-      <section data-bgcolor="#e3857a" data-textcolor="#f1dba7">
+      <section class="photo" data-bgcolor="#e3857a" data-textcolor="#f1dba7">
         <img
           src="https://images.pexels.com/photos/4791474/pexels-photo-4791474.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
           alt=""
         />
-        <h2
-          data-scroll
-          data-scroll-speed="1"
-          style="margin: 80px; font-family: ChosunilboNM"
-        >
-          <!-- 배울 수 있는 그릇을 만들기 위해 노력했습니다. -->
-        </h2>
       </section>
       <section
         class="horizontal-scroll"
@@ -1039,7 +1041,7 @@
           src="https://images.pexels.com/photos/4791474/pexels-photo-4791474.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
           alt=""
         /> -->
-        <div class="sec sec1_1">
+        <!-- <div class="sec sec1_1">
           <figure>
             <img src="../img/choose.jpg" alt="" />
           </figure>
@@ -1052,13 +1054,13 @@
               살아가는 데 있어 많은 선택을 해왔습니다. 결과는 모두 저의
               몫이였습니다. 그 수 많은 선택들 중 코딩의 길을 고른 저의 선택은
               스스로에게 가장 도전적이였고, 그 이상의 책임감을 갖게
-              만들었습니다. 지금 제가 보여드릴 수 있는 건 단지 이 몇 줄의
-              문장들과 6개월간의 흔적 뿐이지만 이 흔적들이 기회를 만들어 낸다면
-              주어진 책임에 대해 책임감을 갖고 기대에 꼭 부응할 수 있는 선택이
-              되도록 만들겠습니다.
+              만들었습니다. 지금 저를 보여드릴 수 있는 건 단지 이 몇 줄의
+              문장들과 그것을 모아둔 포트폴리오 뿐이지만 이것이 기회를 만들어
+              낸다면 주어진 일에 대해 책임감을 갖고 기대에 꼭 부응해 후회없는
+              선택이 되도록 만들겠습니다.
             </p>
           </div>
-        </div>
+        </div> -->
         <div class="sec sec1_1 sec1_2">
           <div class="sec_desc">
             <h3>
@@ -1068,17 +1070,19 @@
             <p>
               최근 들었 던 말 중에 와닿았던 문장이 있습니다. “누울 때 행복하기
               위해 걷습니다.” 돌이켜 저를 생각해 보면 멈춰져 있을 때 항상
-              불안감을 느꼈습니다. 그런 시기 저 문장은 제가 평소에 제 생각들의
-              실체를 알려주었습니다. 안주하기를 싫어해 더 나아지기 위해 애썼던
-              내가 사실은 누구보다 안주하기를 원하는 사람이였습니다. 앞으로도
-              저는 안주하기를 원하는 만큼 더 나아갈 것입니다.
+              불안감을 느꼈습니다. 그런 시기 저 문장은 평소에 제 생각들의 실체를
+              알려주었습니다. 안주하기를 싫어해 더 나아지기 위해 애썼던 내가
+              사실은 누구보다 안주하기를 원하는 사람이였습니다. 앞으로도 저는
+              안주하기를 원하는 만큼 더 나아갈 것입니다.
             </p>
           </div>
           <figure>
             <img src="../img/gentle.jpg" alt="" />
           </figure>
         </div>
-        <h2 data-scroll data-scroll-speed="1">invite me to your world</h2>
+        <h2 class="h2_last" data-scroll data-scroll-speed="1">
+          invite me to your world
+        </h2>
       </section>
     </div>
 
