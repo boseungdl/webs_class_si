@@ -162,7 +162,7 @@
       .sec1_2 {
         flex-direction: row;
         align-items: center;
-        padding-right: 10vw;
+        padding-right: 17vw;
       }
       .sec1_2 figure {
         width: 35%;
@@ -495,7 +495,7 @@
       .xxx span {
         /* transform-origin: 0 100%;
         transform: rotateZ(-70deg); */
-        font-size: 2vw;
+        font-size: 1.5vw;
       }
       .xxx span {
       }
@@ -684,7 +684,7 @@
       >
         <div class="pin-wrap xx">
           <h2 class="sec xxx">
-            <span> 꾸준함이 내눈이 되어 나를 인도할거야.</span>
+            <span> 꾸준함이 내 눈이 되어 나를 인도할거야.</span>
           </h2>
           <!-- <img
             src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900"
@@ -1034,7 +1034,7 @@
 
       <section
         class="lastSection"
-        data-bgcolor="#e3857a"
+        data-bgcolor="rgb(3, 47, 53)"
         data-textcolor="#f1dba7"
       >
         <!-- <img
@@ -1162,7 +1162,7 @@
         const web = document.querySelectorAll(".web");
         web.forEach((el) => {
           tl2 = gsap.timeline();
-          if (el.getBoundingClientRect().top < window.innerHeight / 2) {
+          if (el.getBoundingClientRect().top < window.innerHeight) {
             tl2
               .to(el.querySelector("span"), {
                 scale: 1,
@@ -1204,12 +1204,12 @@
             lastSecSpan.forEach((el2) => {
               tl3.to(el2, { opacity: 1, duration: 0.5 }, "<0.2");
             });
-            gsap.to(lastSecImg, { y: 0, opacity: 1, duration: 1, delay: 3 });
+            gsap.to(lastSecImg, { y: 0, opacity: 1, duration: 1, delay: 2 });
             gsap.to(".lastSection p", {
               x: 0,
               opacity: 1,
               duration: 3,
-              delay: 4,
+              delay: 2.5,
               ease: "power3.out",
             });
           }
