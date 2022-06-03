@@ -1,29 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <img class="Like" src="img/Like.jpg" alt="">
-
-    <script>
-   const IM = document.querySelectorAll('.Like');
-            
-   IM.forEach(el => {
-       el.addEventListener("click", () => {
-           if(el.getAttribute('src') == 'img/Like.jpg'){
-                el.setAttribute('src') == 'img/Like2.jpg'
-           } else {
-                el.setAttribute('src') == 'img/Like.jpg'
-           }
-       })
-   })
-  
-
-    </script>
-    
-</body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .header {
+        width: 100vw;
+      }
+      .header > ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .header > ul > li > ul {
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+        scrollbar-width: 0;
+        transform: translateX(-3px);
+      }
+      .header > ul > li > ul::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+      }
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <ul>
+        <li>
+          123
+          <ul>
+            <li>asda</li>
+            <li>asda</li>
+            <li>asda</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+        <li>
+          112
+          <ul>
+            <li>asda</li>
+            <li>asda</li>
+            <li>asda</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+        <li>
+          1233
+          <ul>
+            <li>asda</li>
+            <li>asda</li>
+            <li>asda</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+        <li>
+          121
+          <ul>
+            <li>asda</li>
+            <li>asda</li>
+            <li>asda</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    const li = document.querySelectorAll(".header > ul > li");
+    const ul = document.querySelectorAll(".header > ul > li > ul");
+    li.forEach((el) => {
+      el.addEventListener("mouseover", () => {
+        el.querySelector("ul").style.visibility = "visible";
+        el.querySelector("ul").style.height = "100%";
+        el.querySelector("ul").style.overflow = "auto";
+      });
+      el.addEventListener("mouseout", () => {
+        el.querySelector("ul").style.visibility = "hidden";
+        el.querySelector("ul").style.height = "0";
+        el.querySelector("ul").style.overflow = "hidden";
+      });
+    });
+  </script>
 </html>
