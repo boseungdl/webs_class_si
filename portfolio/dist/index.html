@@ -611,6 +611,9 @@
         display: flex;
         justify-content: center;
       }
+      .me {
+        width: 400px;
+      }
     </style>
   </head>
   <body>
@@ -937,10 +940,7 @@
       </section>
 
       <section class="photo" data-bgcolor="#e3857a" data-textcolor="#f1dba7">
-        <img
-          src="https://images.pexels.com/photos/4791474/pexels-photo-4791474.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          alt=""
-        />
+        <img class="me" src="../img/[한승보]1 (1).jpg" alt="" />
       </section>
       <section
         class="horizontal-scroll"
@@ -1098,6 +1098,10 @@
       const gsap1 = document.querySelectorAll(".gsap1");
 
       let one = true;
+      let two = true;
+      let three = true;
+      let four = true;
+      let five = true;
       function func() {
         if (xxx.getBoundingClientRect().top < xxx.offsetHeight / 1.3 && one) {
           gsap.to(span, {
@@ -1111,10 +1115,8 @@
       }
 
       function scroll() {
-        console.log(span[0].style.transform);
         func();
 
-        console.log(1);
         // console.log(gsap1[0].getBoundingClientRect().left);
         gsap1.forEach((el) => {
           if (
@@ -1145,8 +1147,9 @@
         const alone = document.querySelector(".sec1_3");
 
         const sec3Cont = document.querySelectorAll(".sec3");
+
         sec3Cont.forEach((el) => {
-          if (el.getBoundingClientRect().left < window.innerWidth / 2) {
+          if (el.getBoundingClientRect().left < window.innerWidth / 2 && two) {
             let tl = gsap.timeline();
             tl.to(el.querySelector("img"), {
               x: 0,
@@ -1158,11 +1161,16 @@
               "<0.5"
             );
           }
+          if (sec3Cont[2].style.opacity == "1") {
+            two = false;
+          }
         });
+
         const web = document.querySelectorAll(".web");
+
         web.forEach((el) => {
           tl2 = gsap.timeline();
-          if (el.getBoundingClientRect().top < window.innerHeight) {
+          if (el.getBoundingClientRect().top < window.innerHeight && three) {
             tl2
               .to(el.querySelector("span"), {
                 scale: 1,
@@ -1190,8 +1198,13 @@
                 },
                 "<0.5"
               );
+            console.log(three);
+          }
+          if (web[3].getBoundingClientRect().bottom < window.innerHeight) {
+            three = false;
           }
         });
+
         const lastSec = document.querySelector(".lastSection");
         const lastSecDesc = document.querySelectorAll(".lastSection .sec_desc");
         const lastSecSpan = document.querySelectorAll(
